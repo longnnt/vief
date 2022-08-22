@@ -1,3 +1,5 @@
+import { fonts } from "./fonts";
+import { lineHeights } from "./lineHeights";
 import { breakpoints } from "./breakpoints";
 import { colors } from "./colors";
 import { shadows } from "./shadows";
@@ -8,6 +10,8 @@ const foundations = {
   colors,
   shadows,
   space,
+  lineHeights,
+  fonts,
 };
 
 export default foundations;

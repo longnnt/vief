@@ -5,7 +5,7 @@ export const colors = {
     700: "#2a69ac",
   },
   green: {
-    primary: "#61A533",
+    primary: "#30BF45",
   },
   red: {
     primary: "#D70000",
@@ -14,5 +14,11 @@ export const colors = {
   gray: {
     line: "#EEEEEE",
     disabled: "#B0B0B0",
+  },
+  blue: {
+    primary: "#01459C",
+  },
+  white: {
+    primary: "#FFFFFF",
   },
 };
