@@ -3,16 +3,71 @@ import React, { useEffect, useState } from "react";
 import type { AppProps } from "next/app";
 import { Provider } from "react-redux";
 import { QueryClientProvider, QueryClient, Hydrate } from "react-query";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import "../../i18n";
 import { store } from "../common/redux/store";
-import { theme } from "../common/theme/theme";
+// import { theme } from "../common/theme/theme";
 import { Loading } from "src/common/components/Loading";
+// import { Layout } from "../components/layout";
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
+import { Category } from "../common/type/type";
+import axios from "axios";
+import Layout from "../components/layout/Layout";
+
+const theme = extendTheme({
+  colors: {
+    brand: {
+      100: "#01459c",
+      200: "#30BF45",
+      // ...
+      900: "#1a202c",
+    },
+  },
+
+  styles: {
+    global: {
+      // styles for the `body`
+      body: {
+        color: "black",
+        fontFamily: "Montserrat",
+      },
+    },
+  },
+  components: {
+    Button: {
+      baseStyle: {
+        fontWeight: "500",
+        color: "#ffffff",
+      },
+      defaultProps: {},
+    },
+    Select: {
+      defaultProps: {
+        variant: "unstyled",
+      },
+    },
+    Divider: {
+      defaultProps: {},
+    },
+  },
+});
+
+// export const getStaticProps:GetStaticProps = async () =>{
+//   // const res= await axios.get('/client/categories?type=POLICY&field=WOOD&isFeatured=1')
+//   const res=  await axios.get('https://jsonplaceholder.typicode.com/users')
+//   const data: Category[] = await res.data;
+//   return{
+//       props:{
+//         cate:data,
+//       }
+// }
+// }
 
 const queryClient = new QueryClient();
+const MyApp = ({ Component, pageProps }: AppProps) => {
+  // console.log(cate);
 
-function MyApp({ Component, pageProps }: AppProps) {
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   useEffect(() => {
@@ -42,12 +97,13 @@ function MyApp({ Component, pageProps }: AppProps) {
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
           <ChakraProvider theme={theme}>
-            <Component {...pageProps} />
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
           </ChakraProvider>
         </Hydrate>
       </QueryClientProvider>
     </Provider>
   );
-}
-
+};
 export default MyApp;
