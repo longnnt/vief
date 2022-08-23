@@ -10,48 +10,11 @@ import { store } from "../common/redux/store";
 // import { theme } from "../common/theme/theme";
 import { Loading } from "src/common/components/Loading";
 // import { Layout } from "../components/layout";
-import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
-import { Category } from "../common/type/type";
-import axios from "axios";
+// import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
+// import { Category } from "../common/type/type";
+// import axios from "axios";
 import Layout from "../components/layout/Layout";
-
-const theme = extendTheme({
-  colors: {
-    brand: {
-      100: "#01459c",
-      200: "#30BF45",
-      // ...
-      900: "#1a202c",
-    },
-  },
-
-  styles: {
-    global: {
-      // styles for the `body`
-      body: {
-        color: "black",
-        fontFamily: "Montserrat",
-      },
-    },
-  },
-  components: {
-    Button: {
-      baseStyle: {
-        fontWeight: "500",
-        color: "#ffffff",
-      },
-      defaultProps: {},
-    },
-    Select: {
-      defaultProps: {
-        variant: "unstyled",
-      },
-    },
-    Divider: {
-      defaultProps: {},
-    },
-  },
-});
+import { theme } from "../common/theme/theme";
 
 // export const getStaticProps:GetStaticProps = async () =>{
 //   // const res= await axios.get('/client/categories?type=POLICY&field=WOOD&isFeatured=1')

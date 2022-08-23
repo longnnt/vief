@@ -17,9 +17,10 @@ const CategoryEvent = ({ children }: { children: Category }) => {
     <>
       <Menu isOpen={isOpen}>
         <MenuButton onMouseEnter={onOpen} onMouseLeave={onClose}>
-          Sự kiện{isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
+          Sự kiện
+          {/* {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />} */}
         </MenuButton>
-        <MenuList onMouseEnter={onOpen} onMouseLeave={onClose}>
+        <MenuList onMouseEnter={onOpen} onMouseLeave={onClose} mt={"-7px"}>
           {children?.map((index, key) => (
             <MenuItem key={key}>
               <Link>{index.name}</Link>
