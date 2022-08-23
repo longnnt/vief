@@ -27,10 +27,11 @@ const CategoryPolicy = ({ children }: { children: Category }) => {
     <>
       <Menu isOpen={isOpen}>
         <MenuButton onMouseEnter={onOpen} onMouseLeave={onClose}>
-          Chính sách {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
+          Chính sách
+          {/* {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />} */}
         </MenuButton>
 
-        <MenuList onMouseEnter={onOpen} onMouseLeave={onClose}>
+        <MenuList onMouseEnter={onOpen} onMouseLeave={onClose} mt={"-7px"}>
           {children?.map((index, key) => (
             <MenuItem key={key}>
               <Link>{index.name}</Link>

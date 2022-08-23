@@ -5,7 +5,9 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   Button,
+  Divider,
   Image,
+  Link,
   Stack,
   Text,
 } from "@chakra-ui/react";
@@ -14,16 +16,25 @@ const Story = () => {
   return (
     <>
       <Stack direction={"row"} spacing="64px">
-        <Stack spacing="32px" w="50%">
-          <Breadcrumb color="brand.100" fontSize="20px" fontWeight="600">
-            <BreadcrumbItem>
-              <BreadcrumbLink href="#">Chuyện doanh nghiệp</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbItem isCurrentPage>
-              <BreadcrumbLink href="#">Câu chuyện</BreadcrumbLink>
-            </BreadcrumbItem>
-          </Breadcrumb>
-          <Text fontSize="48px" fontWeight={700} color="brand.200">
+        <Stack spacing="32px" w="70%">
+          <Stack>
+            <Breadcrumb color="brand.100" fontSize="20px" fontWeight="600">
+              <BreadcrumbItem>
+                <BreadcrumbLink href="#">Chuyện doanh nghiệp</BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbItem isCurrentPage>
+                <BreadcrumbLink href="#">Câu chuyện</BreadcrumbLink>
+              </BreadcrumbItem>
+            </Breadcrumb>
+            <Divider borderColor="brand.100" w={"75%"}></Divider>
+          </Stack>
+
+          <Text
+            fontSize="45px"
+            fontWeight={700}
+            color="brand.200"
+            textTransform={"uppercase"}
+          >
             IFC phối hợp ngân hàng Việt thúc đẩy dự án bảo vệ môi trường
           </Text>
           <Text textAlign={"justify"} fontSize="14px" fontWeight="500">
@@ -37,17 +48,22 @@ const Story = () => {
             donec ac odio tempor orci dapibus ultrices in iaculis nunc sed augue
             lacus
           </Text>
-          <Box>
-            <Button bg="brand.100" rightIcon={<ArrowForwardIcon />}>
+          <Link href="/" _hover={{ textDecoration: "none" }}>
+            <Button
+              bg="brand.100"
+              textColor="white"
+              rightIcon={<ArrowForwardIcon />}
+            >
               Xem thêm
             </Button>
-          </Box>
+          </Link>
         </Stack>
         <Box>
           <Image
             src="/companyIMG.png"
-            w="592px"
+            w="full"
             h="444px"
+            objectFit="cover"
             borderRadius={"12px"}
           ></Image>
         </Box>

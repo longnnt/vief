@@ -55,12 +55,12 @@ const Navbar = ({
 
   return (
     <>
-      <Box bg="white" px={4} position="fixed" w="100%" zIndex="999999999">
+      <Box bg="white" position="fixed" w="100%" zIndex="999999999">
         <Flex
+          px={"11%"}
           h={16}
           alignItems="center"
           justifyContent={"space-between"}
-          padding={"0px 200px"}
         >
           <IconButton
             size={"md"}
@@ -74,6 +74,8 @@ const Navbar = ({
             <Image src="/fulllogo.png"></Image>
           </Box>
           <HStack
+            fontSize="14px"
+            fontWeight="500"
             spacing="32px"
             alignItems={"center"}
             display={{ base: "none", md: "flex" }}
@@ -87,12 +89,16 @@ const Navbar = ({
             <Link>{Links[6]}</Link>
           </HStack>
           <Flex alignItems={"center"}>
-            <Select>
+            <Select variant={"unstyled"}>
               <option>VI</option>
               <option>EN</option>
             </Select>
             <ButtonGroup>
-              <Button bg="brand.100">Đăng ký</Button>
+              <Link href="/" _hover={{ textDecoration: "none" }}>
+                <Button bg="brand.100" textColor="white">
+                  Đăng ký
+                </Button>
+              </Link>
             </ButtonGroup>
           </Flex>
         </Flex>
@@ -101,8 +107,12 @@ const Navbar = ({
           <>
             <Box pb={4} display={{ md: "none" }}>
               <Stack as={"nav"} spacing={4} alignItems="center">
-                <Link>{Links[0]}</Link>
-                <CategoryPolicy>{dataPolicy}</CategoryPolicy>
+                <Link>
+                  <Button>{Links[0]}</Button>
+                </Link>
+                <Button>
+                  <CategoryPolicy>{dataPolicy}</CategoryPolicy>
+                </Button>
                 <CategoryEvent>{dataEvent}</CategoryEvent>
                 <CategoryCompany>{dataCompany}</CategoryCompany>
                 <CategoryLibrary>{dataLibrary}</CategoryLibrary>
