@@ -18,23 +18,27 @@ const Story = () => {
       <Stack direction={"row"} spacing="64px">
         <Stack spacing="32px" w="70%">
           <Stack>
-            <Breadcrumb color="brand.100" fontSize="20px" fontWeight="600">
+            <Breadcrumb
+              color="brand.100"
+              fontSize="20px"
+              fontWeight="600"
+              borderBottom={"solid 1.5px"}
+              width="fit-content"
+            >
               <BreadcrumbItem>
-                <BreadcrumbLink href="#">Chuyện doanh nghiệp</BreadcrumbLink>
+                <BreadcrumbLink href="#" _hover={{ textDecoration: "none" }}>
+                  Chuyện doanh nghiệp
+                </BreadcrumbLink>
               </BreadcrumbItem>
-              <BreadcrumbItem isCurrentPage>
-                <BreadcrumbLink href="#">Câu chuyện</BreadcrumbLink>
+              <BreadcrumbItem>
+                <BreadcrumbLink href="#" _hover={{ textDecoration: "none" }}>
+                  Câu chuyện
+                </BreadcrumbLink>
               </BreadcrumbItem>
             </Breadcrumb>
-            <Divider borderColor="brand.100" w={"75%"}></Divider>
           </Stack>
 
-          <Text
-            fontSize="45px"
-            fontWeight={700}
-            color="brand.200"
-            textTransform={"uppercase"}
-          >
+          <Text fontSize="36px" fontWeight={600} color="brand.200">
             IFC phối hợp ngân hàng Việt thúc đẩy dự án bảo vệ môi trường
           </Text>
           <Text textAlign={"justify"} fontSize="14px" fontWeight="500">

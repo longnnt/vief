@@ -3,12 +3,12 @@ import { Box, Button, Image, Input, Stack, Text } from "@chakra-ui/react";
 const Subcribe = () => {
   return (
     <>
-      <Stack direction="row" spacing="32px">
-        <Box w="50%">
+      <Stack direction="row" spacing="32px" alignItems={"center"}>
+        <Box w="592px" h="444px">
           <Image
             src="/researchIMG.png"
-            w="full"
-            h="full"
+            w="592px"
+            h="444px"
             objectFit={"cover"}
             borderRadius={"12px"}
           ></Image>

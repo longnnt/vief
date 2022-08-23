@@ -18,19 +18,21 @@ const Library = () => {
       <Stack spacing="32px">
         <Stack spacing="16px">
           <Stack>
-            <Breadcrumb color="brand.100" fontSize="20px" fontWeight="600">
+            <Breadcrumb
+              color="brand.100"
+              fontSize="20px"
+              fontWeight="600"
+              borderBottom={"solid 1.5px"}
+              width="fit-content"
+            >
               <BreadcrumbItem>
-                <BreadcrumbLink href="#">Thư viện</BreadcrumbLink>
+                <BreadcrumbLink href="#" _hover={{ textDecoration: "none" }}>
+                  Thư viện
+                </BreadcrumbLink>
               </BreadcrumbItem>
             </Breadcrumb>
-            <Divider borderColor="brand.100" w={"12%"}></Divider>
           </Stack>
-          <Text
-            fontSize="45px"
-            fontWeight={700}
-            color="brand.200"
-            textTransform={"uppercase"}
-          >
+          <Text fontSize="32px" fontWeight={600} color="brand.200">
             Báo cáo về biến đổi khí hậu
           </Text>
         </Stack>

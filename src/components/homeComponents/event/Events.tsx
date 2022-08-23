@@ -16,20 +16,26 @@ const Events = () => {
         <Stack>
           <Stack align={"center"}>
             <Stack>
-              <Breadcrumb color="brand.100" fontSize="20px" fontWeight="600">
+              <Breadcrumb
+                color="brand.100"
+                fontSize="20px"
+                fontWeight="600"
+                borderBottom={"solid 1.5px"}
+                width="fit-content"
+              >
                 <BreadcrumbItem>
-                  <BreadcrumbLink href="#">Sự kiện</BreadcrumbLink>
+                  <BreadcrumbLink href="#" _hover={{ textDecoration: "none" }}>
+                    Sự kiện
+                  </BreadcrumbLink>
                 </BreadcrumbItem>
 
                 <BreadcrumbItem isCurrentPage>
-                  <BreadcrumbLink href="#">Sắp diễn ra</BreadcrumbLink>
+                  <BreadcrumbLink href="#" _hover={{ textDecoration: "none" }}>
+                    Sắp diễn ra
+                  </BreadcrumbLink>
                 </BreadcrumbItem>
               </Breadcrumb>
-              <Divider borderColor="brand.100"></Divider>
             </Stack>
-            <Text fontSize="48px" fontWeight={700} color="brand.200">
-              SẮP DIỄN RA
-            </Text>
           </Stack>
         </Stack>
       </Center>

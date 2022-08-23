@@ -12,16 +12,6 @@ import {
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
-const Links = [
-  "Trang chủ",
-  "Chính sách",
-  "Sự kiện",
-  "Doanh nghiệp",
-  "Thư viện",
-  "Về chúng tôi",
-  "Liên Hệ",
-];
-
 const ListHeader = ({ children }: { children: ReactNode }) => {
   return (
     <Text fontSize="20px" fontWeight={"600"}>
@@ -32,9 +22,11 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 
 const Footer = () => {
   return (
-    <Box bg="#F2F3F7">
-      <Stack py={"64px"} px={"18%"}>
+    <Box bg="#F2F3F7" w="100%">
+      <Center>
         <SimpleGrid
+          py="64px"
+          width="1216px"
           columns={{ base: 1, sm: 2, md: 3 }}
           spacing={"64px"}
           color="#394160"
@@ -91,7 +83,7 @@ const Footer = () => {
             </Link>
           </Stack>
         </SimpleGrid>
-      </Stack>
+      </Center>
     </Box>
   );
 };

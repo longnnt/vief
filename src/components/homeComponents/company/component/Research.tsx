@@ -18,35 +18,40 @@ const Research = () => {
       <Stack spacing="32px">
         <Stack spacing="16px" textAlign={"right"}>
           <Stack>
-            <Breadcrumb color="brand.100" fontSize="20px" fontWeight="600">
+            <Breadcrumb
+              color="brand.100"
+              fontSize="20px"
+              fontWeight="600"
+              borderBottom={"solid 1.5px"}
+              width="fit-content"
+              alignSelf={"flex-end"}
+            >
               <BreadcrumbItem>
-                <BreadcrumbLink href="#">Chuyện doanh nghiệp</BreadcrumbLink>
+                <BreadcrumbLink href="#" _hover={{ textDecoration: "none" }}>
+                  Chuyện doanh nghiệp
+                </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbItem isCurrentPage>
-                <BreadcrumbLink href="#">Nghiên cứu điển hình</BreadcrumbLink>
+                <BreadcrumbLink href="#" _hover={{ textDecoration: "none" }}>
+                  Nghiên cứu điển hình
+                </BreadcrumbLink>
               </BreadcrumbItem>
             </Breadcrumb>
-            <Divider
-              borderColor="brand.100"
-              width={"50%"}
-              alignSelf="flex-end"
-            ></Divider>
           </Stack>
 
           <Text
+            width={"1007px"}
             alignSelf={"flex-end"}
-            fontSize="48px"
-            fontWeight={700}
-            // w={"80%"}
+            fontSize="36px"
+            fontWeight={600}
             color="brand.200"
-            textTransform={"uppercase"}
           >
             Đề xuất các nhóm giải pháp ngoài lâm nghiệp nhằm giảm phát thải khí
             nhà kính
           </Text>
         </Stack>
         <Stack spacing="64px" direction="row">
-          <Box>
+          <Box h="450px" w="800px">
             <Image
               src="/researchIMG.png"
               w="full"
@@ -55,7 +60,7 @@ const Research = () => {
               objectFit="cover"
             ></Image>
           </Box>
-          <Stack w="40%" spacing="32px">
+          <Stack w="384px" spacing="32px">
             <Text
               textAlign={"justify"}
               fontSize="14px"

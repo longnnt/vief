@@ -16,8 +16,8 @@ const About = () => {
   return (
     <>
       <Stack spacing="64px">
-        <Stack direction="row" spacing="64px">
-          <Box w="50%">
+        <Stack direction="row" spacing="64px" alignItems={"center"}>
+          <Box w="592px" h="444px">
             <Image
               borderRadius="12px"
               src="/bgHome.png"
@@ -26,17 +26,22 @@ const About = () => {
               objectFit="cover"
             ></Image>
           </Box>
-          <Stack justifyContent="space-between" w={"60%"} spacing="32px">
+          <Stack w={"60%"} spacing="32px">
             <Stack spacing="16px">
               <Stack>
-                <Link color="brand.100" fontSize="20px" fontWeight="600">
+                <Link
+                  color="brand.100"
+                  fontSize="20px"
+                  fontWeight="600"
+                  borderBottom={"solid 1.5px"}
+                  width="fit-content"
+                  _hover={{ textDecoration: "none" }}
+                >
                   Về chúng tôi
                 </Link>
-
-                <Divider borderColor="brand.100"></Divider>
               </Stack>
-              <Text fontSize="48px" fontWeight={700} color="brand.200">
-                VIEF
+              <Text fontSize="36px" fontWeight={600} color="brand.200">
+                ViEF - Vietnam Economic Forum
               </Text>
             </Stack>
             <Text fontSize="14px" fontWeight="500" textAlign={"justify"}>
