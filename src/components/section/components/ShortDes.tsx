@@ -1,18 +1,7 @@
 import { Box, Text } from "@chakra-ui/react";
 import React from "react";
+import { ShortDesProps } from "../interface";
 import ButtonComponent from "./Button";
-
-interface ShortDesProps {
-  shortDes?: string;
-  w?: string;
-  h?: string;
-  p?: string;
-  m?: string;
-  mt?: string;
-  textWidth?: string;
-  textHeight?: string;
-  btnTitle?: string;
-}
 
 export default function ShortDes({
   shortDes,
@@ -24,13 +13,20 @@ export default function ShortDes({
   textWidth,
   textHeight,
   btnTitle,
+  haveButton = true,
+  textAlign,
 }: ShortDesProps) {
   return (
     <Box w={w} h={h} p={p} m={m} mt={mt}>
-      <Text w={textWidth} h={textHeight} textAlign="justify">
+      <Text
+        w={textWidth}
+        h={textHeight}
+        textAlign={textAlign}
+        color={"text.primary"}
+      >
         {shortDes}
       </Text>
-      <ButtonComponent btnTitle={btnTitle} />
+      {haveButton && <ButtonComponent btnTitle={btnTitle} />}
     </Box>
   );
 }

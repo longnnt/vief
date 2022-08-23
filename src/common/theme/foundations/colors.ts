@@ -4,6 +4,9 @@ export const colors = {
     800: "#153e75",
     700: "#2a69ac",
   },
+  text: {
+    primary: "#394160",
+  },
   green: {
     primary: "#30BF45",
   },
@@ -20,5 +23,9 @@ export const colors = {
   },
   white: {
     primary: "#FFFFFF",
+    secondary: "#F2F3F7",
+  },
+  orange: {
+    primary: "#F3A70F",
   },
 };

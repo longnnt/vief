@@ -3,23 +3,7 @@ import React from "react";
 import HeadingComponent from "../components/Heading";
 import Title from "../components/Title";
 import styles from "../../../styles/Header.module.css";
-
-interface SectionHeaderProps {
-  w?: string;
-  h?: string;
-  p?: string;
-  m?: string;
-  mb?: string;
-  category?: string;
-  title?: string;
-  titleWidth?: string;
-  titleHeight?: string;
-  heading?: string;
-  headingWidth?: string;
-  headingHeight?: string;
-  headingMarginTop?: string;
-  isReverse?: boolean;
-}
+import { SectionHeaderProps } from "../interface";
 
 export default function SectionHeader({
   w,
@@ -34,15 +18,18 @@ export default function SectionHeader({
   headingHeight,
   headingMarginTop,
   isReverse = false,
+  alignItems,
 }: SectionHeaderProps) {
   return (
-    <Box
+    <Flex
       w={w}
       h={h}
       p={p}
       m={m}
       mb={mb}
       className={isReverse ? styles.reverse : styles.noReverse}
+      flexDirection="column"
+      alignItems={alignItems}
     >
       <Title category={category} title={title} w={"fit-content"} />
       <HeadingComponent
@@ -51,6 +38,6 @@ export default function SectionHeader({
         h={headingHeight}
         mt={headingMarginTop}
       />
-    </Box>
+    </Flex>
   );
 }

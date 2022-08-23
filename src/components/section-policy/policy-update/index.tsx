@@ -1,10 +1,7 @@
 import { Flex, Image } from "@chakra-ui/react";
 import React from "react";
+import { PolicyUpdateProps } from "../interface";
 import PolicyUpdateRight from "./PolicyUpdateRight";
-
-interface PolicyUpdateProps {
-  mt?: string;
-}
 
 export default function PolicyUpdate({ mt }: PolicyUpdateProps) {
   return (

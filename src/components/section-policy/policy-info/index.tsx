@@ -9,10 +9,8 @@ export default function PolicyInfo() {
       <SectionHeader
         category="Chính sách"
         title="Thông tin chính sách"
-        heading="BAN HÀNH DANH MỤC LĨNH VỰC,
-          CƠ SỞ PHÁT THẢI KHÍ NHÀ KÍNH PHẢI THỰC HIỆN KIỂM KÊ KHÍ NHÀ KÍNH"
+        heading="Ban hành danh mục lĩnh vực, cơ sở phát thải khí nhà kính phai thực hiện kiểm kê khí nhà kính"
         headingWidth="1008px"
-        headingHeight="186px"
         mb="32px"
       />
       <PolicyInfoContent />

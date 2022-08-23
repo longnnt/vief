@@ -2,10 +2,8 @@ import ShortDes from "@/src/components/section/components/ShortDes";
 import SectionHeader from "@/src/components/section/section-header";
 import { Box, Flex, Image } from "@chakra-ui/react";
 import React from "react";
+import { CompanyResearchContentProps } from "../../interface";
 
-interface CompanyResearchContentProps {
-  mt?: string;
-}
 export default function CompanyResearchContent({
   mt,
 }: CompanyResearchContentProps) {

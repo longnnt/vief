@@ -1,12 +1,6 @@
 import React from "react";
 import { Heading } from "@chakra-ui/react";
-
-interface HeadingComponentProps {
-  w?: string;
-  h?: string;
-  heading?: string;
-  mt?: string;
-}
+import { HeadingComponentProps } from "../interface";
 
 export default function HeadingComponent({
   w,
@@ -18,13 +12,13 @@ export default function HeadingComponent({
     <Heading
       w={w}
       h={h}
-      color="green.primary"
-      fontSize={"48px"}
-      lineHeight="62.4px"
+      color="text.primary"
+      fontSize={"36px"}
+      lineHeight="50.4px"
       fontWeight={700}
       mt={mt}
     >
-      {heading?.toUpperCase()}
+      {heading}
     </Heading>
   );
 }

@@ -7,12 +7,25 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import "../../i18n";
 import { store } from "../common/redux/store";
-import { theme } from "../common/theme/theme";
 import { Loading } from "src/common/components/Loading";
+import Layout from "../components/layout/Layout";
+import { theme } from "../common/theme/theme";
+
+// export const getStaticProps:GetStaticProps = async () =>{
+//   // const res= await axios.get('/client/categories?type=POLICY&field=WOOD&isFeatured=1')
+//   const res=  await axios.get('https://jsonplaceholder.typicode.com/users')
+//   const data: Category[] = await res.data;
+//   return{
+//       props:{
+//         cate:data,
+//       }
+// }
+// }
 
 const queryClient = new QueryClient();
+const MyApp = ({ Component, pageProps }: AppProps) => {
+  // console.log(cate);
 
-function MyApp({ Component, pageProps }: AppProps) {
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   useEffect(() => {
@@ -42,12 +55,13 @@ function MyApp({ Component, pageProps }: AppProps) {
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
           <ChakraProvider theme={theme}>
-            <Component {...pageProps} />
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
           </ChakraProvider>
         </Hydrate>
       </QueryClientProvider>
     </Provider>
   );
-}
-
+};
 export default MyApp;

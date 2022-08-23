@@ -1,25 +1,29 @@
 import { Text } from "@chakra-ui/react";
 import React from "react";
+import { TitleProps } from "../interface";
 
-interface TitleProps {
-  title?: string;
-  w?: string;
-  h?: string;
-  category?: string;
-}
-
-export default function Title({ title, w, h, category }: TitleProps) {
+export default function Title({
+  title,
+  w,
+  h,
+  category,
+  isBorderBottom = true,
+  textColor = "text.primary",
+  mb,
+  lineHeight = "30px",
+}: TitleProps) {
   return (
     <Text
       w={w}
       h={h}
-      borderBottom="1px solid"
-      color={"blue.primary"}
+      borderBottom={isBorderBottom ? "1px solid" : ""}
+      color={textColor}
       fontWeight="600"
       fontSize={"20px"}
-      lineHeight="30px"
+      lineHeight={lineHeight}
+      mb={mb}
     >
-      {`${category} / ${title}`}
+      {category ? `${category} / ${title}` : `${title}`}
     </Text>
   );
 }

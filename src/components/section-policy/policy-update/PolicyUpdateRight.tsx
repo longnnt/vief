@@ -5,17 +5,13 @@ import SectionHeader from "../../section/section-header";
 
 export default function PolicyUpdateRight() {
   return (
-    <Box>
+    <Box h="350px">
       <SectionHeader
         category="Chính sách"
         title="Mới cập nhật"
         w="560px"
         h="172px"
-        titleWidth="268px"
-        titleHeight="30px"
         heading="Cop26 và dấu ấn Việt Nam"
-        headingWidth="464px"
-        headingHeight="124px"
       />
       <ShortDes
         shortDes="Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra orci sagittis eu volutpat odio facilisis mauris sit amet massa"
