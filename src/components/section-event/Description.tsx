@@ -1,10 +1,6 @@
 import { ChakraProps, Flex, Text } from "@chakra-ui/react";
 import React from "react";
-
-interface DescriptionProps {
-  children: React.ReactNode;
-  wrapperStyle?: ChakraProps;
-}
+import { DescriptionProps } from "./interface";
 
 export default function Description({
   children,
@@ -14,7 +10,7 @@ export default function Description({
     <Flex
       alignItems={"center"}
       {...wrapperStyle}
-      ml={wrapperStyle?.ml || "8px"}
+      ml={wrapperStyle?.ml}
       mb={wrapperStyle?.mb || "8px"}
     >
       {children}

@@ -8,24 +8,27 @@ import EventContentItem from "./EventContentItem";
 
 const listEvents = [1, 2, 3, 4];
 
-export default function SectionEvent() {
+interface SectionEventProps {
+  isSectionHeader?: boolean;
+}
+
+export default function SectionEvent({
+  isSectionHeader = true,
+}: SectionEventProps) {
   return (
-    <Section wrapperStyle={{ position: "relative" }}>
-      <SectionHeader
-        category="Sự kiện"
-        title="Sắp diễn ra"
-        alignItems="center"
-        wrapperStyle={{ mb: "18px" }}
-      />
-      <Box
-        position={"absolute"}
-        left="-64px"
-        top="52%"
-        className="box-container"
-      >
-        <ChevronLeft />
-      </Box>
+    <>
+      {isSectionHeader && (
+        <SectionHeader
+          category="Sự kiện"
+          title="Sắp diễn ra"
+          alignItems="center"
+          wrapperStyle={{ mb: "18px" }}
+        />
+      )}
       <Box overflow={"hidden"}>
+        <Box position={"absolute"} left="-64px" top="52%">
+          <ChevronLeft />
+        </Box>
         <Flex width={"fit-content"}>
           {listEvents.map((event) => (
             <EventContentItem
@@ -34,10 +37,10 @@ export default function SectionEvent() {
             />
           ))}
         </Flex>
+        <Box position={"absolute"} right="-64px" top="52%">
+          <ChevronRight />
+        </Box>
       </Box>
-      <Box position={"absolute"} right="-64px" top="52%">
-        <ChevronRight />
-      </Box>
-    </Section>
+    </>
   );
 }

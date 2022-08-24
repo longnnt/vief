@@ -6,3 +6,7 @@ export interface TimeLeftProps {
 export interface EventContentItemProps {
   wrapperStyle?: ChakraProps;
 }
+export interface DescriptionProps {
+  children: React.ReactNode;
+  wrapperStyle?: ChakraProps;
+}
