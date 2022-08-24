@@ -4,6 +4,7 @@ import { breakpoints } from "./breakpoints";
 import { colors } from "./colors";
 import { shadows } from "./shadows";
 import { space } from "./space";
+import { styles } from "./styles";
 
 const foundations = {
   breakpoints,
@@ -12,6 +13,7 @@ const foundations = {
   space,
   lineHeights,
   fonts,
+  styles,
 };
 
 export default foundations;

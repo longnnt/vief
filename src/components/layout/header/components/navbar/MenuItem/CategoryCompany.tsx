@@ -8,7 +8,6 @@ import {
   MenuList,
   useDisclosure,
 } from "@chakra-ui/react";
-import { ReactNode } from "react";
 
 const CategoryCompany = ({ children }: { children: Category }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -17,9 +16,10 @@ const CategoryCompany = ({ children }: { children: Category }) => {
     <>
       <Menu isOpen={isOpen}>
         <MenuButton onMouseEnter={onOpen} onMouseLeave={onClose}>
-          Doanh nghiệp{isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
+          Doanh nghiệp
+          {/* {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />} */}
         </MenuButton>
-        <MenuList onMouseEnter={onOpen} onMouseLeave={onClose}>
+        <MenuList onMouseEnter={onOpen} onMouseLeave={onClose} mt={"-7px"}>
           {children?.map((index, key) => (
             <MenuItem key={key}>
               <Link>{index.name}</Link>

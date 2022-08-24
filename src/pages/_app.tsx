@@ -8,6 +8,11 @@ import { useRouter } from "next/router";
 import "../../i18n";
 import { store } from "../common/redux/store";
 import { Loading } from "src/common/components/Loading";
+
+// import { Layout } from "../components/layout";
+// import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
+// import { Category } from "../common/type/type";
+// import axios from "axios";
 import Layout from "../components/layout/Layout";
 import { theme } from "../common/theme/theme";
 
