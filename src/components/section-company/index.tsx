@@ -1,4 +1,3 @@
-import { Box } from "@chakra-ui/react";
 import React from "react";
 import Section from "../section";
 import SectionCompanyResearch from "./company-research";
