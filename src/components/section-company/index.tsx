@@ -8,7 +8,7 @@ export default function SectionCompany() {
   return (
     <Section>
       <SectionCompanyStory />
-      <SectionCompanyResearch mt="64px" />
+      <SectionCompanyResearch wrapperStyle={{ mt: "64px" }} />
     </Section>
   );
 }

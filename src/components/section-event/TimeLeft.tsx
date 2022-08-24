@@ -1,11 +1,7 @@
 import Clock from "@/src/Images/Icons/Clock";
-import { ChakraProps, Flex, Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import React from "react";
-
-interface TimeLeftProps {
-  days?: number;
-  wrapperStyle?: ChakraProps;
-}
+import { TimeLeftProps } from "./interface";
 
 export default function TimeLeft({ days, wrapperStyle }: TimeLeftProps) {
   return (

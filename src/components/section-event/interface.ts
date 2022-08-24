@@ -1,8 +1,8 @@
 import { ChakraProps } from "@chakra-ui/react";
-export interface CompanyResearchContentProps {
+export interface TimeLeftProps {
+  days?: number;
   wrapperStyle?: ChakraProps;
 }
-
-export interface SectionCompanyResearchProps {
+export interface EventContentItemProps {
   wrapperStyle?: ChakraProps;
 }

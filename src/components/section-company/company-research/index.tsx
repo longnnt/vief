@@ -1,17 +1,14 @@
-import { Box } from "@chakra-ui/react";
+import { Box, ChakraProps } from "@chakra-ui/react";
 import React from "react";
 import SectionHeader from "../../section/section-header";
+import { SectionCompanyResearchProps } from "../interface";
 import CompanyResearchContent from "./company-research-content";
 
-interface SectionCompanyResearchProps {
-  mt?: string;
-}
-
 export default function SectionCompanyResearch({
-  mt,
+  wrapperStyle,
 }: SectionCompanyResearchProps) {
   return (
-    <Box mt={mt}>
+    <Box {...wrapperStyle}>
       <SectionHeader
         category="Chuyện doanh nghiệp"
         title="Nghiên cứu điển hình"
@@ -19,7 +16,7 @@ export default function SectionCompanyResearch({
         headingWidth="1007px"
         isReverse={true}
       />
-      <CompanyResearchContent mt={"32px"} />
+      <CompanyResearchContent wrapperStyle={{ mt: "32px" }} />
     </Box>
   );
 }

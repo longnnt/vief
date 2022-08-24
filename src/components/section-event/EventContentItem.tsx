@@ -3,16 +3,12 @@ import ShortDes from "@/src/components/section/components/ShortDes";
 import Title from "@/src/components/section/components/Title";
 import Location from "@/src/Images/Icons/Location";
 import WoodSector from "@/src/Images/Icons/WoodSector";
-import { Box, ChakraProps, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Image } from "@chakra-ui/react";
 import React from "react";
 import Calendar from "../section/components/Calendar";
 import Description from "./Description";
+import { EventContentItemProps } from "./interface";
 import TimeLeft from "./TimeLeft";
-import styles from "@/src/styles/EventContentItem.module.css";
-
-interface EventContentItemProps {
-  wrapperStyle?: ChakraProps;
-}
 
 export default function EventContentItem({
   wrapperStyle,
