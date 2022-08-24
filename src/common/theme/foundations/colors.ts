@@ -30,6 +30,7 @@ export const colors = {
   white: {
     primary: "#FFFFFF",
     secondary: "#F2F3F7",
+    100: "#C5CAD3",
   },
   orange: {
     primary: "#F3A70F",

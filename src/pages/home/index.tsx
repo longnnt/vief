@@ -9,6 +9,7 @@ import Company from "@/src/components/homeComponents/company/Company";
 import Library from "@/src/components/homeComponents/library/Library";
 import Subcribe from "@/src/components/homeComponents/subcribe/Subcribe";
 import SectionCompany from "@/src/components/section-company";
+import Section from "@/src/components/section";
 
 function HomePage() {
   return (
@@ -18,7 +19,9 @@ function HomePage() {
         <Stack alignSelf="center" py="127.5px" width="1216px" spacing={"136px"}>
           <About></About>
           <SectionPolicy />
-          <SectionEvent />
+          <Section wrapperStyle={{ position: "relative" }}>
+            <SectionEvent />
+          </Section>
           <SectionCompany />
           <Library />
           <Subcribe />

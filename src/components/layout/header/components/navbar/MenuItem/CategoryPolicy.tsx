@@ -20,7 +20,7 @@ import {
 //   }
 // }
 
-const CategoryPolicy = ({ children }: { children: Category }) => {
+const CategoryPolicy = ({ children }: { children?: Category }) => {
   // console.log(children);
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (

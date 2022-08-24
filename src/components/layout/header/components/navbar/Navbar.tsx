@@ -26,10 +26,10 @@ const Navbar = ({
   dataEvent,
   dataLibrary,
 }: {
-  dataPolicy: Category;
-  dataCompany: Category;
-  dataEvent: Category;
-  dataLibrary: Category;
+  dataPolicy?: Category;
+  dataCompany?: Category;
+  dataEvent?: Category;
+  dataLibrary?: Category;
 }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 

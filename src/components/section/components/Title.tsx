@@ -15,7 +15,7 @@ export default function Title({
       borderBottom={isBorderBottom ? "1px solid" : ""}
       color={textColor}
       fontWeight="600"
-      fontSize={"20px"}
+      fontSize={wrapperStyle?.fontSize || "20px"}
       lineHeight={lineHeight}
       {...wrapperStyle}
       w="fit-content"
