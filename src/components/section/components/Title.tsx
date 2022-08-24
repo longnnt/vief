@@ -4,24 +4,21 @@ import { TitleProps } from "../interface";
 
 export default function Title({
   title,
-  w,
-  h,
   category,
   isBorderBottom = true,
   textColor = "text.primary",
-  mb,
   lineHeight = "30px",
+  wrapperStyle,
 }: TitleProps) {
   return (
     <Text
-      w={w}
-      h={h}
       borderBottom={isBorderBottom ? "1px solid" : ""}
       color={textColor}
       fontWeight="600"
       fontSize={"20px"}
       lineHeight={lineHeight}
-      mb={mb}
+      {...wrapperStyle}
+      w="fit-content"
     >
       {category ? `${category} / ${title}` : `${title}`}
     </Text>

@@ -6,11 +6,7 @@ import styles from "../../../styles/Header.module.css";
 import { SectionHeaderProps } from "../interface";
 
 export default function SectionHeader({
-  w,
-  h,
-  p,
-  m,
-  mb,
+  wrapperStyle,
   category,
   title,
   heading,
@@ -22,21 +18,19 @@ export default function SectionHeader({
 }: SectionHeaderProps) {
   return (
     <Flex
-      w={w}
-      h={h}
-      p={p}
-      m={m}
-      mb={mb}
+      {...wrapperStyle}
       className={isReverse ? styles.reverse : styles.noReverse}
       flexDirection="column"
       alignItems={alignItems}
     >
-      <Title category={category} title={title} w={"fit-content"} />
+      <Title category={category} title={title} />
       <HeadingComponent
+        wrapperStyle={{
+          w: headingWidth,
+          h: headingHeight,
+          mt: headingMarginTop,
+        }}
         heading={heading}
-        w={headingWidth}
-        h={headingHeight}
-        mt={headingMarginTop}
       />
     </Flex>
   );

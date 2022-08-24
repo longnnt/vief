@@ -5,19 +5,15 @@ import ButtonComponent from "./Button";
 
 export default function ShortDes({
   shortDes,
-  w,
-  h,
-  p,
-  m,
-  mt,
+  wrapperStyle,
   textWidth,
   textHeight,
   btnTitle,
   haveButton = true,
-  textAlign,
+  textAlign = "justify",
 }: ShortDesProps) {
   return (
-    <Box w={w} h={h} p={p} m={m} mt={mt}>
+    <Box {...wrapperStyle}>
       <Text
         w={textWidth}
         h={textHeight}

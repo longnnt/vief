@@ -3,20 +3,17 @@ import { Heading } from "@chakra-ui/react";
 import { HeadingComponentProps } from "../interface";
 
 export default function HeadingComponent({
-  w,
-  h,
-  mt = "18px",
   heading,
+  wrapperStyle,
 }: HeadingComponentProps) {
   return (
     <Heading
-      w={w}
-      h={h}
+      {...wrapperStyle}
       color="text.primary"
       fontSize={"36px"}
-      lineHeight="50.4px"
+      lineHeight="54px"
       fontWeight={700}
-      mt={mt}
+      mt={wrapperStyle?.mt || "18px"}
     >
       {heading}
     </Heading>

@@ -17,7 +17,6 @@ export default function SectionCompanyResearch({
         title="Nghiên cứu điển hình"
         heading="Đề xuất các nhóm giải pháp ngoài lâm nghiệp nhằm giảm phát thải khí nhà kính"
         headingWidth="1007px"
-        headingHeight="186px"
         isReverse={true}
       />
       <CompanyResearchContent mt={"32px"} />

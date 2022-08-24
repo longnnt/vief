@@ -1,26 +1,22 @@
 import { Button, Text } from "@chakra-ui/react";
 import React from "react";
 import { ButtonComponentProps } from "../interface";
-import ArrowForward from "./ArrowForward";
+import ArrowForward from "../../../Images/Icons/ArrowForward";
 
 export default function ButtonComponent({
-  w,
-  h,
+  wrapperStyle,
   btnTitle = "Xem thêm",
-  p,
   isArrowForward = true,
   textHeight,
-  mt = "32px",
 }: ButtonComponentProps) {
   return (
     <Button
       size={"md"}
-      w={w}
-      h={h}
-      p={p}
+      {...wrapperStyle}
+      mt={wrapperStyle?.mt || "32px"}
       backgroundColor={"blue.primary"}
       colorScheme="blue.primary"
-      mt={mt}
+      p="8px"
     >
       <Text
         fontSize={"14px"}

@@ -5,10 +5,10 @@ import { SectionProps } from "./interface";
 export default function Section({
   children,
   marginLeftRight = "352px",
-  w = "1216px",
+  wrapperStyle,
 }: SectionProps) {
   return (
-    <Box m={`128px ${marginLeftRight} 0`} w={w}>
+    <Box m={`128px ${marginLeftRight} 0`} w={"1216px"} {...wrapperStyle}>
       {children}
     </Box>
   );
