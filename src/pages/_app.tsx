@@ -3,12 +3,12 @@ import React, { useEffect, useState } from "react";
 import type { AppProps } from "next/app";
 import { Provider } from "react-redux";
 import { QueryClientProvider, QueryClient, Hydrate } from "react-query";
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import "../../i18n";
 import { store } from "../common/redux/store";
-// import { theme } from "../common/theme/theme";
 import { Loading } from "src/common/components/Loading";
+
 // import { Layout } from "../components/layout";
 // import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 // import { Category } from "../common/type/type";

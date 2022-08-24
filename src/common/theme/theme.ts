@@ -3,4 +3,11 @@ import foundations from "./foundations/index";
 
 export const theme = extendTheme({
   ...foundations,
+  styles: {
+    global: () => ({
+      body: {
+        fontFamily: "Montserrat, sans-serif",
+      },
+    }),
+  },
 });

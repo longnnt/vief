@@ -10,8 +10,11 @@ export const colors = {
 
     // ...
   },
+  text: {
+    primary: "#394160",
+  },
   green: {
-    primary: "#61A533",
+    primary: "#30BF45",
   },
   red: {
     primary: "#D70000",
@@ -20,5 +23,15 @@ export const colors = {
   gray: {
     line: "#EEEEEE",
     disabled: "#B0B0B0",
+  },
+  blue: {
+    primary: "#01459C",
+  },
+  white: {
+    primary: "#FFFFFF",
+    secondary: "#F2F3F7",
+  },
+  orange: {
+    primary: "#F3A70F",
   },
 };
