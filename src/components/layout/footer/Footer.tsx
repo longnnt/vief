@@ -26,8 +26,8 @@ const Footer = () => {
       <Center>
         <SimpleGrid
           py="64px"
-          width="1216px"
-          columns={{ base: 1, sm: 2, md: 3 }}
+          width={{ sm: "343px", md: "1216px" }}
+          columns={{ base: 1, sm: 1, md: 3 }}
           spacing={"64px"}
           color="#394160"
         >

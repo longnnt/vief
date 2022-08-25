@@ -7,6 +7,7 @@ export const colors = {
     200: "#394160",
     bgItemFile: "#F2F3F7",
     text: "#394160",
+    title: "#30BF45",
 
     // ...
   },

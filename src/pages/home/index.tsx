@@ -13,7 +13,7 @@ function HomePage() {
     <>
       <Stack>
         <Carousel />
-        <Stack alignSelf="center" py="127.5px" width="1216px" spacing={"136px"}>
+        <Stack alignSelf="center" py="127.5px" width="1216px" spacing={"128px"}>
           <About></About>
           <Events></Events>
           <Company></Company>
