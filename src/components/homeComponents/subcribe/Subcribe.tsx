@@ -11,13 +11,14 @@ const Subcribe = () => {
             h="444px"
             objectFit={"cover"}
             borderRadius={"12px"}
+            alt=""
           ></Image>
         </Box>
         <Stack spacing="32px" w="50%">
           <Text
             fontSize="28px"
             fontWeight={700}
-            color="brand.200"
+            color="text"
             textTransform={"uppercase"}
           >
             Đăng ký nhận tin

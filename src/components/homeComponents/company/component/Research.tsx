@@ -44,7 +44,7 @@ const Research = () => {
             alignSelf={"flex-end"}
             fontSize="36px"
             fontWeight={600}
-            color="brand.200"
+            color="text"
           >
             Đề xuất các nhóm giải pháp ngoài lâm nghiệp nhằm giảm phát thải khí
             nhà kính
@@ -58,6 +58,7 @@ const Research = () => {
               h="full"
               borderRadius={"12px"}
               objectFit="cover"
+              alt=""
             ></Image>
           </Box>
           <Stack w="384px" spacing="32px">

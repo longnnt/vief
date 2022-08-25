@@ -1,22 +1,20 @@
+import { WebContainer } from "@/src/common/components/WebContainer";
 import About from "@/src/components/homeComponents/about/About";
 import Carousel from "@/src/components/homeComponents/carousel/Carousel";
-
-import { Stack } from "@chakra-ui/react";
-import React from "react";
-import SectionPolicy from "@/src/components/section-policy";
-import SectionEvent from "@/src/components/section-event";
-import Company from "@/src/components/homeComponents/company/Company";
 import Library from "@/src/components/homeComponents/library/Library";
 import Subcribe from "@/src/components/homeComponents/subcribe/Subcribe";
-import SectionCompany from "@/src/components/section-company";
 import Section from "@/src/components/section";
+import SectionCompany from "@/src/components/section-company";
+import SectionEvent from "@/src/components/section-event";
+import SectionPolicy from "@/src/components/section-policy";
+import { Stack } from "@chakra-ui/react";
 
 function HomePage() {
   return (
-    <>
+    <WebContainer>
       <Stack>
         <Carousel />
-        <Stack alignSelf="center" py="127.5px" width="1216px" spacing={"128px"}>
+        <Stack alignSelf="center" py="127.5px">
           <About></About>
           <SectionPolicy />
           <Section wrapperStyle={{ position: "relative" }}>
@@ -27,7 +25,7 @@ function HomePage() {
           <Subcribe />
         </Stack>
       </Stack>
-    </>
+    </WebContainer>
   );
 }
 

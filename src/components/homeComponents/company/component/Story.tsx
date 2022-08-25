@@ -38,7 +38,7 @@ const Story = () => {
             </Breadcrumb>
           </Stack>
 
-          <Text fontSize="36px" fontWeight={600} color="brand.200">
+          <Text fontSize="36px" fontWeight={600} color="text">
             IFC phối hợp ngân hàng Việt thúc đẩy dự án bảo vệ môi trường
           </Text>
           <Text textAlign={"justify"} fontSize="14px" fontWeight="500">

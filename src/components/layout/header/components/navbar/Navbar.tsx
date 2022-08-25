@@ -1,27 +1,22 @@
+import { Category } from "@/src/common/type/type";
+import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import {
   Box,
-  Flex,
-  Avatar,
-  HStack,
-  Link,
-  IconButton,
   Button,
-  useDisclosure,
-  Select,
   ButtonGroup,
+  Flex,
+  HStack,
+  IconButton,
   Image,
-  Center,
+  Link,
+  Select,
   Stack,
-  Menu,
-  MenuList,
-  MenuItem,
+  useDisclosure,
 } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon, SmallAddIcon } from "@chakra-ui/icons";
-import CategoryLibrary from "./MenuItem/CategoryLibrary";
 import CategoryCompany from "./MenuItem/CategoryCompany";
-import CategoryPolicy from "./MenuItem/CategoryPolicy";
-import { Category } from "@/src/common/type/type";
 import CategoryEvent from "./MenuItem/CategoryEvent";
+import CategoryLibrary from "./MenuItem/CategoryLibrary";
+import CategoryPolicy from "./MenuItem/CategoryPolicy";
 
 const Navbar = ({
   dataPolicy,
@@ -35,7 +30,6 @@ const Navbar = ({
   dataLibrary?: Category;
 }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
   return (
     <>
       <Box w="100%" alignItems={"center"} position="fixed" zIndex="999999999">

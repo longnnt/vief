@@ -42,7 +42,7 @@ export default function EventContentItem({
         <Title
           title="Lorem ipsum dolor sit amet, consectetur adipiscing elit ut"
           isBorderBottom={false}
-          textColor="text.primary"
+          textColor="text"
           wrapperStyle={{ mb: "16px", lineHeight: "28px" }}
         />
         <ShortDes

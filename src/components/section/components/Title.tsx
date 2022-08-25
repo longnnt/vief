@@ -6,7 +6,7 @@ export default function Title({
   title,
   category,
   isBorderBottom = true,
-  textColor = "text.primary",
+  textColor = "text",
   wrapperStyle,
 }: TitleProps) {
   return (

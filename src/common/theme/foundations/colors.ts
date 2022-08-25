@@ -1,4 +1,5 @@
 export const colors = {
+  text: "#394160",
   brand: {
     900: "red",
     800: "#153e75",
@@ -11,8 +12,8 @@ export const colors = {
 
     // ...
   },
-  text: {
-    primary: "#394160",
+  blue: {
+    primary: "#01459c",
   },
   green: {
     primary: "#30BF45",
@@ -22,11 +23,9 @@ export const colors = {
     secondary: "#FF0000",
   },
   gray: {
+    primary: "#394160",
     line: "#EEEEEE",
-    disabled: "#B0B0B0",
-  },
-  blue: {
-    primary: "#01459C",
+    disabled: "#C5CAD3",
   },
   white: {
     primary: "#FFFFFF",

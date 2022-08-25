@@ -9,7 +9,7 @@ export default function HeadingComponent({
   return (
     <Heading
       {...wrapperStyle}
-      color="text.primary"
+      color="text"
       fontSize={"36px"}
       lineHeight="54px"
       fontWeight={700}

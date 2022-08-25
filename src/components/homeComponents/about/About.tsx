@@ -22,7 +22,7 @@ const About = () => {
             <Stack spacing="16px">
               <Stack>
                 <Link
-                  color="brand.100"
+                  color="text"
                   fontSize="20px"
                   fontWeight="600"
                   borderBottom={"solid 1.5px"}
@@ -32,7 +32,7 @@ const About = () => {
                   Về chúng tôi
                 </Link>
               </Stack>
-              <Text fontSize="36px" fontWeight={600} color="brand.200">
+              <Text fontSize="36px" fontWeight={600} color="text">
                 ViEF - Vietnam Economic Forum
               </Text>
             </Stack>
