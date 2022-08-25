@@ -3,7 +3,7 @@ export const styles = {
     // styles for the `body`
     body: {
       color: "#394160",
-      fontFamily: "Montserrat",
+      fontFamily: "Montserrat, sans-serif",
     },
   },
 };
