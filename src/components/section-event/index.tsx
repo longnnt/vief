@@ -33,7 +33,7 @@ export default function SectionEvent({
           {listEvents.map((event) => (
             <EventContentItem
               key={event}
-              wrapperStyle={{ w: "384px", mr: "32px" }}
+              wrapperStyle={{ w: { xl: "344px", "2xl": "384px" }, mr: "32px" }}
             />
           ))}
         </Flex>
