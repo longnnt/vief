@@ -40,10 +40,11 @@ const Navbar = ({
           <Center>
             <Flex
               alignSelf={"center"}
-              w="1390px"
+              w={{ xl: "1200px", "2xl": "100%" }}
               h="96px"
               alignItems="center"
               justifyContent={"space-between"}
+              px={{ xl: "20px", "2xl": "200px" }}
             >
               <Box>
                 <Image src="/fulllogo.png"></Image>

@@ -7,7 +7,6 @@ export default function Title({
   category,
   isBorderBottom = true,
   textColor = "text.primary",
-  lineHeight = "30px",
   wrapperStyle,
 }: TitleProps) {
   return (
@@ -16,7 +15,7 @@ export default function Title({
       color={textColor}
       fontWeight="600"
       fontSize={wrapperStyle?.fontSize || "20px"}
-      lineHeight={lineHeight}
+      lineHeight={wrapperStyle?.lineHeight || "30px"}
       {...wrapperStyle}
       w="fit-content"
     >

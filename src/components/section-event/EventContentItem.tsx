@@ -34,13 +34,16 @@ export default function EventContentItem({
           }}
         />
       </Box>
-      <Box w="352px" mt="32px">
+      <Box
+        w="352px"
+        mt={{ "2xl": "32px" }}
+        p={{ xl: "32px 32px 0 32px", "2xl": 0 }}
+      >
         <Title
           title="Lorem ipsum dolor sit amet, consectetur adipiscing elit ut"
           isBorderBottom={false}
           textColor="text.primary"
-          lineHeight="28px"
-          wrapperStyle={{ mb: "16px" }}
+          wrapperStyle={{ mb: "16px", lineHeight: "28px" }}
         />
         <ShortDes
           shortDes="Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor"

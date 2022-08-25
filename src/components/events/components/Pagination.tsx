@@ -7,7 +7,12 @@ const listPage = [1, 2, 3];
 
 export default function Pagination() {
   return (
-    <Flex justifyContent={"center"} textAlign="center" alignItems={"center"}>
+    <Flex
+      justifyContent={"center"}
+      textAlign="center"
+      alignItems={"center"}
+      mr="36px"
+    >
       <Flex justifyContent={"center"} alignItems={"center"} w={"24px"} h="24px">
         <LeftArrow />
       </Flex>

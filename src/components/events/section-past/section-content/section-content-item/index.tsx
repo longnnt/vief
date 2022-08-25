@@ -11,8 +11,18 @@ export default function SectionContentItem({
   wrapperStyle,
 }: SectionContentItemProps) {
   return (
-    <Flex alignItems={"center"} {...wrapperStyle} mb={"32px"}>
-      <Image src="./event-past.png" alt="" />
+    <Flex
+      alignItems={"center"}
+      {...wrapperStyle}
+      mb={"32px"}
+      mr={{ xl: "32px", "2xl": "0" }}
+      w={{ xl: "570px", "2xl": "592px" }}
+    >
+      <Image
+        src="./event-past.png"
+        alt=""
+        w={{ xl: "260px", "2xl": "280px" }}
+      />
       <Box w={"296px"} ml="16px">
         <Title
           title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
