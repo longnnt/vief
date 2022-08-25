@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
-const CategoryEvent = ({ children }: { children: Category }) => {
+const CategoryEvent = ({ children }: { children?: Category }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (

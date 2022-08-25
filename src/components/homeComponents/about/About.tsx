@@ -1,14 +1,5 @@
 import { ArrowForwardIcon } from "@chakra-ui/icons";
-import {
-  Box,
-  Button,
-  Divider,
-  Image,
-  Link,
-  SimpleGrid,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Button, Image, Link, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 import Partner from "./partner/Partner";
 
@@ -24,6 +15,7 @@ const About = () => {
               width={"full"}
               height={"full"}
               objectFit="cover"
+              alt=""
             ></Image>
           </Box>
           <Stack w={"60%"} spacing="32px">
@@ -66,7 +58,7 @@ const About = () => {
             </Link>
           </Stack>
         </Stack>
-        <Partner></Partner>
+        <Partner />
       </Stack>
     </>
   );

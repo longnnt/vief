@@ -29,10 +29,10 @@ const Navbar = ({
   dataEvent,
   dataLibrary,
 }: {
-  dataPolicy: Category;
-  dataCompany: Category;
-  dataEvent: Category;
-  dataLibrary: Category;
+  dataPolicy?: Category;
+  dataCompany?: Category;
+  dataEvent?: Category;
+  dataLibrary?: Category;
 }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -42,8 +42,8 @@ const Navbar = ({
         <Stack bg="white">
           <Flex
             alignSelf={"center"}
-            w={{ sm: "343px", lg: "1390px" }}
-            px={{ base: "none", sm: "16px" }}
+            w={{ sm: "343px", lg: "1390px", xl: "1200px", "2xl": "100%" }}
+            px={{ base: "none", sm: "16px", xl: "20px", "2xl": "200px" }}
             alignItems="center"
             h={{ sm: "66px", md: "96px" }}
             justifyContent={"space-between"}

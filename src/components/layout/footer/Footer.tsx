@@ -30,6 +30,7 @@ const Footer = () => {
           columns={{ base: 1, sm: 1, md: 3 }}
           spacing={"64px"}
           color="#394160"
+          pl={{ xl: "65px", "2xl": 0 }}
         >
           <Stack align={"flex-start"} spacing="8px">
             <ListHeader>

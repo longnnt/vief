@@ -1,8 +1,5 @@
 /* eslint-disable react/react-in-jsx-scope */
 import type { GetStaticPaths, InferGetStaticPropsType, NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
 import HomePage from "./home";
 import { GetStaticProps } from "next";
 
@@ -70,8 +67,8 @@ const Home = ({
         dataCompany={dataCompany}
         dataEvent={dataEvent}
         dataLibrary={dataLibrary}
-      ></Navbar>
-      <HomePage></HomePage>
+      />
+      <HomePage />
     </>
   );
 };

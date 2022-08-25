@@ -9,7 +9,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 
-const CategoryCompany = ({ children }: { children: Category }) => {
+const CategoryCompany = ({ children }: { children?: Category }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
