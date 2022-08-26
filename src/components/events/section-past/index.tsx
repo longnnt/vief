@@ -1,8 +1,8 @@
-import { Box } from "@chakra-ui/react";
+import { Pagination } from "@/src/common/components/pagination";
+import { Box, HStack } from "@chakra-ui/react";
 import React from "react";
 import Title from "../../section/components/Title";
 import ButtonEventComponent from "../components/Button";
-import Pagination from "../components/Pagination";
 import { SectionPastProps } from "../interface";
 import SectionContent from "./section-content";
 
@@ -19,7 +19,9 @@ export default function SectionPast({ wrapperStyle }: SectionPastProps) {
       <ButtonEventComponent btnTitle="Ngành Gỗ" />
       <ButtonEventComponent btnTitle="Ngành khác" />
       <SectionContent />
-      <Pagination />
+      <HStack w="full" justifyContent="center">
+        <Pagination currentPage={5} totalPages={10} onPageChange={() => {}} />
+      </HStack>
     </Box>
   );
 }

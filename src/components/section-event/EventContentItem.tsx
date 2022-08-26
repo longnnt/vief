@@ -1,3 +1,4 @@
+import { PICTURE } from "@/src/common/constants/common.constant";
 import ButtonComponent from "@/src/components/section/components/Button";
 import ShortDes from "@/src/components/section/components/ShortDes";
 import Title from "@/src/components/section/components/Title";
@@ -24,7 +25,7 @@ export default function EventContentItem({
     >
       <Box overflow={"hidden"} borderTopRadius="14px">
         <Image
-          src="./event.png"
+          src={PICTURE("1")}
           alt=""
           transitionDuration={"0.2s"}
           sx={{
@@ -34,15 +35,11 @@ export default function EventContentItem({
           }}
         />
       </Box>
-      <Box
-        w="352px"
-        mt={{ "2xl": "32px" }}
-        p={{ xl: "32px 32px 0 32px", "2xl": 0 }}
-      >
+      <Box p={{ xl: "32px 32px 0 32px", "2xl": 0 }}>
         <Title
           title="Lorem ipsum dolor sit amet, consectetur adipiscing elit ut"
           isBorderBottom={false}
-          textColor="text.primary"
+          textColor="text"
           wrapperStyle={{ mb: "16px", lineHeight: "28px" }}
         />
         <ShortDes

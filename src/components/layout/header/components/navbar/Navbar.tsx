@@ -1,27 +1,22 @@
+import { Category } from "@/src/common/type/type";
+import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import {
   Box,
-  Flex,
-  Avatar,
-  HStack,
-  Link,
-  IconButton,
   Button,
-  useDisclosure,
-  Select,
   ButtonGroup,
+  Flex,
+  HStack,
+  IconButton,
   Image,
-  Center,
+  Link,
+  Select,
   Stack,
-  Menu,
-  MenuList,
-  MenuItem,
+  useDisclosure,
 } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon, SmallAddIcon } from "@chakra-ui/icons";
-import CategoryLibrary from "./MenuItem/CategoryLibrary";
 import CategoryCompany from "./MenuItem/CategoryCompany";
-import CategoryPolicy from "./MenuItem/CategoryPolicy";
-import { Category } from "@/src/common/type/type";
 import CategoryEvent from "./MenuItem/CategoryEvent";
+import CategoryLibrary from "./MenuItem/CategoryLibrary";
+import CategoryPolicy from "./MenuItem/CategoryPolicy";
 
 const Navbar = ({
   dataPolicy,
@@ -35,24 +30,23 @@ const Navbar = ({
   dataLibrary?: Category;
 }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
   return (
     <>
       <Box w="100%" alignItems={"center"} position="fixed" zIndex="999999999">
         <Stack bg="white">
           <Flex
             alignSelf={"center"}
-            w={{ sm: "343px", lg: "1390px", xl: "1200px", "2xl": "100%" }}
-            px={{ base: "none", sm: "16px", xl: "20px", "2xl": "200px" }}
+            w="full"
+            px={{ base: "80px", sm: "20px" }}
             alignItems="center"
-            h={{ sm: "66px", md: "96px" }}
+            h={{ sm: "66px", base: "96px" }}
             justifyContent={"space-between"}
           >
             <Box>
               <Image src="/fulllogo.png"></Image>
             </Box>
             <HStack
-              display={{ base: "none", md: "flex" }}
+              display={{ md: "flex", sm: "none" }}
               fontSize="14px"
               fontWeight="500"
               spacing="32px"
@@ -76,7 +70,7 @@ const Navbar = ({
                   <Button
                     bg="brand.100"
                     textColor="white"
-                    display={{ base: "none", md: "flex" }}
+                    display={{ md: "block", sm: "none" }}
                   >
                     Đăng nhập
                   </Button>
@@ -86,7 +80,7 @@ const Navbar = ({
                 aria-label={"Open Menu"}
                 size={"md"}
                 icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-                display={{ md: "none" }}
+                display={{ sm: "block", md: "none" }}
                 onClick={isOpen ? onClose : onOpen}
               />
             </Flex>

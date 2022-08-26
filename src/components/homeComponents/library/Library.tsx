@@ -32,7 +32,7 @@ const Library = () => {
               </BreadcrumbItem>
             </Breadcrumb>
           </Stack>
-          <Text fontSize="32px" fontWeight={600} color="brand.200">
+          <Text fontSize="32px" fontWeight={600} color="text">
             Báo cáo về biến đổi khí hậu
           </Text>
         </Stack>
@@ -103,7 +103,7 @@ const Library = () => {
               <Box boxSize={"56px"}>
                 <Image src="/iconFile.png" w="full" h="full"></Image>
               </Box>
-              <Text fontWeight={600} color="#394160">
+              <Text fontWeight={600} color="">
                 Báo cáo cập nhật hai năm một lần lần thứ ba của Việt Nam (BUR3)
                 gửi Công ước khung của Liên hợp quốc về biến đổi khí hậu
               </Text>

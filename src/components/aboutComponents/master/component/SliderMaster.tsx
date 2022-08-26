@@ -75,7 +75,7 @@ export default function SliderMaster() {
   return (
     <Center>
       <Box
-        w={{ md: "1360px", sm: "375px" }}
+        w={{ md: "container", sm: "full" }}
         display={{ md: "block", sm: "none" }}
       >
         <Slider {...settingsMd}>

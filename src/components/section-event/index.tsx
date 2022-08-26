@@ -1,12 +1,8 @@
-import ChevronLeft from "@/src/Images/Icons/ChevronLeft";
-import ChevronRight from "@/src/Images/Icons/ChevronRight";
-import { Box, Flex } from "@chakra-ui/react";
-import React, { useEffect, useRef } from "react";
-import Section from "../section";
+import { Box, Grid, GridItem } from "@chakra-ui/react";
 import SectionHeader from "../section/section-header";
 import EventContentItem from "./EventContentItem";
 
-const listEvents = [1, 2, 3, 4];
+const listEvents = [1, 2, 3];
 
 interface SectionEventProps {
   isSectionHeader?: boolean;
@@ -26,20 +22,19 @@ export default function SectionEvent({
         />
       )}
       <Box overflow={"hidden"}>
-        <Box position={"absolute"} left="-64px" top="52%">
+        {/* <Box>
           <ChevronLeft />
-        </Box>
-        <Flex width={"fit-content"}>
-          {listEvents.map((event) => (
-            <EventContentItem
-              key={event}
-              wrapperStyle={{ w: { xl: "344px", "2xl": "384px" }, mr: "32px" }}
-            />
+        </Box> */}
+        <Grid templateColumns={"repeat(3, 1fr)"} gap="10">
+          {listEvents.map((event, index) => (
+            <GridItem key={index}>
+              <EventContentItem key={event} />
+            </GridItem>
           ))}
-        </Flex>
-        <Box position={"absolute"} right="-64px" top="52%">
+        </Grid>
+        {/* <Box position={"absolute"} right="-64px" top="52%">
           <ChevronRight />
-        </Box>
+        </Box> */}
       </Box>
     </>
   );

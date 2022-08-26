@@ -14,12 +14,7 @@ export default function ShortDes({
 }: ShortDesProps) {
   return (
     <Box {...wrapperStyle}>
-      <Text
-        w={textWidth}
-        h={textHeight}
-        textAlign={textAlign}
-        color={"text.primary"}
-      >
+      <Text w={textWidth} h={textHeight} textAlign={textAlign} color={"text"}>
         {shortDes}
       </Text>
       {haveButton && <ButtonComponent btnTitle={btnTitle} />}

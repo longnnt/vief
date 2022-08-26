@@ -1,20 +1,21 @@
-import "../styles/globals.css";
-import React, { useEffect, useState } from "react";
 import type { AppProps } from "next/app";
-import { Provider } from "react-redux";
-import { QueryClientProvider, QueryClient, Hydrate } from "react-query";
-import { ChakraProvider } from "@chakra-ui/react";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
+import { Provider } from "react-redux";
 import "../../i18n";
 import { store } from "../common/redux/store";
+import "../styles/globals.css";
+// import { theme } from "../common/theme/theme";
 import { Loading } from "src/common/components/Loading";
 
 // import { Layout } from "../components/layout";
 // import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 // import { Category } from "../common/type/type";
 // import axios from "axios";
-import Layout from "../components/layout/Layout";
+import { ChakraProvider } from "@chakra-ui/react";
 import { theme } from "../common/theme/theme";
+import { HomeLayout } from "../components/layout/HomeLayout";
 
 // export const getStaticProps:GetStaticProps = async () =>{
 //   // const res= await axios.get('/client/categories?type=POLICY&field=WOOD&isFeatured=1')
@@ -53,6 +54,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     };
   }, []);
 
+  //@ts-ignore
+  const Layout = Component.layout ? Component.layout : HomeLayout;
   return isLoading ? (
     <Loading />
   ) : (
@@ -69,4 +72,5 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     </Provider>
   );
 };
+
 export default MyApp;

@@ -7,7 +7,8 @@
     "baseUrl": ".",
     "paths": {
       "@/src/*": ["src/*"],
-      "@/common/*": ["src/common/*"]
+      "@/common/*": ["src/common/*"],
+      "@/utils/*": ["src/common/utils/*"]
     },
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -20,6 +21,15 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/header/components/Navbar/Navbar.js", "src/components/body/index.js", "src/components/layout/header/components/navbar/MenuItem.js", "src/components/layout/header/components/navbar/MenuItem/CategoryPolicy.tsx", "src/components/layout/index.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/components/header/components/Navbar/Navbar.js",
+    "src/components/body/index.js",
+    "src/components/layout/header/components/navbar/MenuItem.js",
+    "src/components/layout/header/components/navbar/MenuItem/CategoryPolicy.tsx",
+    "src/components/layout/index.js"
+  ],
   "exclude": ["node_modules"]
 }

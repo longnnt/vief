@@ -11,6 +11,7 @@ function SampleNextArrow(props: any) {
   const { onClick } = props;
   return (
     <IconButton
+      display={{ sm: "none", md: "block" }}
       boxSize={"40px"}
       aria-label=""
       isRound
@@ -29,6 +30,7 @@ function SamplePrevArrow(props: any) {
   const { onClick } = props;
   return (
     <IconButton
+      display={{ sm: "none", md: "block" }}
       mr="20px"
       boxSize={"40px"}
       aria-label=""
@@ -67,7 +69,7 @@ export default function SliderImage() {
   return (
     <Center>
       <Box
-        w={{ md: "1360px", sm: "375px" }}
+        w={{ md: "container", sm: "full" }}
         display={{ md: "block", sm: "none" }}
       >
         <Slider {...settingsMd}>
