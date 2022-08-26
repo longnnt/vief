@@ -5,12 +5,8 @@ const WeAre = () => {
   return (
     <>
       <Box>
-        <Center>
-          <Stack
-            w={{ base: "none", md: "1216px", sm: "343px" }}
-            align={"center"}
-            spacing={{ md: "64px", sm: "32px" }}
-          >
+        <Box>
+          <Stack w="full" align={"center"} spacing={{ md: "64px", sm: "32px" }}>
             <Link
               color="brand.100"
               fontSize="20px"
@@ -27,7 +23,7 @@ const WeAre = () => {
             >
               <Stack
                 spacing={{ sm: "16px", md: "32px" }}
-                w={{ sm: "343px", md: "592px" }}
+                w={{ sm: "100%", md: "50%" }}
                 alignSelf="center"
               >
                 <Text
@@ -51,7 +47,7 @@ const WeAre = () => {
               </Stack>
               <Stack
                 spacing={{ sm: "16px", md: "32px" }}
-                w={{ sm: "343px", md: "592px" }}
+                w={{ sm: "100%", md: "50%" }}
               >
                 <Text
                   fontSize={"14px"}
@@ -89,7 +85,7 @@ const WeAre = () => {
             </Stack>
             <Partner></Partner>
           </Stack>
-        </Center>
+        </Box>
       </Box>
     </>
   );

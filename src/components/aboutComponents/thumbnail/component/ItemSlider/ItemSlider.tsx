@@ -4,8 +4,8 @@ const ItemSlider = () => {
   return (
     <>
       <Box
-        w={{ md: "405px", sm: "252px" }}
-        h={{ md: "288px", sm: "189px" }}
+        w={{ md: "345px", sm: "252px" }}
+        h={{ md: "228px", sm: "189px" }}
         padding="10px"
       >
         <Image

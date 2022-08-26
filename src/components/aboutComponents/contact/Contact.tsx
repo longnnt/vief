@@ -11,11 +11,11 @@ import {
 const Contact = () => {
   return (
     <>
-      <Center>
-        <Stack w="1216px" spacing="32px">
+      <Box>
+        <Stack spacing="32px">
           <Stack
             spacing="16px"
-            w={{ md: "592px", sm: "343px" }}
+            w={{ md: "592px", sm: "full" }}
             alignSelf="center"
           >
             <Text
@@ -39,7 +39,7 @@ const Contact = () => {
             alignItems={"center"}
           >
             <Box
-              w={{ md: "592px", sm: "343px" }}
+              w={{ md: "592px", sm: "full" }}
               h={{ md: "444px", sm: "257.25px" }}
             >
               <Image
@@ -48,9 +48,10 @@ const Contact = () => {
                 h="100%"
                 objectFit={"cover"}
                 borderRadius={"12px"}
-              ></Image>
+                alt=""
+              />
             </Box>
-            <Stack spacing="32px" w={{ md: "592px", sm: "343px" }}>
+            <Stack spacing="32px" w={{ md: "592px", sm: "full" }}>
               <Stack spacing="8px">
                 <Text fontWeight="500" fontSize="14px">
                   Họ và tên
@@ -88,7 +89,7 @@ const Contact = () => {
             </Stack>
           </Stack>
         </Stack>
-      </Center>
+      </Box>
     </>
   );
 };

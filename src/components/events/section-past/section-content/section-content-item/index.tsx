@@ -1,3 +1,4 @@
+import { PICTURE } from "@/src/common/constants/common.constant";
 import Description from "@/src/components/section-event/Description";
 import Calendar from "@/src/components/section/components/Calendar";
 import ShortDes from "@/src/components/section/components/ShortDes";
@@ -19,9 +20,11 @@ export default function SectionContentItem({
       w={{ xl: "570px", "2xl": "592px" }}
     >
       <Image
-        src="./event-past.png"
+        src={PICTURE(new Date().toString())}
         alt=""
         w={{ xl: "260px", "2xl": "280px" }}
+        h="full"
+        borderRadius="12px"
       />
       <Box w={"296px"} ml="16px">
         <Title

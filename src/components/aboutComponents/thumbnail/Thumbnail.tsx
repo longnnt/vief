@@ -12,12 +12,8 @@ import SliderImage from "./component/SliderImage";
 const Thumbnail = () => {
   return (
     <>
-      <Center>
-        <Stack
-          w={{ md: "1216px", sm: "375px" }}
-          h={{ md: "394px", sm: "265px" }}
-          spacing="32px"
-        >
+      <Box>
+        <Stack h={{ md: "334px", sm: "265px" }} spacing="32px">
           <Text
             fontSize={"28px"}
             fontWeight="600"
@@ -27,7 +23,7 @@ const Thumbnail = () => {
           </Text>
           <SliderImage />
         </Stack>
-      </Center>
+      </Box>
     </>
   );
 };

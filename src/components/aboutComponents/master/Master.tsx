@@ -1,20 +1,11 @@
-import {
-  Box,
-  Button,
-  Center,
-  Flex,
-  Image,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Center, Stack, Text } from "@chakra-ui/react";
 import SliderMaster from "./component/SliderMaster";
 
 const Master = () => {
   return (
     <>
-      <Center>
+      <Box>
         <Stack
-          w={{ md: "1216px", sm: "375px" }}
           h={{ md: "535px", sm: "515px" }}
           spacing={{ md: "32px", sm: "16px" }}
         >
@@ -27,7 +18,7 @@ const Master = () => {
           </Text>
           <SliderMaster />
         </Stack>
-      </Center>
+      </Box>
     </>
   );
 };

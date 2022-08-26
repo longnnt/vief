@@ -36,17 +36,17 @@ const Navbar = ({
         <Stack bg="white">
           <Flex
             alignSelf={"center"}
-            w={{ sm: "343px", lg: "1390px", xl: "1200px", "2xl": "100%" }}
-            px={{ base: "none", sm: "16px", xl: "20px", "2xl": "200px" }}
+            w="full"
+            px={{ base: "80px", sm: "20px" }}
             alignItems="center"
-            h={{ sm: "66px", md: "96px" }}
+            h={{ sm: "66px", base: "96px" }}
             justifyContent={"space-between"}
           >
             <Box>
               <Image src="/fulllogo.png"></Image>
             </Box>
             <HStack
-              display={{ base: "none", md: "flex" }}
+              display={{ md: "flex", sm: "none" }}
               fontSize="14px"
               fontWeight="500"
               spacing="32px"
@@ -70,7 +70,7 @@ const Navbar = ({
                   <Button
                     bg="brand.100"
                     textColor="white"
-                    display={{ base: "none", md: "flex" }}
+                    display={{ md: "block", sm: "none" }}
                   >
                     Đăng nhập
                   </Button>
@@ -80,7 +80,7 @@ const Navbar = ({
                 aria-label={"Open Menu"}
                 size={"md"}
                 icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-                display={{ md: "none" }}
+                display={{ sm: "block", md: "none" }}
                 onClick={isOpen ? onClose : onOpen}
               />
             </Flex>
