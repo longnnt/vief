@@ -4,6 +4,7 @@ import { Category } from "@/src/common/type/type";
 import Navbar from "./header/components/navbar/Navbar";
 import Footer from "./footer/Footer";
 import { execute } from "@/src/common/lib/request";
+import { Box } from "@chakra-ui/react";
 
 const HomeLayout = ({ children }: { children: ReactNode }) => {
   const [policy, setPolicy] = useState<Category>([]);
@@ -38,16 +39,16 @@ const HomeLayout = ({ children }: { children: ReactNode }) => {
     setLibrary(resLibrary.data);
   }
   return (
-    <>
+    <Box position="relative" h="100vh" overflow="scroll">
       <Navbar
         dataPolicy={policy}
         dataCompany={company}
         dataEvent={event}
         dataLibrary={library}
-      ></Navbar>
+      />
       {children}
       <Footer />
-    </>
+    </Box>
   );
 };
 

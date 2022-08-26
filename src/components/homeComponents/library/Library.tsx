@@ -1,16 +1,13 @@
-import { DownloadIcon } from "@chakra-ui/icons";
 import {
-  Box,
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
-  Button,
-  Divider,
-  Image,
+  GridItem,
   SimpleGrid,
   Stack,
   Text,
 } from "@chakra-ui/react";
+import { LibraryItem } from "./LibraryItem";
 
 const Library = () => {
   return (
@@ -32,92 +29,27 @@ const Library = () => {
               </BreadcrumbItem>
             </Breadcrumb>
           </Stack>
-          <Text fontSize="32px" fontWeight={600} color="text">
-            Báo cáo về biến đổi khí hậu
-          </Text>
+          <Text variant="text36">Báo cáo về biến đổi khí hậu</Text>
         </Stack>
-        <SimpleGrid columns={2} spacing={"32px"}>
-          <Box bg="brand.bgItemFile" height="292px" borderRadius="12px">
-            <Stack p={"12px 12px"} spacing="32px">
-              <Box boxSize={"56px"}>
-                <Image src="/iconFile.png" w="full" h="full"></Image>
-              </Box>
-              <Text fontWeight={600}>
-                Báo cáo cập nhật hai năm một lần lần thứ ba của Việt Nam (BUR3)
-                gửi Công ước khung của Liên hợp quốc về biến đổi khí hậu
-              </Text>
-              <Box>
-                <Button
-                  bg="brand.100"
-                  textColor="white"
-                  rightIcon={<DownloadIcon />}
-                >
-                  Tải về
-                </Button>
-              </Box>
-            </Stack>
-          </Box>
-          <Box bg="brand.bgItemFile" height="292px" borderRadius="12px">
-            <Stack p={"12px 12px"} spacing="32px">
-              <Box boxSize={"56px"}>
-                <Image src="/iconFile.png" w="full" h="full"></Image>
-              </Box>
-              <Text fontWeight={600}>
-                Báo cáo cập nhật hai năm một lần lần thứ ba của Việt Nam (BUR3)
-                gửi Công ước khung của Liên hợp quốc về biến đổi khí hậu
-              </Text>
-              <Box>
-                <Button
-                  bg="brand.100"
-                  textColor="white"
-                  rightIcon={<DownloadIcon />}
-                >
-                  Tải về
-                </Button>
-              </Box>
-            </Stack>
-          </Box>
-          <Box bg="brand.bgItemFile" height="292px" borderRadius="12px">
-            <Stack p={"12px 12px"} spacing="32px">
-              <Box boxSize={"56px"}>
-                <Image src="/iconFile.png" w="full" h="full"></Image>
-              </Box>
-              <Text fontWeight={600}>
-                Báo cáo cập nhật hai năm một lần lần thứ ba của Việt Nam (BUR3)
-                gửi Công ước khung của Liên hợp quốc về biến đổi khí hậu
-              </Text>
-              <Box>
-                <Button
-                  bg="brand.100"
-                  textColor="white"
-                  rightIcon={<DownloadIcon />}
-                >
-                  Tải về
-                </Button>
-              </Box>
-            </Stack>
-          </Box>
-
-          <Box bg="brand.bgItemFile" height="292px" borderRadius="12px">
-            <Stack p={"12px 12px"} spacing="32px">
-              <Box boxSize={"56px"}>
-                <Image src="/iconFile.png" w="full" h="full"></Image>
-              </Box>
-              <Text fontWeight={600} color="">
-                Báo cáo cập nhật hai năm một lần lần thứ ba của Việt Nam (BUR3)
-                gửi Công ước khung của Liên hợp quốc về biến đổi khí hậu
-              </Text>
-              <Box>
-                <Button
-                  bg="brand.100"
-                  textColor="white"
-                  rightIcon={<DownloadIcon />}
-                >
-                  Tải về
-                </Button>
-              </Box>
-            </Stack>
-          </Box>
+        <SimpleGrid
+          columns={{
+            md: 2,
+            sm: 1,
+          }}
+          spacing={"32px"}
+        >
+          <GridItem>
+            <LibraryItem />
+          </GridItem>
+          <GridItem>
+            <LibraryItem />
+          </GridItem>
+          <GridItem>
+            <LibraryItem />
+          </GridItem>
+          <GridItem>
+            <LibraryItem />
+          </GridItem>
         </SimpleGrid>
       </Stack>
     </>

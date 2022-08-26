@@ -32,7 +32,14 @@ const Navbar = ({
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Box w="100%" alignItems={"center"} position="fixed" zIndex="999999999">
+      <Box
+        w="100%"
+        alignItems={"center"}
+        position="sticky"
+        top={0}
+        zIndex="10000"
+        shadow="xl"
+      >
         <Stack bg="white">
           <Flex
             alignSelf={"center"}

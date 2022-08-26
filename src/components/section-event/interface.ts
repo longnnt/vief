@@ -10,3 +10,10 @@ export interface DescriptionProps {
   children: React.ReactNode;
   wrapperStyle?: ChakraProps;
 }
+
+export interface Event {
+  img: string;
+  title: string;
+  shortDesc: string;
+  content: string;
+}
