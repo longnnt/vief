@@ -56,9 +56,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   //@ts-ignore
   const Layout = Component.layout ? Component.layout : HomeLayout;
-  return isLoading ? (
-    <Loading />
-  ) : (
+  return (
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>

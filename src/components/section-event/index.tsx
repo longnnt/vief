@@ -1,8 +1,7 @@
 import { Box, Grid, GridItem } from "@chakra-ui/react";
 import SectionHeader from "../section/section-header";
+import { EVENT_DATA } from "./constants";
 import EventContentItem from "./EventContentItem";
-
-const listEvents = [1, 2, 3];
 
 interface SectionEventProps {
   isSectionHeader?: boolean;
@@ -26,9 +25,9 @@ export default function SectionEvent({
           <ChevronLeft />
         </Box> */}
         <Grid templateColumns={"repeat(3, 1fr)"} gap="10">
-          {listEvents.map((event, index) => (
+          {EVENT_DATA.map((event, index) => (
             <GridItem key={index}>
-              <EventContentItem key={event} />
+              <EventContentItem event={event} />
             </GridItem>
           ))}
         </Grid>

@@ -1,22 +1,20 @@
 import { PICTURE } from "@/src/common/constants/common.constant";
 import ButtonComponent from "@/src/components/section/components/Button";
-import ShortDes from "@/src/components/section/components/ShortDes";
-import Title from "@/src/components/section/components/Title";
 import Location from "@/src/Images/Icons/Location";
 import WoodSector from "@/src/Images/Icons/WoodSector";
-import { Box, Flex, Image } from "@chakra-ui/react";
-import React from "react";
+import { Box, Flex, Image, Text, VStack } from "@chakra-ui/react";
 import Calendar from "../section/components/Calendar";
 import Description from "./Description";
-import { EventContentItemProps } from "./interface";
+import { Event } from "./interface";
 import TimeLeft from "./TimeLeft";
 
-export default function EventContentItem({
-  wrapperStyle,
-}: EventContentItemProps) {
+type EventContentItemProps = {
+  event: Event;
+};
+export default function EventContentItem({ event }: EventContentItemProps) {
+  const { img, shortDesc, title } = event;
   return (
     <Flex
-      {...wrapperStyle}
       backgroundColor="white.secondary"
       flexDirection="column"
       alignItems={"center"}
@@ -25,8 +23,10 @@ export default function EventContentItem({
     >
       <Box overflow={"hidden"} borderTopRadius="14px">
         <Image
-          src={PICTURE("1")}
+          src={img}
           alt=""
+          w="full"
+          h="288px"
           transitionDuration={"0.2s"}
           sx={{
             ".event-card:hover &": {
@@ -35,18 +35,13 @@ export default function EventContentItem({
           }}
         />
       </Box>
-      <Box p={{ xl: "32px 32px 0 32px", "2xl": 0 }}>
-        <Title
-          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit ut"
-          isBorderBottom={false}
-          textColor="text"
-          wrapperStyle={{ mb: "16px", lineHeight: "28px" }}
-        />
-        <ShortDes
-          shortDes="Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor"
-          haveButton={false}
-          textAlign="unset"
-        />
+      <VStack px="16px" py="32px" alignItems="start" spacing="16px">
+        <Text variant="text20" className="text-2-line">
+          {title}
+        </Text>
+        <Text variant="text14" className="text-4-line">
+          {shortDesc}
+        </Text>
         <Flex
           m="16px 0"
           flexDirection="column"
@@ -72,7 +67,7 @@ export default function EventContentItem({
           />
           <TimeLeft days={5} wrapperStyle={{ ml: "16px" }} />
         </Flex>
-      </Box>
+      </VStack>
     </Flex>
   );
 }

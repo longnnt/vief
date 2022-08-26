@@ -5,7 +5,7 @@ export default function SectionPolicy() {
   return (
     <>
       <PolicyInfo />
-      <PolicyUpdate mt="96px" />
+      <PolicyUpdate />
     </>
   );
 }

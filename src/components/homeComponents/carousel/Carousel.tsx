@@ -1,22 +1,16 @@
-import React from "react";
-
-import { Box, Button, Flex, Image } from "@chakra-ui/react";
+import { Box, Image } from "@chakra-ui/react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import { PICTURE } from "@/src/common/constants/common.constant";
+import { Autoplay, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
-import { Autoplay, Navigation, Pagination } from "swiper";
 
 const Carousel = () => {
   return (
-    <Box
-      w="full"
-      h="1000px"
-      backgroundPosition="center"
-      backgroundSize={"cover"}
-    >
+    <Box w="full" backgroundPosition="center">
       <Swiper
         pagination={true}
         modules={[Pagination, Autoplay]}
@@ -24,10 +18,14 @@ const Carousel = () => {
         slidesPerView={1}
       >
         <SwiperSlide>
-          <Image src="/bgHome.png"></Image>
+          <Image src={PICTURE("0")} alt="" />
         </SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
+        <SwiperSlide>
+          <Image src={PICTURE("1")} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Image src={PICTURE("2")} alt="" />
+        </SwiperSlide>
       </Swiper>
     </Box>
   );

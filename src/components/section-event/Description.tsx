@@ -12,6 +12,7 @@ export default function Description({
       {...wrapperStyle}
       ml={wrapperStyle?.ml}
       mb={wrapperStyle?.mb || "8px"}
+      minW="max-content"
     >
       {children}
       <Text ml={wrapperStyle?.ml || "8px"}>Thứ bảy, 08:00 ngày 05/09/2022</Text>

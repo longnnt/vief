@@ -7,8 +7,20 @@ const About = () => {
   return (
     <>
       <Stack spacing="64px">
-        <Stack direction="row" spacing="64px" alignItems={"center"}>
-          <Box w="592px" h="444px">
+        <Stack
+          direction={{
+            md: "row",
+            sm: "column-reverse",
+          }}
+          justifyContent="space-between"
+        >
+          <Box
+            w={{
+              md: "47%",
+              sm: "100%",
+            }}
+            h="444px"
+          >
             <Image
               borderRadius="12px"
               src="/bgHome.png"
@@ -16,15 +28,23 @@ const About = () => {
               height={"full"}
               objectFit="cover"
               alt=""
-            ></Image>
+            />
           </Box>
-          <Stack w={"60%"} spacing="32px">
-            <Stack spacing="16px">
+          <Stack
+            w={{
+              md: "47%",
+              sm: "100%",
+            }}
+            h="full"
+            spacing="32px"
+          >
+            <Stack>
               <Stack>
                 <Link
-                  color="text"
-                  fontSize="20px"
-                  fontWeight="600"
+                  variant={{
+                    md: "text20",
+                    sm: "text16",
+                  }}
                   borderBottom={"solid 1.5px"}
                   width="fit-content"
                   _hover={{ textDecoration: "none" }}
@@ -32,11 +52,16 @@ const About = () => {
                   Về chúng tôi
                 </Link>
               </Stack>
-              <Text fontSize="36px" fontWeight={600} color="text">
+              <Text
+                variant={{
+                  md: "text36",
+                  sm: "text28",
+                }}
+              >
                 ViEF - Vietnam Economic Forum
               </Text>
             </Stack>
-            <Text fontSize="14px" fontWeight="500" textAlign={"justify"}>
+            <Text variant="text14" textAlign={"justify"}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
               aliquam, purus sit amet luctus venenatis, lectus magna fringilla
               urna, porttitor rhoncus dolor purus non enim praesent elementum
@@ -58,6 +83,7 @@ const About = () => {
             </Link>
           </Stack>
         </Stack>
+
         <Partner />
       </Stack>
     </>
