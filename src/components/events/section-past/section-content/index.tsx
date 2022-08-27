@@ -10,7 +10,8 @@ export default function SectionContent() {
       flexWrap={"wrap"}
       justifyContent={"space-between"}
       mt={"32px"}
-      w={{ xl: "1204px", "2xl": "1216px" }}
+      w={{ sm: "100%", xl: "1204px", "2xl": "1216px" }}
+      flexDirection={{ sm: "column", xl: "row", "2xl": "row" }}
     >
       {list.map((event) => (
         <SectionContentItem key={event} />

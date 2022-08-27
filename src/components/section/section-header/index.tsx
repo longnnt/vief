@@ -22,6 +22,7 @@ export default function SectionHeader({
       className={isReverse ? styles.reverse : styles.noReverse}
       flexDirection="column"
       alignItems={alignItems}
+      mt={{ sm: "48px" }}
     >
       <Title category={category} title={title} />
       <HeadingComponent
