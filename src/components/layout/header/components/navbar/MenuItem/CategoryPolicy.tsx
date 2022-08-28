@@ -1,3 +1,5 @@
+import { ROUTE_POLICY } from "@/src/common/constants/routes.constant";
+import { useViefRouter } from "@/src/common/hooks/useViefRouter";
 import { Category } from "@/src/common/type/type";
 import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
 import {
@@ -9,24 +11,22 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 
-// export async function getStaticProps() {
-//   // const res= await axios.get('/client/categories?type=POLICY&field=WOOD&isFeatured=1')
-//   const res= await fetch('https://fakestoreapi.com/users')
-//   const data = await res.json();
-//   return{
-//       props:{
-//         cate:data,
-//       }
-//   }
-// }
-
 const CategoryPolicy = ({ children }: { children?: Category }) => {
-  // console.log(children);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const router = useViefRouter();
+
+  function handleRouter() {
+    router.push(ROUTE_POLICY.en);
+  }
+
   return (
     <>
       <Menu isOpen={isOpen}>
-        <MenuButton onMouseEnter={onOpen} onMouseLeave={onClose}>
+        <MenuButton
+          onMouseEnter={onOpen}
+          onMouseLeave={onClose}
+          onClick={handleRouter}
+        >
           Chính sách
           {/* {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />} */}
         </MenuButton>

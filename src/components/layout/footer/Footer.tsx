@@ -17,7 +17,7 @@ const Footer = () => {
         <WebContainer>
           <SimpleGrid
             py="64px"
-            columns={{ base: 3, sm: 2 }}
+            columns={{ base: 3, sm: 1, md: 3 }}
             spacing={"64px"}
             color="text"
           >
