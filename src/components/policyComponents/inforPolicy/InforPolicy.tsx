@@ -1,20 +1,12 @@
-import { ArticleItem } from "@/src/common/components/articleItem";
-import { Pagination } from "@/src/common/components/pagination";
 import {
-  Box,
-  Grid,
-  GridItem,
   Stack,
-  Tab,
   TabList,
   TabPanel,
   TabPanels,
   Tabs,
   Text,
-  VStack,
 } from "@chakra-ui/react";
 
-import { DATA_ARTICLE } from "../../enterprise-story/constants";
 import { TabItem } from "./tabItem/TabItem";
 import { TabPanelItem } from "./tabItem/tabPanelItem/TabPanelItem";
 
