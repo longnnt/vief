@@ -17,16 +17,22 @@ export default function SectionContentItem({
       {...wrapperStyle}
       mb={"32px"}
       mr={{ xl: "32px", "2xl": "0" }}
-      w={{ xl: "570px", "2xl": "592px" }}
+      w={{ sm: "100%", xl: "570px", "2xl": "592px" }}
+      flexDirection={{ sm: "column", xl: "row", "2xl": "row" }}
+      justifyContent="space-between"
     >
       <Image
         src={PICTURE(new Date().toString())}
         alt=""
-        w={{ xl: "260px", "2xl": "280px" }}
+        w={{ sm: "100%", xl: "260px", "2xl": "280px" }}
         h="full"
         borderRadius="12px"
       />
-      <Box w={"296px"} ml="16px">
+      <Box
+        w={{ sm: "100%", xl: "296px", "2xl": "296px" }}
+        ml={{ sm: "0", xl: "16px" }}
+        mt={{ sm: "16px" }}
+      >
         <Title
           title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
           wrapperStyle={{ fontSize: "20px", lineHeight: "28px", mb: "16px" }}

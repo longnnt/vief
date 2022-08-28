@@ -10,7 +10,7 @@ const listEvents = [1, 2, 3, 4, 5, 6];
 
 export default function SectionPast({ wrapperStyle }: SectionPastProps) {
   return (
-    <Box {...wrapperStyle} mb={"64px"}>
+    <Box {...wrapperStyle}>
       <Title
         isBorderBottom={false}
         wrapperStyle={{ fontSize: "28px", lineHeight: "42px", mb: "32px" }}

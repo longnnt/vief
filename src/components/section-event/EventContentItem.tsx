@@ -16,10 +16,10 @@ export default function EventContentItem({ event }: EventContentItemProps) {
   return (
     <Flex
       backgroundColor="white.secondary"
-      flexDirection="column"
+      flexDirection={"column"}
       alignItems={"center"}
       borderRadius={"14px"}
-      className="event-card"
+      w={{ "2xl": "384px" }}
     >
       <Box overflow={"hidden"} borderTopRadius="14px">
         <Image
