@@ -17,3 +17,7 @@ export const ROUTE_ENTERPRISE_ARTICLE_DETAIL: Record<Lang, string> = {
   vi: "/chuyen-doanh-nghiep/bai-viet/:slug",
   en: "/enterprise-story/article/:slug",
 };
+export const ROUTE_POLICY: Record<Lang, string> = {
+  vi: "/chinh-sach",
+  en: "/policy",
+};
