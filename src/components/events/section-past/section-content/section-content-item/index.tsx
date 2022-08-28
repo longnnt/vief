@@ -1,6 +1,6 @@
 import { PICTURE } from "@/src/common/constants/common.constant";
 import Description from "@/src/components/section-event/Description";
-import Calendar from "@/src/components/section/components/Calendar";
+import Calendar from "@/src/Images/Icons/Calendar";
 import ShortDes from "@/src/components/section/components/ShortDes";
 import Title from "@/src/components/section/components/Title";
 import Location from "@/src/Images/Icons/Location";

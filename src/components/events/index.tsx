@@ -8,10 +8,7 @@ export default function Events() {
     <>
       <Stack pt="36px" pb="64px">
         <Stack alignSelf="center" width={{ sm: "100%" }} mt="0">
-          <Title
-            title="Sự kiện"
-            wrapperStyle={{ textAlign: "center", mb: "64px" }}
-          />
+          <Title title="Sự kiện" wrapperStyle={{ m: "0 auto", mb: "64px" }} />
           <SectionUpcoming />
           <SectionPast wrapperStyle={{ mt: { sm: "48px", base: "69px" } }} />
         </Stack>

@@ -25,11 +25,12 @@ export interface ButtonComponentProps {
   btnTitle?: string;
   isArrowForward?: boolean;
   textHeight?: string;
+  isDisabled?: boolean;
 }
 
 export interface HeadingComponentProps {
   heading?: string;
-  wrapperStyle: ChakraProps;
+  wrapperStyle?: ChakraProps;
 }
 
 export interface ShortDesProps {
