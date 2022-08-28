@@ -1,5 +1,4 @@
-import { Box, Image, Link } from "@chakra-ui/react";
-import { ReactNode } from "react";
+import { Box, Image } from "@chakra-ui/react";
 
 export const ItemPartner = ({ children }: { children: any }) => (
   <Box>

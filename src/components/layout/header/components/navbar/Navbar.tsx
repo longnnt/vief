@@ -50,7 +50,7 @@ const Navbar = ({
             justifyContent={"space-between"}
           >
             <Box>
-              <Image src="/fulllogo.png"></Image>
+              <Image src="/fulllogo.png" alt=""></Image>
             </Box>
             <HStack
               display={{ md: "flex", sm: "none" }}

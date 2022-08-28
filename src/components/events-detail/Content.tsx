@@ -4,7 +4,6 @@ import { Box, Flex, Image, Stack, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
 import TimeLeft from "../events/components/TimeLeft";
-import HeadingComponent from "../section/components/Heading";
 import FormSignup from "./FormSignup";
 import { ContentProps } from "./interface";
 import LeftContent from "./LeftContent";
@@ -39,7 +38,9 @@ export default function Content({ isExpired }: ContentProps) {
           />
         </Box>
       </Stack>
-      <HeadingComponent heading="LIÊN HỢP QUỐC KHỞI ĐỘNG THẬP KỶ PHỤC HỒI HỆ SINH THÁI" />
+      <Text variant={"text36"}>
+        LIÊN HỢP QUỐC KHỞI ĐỘNG THẬP KỶ PHỤC HỒI HỆ SINH THÁI
+      </Text>
       <Flex
         justifyContent={"space-between"}
         mt="32px"

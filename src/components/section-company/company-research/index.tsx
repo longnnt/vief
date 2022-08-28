@@ -1,18 +1,6 @@
 import { PICTURE } from "@/src/common/constants/common.constant";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
-import {
-  Box,
-  Button,
-  ChakraProps,
-  Image,
-  Stack,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
-import React from "react";
-import SectionHeader from "../../section/section-header";
-import { SectionCompanyResearchProps } from "../interface";
-import CompanyResearchContent from "./company-research-content";
+import { Box, Button, Image, Stack, Text, VStack } from "@chakra-ui/react";
 
 export default function SectionCompanyResearch() {
   return (

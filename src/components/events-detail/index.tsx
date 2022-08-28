@@ -11,7 +11,7 @@ export default function EventDetail({ isExpired }: EventDetailProps) {
       <Text variant={"text28"} mb="32px">
         {!isExpired ? "Sự kiện liên quan" : "Sự kiện sắp diễn ra"}
       </Text>
-      <SectionEvent isSectionHeader={false} />
+      <SectionEvent />
     </Stack>
   );
 }

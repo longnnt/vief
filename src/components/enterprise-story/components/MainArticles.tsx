@@ -27,7 +27,7 @@ function MainArticles() {
         Case study
       </Text>
       <HStack spacing="32px">
-        <Button variant="">Ngành Gỗ</Button>
+        <Button>Ngành Gỗ</Button>
         <Button variant="primary">Ngành khác</Button>
       </HStack>
 

@@ -1,25 +1,10 @@
 import { Box, Grid, GridItem } from "@chakra-ui/react";
-import SectionHeader from "../section/section-header";
 import { EVENT_DATA } from "./constants";
 import EventContentItem from "./EventContentItem";
 
-interface SectionEventProps {
-  isSectionHeader?: boolean;
-}
-
-export default function SectionEvent({
-  isSectionHeader = true,
-}: SectionEventProps) {
+export default function SectionEvent() {
   return (
     <>
-      {isSectionHeader && (
-        <SectionHeader
-          category="Sự kiện"
-          title="Sắp diễn ra"
-          alignItems="center"
-          wrapperStyle={{ mb: "18px" }}
-        />
-      )}
       <Box overflow={"hidden"}>
         {/* <Box>
           <ChevronLeft />
@@ -32,7 +17,7 @@ export default function SectionEvent({
           }}
           gap="8"
         >
-          {EVENT_DATA.map((event, index) => (
+          {EVENT_DATA.slice(0, 3).map((event, index) => (
             <GridItem key={index}>
               <EventContentItem event={event} />
             </GridItem>

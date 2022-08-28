@@ -21,3 +21,7 @@ export const ROUTE_POLICY: Record<Lang, string> = {
   vi: "/chinh-sach",
   en: "/policy",
 };
+export const ROUTE_EVENT: Record<Lang, string> = {
+  vi: "/su-kien",
+  en: "/events",
+};

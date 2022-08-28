@@ -1,3 +1,4 @@
+import { ROUTE_ABOUT } from "@/src/common/constants/routes.constant";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { Box, Button, Image, Link, Stack, Text } from "@chakra-ui/react";
 import React from "react";
@@ -62,17 +63,17 @@ const About = () => {
               </Text>
             </Stack>
             <Text variant="text14" textAlign={"justify"}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
-              aliquam, purus sit amet luctus venenatis, lectus magna fringilla
-              urna, porttitor rhoncus dolor purus non enim praesent elementum
-              facilisis leo, vel fringilla est ullamcorper eget nulla facilisi
-              etiam dignissim diam quis enim lobortis scelerisque fermentum dui
-              faucibus in ornare quam viverra orci sagittis eu volutpat odio
-              facilisis mauris sit amet massa vitae tortor condimentum lacinia
-              quis vel eros donec ac odio tempor orci dapibus ultrices in
-              iaculis nunc sed augue lacus
+              Với chủ đề ViEF 2021 - Thúc đẩy tăng trưởng kinh tế và tạo sức bật
+              cho doanh nghiệp trong tình hình mới, Diễn đàn Kinh tế Việt Nam
+              thường niên lần thứ 4 là sự kiện gặp gỡ, đối thoại công tư quy mô
+              quốc gia, nhằm huy động, tập hợp hiệu quả nguồn lực của khu vực
+              doanh nghiệp để xây dựng và thực thi hiệu quả Chương trình phục
+              hồi, phát triển kinh tế giai đoạn 2022 - 2023, góp phần thúc đẩy
+              các mục tiêu tăng trưởng giai đoạn 5 năm và trước mắt trọng tâm
+              cho năm 2022 là năm có ý nghĩa “bản lề” để bứt phá trong bối cảnh
+              dịch bệnh Covid-19.
             </Text>
-            <Link href="/" _hover={{ textDecoration: "none" }}>
+            <Link href={ROUTE_ABOUT["en"]} _hover={{ textDecoration: "none" }}>
               <Button
                 bg="brand.100"
                 textColor="white"

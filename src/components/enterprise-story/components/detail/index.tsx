@@ -4,15 +4,7 @@ import { Pagination } from "@/src/common/components/pagination";
 import { RenderBreadcrumb } from "@/src/common/components/renderBreadcumb";
 import { WebContainer } from "@/src/common/components/WebContainer";
 import { BREAD_CRUMB_ENTERPRISE_DETAIL } from "@/src/common/configs/breadcrumb.configs";
-import {
-  Box,
-  Grid,
-  GridItem,
-  HStack,
-  Stack,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Grid, GridItem, Stack, Text, VStack } from "@chakra-ui/react";
 import { DATA_ARTICLE } from "../../constants";
 import { Article } from "../../interfaces";
 
@@ -21,6 +13,7 @@ type EnterpriseDetailProps = {
 };
 function EnterpriseDetail({ article }: EnterpriseDetailProps) {
   const { title, content, author } = article;
+
   return (
     <WebContainer>
       <VStack alignItems="start" mt="32px" spacing="64px" mb="64px">

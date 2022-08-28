@@ -1,4 +1,4 @@
-import { Flex, FormLabel, Heading, Input } from "@chakra-ui/react";
+import { Flex, FormLabel, Heading, Input, Text } from "@chakra-ui/react";
 import React from "react";
 import ButtonEventComponent from "../events/components/Button";
 import { FormSignupProps } from "./interface";
@@ -13,9 +13,9 @@ export default function FormSignup({ isExpired }: FormSignupProps) {
       flexDirection={"column"}
       h="fit-content"
     >
-      <Heading fontSize={"28px"} lineHeight="42px" textAlign={"center"}>
+      <Text variant={"text28"} textAlign="center">
         Đăng ký
-      </Heading>
+      </Text>
       <FormLabel mb="0" mt="32px">
         Họ và tên
       </FormLabel>
