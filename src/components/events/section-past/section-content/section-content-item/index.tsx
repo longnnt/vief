@@ -1,56 +1,38 @@
-import { PICTURE } from "@/src/common/constants/common.constant";
 import Description from "@/src/components/section-event/Description";
+import { Event } from "@/src/components/section-event/interface";
 import Calendar from "@/src/components/section/components/Calendar";
-import ShortDes from "@/src/components/section/components/ShortDes";
-import Title from "@/src/components/section/components/Title";
 import Location from "@/src/Images/Icons/Location";
-import { Box, Flex, Image } from "@chakra-ui/react";
-import React from "react";
-import { SectionContentItemProps } from "../../../interface";
+import { Image, Text, VStack } from "@chakra-ui/react";
 
-export default function SectionContentItem({
-  wrapperStyle,
-}: SectionContentItemProps) {
+type SectionContentItemProps = {
+  event: Event;
+};
+export default function SectionContentItem({ event }: SectionContentItemProps) {
+  const { img, title, shortDesc } = event;
   return (
-    <Flex
-      alignItems={"center"}
-      {...wrapperStyle}
-      mb={"32px"}
-      mr={{ xl: "32px", "2xl": "0" }}
-      w={{ sm: "100%", xl: "570px", "2xl": "592px" }}
-      flexDirection={{ sm: "column", xl: "row", "2xl": "row" }}
-      justifyContent="space-between"
-    >
+    <VStack w="full" flexDir={{ md: "row", sm: "column" }} spacing="16px">
       <Image
-        src={PICTURE(new Date().toString())}
+        src={img}
         alt=""
-        w={{ sm: "100%", xl: "260px", "2xl": "280px" }}
-        h="full"
+        w={{ md: "280px", sm: "full" }}
+        h="210px"
         borderRadius="12px"
+        mr={{ md: "16px", sm: "0px" }}
       />
-      <Box
-        w={{ sm: "100%", xl: "296px", "2xl": "296px" }}
-        ml={{ sm: "0", xl: "16px" }}
-        mt={{ sm: "16px" }}
-      >
-        <Title
-          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-          wrapperStyle={{ fontSize: "20px", lineHeight: "28px", mb: "16px" }}
-          isBorderBottom={false}
-        />
-        <ShortDes
-          shortDes="Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit"
-          haveButton={false}
-          textAlign="unset"
-          wrapperStyle={{ mb: "16px" }}
-        />
+      <VStack alignItems="start" spacing="16px">
+        <Text variant="text20" className="text-2-line">
+          {title}
+        </Text>
+        <Text variant="text14" className="text-2-line">
+          {shortDesc}
+        </Text>
         <Description>
           <Calendar />
         </Description>
         <Description>
           <Location />
         </Description>
-      </Box>
-    </Flex>
+      </VStack>
+    </VStack>
   );
 }

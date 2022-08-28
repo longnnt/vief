@@ -27,11 +27,6 @@ export interface ButtonComponentProps {
   textHeight?: string;
 }
 
-export interface HeadingComponentProps {
-  heading?: string;
-  wrapperStyle: ChakraProps;
-}
-
 export interface ShortDesProps {
   shortDes?: string;
   wrapperStyle?: ChakraProps;

@@ -16,7 +16,7 @@ function EventsHome() {
         }}
         gap="6"
       >
-        {EVENT_DATA.map((event, index) => (
+        {EVENT_DATA.slice(0, 3).map((event, index) => (
           <GridItem key={index}>
             <EventContentItem event={event} />
           </GridItem>

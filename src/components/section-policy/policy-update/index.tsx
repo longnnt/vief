@@ -1,8 +1,15 @@
 import { PICTURE } from "@/src/common/constants/common.constant";
+import { ROUTE_POLICY } from "@/src/common/constants/routes.constant";
+import { useViefRouter } from "@/src/common/hooks/useViefRouter";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { Box, Button, Image, Stack, Text } from "@chakra-ui/react";
 
 export default function PolicyUpdate() {
+  const router = useViefRouter();
+
+  function handleRoutePolicy() {
+    router.push(ROUTE_POLICY["en"]);
+  }
   return (
     <Box>
       <Text
@@ -70,7 +77,12 @@ export default function PolicyUpdate() {
             in ornare quam viverra orci sagittis eu volutpat odio facilisis
             mauris sit amet massa
           </Text>
-          <Button variant="primary" rightIcon={<ArrowForwardIcon />} mt="32px">
+          <Button
+            variant="primary"
+            rightIcon={<ArrowForwardIcon />}
+            mt="32px"
+            onClick={handleRoutePolicy}
+          >
             Xem thêm
           </Button>
         </Box>

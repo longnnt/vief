@@ -10,7 +10,3 @@ export interface ButtonEventComponentProps {
 export interface SectionContentItemProps {
   wrapperStyle?: ChakraProps;
 }
-
-export interface SectionPastProps {
-  wrapperStyle?: ChakraProps;
-}
