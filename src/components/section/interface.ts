@@ -26,6 +26,7 @@ export interface ButtonComponentProps {
   isArrowForward?: boolean;
   textHeight?: string;
   isDisabled?: boolean;
+  onHandleSubmit?: () => void;
 }
 
 export interface HeadingComponentProps {

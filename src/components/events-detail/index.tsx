@@ -2,6 +2,7 @@ import { Stack, Text } from "@chakra-ui/react";
 import React from "react";
 import SectionEvent from "../section-event";
 import Content from "./Content";
+import FormSuccess from "./FormSuccess";
 import { EventDetailProps } from "./interface";
 
 export default function EventDetail({ isExpired }: EventDetailProps) {

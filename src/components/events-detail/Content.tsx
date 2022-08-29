@@ -10,7 +10,7 @@ import LeftContent from "./LeftContent";
 
 export default function Content({ isExpired }: ContentProps) {
   return (
-    <Stack>
+    <Stack spacing="0">
       <Flex w={"100%"} alignItems="center" mb={{ base: "64px", sm: "48px" }}>
         <LeftArrow />
         <Link href={"/events"}>
