@@ -1,5 +1,9 @@
+import {
+  ROUTE_ABOUT,
+  ROUTE_HOME,
+} from "@/src/common/constants/routes.constant";
+import { useViefRouter } from "@/src/common/hooks/useViefRouter";
 import { Category } from "@/src/common/type/type";
-import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
@@ -11,12 +15,14 @@ import {
   Link,
   Select,
   Stack,
+  Text,
   useDisclosure,
 } from "@chakra-ui/react";
 import CategoryCompany from "./MenuItem/CategoryCompany";
 import CategoryEvent from "./MenuItem/CategoryEvent";
 import CategoryLibrary from "./MenuItem/CategoryLibrary";
 import CategoryPolicy from "./MenuItem/CategoryPolicy";
+import NavbarMenu from "./navbarMenuResponsive/NavBarMenu";
 
 const Navbar = ({
   dataPolicy,
@@ -29,7 +35,10 @@ const Navbar = ({
   dataEvent?: Category;
   dataLibrary?: Category;
 }) => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const router = useViefRouter();
+  const handleRouter = (children: any) => {
+    router.push(children);
+  };
   return (
     <>
       <Box
@@ -59,13 +68,31 @@ const Navbar = ({
               spacing="32px"
               alignItems={"center"}
             >
-              <Link href="/">Trang chủ</Link>
+              <Text
+                onClick={() => handleRouter(ROUTE_HOME.en)}
+                variant="text14"
+                cursor="pointer"
+              >
+                Trang chủ
+              </Text>
               <CategoryPolicy>{dataPolicy}</CategoryPolicy>
               <CategoryEvent>{dataEvent}</CategoryEvent>
               <CategoryCompany>{dataCompany}</CategoryCompany>
               <CategoryLibrary>{dataLibrary}</CategoryLibrary>
-              <Link href="/about">Về chúng tôi</Link>
-              <Link>Liên hệ</Link>
+              <Text
+                onClick={() => handleRouter(ROUTE_ABOUT.en)}
+                variant="text14"
+                cursor="pointer"
+              >
+                Về chúng tôi
+              </Text>
+              <Text
+                onClick={() => handleRouter(ROUTE_ABOUT.en)}
+                variant="text14"
+                cursor="pointer"
+              >
+                Liên hệ
+              </Text>
             </HStack>
             <Flex alignItems={"center"}>
               <Select variant={"unstyled"}>
@@ -83,27 +110,9 @@ const Navbar = ({
                   </Button>
                 </Link>
               </ButtonGroup>
-              <IconButton
-                aria-label={"Open Menu"}
-                size={"md"}
-                icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-                display={{ sm: "block", md: "none" }}
-                onClick={isOpen ? onClose : onOpen}
-              />
+              <NavbarMenu />
             </Flex>
           </Flex>
-
-          {isOpen ? (
-            <Stack alignItems="flex-start" px="16px" py="16px">
-              <Link href="/">Trang chủ</Link>
-              <CategoryPolicy>{dataPolicy}</CategoryPolicy>
-              <CategoryEvent>{dataEvent}</CategoryEvent>
-              <CategoryCompany>{dataCompany}</CategoryCompany>
-              <CategoryLibrary>{dataLibrary}</CategoryLibrary>
-              <Link href="/about">Về chúng tôi</Link>
-              <Link>Liên hệ</Link>
-            </Stack>
-          ) : null}
         </Stack>
       </Box>
     </>

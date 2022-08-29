@@ -8,7 +8,7 @@ export const PolicyPage = () => {
     <WebContainer>
       <Stack
         mb={"64px"}
-        pt={{ md: "150px", sm: "66px" }}
+        pt={{ md: "64px", sm: "32px" }}
         spacing={{ md: "64px", sm: "32px" }}
       >
         <Text

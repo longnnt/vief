@@ -18,40 +18,8 @@ import FormSuccess from "./FormSuccess";
 import { FormSignupProps } from "./interface";
 
 export default function FormSignup({ isExpired }: FormSignupProps) {
-  const [name, setName] = useState<string>("");
-  const [phone, setPhone] = useState<string>();
-  const [email, setEmail] = useState<string>("");
-  const [showMessName, setShowMessName] = useState<boolean>(false);
-  const [showMessPhone, setShowMessPhone] = useState<boolean>(false);
-  const [showMessEmail, setShowMessEmail] = useState<boolean>(false);
   const { isOpen, onClose, onOpen } = useDisclosure();
 
-  const handleShowMessName = (e: FormEvent<HTMLInputElement>) => {
-    if (e.currentTarget.value === "") {
-      setShowMessName(true);
-    } else {
-      setShowMessName(false);
-    }
-    setName(e.currentTarget.value);
-  };
-  const handleShowMessPhone = (e: FormEvent<HTMLInputElement>) => {
-    if (e.currentTarget.value === "") {
-      setShowMessPhone(true);
-    } else {
-      setShowMessPhone(false);
-    }
-    setPhone(e.currentTarget.value);
-  };
-  const handleShowMessEmail = (e: FormEvent<HTMLInputElement>) => {
-    if (e.currentTarget.value === "") {
-      setShowMessEmail(true);
-    } else {
-      setShowMessEmail(false);
-    }
-    setEmail(e.currentTarget.value);
-  };
-
-  const handleSubmit = () => {};
   return (
     <Flex
       w={{ base: "448px", sm: "100%" }}
@@ -112,9 +80,7 @@ export default function FormSignup({ isExpired }: FormSignupProps) {
         mt="8px"
         bg={"white.secondary"}
         disabled={isExpired ? true : false}
-        onChange={(e) => handleShowMessName(e)}
       />
-      {showMessName && <FormAlert message="Vui lòng nhập Họ và tên" />}
       <FormLabel
         fontSize="14px"
         lineHeight={"20px"}
@@ -129,9 +95,7 @@ export default function FormSignup({ isExpired }: FormSignupProps) {
         mt="8px"
         bg={"white.secondary"}
         disabled={isExpired ? true : false}
-        onChange={(e) => handleShowMessPhone(e)}
       />
-      {showMessPhone && <FormAlert message="Vui lòng nhập Số điện thoại" />}
       <FormLabel
         fontSize="14px"
         lineHeight={"20px"}
@@ -146,9 +110,7 @@ export default function FormSignup({ isExpired }: FormSignupProps) {
         mt="8px"
         bg={"white.secondary"}
         disabled={isExpired ? true : false}
-        onChange={(e) => handleShowMessEmail(e)}
       />
-      {showMessEmail && <FormAlert message="Vui lòng nhập Email" />}
 
       <Button
         disabled={isExpired}

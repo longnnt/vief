@@ -10,7 +10,7 @@ import { WebContainer } from "@/src/common/components/WebContainer";
 const About = () => {
   return (
     <WebContainer>
-      <Stack py="64px" spacing="64px" pt={{ md: "150px", sm: "64px" }}>
+      <Stack py="64px" spacing="64px" pt={{ md: "64px", sm: "32px" }}>
         <WeAre />
         <Wallpaper />
         <Thumbnail />
