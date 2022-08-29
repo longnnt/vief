@@ -50,25 +50,25 @@ const Footer = () => {
             </Stack>
             <Stack align={"flex-start"} spacing="8px">
               <ListHeader>Điều hướng</ListHeader>
-              <Link href="" fontSize="14px" fontWeight={"500"}>
+              <Link href="/" fontSize="14px" fontWeight={"500"}>
                 Trang chủ
               </Link>
-              <Link href="" fontSize="14px" fontWeight={"500"}>
+              <Link href="/policy" fontSize="14px" fontWeight={"500"}>
                 Chính sách
               </Link>
-              <Link href="" fontSize="14px" fontWeight={"500"}>
+              <Link href="/events" fontSize="14px" fontWeight={"500"}>
                 Sự kiện
               </Link>
-              <Link href="" fontSize="14px" fontWeight={"500"}>
+              <Link href="/enterprise-story" fontSize="14px" fontWeight={"500"}>
                 Doanh nghiệp
               </Link>
-              <Link href="" fontSize="14px" fontWeight={"500"}>
+              <Link href="/library" fontSize="14px" fontWeight={"500"}>
                 Thư viện
               </Link>
-              <Link href="" fontSize="14px" fontWeight={"500"}>
+              <Link href="/about" fontSize="14px" fontWeight={"500"}>
                 Về chúng tôi
               </Link>
-              <Link href="" fontSize="14px" fontWeight={"500"}>
+              <Link href="/about" fontSize="14px" fontWeight={"500"}>
                 Liên hệ
               </Link>
             </Stack>

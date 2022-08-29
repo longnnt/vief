@@ -25,3 +25,7 @@ export const ROUTE_EVENT: Record<Lang, string> = {
   vi: "/su-kien",
   en: "/events",
 };
+export const ROUTE_LIBRARY: Record<Lang, string> = {
+  vi: "/thu-vien",
+  en: "/library",
+};
