@@ -21,7 +21,7 @@ export default function Content({ isExpired }: ContentProps) {
           </a>
         </Link>
       </Flex>
-      <Stack>
+      <Stack pb="32px">
         <Image src={PICTURE("1")} alt="" mb={"32px"} borderRadius="12px" />
         <Box
           w="fit-content"
@@ -38,13 +38,14 @@ export default function Content({ isExpired }: ContentProps) {
           />
         </Box>
       </Stack>
-      <Text variant={"text36"}>
+      <Text variant={"text36"} pb="32px">
         LIÊN HỢP QUỐC KHỞI ĐỘNG THẬP KỶ PHỤC HỒI HỆ SINH THÁI
       </Text>
       <Flex
         justifyContent={"space-between"}
         mt="32px"
         flexDirection={{ sm: "column", base: "row" }}
+        pb={{ base: "64px", sm: "48px" }}
       >
         <LeftContent />
         <FormSignup isExpired={isExpired} />

@@ -6,9 +6,9 @@ import { EventDetailProps } from "./interface";
 
 export default function EventDetail({ isExpired }: EventDetailProps) {
   return (
-    <Stack mb={"69px"} mt="32px">
+    <Stack mb={"69px"} mt={{ base: "32px", sm: "16px" }}>
       <Content isExpired={isExpired} />
-      <Text variant={"text28"} mb="32px">
+      <Text variant={"text28"} pb="32px">
         {!isExpired ? "Sự kiện liên quan" : "Sự kiện sắp diễn ra"}
       </Text>
       <SectionEvent />

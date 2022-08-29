@@ -8,18 +8,20 @@ import WoodSector from "@/src/Images/Icons/WoodSector";
 export default function LeftContent() {
   return (
     <Stack w={{ base: "696px", xl: "100%" }}>
-      <Text variant={"text14"} fontWeight="600">
-        Thời gian
-      </Text>
-      <Description wrapperStyle={{ mt: "16px" }}>
-        <Calendar />
-      </Description>
-      <Description>
-        <Location />
-      </Description>
-      <Description>
-        <WoodSector />
-      </Description>
+      <Box pb={"32px"}>
+        <Text variant={"text14"} fontWeight="600">
+          Thời gian
+        </Text>
+        <Description wrapperStyle={{ mt: "16px" }}>
+          <Calendar />
+        </Description>
+        <Description>
+          <Location />
+        </Description>
+        <Description>
+          <WoodSector />
+        </Description>
+      </Box>
       <Text variant={"text14"} fontWeight="600" mt="24px">
         Mô tả
       </Text>
