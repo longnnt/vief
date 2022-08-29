@@ -30,6 +30,6 @@
     "src/components/layout/header/components/navbar/MenuItem.js",
     "src/components/layout/header/components/navbar/MenuItem/CategoryPolicy.tsx",
     "src/components/layout/index.js"
-, "src/pages/library/index.tsx"  ],
+],
   "exclude": ["node_modules"]
 }
