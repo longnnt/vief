@@ -1,6 +1,6 @@
 import Description from "@/src/components/section-event/Description";
+import Calendar from "@/src/Images/Icons/Calendar";
 import { Event } from "@/src/components/section-event/interface";
-import Calendar from "@/src/components/section/components/Calendar";
 import Location from "@/src/Images/Icons/Location";
 import { Image, Text, VStack } from "@chakra-ui/react";
 

@@ -3,7 +3,7 @@ import ButtonComponent from "@/src/components/section/components/Button";
 import Location from "@/src/Images/Icons/Location";
 import WoodSector from "@/src/Images/Icons/WoodSector";
 import { Box, Flex, Image, Text, VStack } from "@chakra-ui/react";
-import Calendar from "../section/components/Calendar";
+import Calendar from "../../Images/Icons/Calendar";
 import Description from "./Description";
 import { Event } from "./interface";
 import TimeLeft from "./TimeLeft";
