@@ -1,8 +1,8 @@
-import { ReactNode } from "react";
-import { ArticleItem } from "@/src/common/components/articleItem";
 import { Pagination } from "@/src/common/components/pagination";
-import { DATA_ARTICLE } from "@/src/components/enterprise-story/constants";
+
 import { Box, Grid, GridItem, Stack, TabPanel } from "@chakra-ui/react";
+import { DATA_ARTICLE } from "../../../constants";
+import { ArticlePolicyItem } from "../../../policyDetail/articleItem";
 
 export const TabPanelItem = () => {
   return (
@@ -21,7 +21,7 @@ export const TabPanelItem = () => {
           {DATA_ARTICLE.map((article, index) => {
             return (
               <GridItem key={index}>
-                <ArticleItem article={article} />
+                <ArticlePolicyItem article={article} />
               </GridItem>
             );
           })}
