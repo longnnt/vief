@@ -46,7 +46,7 @@ const Navbar = ({
         alignItems={"center"}
         position="sticky"
         top={0}
-        zIndex="1000"
+        zIndex="10"
         shadow="xl"
       >
         <Stack bg="white">

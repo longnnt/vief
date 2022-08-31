@@ -7,6 +7,7 @@ export default function ButtonEventComponent({
   btnTitle,
   textHeight,
   isDisabled,
+  onHandleSubmit,
 }: ButtonComponentProps) {
   return (
     <Button
@@ -19,6 +20,7 @@ export default function ButtonEventComponent({
       w={wrapperStyle?.w || "140px"}
       h={wrapperStyle?.h || "40px"}
       mr={wrapperStyle?.mr || "32px"}
+      onClick={onHandleSubmit}
     >
       <Text
         fontSize={"14px"}

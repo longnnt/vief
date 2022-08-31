@@ -26,7 +26,7 @@ export default function SectionCompanyResearch() {
             sm: "full",
           }}
           my="18px"
-          textAlign={{ sm: "start", xl: "end" }}
+          textAlign={{ sm: "start", base: "end" }}
         >
           Đề xuất các nhóm giải pháp ngoài lâm nghiệp nhằm giảm phát thải khí
           nhà kính
