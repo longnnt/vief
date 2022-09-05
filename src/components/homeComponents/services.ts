@@ -11,8 +11,11 @@ export async function getListBannerService(lang: Lang = "vi") {
       toUrlQueryString(API_BANNER, { fields: "WOOD" }),
       { headers: { lang } }
     );
+    console.log("a: ", res.data);
+
     return res.data;
   } catch (error) {
+    console.log("b: ", error);
     return LIST_DATA_RESPONSE;
   }
 }

@@ -12,6 +12,8 @@ type CarouselProps = {
   banners: Banner[];
 };
 const Carousel = ({ banners }: CarouselProps) => {
+  console.log({ banners });
+
   return (
     <Box
       w="full"
