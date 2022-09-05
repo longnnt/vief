@@ -30,8 +30,6 @@ import { HomeLayout } from "../components/layout/HomeLayout";
 
 const queryClient = new QueryClient();
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  // console.log(cate);
-
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   useEffect(() => {

@@ -1,14 +1,17 @@
-import { Box, Image } from "@chakra-ui/react";
+import { Box, Image, Stack, Text } from "@chakra-ui/react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { PICTURE } from "@/src/common/constants/common.constant";
 import { Autoplay, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
+import { Banner } from "../interfaces";
 
-const Carousel = () => {
+type CarouselProps = {
+  banners: Banner[];
+};
+const Carousel = ({ banners }: CarouselProps) => {
   return (
     <Box
       w="full"
@@ -24,15 +27,46 @@ const Carousel = () => {
         autoplay={{ delay: 3000 }}
         slidesPerView={1}
       >
-        <SwiperSlide>
-          <Image src={PICTURE("0")} alt="" objectFit="cover" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src={PICTURE("1")} alt="" objectFit="cover" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src={PICTURE("2")} alt="" objectFit="cover" />
-        </SwiperSlide>
+        {banners.map((banner) => (
+          <SwiperSlide key={banner.id}>
+            <Box w="full" h="full" position="relative">
+              <a href={banner.link} target="_blank" rel="noreferrer">
+                <Image
+                  src={banner.image.url}
+                  alt=""
+                  objectFit="cover"
+                  w="full"
+                  h="full"
+                />
+              </a>
+              <Stack
+                position="absolute"
+                top="100"
+                left="50%"
+                alignItems="start"
+              >
+                <Text variant="text28">{banner.translates[0].title}</Text>
+                <Text
+                  variant="text36"
+                  fontSize="80px"
+                  color="green.primary"
+                  lineHeight="100%"
+                >
+                  {banner.translates[0].subTitle}
+                </Text>
+                <Text
+                  textAlign="left"
+                  variant="text14"
+                  maxW="500px"
+                  className="text-4-line"
+                  dangerouslySetInnerHTML={{
+                    __html: banner.translates[0].shortDesc,
+                  }}
+                />
+              </Stack>
+            </Box>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </Box>
   );

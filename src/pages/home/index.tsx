@@ -1,6 +1,7 @@
 import { WebContainer } from "@/src/common/components/WebContainer";
 import About from "@/src/components/homeComponents/about/About";
 import Carousel from "@/src/components/homeComponents/carousel/Carousel";
+import { HomePageProps } from "@/src/components/homeComponents/interfaces";
 import Library from "@/src/components/homeComponents/library/Library";
 import Subcribe from "@/src/components/homeComponents/subcribe/Subcribe";
 import SectionCompany from "@/src/components/section-company";
@@ -8,10 +9,10 @@ import { EventsHome } from "@/src/components/section-event/EventsHome";
 import SectionPolicy from "@/src/components/section-policy";
 import { Stack } from "@chakra-ui/react";
 
-function HomePage() {
+function HomePage({ banners }: HomePageProps) {
   return (
     <Stack>
-      <Carousel />
+      <Carousel banners={banners} />
       <WebContainer>
         <Stack
           alignSelf="center"
