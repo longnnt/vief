@@ -1,10 +1,9 @@
-import { ReactNode, useLayoutEffect, useState } from "react";
-import React from "react";
-import { Category } from "@/src/common/type/type";
-import Navbar from "./header/components/navbar/Navbar";
-import Footer from "./footer/Footer";
 import { execute } from "@/src/common/lib/request";
+import { Category } from "@/src/common/type/type";
 import { Box } from "@chakra-ui/react";
+import { ReactNode, useEffect, useState } from "react";
+import Footer from "./footer/Footer";
+import Navbar from "./header/components/navbar/Navbar";
 
 const HomeLayout = ({ children }: { children: ReactNode }) => {
   const [policy, setPolicy] = useState<Category>([]);
@@ -12,7 +11,7 @@ const HomeLayout = ({ children }: { children: ReactNode }) => {
   const [event, setEvent] = useState<Category>([]);
   const [library, setLibrary] = useState<Category>([]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     handleGetCategories();
   }, []);
 
