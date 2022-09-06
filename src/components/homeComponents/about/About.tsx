@@ -41,7 +41,7 @@ const About = () => {
           >
             <Stack>
               <Stack>
-                <Link
+                <Text
                   variant={{
                     md: "text20",
                     sm: "text16",
@@ -51,7 +51,7 @@ const About = () => {
                   _hover={{ textDecoration: "none" }}
                 >
                   Về chúng tôi
-                </Link>
+                </Text>
               </Stack>
               <Text
                 variant={{

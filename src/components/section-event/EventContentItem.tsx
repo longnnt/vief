@@ -63,9 +63,9 @@ export default function EventContentItem({ event }: EventContentItemProps) {
             btnTitle="Đăng ký nhanh"
             isArrowForward={false}
             textHeight="25px"
-            wrapperStyle={{ mt: "0" }}
+            wrapperStyle={{ mt: "0", mr: "16px" }}
           />
-          <TimeLeft days={5} wrapperStyle={{ ml: "16px" }} />
+          <TimeLeft days={5} />
         </Flex>
       </VStack>
     </Flex>

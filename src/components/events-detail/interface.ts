@@ -8,3 +8,6 @@ export interface ContentProps {
 export interface EventDetailProps {
   isExpired?: boolean;
 }
+export interface FormAlertProps {
+  message?: string;
+}

@@ -1,8 +1,21 @@
 /* eslint-disable react/react-in-jsx-scope */
-import HomePage from "./home";
+import { GetServerSideProps } from "next";
+import { Lang } from "../common/interfaces/common.interface";
+import { Home } from "../components/homeComponents";
+import { HomePageProps } from "../components/homeComponents/interfaces";
+import { getListBannerService } from "../components/homeComponents/services";
 
-const Home = () => {
-  return <HomePage />;
+const HomePage = ({ banners }: HomePageProps) => {
+  return <Home banners={banners} />;
 };
 
-export default Home;
+export const getServerSideProps: GetServerSideProps<HomePageProps> = async ({
+  locale,
+}) => {
+  const bannerRes = await getListBannerService(locale as Lang);
+  return {
+    props: { banners: bannerRes.data },
+  };
+};
+
+export default HomePage;

@@ -1,9 +1,25 @@
-import { Flex, FormLabel, Heading, Input, Text } from "@chakra-ui/react";
-import React from "react";
+import Success from "@/src/Images/Icons/Success";
+import {
+  Button,
+  Flex,
+  FormLabel,
+  Input,
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalOverlay,
+  Text,
+  useDisclosure,
+} from "@chakra-ui/react";
+import React, { FormEvent, useState } from "react";
 import ButtonEventComponent from "../events/components/Button";
+import FormAlert from "./FormAlert";
+import FormSuccess from "./FormSuccess";
 import { FormSignupProps } from "./interface";
 
 export default function FormSignup({ isExpired }: FormSignupProps) {
+  const { isOpen, onClose, onOpen } = useDisclosure();
+
   return (
     <Flex
       w={{ base: "448px", sm: "100%" }}
@@ -11,12 +27,52 @@ export default function FormSignup({ isExpired }: FormSignupProps) {
       boxShadow="0px 0px 16px rgba(0, 0, 0, 0.1)"
       borderRadius={"12px"}
       flexDirection={"column"}
-      h="fit-content"
+      h="446px"
+      justifyContent={"space-between"}
     >
+      <Modal isOpen={isOpen} onClose={onClose} closeOnOverlayClick={false}>
+        <ModalOverlay />
+        <ModalContent w="fit-content">
+          <Flex
+            width="280px"
+            flexDirection={"column"}
+            alignItems="center"
+            textAlign={"center"}
+            boxShadow="0px 0px 16px rgba(0, 0, 0, 0.1)"
+            borderRadius="12px"
+            p="32px 8px"
+          >
+            <Success />
+            <Text variant={"text16"} my="16px">
+              Đăng ký thành công
+            </Text>
+            <Text mb="16px" userSelect={"none"}>
+              Vui lòng kiểm tra Hộp thư email để nhận thông tin chi tiết về sự
+              kiện. Vui lòng mang theo mã QR khi đến tham gia sự kiện
+            </Text>
+            <Button
+              bg="blue.primary"
+              color={"white"}
+              p="8px 15px"
+              colorScheme={"blue.primary"}
+              fontWeight="600"
+              onClick={onClose}
+            >
+              Quay lại trang
+            </Button>
+          </Flex>
+        </ModalContent>
+      </Modal>
       <Text variant={"text28"} textAlign="center">
         Đăng ký
       </Text>
-      <FormLabel mb="0" mt="32px">
+      <FormLabel
+        fontSize="14px"
+        lineHeight={"20px"}
+        fontWeight="600"
+        mb="0"
+        mt="32px"
+      >
         Họ và tên
       </FormLabel>
       <Input
@@ -25,7 +81,13 @@ export default function FormSignup({ isExpired }: FormSignupProps) {
         bg={"white.secondary"}
         disabled={isExpired ? true : false}
       />
-      <FormLabel mb="0" mt="16px">
+      <FormLabel
+        fontSize="14px"
+        lineHeight={"20px"}
+        fontWeight="600"
+        mb="0"
+        mt="16px"
+      >
         Số điện thoại
       </FormLabel>
       <Input
@@ -34,7 +96,13 @@ export default function FormSignup({ isExpired }: FormSignupProps) {
         bg={"white.secondary"}
         disabled={isExpired ? true : false}
       />
-      <FormLabel mb="0" mt="16px">
+      <FormLabel
+        fontSize="14px"
+        lineHeight={"20px"}
+        fontWeight="600"
+        mb="0"
+        mt="16px"
+      >
         Email
       </FormLabel>
       <Input
@@ -43,11 +111,20 @@ export default function FormSignup({ isExpired }: FormSignupProps) {
         bg={"white.secondary"}
         disabled={isExpired ? true : false}
       />
-      <ButtonEventComponent
-        wrapperStyle={{ m: "0 auto", mt: "32px", mr: "auto", w: "132px" }}
-        btnTitle="Đăng ký"
-        isDisabled={isExpired ? true : false}
-      />
+
+      <Button
+        disabled={isExpired}
+        w="fit-content"
+        m="0 auto"
+        onClick={onOpen}
+        fontWeight="600"
+        p="0"
+        bg="blue.primary"
+        colorScheme={"blue.primary"}
+        mt="32px"
+      >
+        <Text mx="36px">Đăng ký</Text>
+      </Button>
     </Flex>
   );
 }
