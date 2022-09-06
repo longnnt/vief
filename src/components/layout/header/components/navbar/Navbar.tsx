@@ -10,13 +10,11 @@ import {
   ButtonGroup,
   Flex,
   HStack,
-  IconButton,
   Image,
   Link,
   Select,
   Stack,
   Text,
-  useDisclosure,
 } from "@chakra-ui/react";
 import CategoryCompany from "./MenuItem/CategoryCompany";
 import CategoryEvent from "./MenuItem/CategoryEvent";
