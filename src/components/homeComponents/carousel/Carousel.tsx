@@ -43,24 +43,33 @@ const Carousel = ({ banners }: CarouselProps) => {
               </a>
               <Stack
                 position="absolute"
-                top="100"
-                left="50%"
-                alignItems="start"
+                top={{ md: "100", sm: "unset" }}
+                bottom={{ md: "unset", sm: "10%" }}
+                left={{ md: "50%", sm: "10%" }}
+                alignItems={{ md: "start", sm: "center" }}
+                w={{ md: "unset", sm: "80%" }}
+                m="auto"
+                borderRadius="12px"
+                bg={{ md: "unset", sm: "white" }}
+                opacity={{ md: "unset", sm: "0.8" }}
+                p={{ md: "unset", sm: "16px" }}
               >
-                <Text variant="text28">{banner.translates[0].title}</Text>
+                <Text variant={{ md: "text28", sm: "text20" }}>
+                  {banner.translates[0].title}
+                </Text>
                 <Text
                   variant="text36"
-                  fontSize="80px"
+                  fontSize={{ md: "80px", sm: "28px" }}
                   color="green.primary"
                   lineHeight="100%"
                 >
                   {banner.translates[0].subTitle}
                 </Text>
                 <Text
-                  textAlign="left"
+                  textAlign={{ md: "left", sm: "center" }}
                   variant="text14"
                   maxW="500px"
-                  className="text-4-line"
+                  className="text-7-line"
                   dangerouslySetInnerHTML={{
                     __html: banner.translates[0].shortDesc,
                   }}

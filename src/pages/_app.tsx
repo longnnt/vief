@@ -6,8 +6,8 @@ import { Provider } from "react-redux";
 import "../../i18n";
 import { store } from "../common/redux/store";
 import "../styles/globals.css";
+import "../styles/editor-quill.css";
 // import { theme } from "../common/theme/theme";
-import { Loading } from "src/common/components/Loading";
 
 // import { Layout } from "../components/layout";
 // import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
