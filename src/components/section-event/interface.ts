@@ -9,11 +9,20 @@ export interface EventContentItemProps {
 export interface DescriptionProps {
   children: React.ReactNode;
   wrapperStyle?: ChakraProps;
+  content?: string;
 }
 
 export interface Event {
-  img: string;
-  title: string;
-  shortDesc: string;
-  content: string;
+  thumbnail?: Thumbnail;
+  title?: string;
+  shortDesc?: string;
+  content?: string;
+  location?: string;
+  timeStart: string;
+  field?: string;
+  slug: string;
 }
+
+type Thumbnail = {
+  url?: string;
+};

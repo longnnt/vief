@@ -21,3 +21,15 @@ export interface TimeLeftProps {
   stroke?: string;
   isExpired?: boolean;
 }
+
+export interface SectionUpcomingProps {
+  upcoming?: [];
+}
+
+export interface SectionContentProps {
+  PAST_DATA?: [];
+}
+
+export interface SectionPastProps {
+  past?: [];
+}

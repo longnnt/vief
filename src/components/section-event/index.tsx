@@ -2,7 +2,11 @@ import { Box, Grid, GridItem } from "@chakra-ui/react";
 import { EVENT_DATA } from "./constants";
 import EventContentItem from "./EventContentItem";
 
-export default function SectionEvent() {
+interface SectionEventProps {
+  UPCOMING_DATA?: [];
+}
+
+export default function SectionEvent({ UPCOMING_DATA }: SectionEventProps) {
   return (
     <>
       <Box overflow={"hidden"}>
@@ -17,7 +21,7 @@ export default function SectionEvent() {
           }}
           gap="8"
         >
-          {EVENT_DATA.slice(0, 3).map((event, index) => (
+          {UPCOMING_DATA?.slice(0, 3).map((event, index) => (
             <GridItem key={index}>
               <EventContentItem event={event} />
             </GridItem>
