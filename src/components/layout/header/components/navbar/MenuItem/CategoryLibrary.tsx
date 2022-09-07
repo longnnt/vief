@@ -1,6 +1,7 @@
 import { ROUTE_LIBRARY } from "@/src/common/constants/routes.constant";
 import { useViefRouter } from "@/src/common/hooks/useViefRouter";
-import { Category } from "@/src/common/type/type";
+import { Category } from "@/src/components/layout/interfaces";
+
 import {
   Menu,
   MenuButton,
@@ -36,7 +37,7 @@ const CategoryLibrary = ({ children }: { children?: Category }) => {
           {children?.data.map((index, key) => (
             <MenuItem
               key={key}
-              onClick={() => handleRouterCategoryItem(index.path)}
+              // onClick={() => handleRouterCategoryItem(index.path)}
             >
               <Text variant="text14" cursor="pointer">
                 {index.name}

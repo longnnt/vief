@@ -3,7 +3,7 @@ import {
   ROUTE_HOME,
 } from "@/src/common/constants/routes.constant";
 import { useViefRouter } from "@/src/common/hooks/useViefRouter";
-import { Category } from "@/src/common/type/type";
+
 import {
   Box,
   Button,
@@ -16,6 +16,7 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import { Category } from "../../../interfaces";
 import CategoryCompany from "./MenuItem/CategoryCompany";
 import CategoryEvent from "./MenuItem/CategoryEvent";
 import CategoryLibrary from "./MenuItem/CategoryLibrary";
