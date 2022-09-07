@@ -5,3 +5,5 @@ export const BASE_URL =
 export const GET_POSTS = "https://jsonplaceholder.typicode.com/posts";
 export const EDIT_POSTS = "https://jsonplaceholder.typicode/EDIT_POST";
 export const API_BANNER = "client/banners";
+export const API_ARTICLE = "client/article";
+export const API_CATEGORY = "client/category";

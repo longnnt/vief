@@ -1,8 +1,8 @@
-import { Article } from "@/src/components/enterprise-story/interfaces";
 import { HStack, Image, Text, VStack } from "@chakra-ui/react";
 import { useViefRouter } from "@/common/hooks/useViefRouter";
 import { replacePathParams } from "../../lib/common.lib";
 import { ROUTE_ENTERPRISE_ARTICLE_DETAIL } from "../../constants/routes.constant";
+import { Article } from "../../interfaces/common.interface";
 
 type HotNewsProps = {
   articles: Article[];
@@ -21,7 +21,7 @@ function HotNews({ articles, label }: HotNewsProps) {
   return (
     <VStack spacing="32px">
       <Text variant="text28">{label}</Text>
-      {articles.map(({ date, title, url, slug }, index) => {
+      {articles.map(({ createdAt, title, thumbnail, slug }, index) => {
         return (
           <HStack
             key={index}
@@ -34,7 +34,7 @@ function HotNews({ articles, label }: HotNewsProps) {
             onClick={() => handleRedirect(slug)}
           >
             <Image
-              src={url}
+              src={thumbnail.url}
               alt=""
               w={{
                 base: "136px",
@@ -55,7 +55,7 @@ function HotNews({ articles, label }: HotNewsProps) {
               >
                 {title}
               </Text>
-              <Text variant="text14">{date}</Text>
+              <Text variant="text14">{createdAt}</Text>
             </VStack>
           </HStack>
         );

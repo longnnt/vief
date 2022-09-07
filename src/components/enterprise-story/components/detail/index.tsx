@@ -4,8 +4,8 @@ import { Pagination } from "@/src/common/components/pagination";
 import { RenderBreadcrumb } from "@/src/common/components/renderBreadcumb";
 import { WebContainer } from "@/src/common/components/WebContainer";
 import { BREAD_CRUMB_ENTERPRISE_DETAIL } from "@/src/common/configs/breadcrumb.configs";
+import { DATA_ARTICLE } from "@/src/components/policyComponents/constants";
 import { Box, Grid, GridItem, Stack, Text, VStack } from "@chakra-ui/react";
-import { DATA_ARTICLE } from "../../constants";
 import { Article } from "../../interfaces";
 
 type EnterpriseDetailProps = {

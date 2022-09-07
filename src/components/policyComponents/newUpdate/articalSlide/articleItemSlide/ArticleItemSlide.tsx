@@ -1,7 +1,11 @@
+import { Article } from "@/src/common/interfaces/common.interface";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { Box, Button, Image, Link, Stack, Text } from "@chakra-ui/react";
 
-const ArticleItemSlide = () => {
+type Props = {
+  article: Article;
+};
+const ArticleItemSlide = ({ article }: Props) => {
   return (
     <>
       <Stack
@@ -16,12 +20,12 @@ const ArticleItemSlide = () => {
         >
           <Image
             borderRadius="12px"
-            src="/articleCsIMG.png"
+            src={article.thumbnail.url}
             width={"full"}
             height={"full"}
             objectFit="cover"
             alt=""
-          ></Image>
+          />
         </Box>
         <Stack
           w={{ md: "592px", sm: "343px" }}
@@ -32,19 +36,11 @@ const ArticleItemSlide = () => {
               variant={{ md: "tex36", sm: "text28" }}
               lineHeight={{ base: "none", sm: "42px" }}
             >
-              COP26 và dấu ấn Việt Nam
+              {article.title}
             </Text>
           </Stack>
           <Text variant="text14" textAlign={"justify"}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
-            purus sit amet luctus venenatis, lectus magna fringilla urna,
-            porttitor rhoncus dolor purus non enim praesent elementum facilisis
-            leo, vel fringilla est ullamcorper eget nulla facilisi etiam
-            dignissim diam quis enim lobortis scelerisque fermentum dui faucibus
-            in ornare quam viverra orci sagittis eu volutpat odio facilisis
-            mauris sit amet massa vitae tortor condimentum lacinia quis vel eros
-            donec ac odio tempor orci dapibus ultrices in iaculis nunc sed augue
-            lacus
+            {article.shortDesc}
           </Text>
           <Link href="/" _hover={{ textDecoration: "none" }}>
             <Button variant="primary" rightIcon={<ArrowForwardIcon />}>

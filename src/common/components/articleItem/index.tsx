@@ -1,8 +1,8 @@
-import { Article } from "@/src/components/enterprise-story/interfaces";
 import { ChakraProps, Img, Text, VStack } from "@chakra-ui/react";
 import React from "react";
 import { ROUTE_ENTERPRISE_ARTICLE_DETAIL } from "../../constants/routes.constant";
 import { useViefRouter } from "../../hooks/useViefRouter";
+import { Article } from "../../interfaces/common.interface";
 import { replacePathParams } from "../../lib/common.lib";
 
 export type ArticleItemProps = {
@@ -19,7 +19,7 @@ function ArticleItem({ article, imgStyle }: ArticleItemProps) {
       })
     );
   }
-  const { url, title, shortDesc, date, slug } = article;
+  const { thumbnail, title, shortDesc, createdAt, slug } = article;
   return (
     <VStack
       spacing="4"
@@ -28,7 +28,7 @@ function ArticleItem({ article, imgStyle }: ArticleItemProps) {
       cursor="pointer"
     >
       <Img
-        src={url}
+        src={thumbnail.url}
         w="full"
         h={{
           base: "288px",
@@ -38,7 +38,7 @@ function ArticleItem({ article, imgStyle }: ArticleItemProps) {
         objectFit="cover"
         {...imgStyle}
       />
-      <Text variant="text14">{date}</Text>
+      <Text variant="text14">{createdAt}</Text>
       <Text
         variant={{
           base: "text20",

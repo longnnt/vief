@@ -1,15 +1,13 @@
 import { ROUTE_POLICY_ARTICLE_DETAIL } from "@/src/common/constants/routes.constant";
 import { useViefRouter } from "@/src/common/hooks/useViefRouter";
+import { Article } from "@/src/common/interfaces/common.interface";
 import { replacePathParams } from "@/src/common/lib/common.lib";
-import { Article } from "../../interfaces";
-import { ChakraProps, Img, Text, VStack } from "@chakra-ui/react";
-import React from "react";
+import { Img, Text, VStack } from "@chakra-ui/react";
 
-export type ArticleItemProps = {
+export type Props = {
   article: Article;
-  imgStyle?: ChakraProps;
 };
-function ArticlePolicyItem({ article, imgStyle }: ArticleItemProps) {
+function ArticlePolicyItem({ article }: Props) {
   const router = useViefRouter();
 
   function handleRedirect(slug: string) {
@@ -19,7 +17,13 @@ function ArticlePolicyItem({ article, imgStyle }: ArticleItemProps) {
       })
     );
   }
-  const { url, title, shortDesc, date, slug } = article;
+  const {
+    thumbnail: { url },
+    title,
+    shortDesc,
+    createdAt,
+    slug,
+  } = article;
   return (
     <VStack
       spacing="4"
@@ -36,9 +40,8 @@ function ArticlePolicyItem({ article, imgStyle }: ArticleItemProps) {
         }}
         borderRadius="12px"
         objectFit="cover"
-        {...imgStyle}
       />
-      <Text variant="text14">{date}</Text>
+      <Text variant="text14">{createdAt}</Text>
       <Text
         variant={{
           base: "text20",

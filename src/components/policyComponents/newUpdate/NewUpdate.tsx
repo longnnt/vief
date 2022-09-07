@@ -1,7 +1,10 @@
 import { Stack, Text, VStack } from "@chakra-ui/react";
+import { PolicyPageProps } from "../interfaces";
 import ArticleSlide from "./articalSlide/ArticleSlide";
 
-const NewUpdate = () => {
+const NewUpdate = ({
+  latestArticle,
+}: Pick<PolicyPageProps, "latestArticle">) => {
   return (
     <>
       <Stack
@@ -10,7 +13,7 @@ const NewUpdate = () => {
         w={{ sm: "343px", md: "1216px" }}
       >
         <Text variant={{ md: "text28", sm: "text24" }}>Mới cập nhật</Text>
-        <ArticleSlide />
+        <ArticleSlide latestArticle={latestArticle} />
       </Stack>
     </>
   );
