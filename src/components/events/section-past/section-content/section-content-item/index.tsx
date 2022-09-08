@@ -38,7 +38,7 @@ export default function SectionContentItem({ event }: SectionContentItemProps) {
         <Text
           variant="text20"
           className="text-2-line"
-          onClick={() => handleRedirect(slug)}
+          onClick={() => handleRedirect(slug!)}
           cursor="pointer"
         >
           {title}
@@ -48,7 +48,7 @@ export default function SectionContentItem({ event }: SectionContentItemProps) {
         </Text>
         <Description
           wrapperStyle={{ pt: "16px" }}
-          content={formatDate(timeStart)}
+          content={formatDate(timeStart!)}
         >
           <Calendar />
         </Description>

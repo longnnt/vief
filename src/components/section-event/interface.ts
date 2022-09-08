@@ -13,13 +13,13 @@ export interface DescriptionProps {
 }
 
 export interface Event {
-  thumbnail?: Thumbnail;
-  title?: string;
-  shortDesc?: string;
-  content?: string;
-  location?: string;
+  thumbnail: Thumbnail;
+  title: string;
+  shortDesc: string;
+  content: string;
+  location: string;
   timeStart: string;
-  field?: string;
+  field: string;
   slug: string;
 }
 

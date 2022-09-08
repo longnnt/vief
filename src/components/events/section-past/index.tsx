@@ -13,7 +13,7 @@ export default function SectionPast({ past }: SectionPastProps) {
         <Button variant="primary">Ngành Gỗ</Button>
         <Button ml="30px">Ngành khác</Button>
       </Box>
-      <SectionContent PAST_DATA={past} />
+      <SectionContent pastData={past} />
       <HStack w="full" justifyContent="center" mt="32px">
         <Pagination currentPage={5} totalPages={10} onPageChange={() => {}} />
       </HStack>

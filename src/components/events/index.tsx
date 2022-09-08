@@ -1,11 +1,7 @@
 import { Stack, Text } from "@chakra-ui/react";
+import { EventsProps } from "./interface";
 import SectionPast from "./section-past";
 import SectionUpcoming from "./section-upcoming";
-
-interface EventsProps {
-  upcoming?: any;
-  past?: any;
-}
 
 export default function Events({ upcoming, past }: EventsProps) {
   return (

@@ -1,4 +1,5 @@
 import { ChakraProps } from "@chakra-ui/react";
+import { Event } from "../section-event/interface";
 
 export interface ButtonEventComponentProps {
   wrapperStyle?: ChakraProps;
@@ -23,13 +24,23 @@ export interface TimeLeftProps {
 }
 
 export interface SectionUpcomingProps {
-  upcoming?: [];
+  upcoming: Event[];
 }
 
 export interface SectionContentProps {
-  PAST_DATA?: [];
+  pastData?: Event[];
 }
 
 export interface SectionPastProps {
-  past?: [];
+  past?: Event[];
+}
+
+export interface EventsPageProps {
+  upcomingData: Event[];
+  pastData: Event[];
+}
+
+export interface EventsProps {
+  upcoming: Event[];
+  past: Event[];
 }

@@ -8,7 +8,7 @@ export default function SectionUpcoming({ upcoming }: SectionUpcomingProps) {
       <Text variant="text28" pb={{ base: "36px", sm: "16px" }}>
         Sắp diễn ra
       </Text>
-      <SectionEvent UPCOMING_DATA={upcoming} />
+      <SectionEvent upcomingData={upcoming} />
     </>
   );
 }

@@ -7,7 +7,7 @@ export const UPCOMING_DATA = [
     id: 1,
     field: "WOOD",
     location: "Ha Noi abc",
-    timeStart: "2022-09-06T09:14:11.398Z",
+    timeStart: "2022-09-20T09:14:11.398Z",
     isFeature: -1,
     thumbnail: {
       id: 2022,

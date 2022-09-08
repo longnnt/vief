@@ -1,19 +1,65 @@
-import {
-  API_EVENTS,
-  API_TOOKPLACE,
-  API_UPCOMINGS,
-} from "./../../common/constants/urlAPI";
+import { ListResponse } from "./../../common/interfaces/common.interface";
+import { toUrlQueryString } from "@/src/common/lib/common.lib";
+import { API_EVENTS } from "./../../common/constants/urlAPI";
 import { execute } from "@/src/common/lib/request";
+import { Lang } from "@/src/common/interfaces/common.interface";
+import { Event } from "../section-event/interface";
 
-export function getArticleEvent() {
-  return execute.get(API_EVENTS);
+export async function getArticleEvent(lang: Lang = "vi") {
+  try {
+    const res = await execute.get<ListResponse<Event>>(
+      toUrlQueryString(API_EVENTS),
+      {
+        headers: { lang },
+      }
+    );
+
+    return res.data;
+  } catch (err) {
+    return err;
+  }
 }
-export function getPastEvent() {
-  return execute.get(API_EVENTS);
+export async function getPastEvent(lang: Lang = "vi") {
+  try {
+    const res = await execute.get<ListResponse<Event>>(
+      toUrlQueryString(API_EVENTS),
+      {
+        headers: { lang },
+      }
+    );
+
+    return res.data;
+  } catch (err) {
+    return err;
+  }
 }
-export function getDetailUpcomingEvent() {
-  return execute.get(API_UPCOMINGS);
+
+export async function getDetailUpcomingEvent(lang: Lang = "vi") {
+  try {
+    const res = await execute.get<ListResponse<Event>>(
+      toUrlQueryString(API_EVENTS, { field: "WOOD", timeline: "UPCOMING" }),
+      {
+        headers: { lang },
+      }
+    );
+
+    return res.data;
+  } catch (err) {
+    return err;
+  }
 }
-export function getDetailPastEvent() {
-  return execute.get(API_TOOKPLACE);
+
+export async function getDetailPastEvent(lang: Lang = "vi") {
+  try {
+    const res = await execute.get<ListResponse<Event>>(
+      toUrlQueryString(API_EVENTS, { field: "WOOD", timeline: "TOOK_PLACE" }),
+      {
+        headers: { lang },
+      }
+    );
+
+    return res.data;
+  } catch (err) {
+    return err;
+  }
 }

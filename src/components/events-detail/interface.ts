@@ -1,13 +1,21 @@
+import { Event } from "../section-event/interface";
+
 export interface FormSignupProps {
   isExpired?: boolean;
 }
-export interface ContentProps {
+export type ContentProps = {
   isExpired?: boolean;
-}
+  data: Event;
+};
 
-export interface EventDetailProps {
+export type EventDetailProps = {
   isExpired?: boolean;
-}
+  data?: Event;
+};
 export interface FormAlertProps {
   message?: string;
+}
+
+export interface LeftContentProps {
+  data: Event;
 }

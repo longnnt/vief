@@ -1,7 +1,7 @@
 import { ROUTE_EVENT_UPCOMING_DETAIL } from "@/src/common/constants/routes.constant";
 import { useViefRouter } from "@/src/common/hooks/useViefRouter";
 import { replacePathParams } from "@/src/common/lib/common.lib";
-import { formatDate } from "@/src/common/utils/common.utils";
+import { formatDate, timeLeft } from "@/src/common/utils/common.utils";
 import ButtonComponent from "@/src/components/section/components/Button";
 import Location from "@/src/Images/Icons/Location";
 import WoodSector from "@/src/Images/Icons/WoodSector";
@@ -11,12 +11,12 @@ import Description from "./Description";
 import { Event } from "./interface";
 import TimeLeft from "./TimeLeft";
 
-type EventContentItemProps = {
+interface EventContentItemProps {
   event: Event;
-};
+}
 export default function EventContentItem({ event }: EventContentItemProps) {
   const { thumbnail, shortDesc, title, timeStart, location, field, slug } =
-    event;
+    event!;
   const router = useViefRouter();
 
   function handleRedirect(slug: string) {
@@ -32,7 +32,6 @@ export default function EventContentItem({ event }: EventContentItemProps) {
       flexDirection={"column"}
       alignItems={"center"}
       borderRadius={"14px"}
-      w={{ "2xl": "384px" }}
     >
       <Box overflow={"hidden"} borderTopRadius="14px">
         <Image
@@ -52,7 +51,7 @@ export default function EventContentItem({ event }: EventContentItemProps) {
         <Text
           variant="text20"
           className="text-2-line"
-          onClick={() => handleRedirect(slug)}
+          onClick={() => handleRedirect(slug!)}
           cursor="pointer"
         >
           {title}
@@ -66,7 +65,7 @@ export default function EventContentItem({ event }: EventContentItemProps) {
           h="91px"
           justifyContent="space-between"
         >
-          <Description content={formatDate(timeStart)}>
+          <Description content={formatDate(timeStart!)}>
             <Calendar />
           </Description>
           <Description content={location}>
@@ -83,7 +82,7 @@ export default function EventContentItem({ event }: EventContentItemProps) {
             textHeight="25px"
             wrapperStyle={{ mt: "0", mr: "16px" }}
           />
-          <TimeLeft days={5} />
+          <TimeLeft days={timeLeft(timeStart!)} />
         </Flex>
       </VStack>
     </Flex>
