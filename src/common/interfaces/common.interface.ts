@@ -1,3 +1,5 @@
+import { AxiosError } from "axios";
+
 export interface RouterConfig {
   pathName: string;
   resource: string;
@@ -18,6 +20,11 @@ export interface ImageResponse {
   key: string;
   type: string;
   url: string;
+}
+
+export interface RequestCallBack<T = unknown> {
+  onSuccess?: (response: T) => void;
+  onError?: (error: unknown) => void;
 }
 
 export interface BaseEntities {
