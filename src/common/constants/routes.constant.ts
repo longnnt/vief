@@ -35,3 +35,7 @@ export const ROUTE_LIBRARY: Record<Lang, string> = {
   vi: "/thu-vien",
   en: "/library",
 };
+export const ROUTE_ARTICLE_DETAIL: Record<Lang, string> = {
+  vi: "/bai-viet/:slug",
+  en: "/article/:slug",
+};

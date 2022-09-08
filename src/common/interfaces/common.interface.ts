@@ -35,6 +35,7 @@ export interface Category extends BaseEntities {
   path?: string;
   thumbnail: ImageResponse;
   name: string;
+  slug: string;
 }
 
 export interface Article extends BaseEntities {
@@ -51,6 +52,7 @@ export interface Article extends BaseEntities {
     id: number;
     name: string;
     slug: string;
+    type: Types;
   };
 }
 
@@ -61,6 +63,7 @@ export interface ArticleDetail extends BaseEntities {
     name: string;
     slug: string;
     shortDesc: string;
+    type: Types;
   };
 }
 
@@ -74,5 +77,5 @@ export interface SearchParams {
   size?: number;
   slugCategory?: string;
   lang?: Lang;
-  slug?: Lang;
+  slug?: string;
 }

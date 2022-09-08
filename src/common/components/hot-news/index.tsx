@@ -1,7 +1,10 @@
 import { HStack, Image, Text, VStack } from "@chakra-ui/react";
 import { useViefRouter } from "@/common/hooks/useViefRouter";
 import { replacePathParams } from "../../lib/common.lib";
-import { ROUTE_ENTERPRISE_ARTICLE_DETAIL } from "../../constants/routes.constant";
+import {
+  ROUTE_ARTICLE_DETAIL,
+  ROUTE_ENTERPRISE_ARTICLE_DETAIL,
+} from "../../constants/routes.constant";
 import { Article } from "../../interfaces/common.interface";
 
 type HotNewsProps = {
@@ -13,7 +16,7 @@ function HotNews({ articles, label }: HotNewsProps) {
 
   function handleRedirect(slug: string) {
     router.push(
-      replacePathParams(ROUTE_ENTERPRISE_ARTICLE_DETAIL["en"], {
+      replacePathParams(ROUTE_ARTICLE_DETAIL["en"], {
         slug,
       })
     );
@@ -24,6 +27,7 @@ function HotNews({ articles, label }: HotNewsProps) {
       {articles.map(({ createdAt, title, thumbnail, slug }, index) => {
         return (
           <HStack
+            w="full"
             key={index}
             alignItems="start"
             h={{

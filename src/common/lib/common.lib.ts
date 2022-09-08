@@ -41,7 +41,7 @@ export async function fakeApiRequest<T = any>(
 }
 
 export function toTotalPage(totalElement = 0, size = PAGE_SIZE) {
-  return Math.ceil(totalElement / size);
+  return Math.ceil(totalElement / size) || 1;
 }
 
 export function toPresentValue(value: any) {

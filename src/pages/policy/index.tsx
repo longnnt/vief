@@ -1,13 +1,20 @@
-import { LANG } from "@/src/common/constants/common.constant";
-import { Lang, SearchParams } from "@/src/common/interfaces/common.interface";
+import { LIST_DATA_RESPONSE } from "@/src/common/constants/common.constant";
+import {
+  Article,
+  Lang,
+  ListResponse,
+} from "@/src/common/interfaces/common.interface";
 import {
   getListArticleService,
   getListCategoryService,
 } from "@/src/common/services/common.services";
 import { PolicyPage } from "@/src/components/policyComponents";
 import { PolicyPageProps } from "@/src/components/policyComponents/interfaces";
+import {
+  ARTICLE_POLICY_SIZE,
+  paramPolicy,
+} from "@/src/components/section-policy/constant";
 import { GetServerSideProps } from "next";
-import React from "react";
 
 function index({ articleData, categories, latestArticle }: PolicyPageProps) {
   return (
@@ -23,23 +30,26 @@ export const getServerSideProps: GetServerSideProps<PolicyPageProps> = async ({
   locale,
 }) => {
   const categories = await (
-    await getListCategoryService(getParams(4, locale))
+    await getListCategoryService(paramPolicy({ size: 4, lang: locale as Lang }))
   ).data;
-  const articleData = await getListArticleService({ ...getParams(1, locale) });
+
+  let articleData: ListResponse<Article> = LIST_DATA_RESPONSE;
+
+  if (categories.length) {
+    articleData = await getListArticleService(
+      paramPolicy({
+        size: ARTICLE_POLICY_SIZE,
+        lang: locale as Lang,
+        slugCategory: categories[0].slug,
+      })
+    );
+  }
   const latestArticle = await (
-    await getListArticleService(getParams(3, locale))
+    await getListArticleService(paramPolicy({ size: 3, lang: locale as Lang }))
   ).data;
   return {
     props: { articleData, categories, latestArticle },
   };
 };
 
-const getParams = (size: number, lang?: string): SearchParams => ({
-  field: "WOOD",
-  type: "POLICY",
-  page: 1,
-  size,
-  isFeature: 1,
-  lang: (lang || LANG.vi) as Lang,
-});
 export default index;

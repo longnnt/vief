@@ -1,6 +1,5 @@
 import { ChakraProps, Img, Text, VStack } from "@chakra-ui/react";
-import React from "react";
-import { ROUTE_ENTERPRISE_ARTICLE_DETAIL } from "../../constants/routes.constant";
+import { ROUTE_ARTICLE_DETAIL } from "../../constants/routes.constant";
 import { useViefRouter } from "../../hooks/useViefRouter";
 import { Article } from "../../interfaces/common.interface";
 import { replacePathParams } from "../../lib/common.lib";
@@ -14,7 +13,7 @@ function ArticleItem({ article, imgStyle }: ArticleItemProps) {
 
   function handleRedirect(slug: string) {
     router.push(
-      replacePathParams(ROUTE_ENTERPRISE_ARTICLE_DETAIL["en"], {
+      replacePathParams(ROUTE_ARTICLE_DETAIL["en"], {
         slug,
       })
     );

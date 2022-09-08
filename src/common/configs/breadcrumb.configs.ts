@@ -1,4 +1,5 @@
 import {
+  ROUTE_ARTICLE_DETAIL,
   ROUTE_ENTERPRISE_STORY,
   ROUTE_POLICY,
 } from "../constants/routes.constant";
@@ -29,5 +30,18 @@ export const BREAD_CRUMB_POLICY_DETAIL: (Lang: Lang) => BreadcrumbsType[] = (
   {
     label: "Ngành gỗ",
     link: ROUTE_POLICY[lang],
+  },
+];
+
+export const BREAD_CRUMB_AR_POLICY_DETAIL: (Lang: Lang) => BreadcrumbsType[] = (
+  lang
+) => [
+  {
+    label: "Chính sách",
+    link: ROUTE_POLICY[lang],
+  },
+  {
+    label: ":articleName",
+    link: "#",
   },
 ];

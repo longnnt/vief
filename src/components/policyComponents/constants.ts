@@ -5,6 +5,7 @@ export const DATA_ARTICLE: Article[] = [
     id: 1,
     lang: "vi",
     category: {
+      type: "POLICY",
       id: 1,
       name: "cate",
       slug: "cate",
@@ -34,6 +35,7 @@ export const DATA_ARTICLE: Article[] = [
     lang: "vi",
     category: {
       id: 2,
+      type: "POLICY",
       name: "cate",
       slug: "cate",
     },
@@ -61,6 +63,7 @@ export const DATA_ARTICLE: Article[] = [
     lang: "vi",
     category: {
       id: 3,
+      type: "POLICY",
       name: "cate",
       slug: "cate",
     },
@@ -89,6 +92,7 @@ export const DATA_ARTICLE: Article[] = [
     lang: "vi",
     category: {
       id: 4,
+      type: "POLICY",
       name: "cate",
       slug: "cate",
     },
@@ -117,6 +121,7 @@ export const DATA_ARTICLE: Article[] = [
     lang: "vi",
     category: {
       id: 5,
+      type: "POLICY",
       name: "cate",
       slug: "cate",
     },
@@ -144,6 +149,7 @@ export const DATA_ARTICLE: Article[] = [
     lang: "vi",
     category: {
       id: 6,
+      type: "POLICY",
       name: "cate",
       slug: "cate",
     },

@@ -1,11 +1,21 @@
+import { ROUTE_ARTICLE_DETAIL } from "@/src/common/constants/routes.constant";
+import { useViefRouter } from "@/src/common/hooks/useViefRouter";
 import { Article } from "@/src/common/interfaces/common.interface";
+import { replacePathParams } from "@/src/common/lib/common.lib";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
-import { Box, Button, Image, Link, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, Image, Stack, Text } from "@chakra-ui/react";
 
 type Props = {
   article: Article;
 };
 const ArticleItemSlide = ({ article }: Props) => {
+  const router = useViefRouter();
+
+  function handleRedirectArticleDetail() {
+    router.push(
+      replacePathParams(ROUTE_ARTICLE_DETAIL["en"], { slug: article.slug })
+    );
+  }
   return (
     <>
       <Stack
@@ -42,11 +52,14 @@ const ArticleItemSlide = ({ article }: Props) => {
           <Text variant="text14" textAlign={"justify"}>
             {article.shortDesc}
           </Text>
-          <Link href="/" _hover={{ textDecoration: "none" }}>
-            <Button variant="primary" rightIcon={<ArrowForwardIcon />}>
-              Xem thêm
-            </Button>
-          </Link>
+          <Button
+            w="max-content"
+            variant="primary"
+            rightIcon={<ArrowForwardIcon />}
+            onClick={handleRedirectArticleDetail}
+          >
+            Xem thêm
+          </Button>
         </Stack>
       </Stack>
     </>

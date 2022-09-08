@@ -18,14 +18,18 @@ const RenderBreadcrumb = ({
   dataLabel,
 }: RenderBreadcrumbProps) => {
   return (
-    <Breadcrumb borderBottom="1.5px solid #394160">
+    <Breadcrumb borderBottom="1.5px solid #394160" w="full">
       {breadcrumbConfigs.map(({ label, link }, index) => {
         const isLastElement = breadcrumbConfigs.length - 1 === index;
         const finalLink = dataRoutes
           ? replacePathParams(link, dataRoutes)
           : link;
         return (
-          <BreadcrumbItem key={index} isCurrentPage={isLastElement}>
+          <BreadcrumbItem
+            key={index}
+            isCurrentPage={isLastElement}
+            overflow="scroll"
+          >
             <BreadcrumbLink href={finalLink}>
               <Text
                 variant={{

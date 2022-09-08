@@ -1,6 +1,10 @@
 import { toUrlQueryString } from "../lib/common.lib";
 import { execute } from "../lib/request";
-import { LANG, LIST_DATA_RESPONSE } from "./../constants/common.constant";
+import {
+  ARTICLE_DETAIL_RESPONSE,
+  LANG,
+  LIST_DATA_RESPONSE,
+} from "./../constants/common.constant";
 import { API_ARTICLE, API_CATEGORY } from "./../constants/urlAPI";
 import {
   Article,
@@ -45,6 +49,6 @@ export async function getArticleDetailService(slug: string, lang: Lang) {
     });
     return res.data;
   } catch (error) {
-    return null;
+    return ARTICLE_DETAIL_RESPONSE;
   }
 }

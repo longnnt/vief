@@ -1,8 +1,11 @@
+import { ArticleItem } from "@/src/common/components/articleItem";
 import { Pagination } from "@/src/common/components/pagination";
+import { LANG } from "@/src/common/constants/common.constant";
 import { useViefRouter } from "@/src/common/hooks/useViefRouter";
 import {
   Article,
   Category,
+  Lang,
   ListResponse,
 } from "@/src/common/interfaces/common.interface";
 import { toTotalPage } from "@/src/common/lib/common.lib";
@@ -17,14 +20,18 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useState } from "react";
+import {
+  ARTICLE_POLICY_SIZE,
+  paramPolicy,
+} from "../../section-policy/constant";
 import { PolicyPageProps } from "../interfaces";
-import { ArticlePolicyItem } from "../policyDetail/articleItem";
 
 export const InfoPolicy = ({
   articleData,
   categories,
 }: Pick<PolicyPageProps, "articleData" | "categories">) => {
   const { locale } = useViefRouter();
+  const lang = (locale || LANG.vi) as Lang;
 
   const [selectedCate, setSelectedCate] = useState<Category | null>(
     categories[0] || null
@@ -35,8 +42,25 @@ export const InfoPolicy = ({
   const [currentPage, setCurrentPage] = useState(1);
 
   async function handlePageChange(page: number) {
-    // const listData = await getListArticleService({page, size: 6, })
+    const listData = await getListArticleService(
+      paramPolicy({ page, size: ARTICLE_POLICY_SIZE, lang })
+    );
+    setListArticleData(listData);
     setCurrentPage(page);
+  }
+
+  async function handleCateChange(cate: Category) {
+    const listData = await getListArticleService(
+      paramPolicy({
+        page: 1,
+        size: ARTICLE_POLICY_SIZE,
+        slugCategory: cate.slug,
+        lang,
+      })
+    );
+    setListArticleData(listData);
+    setCurrentPage(1);
+    setSelectedCate(cate);
   }
 
   return (
@@ -55,7 +79,7 @@ export const InfoPolicy = ({
               minW="140px"
               h="43px"
               onClick={() => {
-                setSelectedCate(cate);
+                handleCateChange(cate);
               }}
             >
               <Text w="full">{cate.name}</Text>
@@ -78,7 +102,7 @@ export const InfoPolicy = ({
             {listArticleData.data.map((article, index) => {
               return (
                 <GridItem key={index}>
-                  <ArticlePolicyItem article={article} />
+                  <ArticleItem article={article} />
                 </GridItem>
               );
             })}
@@ -86,7 +110,10 @@ export const InfoPolicy = ({
           <Box display="flex" justifyContent="center" w="full">
             <Pagination
               currentPage={currentPage}
-              totalPages={toTotalPage(listArticleData.total, 1)}
+              totalPages={toTotalPage(
+                listArticleData.total,
+                ARTICLE_POLICY_SIZE
+              )}
               onPageChange={(page) => handlePageChange(page)}
             />
           </Box>

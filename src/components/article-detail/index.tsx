@@ -1,30 +1,52 @@
+import { ArticleItem } from "@/src/common/components/articleItem";
 import { HotNews } from "@/src/common/components/hot-news";
 import { Pagination } from "@/src/common/components/pagination";
 import { RenderBreadcrumb } from "@/src/common/components/renderBreadcumb";
 import { WebContainer } from "@/src/common/components/WebContainer";
-import { BREAD_CRUMB_POLICY_DETAIL } from "@/src/common/configs/breadcrumb.configs";
+import { BREAD_CRUMB_ENTERPRISE_DETAIL } from "@/src/common/configs/breadcrumb.configs";
+import {
+  Article,
+  ListResponse,
+} from "@/src/common/interfaces/common.interface";
+import { toTotalPage } from "@/src/common/lib/common.lib";
+import { getListArticleService } from "@/src/common/services/common.services";
 import { Box, Grid, GridItem, Stack, Text, VStack } from "@chakra-ui/react";
-import { ArticlePolicyItem } from "./articleItem";
+import { useState } from "react";
+import { ArticleDetailProps } from "./interface";
 
-import { DATA_ARTICLE } from "../constants";
-import { Article } from "../interfaces";
+function ArticleDetail({
+  articleDetail,
+  relateNews,
+  extraNews,
+  breadcrumb,
+}: ArticleDetailProps) {
+  const [articleData, setArticleData] =
+    useState<ListResponse<Article>>(extraNews);
+  const listArticle = articleData.data;
+  const totalPages = toTotalPage(articleData.total, 6);
 
-type PolicyDetailProps = {
-  article: Article;
-};
-function PolicyDetail({ article }: PolicyDetailProps) {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const article = articleDetail.article;
   const { title, content, author } = article;
+  const category = articleDetail.category;
 
+  async function handlePageChange(page: number) {
+    const articleDataRes = await getListArticleService({
+      page,
+      size: 6,
+      slugCategory: category.slug,
+    });
+    setArticleData(articleDataRes);
+    setCurrentPage(page);
+  }
   return (
     <WebContainer>
       <VStack alignItems="start" mt="32px" spacing="64px" mb="64px">
-        <Box>
-          <RenderBreadcrumb
-            breadcrumbConfigs={BREAD_CRUMB_POLICY_DETAIL("en")}
-          />
-        </Box>
+        <Box>{breadcrumb && breadcrumb}</Box>
 
         <Stack
+          w="full"
           flexDir={{
             base: "row",
             sm: "column",
@@ -50,7 +72,7 @@ function PolicyDetail({ article }: PolicyDetailProps) {
             >
               {title}
             </Text>
-            <Text mt="32px">{content}</Text>
+            <Text mt="32px" dangerouslySetInnerHTML={{ __html: content }} />
             <Text variant="text14" w="full" textAlign="end">
               {author}
             </Text>
@@ -62,12 +84,12 @@ function PolicyDetail({ article }: PolicyDetailProps) {
               sm: "100%",
             }}
           >
-            <HotNews articles={DATA_ARTICLE} label="TIN LIÊN QUAN" />
+            <HotNews articles={relateNews} label="TIN LIÊN QUAN" />
           </Box>
         </Stack>
 
         <VStack spacing="32px" alignItems="start">
-          <Text variant="text28">Đọc thêm: Thông tin Chính sách</Text>
+          <Text variant="text28">Đọc thêm: {category.name}</Text>
           <Grid
             templateColumns={{
               sm: "repeat(2, 1fr)",
@@ -78,21 +100,25 @@ function PolicyDetail({ article }: PolicyDetailProps) {
               sm: 4,
             }}
           >
-            {DATA_ARTICLE.map((article, index) => {
+            {listArticle.map((article, index) => {
               return (
                 <GridItem key={index}>
-                  <ArticlePolicyItem article={article} />
+                  <ArticleItem article={article} />
                 </GridItem>
               );
             })}
           </Grid>
         </VStack>
         <Box display="flex" justifyContent="center" w="full">
-          <Pagination currentPage={1} totalPages={10} onPageChange={() => {}} />
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={(page) => handlePageChange(page)}
+          />
         </Box>
       </VStack>
     </WebContainer>
   );
 }
 
-export { PolicyDetail };
+export { ArticleDetail };
