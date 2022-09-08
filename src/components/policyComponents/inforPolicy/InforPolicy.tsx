@@ -22,7 +22,7 @@ import {
 import { useState } from "react";
 import {
   ARTICLE_POLICY_SIZE,
-  paramPolicy,
+  getParamSearchPolicy,
 } from "../../section-policy/constant";
 import { PolicyPageProps } from "../interfaces";
 
@@ -43,7 +43,7 @@ export const InfoPolicy = ({
 
   async function handlePageChange(page: number) {
     const listData = await getListArticleService(
-      paramPolicy({ page, size: ARTICLE_POLICY_SIZE, lang })
+      getParamSearchPolicy({ page, size: ARTICLE_POLICY_SIZE, lang })
     );
     setListArticleData(listData);
     setCurrentPage(page);
@@ -51,7 +51,7 @@ export const InfoPolicy = ({
 
   async function handleCateChange(cate: Category) {
     const listData = await getListArticleService(
-      paramPolicy({
+      getParamSearchPolicy({
         page: 1,
         size: ARTICLE_POLICY_SIZE,
         slugCategory: cate.slug,

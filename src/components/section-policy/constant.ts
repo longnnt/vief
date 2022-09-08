@@ -1,6 +1,6 @@
 import { LANG } from "@/src/common/constants/common.constant";
 import { Lang, SearchParams } from "./../../common/interfaces/common.interface";
-export const paramPolicy = ({
+export const getParamSearchPolicy = ({
   lang = "vi",
   ...params
 }: SearchParams): SearchParams => ({

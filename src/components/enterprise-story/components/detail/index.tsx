@@ -3,7 +3,7 @@ import { HotNews } from "@/src/common/components/hot-news";
 import { Pagination } from "@/src/common/components/pagination";
 import { RenderBreadcrumb } from "@/src/common/components/renderBreadcumb";
 import { WebContainer } from "@/src/common/components/WebContainer";
-import { BREAD_CRUMB_ENTERPRISE_DETAIL } from "@/src/common/configs/breadcrumb.configs";
+import { getBreadCrumbEnterpriseDetail } from "@/src/common/configs/breadcrumb.configs";
 import { DATA_ARTICLE } from "@/src/components/policyComponents/constants";
 import { Box, Grid, GridItem, Stack, Text, VStack } from "@chakra-ui/react";
 import { Article } from "../../interfaces";
@@ -19,7 +19,7 @@ function EnterpriseDetail({ article }: EnterpriseDetailProps) {
       <VStack alignItems="start" mt="32px" spacing="64px" mb="64px">
         <Box>
           <RenderBreadcrumb
-            breadcrumbConfigs={BREAD_CRUMB_ENTERPRISE_DETAIL("en")}
+            breadcrumbConfigs={getBreadCrumbEnterpriseDetail("en")}
           />
         </Box>
 

@@ -1,9 +1,7 @@
 import { ArticleItem } from "@/src/common/components/articleItem";
 import { HotNews } from "@/src/common/components/hot-news";
 import { Pagination } from "@/src/common/components/pagination";
-import { RenderBreadcrumb } from "@/src/common/components/renderBreadcumb";
 import { WebContainer } from "@/src/common/components/WebContainer";
-import { BREAD_CRUMB_ENTERPRISE_DETAIL } from "@/src/common/configs/breadcrumb.configs";
 import {
   Article,
   ListResponse,

@@ -12,7 +12,7 @@ import { PolicyPage } from "@/src/components/policyComponents";
 import { PolicyPageProps } from "@/src/components/policyComponents/interfaces";
 import {
   ARTICLE_POLICY_SIZE,
-  paramPolicy,
+  getParamSearchPolicy,
 } from "@/src/components/section-policy/constant";
 import { GetServerSideProps } from "next";
 
@@ -30,14 +30,16 @@ export const getServerSideProps: GetServerSideProps<PolicyPageProps> = async ({
   locale,
 }) => {
   const categories = await (
-    await getListCategoryService(paramPolicy({ size: 4, lang: locale as Lang }))
+    await getListCategoryService(
+      getParamSearchPolicy({ size: 4, lang: locale as Lang })
+    )
   ).data;
 
   let articleData: ListResponse<Article> = LIST_DATA_RESPONSE;
 
   if (categories.length) {
     articleData = await getListArticleService(
-      paramPolicy({
+      getParamSearchPolicy({
         size: ARTICLE_POLICY_SIZE,
         lang: locale as Lang,
         slugCategory: categories[0].slug,
@@ -45,7 +47,9 @@ export const getServerSideProps: GetServerSideProps<PolicyPageProps> = async ({
     );
   }
   const latestArticle = await (
-    await getListArticleService(paramPolicy({ size: 3, lang: locale as Lang }))
+    await getListArticleService(
+      getParamSearchPolicy({ size: 3, lang: locale as Lang })
+    )
   ).data;
   return {
     props: { articleData, categories, latestArticle },

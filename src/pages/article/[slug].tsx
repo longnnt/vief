@@ -1,5 +1,5 @@
 import { RenderBreadcrumb } from "@/src/common/components/renderBreadcumb";
-import { BREAD_CRUMB_AR_POLICY_DETAIL } from "@/src/common/configs/breadcrumb.configs";
+import { getBreadCrumbPolicyDetail } from "@/src/common/configs/breadcrumb.configs";
 import { LANG } from "@/src/common/constants/common.constant";
 import { Lang } from "@/src/common/interfaces/common.interface";
 import {
@@ -15,7 +15,7 @@ function index({ articleDetail, relateNews, extraNews }: ArticleDetailProps) {
     <ArticleDetail
       breadcrumb={
         <RenderBreadcrumb
-          breadcrumbConfigs={BREAD_CRUMB_AR_POLICY_DETAIL("en")}
+          breadcrumbConfigs={getBreadCrumbPolicyDetail("en")}
           dataLabel={{ articleName: articleDetail.article.title }}
         />
       }
