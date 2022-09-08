@@ -40,7 +40,7 @@ export default function ModalImage() {
         onClose={onClose}
         isCentered
         // size={{ md: "2xl", sm: "xl" }}
-        size="6xl"
+        size={{ md: "6xl", sm: "lg" }}
       >
         <ModalOverlay />
         <ModalContent bg="transparent" borderRadius="12px" padding="10px">
