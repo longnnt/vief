@@ -11,7 +11,7 @@ import { FreeMode, Lazy, Navigation, Thumbs } from "swiper";
 import { Stack } from "@chakra-ui/react";
 import { TopItem } from "./topItem/TopItem";
 import { BottomItem } from "./bottomItem/BottomItem";
-import { DATA_IMG } from "@/src/components/aboutComponents/constants";
+import { DATA_IMG } from "@/src/components/aboutComponents/contants";
 
 export default function ThumbnailGallery() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);

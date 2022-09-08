@@ -27,9 +27,9 @@ export default function SubmitSuccess() {
         size={{ md: "xl", sm: "md" }}
       >
         <ModalOverlay />
-        <ModalContent borderRadius="12px" padding="32px">
+        <ModalContent borderRadius="12px" padding={{ sm: "16px", md: "32px" }}>
           <ModalHeader alignSelf="center">
-            <Box bgImage="url(/checkDownload.png)" boxSize={"128px"}></Box>
+            <Box bgImage="/checkDownload.png" boxSize={"128px"}></Box>
           </ModalHeader>
 
           <ModalBody textAlign={"center"}>

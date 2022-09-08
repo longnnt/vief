@@ -1,5 +1,5 @@
 import { Box, Image } from "@chakra-ui/react";
-import ModalImage from "./ModalImage/ModalImage";
+import ModalImage from "./ModalImage";
 
 const ItemSlider = () => {
   return (

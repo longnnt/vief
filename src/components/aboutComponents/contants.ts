@@ -1,4 +1,4 @@
-import { PICTURE } from "./../../common/constants/common.constant";
+import { PICTURE } from "../../common/constants/common.constant";
 import { Article } from "./interfaces";
 export const DATA_IMG: Article[] = [
   {
