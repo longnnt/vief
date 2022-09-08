@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -8,10 +8,13 @@ import "swiper/css/thumbs";
 
 // import required modules
 import { FreeMode, Lazy, Navigation, Thumbs } from "swiper";
-import { Box, Image, Stack } from "@chakra-ui/react";
+import { Stack } from "@chakra-ui/react";
+import { TopItem } from "./topItem/TopItem";
+import { BottomItem } from "./bottomItem/BottomItem";
+import { DATA_IMG } from "@/src/components/aboutComponents/constants";
 
 export default function ThumbnailGallery() {
-  const [thumbsSwiper, setThumbsSwiper] = React.useState(null);
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   const handleSwiper = (e: any) => {
     setThumbsSwiper(e);
@@ -26,31 +29,11 @@ export default function ThumbnailGallery() {
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper2"
       >
-        <SwiperSlide>
-          <Box w="full" h="500px">
-            <Image src="/bgHome.png" />
-          </Box>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Box w="full" h="500px">
-            <Image src="/articleCsIMG.png" />
-          </Box>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Box w="full" h="500px">
-            <Image src="/company-research.png" />
-          </Box>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Box w="full" h="500px">
-            <Image src="/policy-info.png" />
-          </Box>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Box w="full" h="500px">
-            <Image src="/company-story.png" />
-          </Box>
-        </SwiperSlide>
+        {DATA_IMG.map((item, index) => (
+          <SwiperSlide key={index}>
+            <TopItem props={item} />
+          </SwiperSlide>
+        ))}
       </Swiper>
       <Swiper
         onSwiper={handleSwiper}
@@ -62,31 +45,11 @@ export default function ThumbnailGallery() {
         modules={[FreeMode, Navigation, Thumbs, Lazy]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <Box w="500px" h="200px">
-            <Image src="/bgHome.png" />
-          </Box>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Box w="500px" h="200px">
-            <Image src="/articleCsIMG.png" />
-          </Box>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Box w="500px" h="200px">
-            <Image src="/company-research.png" />
-          </Box>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Box w="500px" h="200px">
-            <Image src="/policy-info.png" />
-          </Box>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Box w="500px" h="200px">
-            <Image src="/company-story.png" />
-          </Box>
-        </SwiperSlide>
+        {DATA_IMG.map((item, index) => (
+          <SwiperSlide key={index}>
+            <BottomItem props={item} />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </Stack>
   );
