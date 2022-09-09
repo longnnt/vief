@@ -1,5 +1,4 @@
 import { execute } from "@/src/common/lib/request";
-import { Category } from "@/src/common/type/type";
 import { Box } from "@chakra-ui/react";
 import {
   ENTERPRISE_CATEGORY,
@@ -10,6 +9,7 @@ import {
 import { ReactNode, useEffect, useState } from "react";
 import Footer from "./footer/Footer";
 import Navbar from "./header/components/navbar/Navbar";
+import { Category } from "./interfaces";
 
 const HomeLayout = ({ children }: { children: ReactNode }) => {
   const [policy, setPolicy] = useState<Category>();
