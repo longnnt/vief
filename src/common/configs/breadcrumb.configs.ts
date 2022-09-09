@@ -6,7 +6,7 @@ import { Lang } from "../interfaces/common.interface";
 import { BreadcrumbsType } from "./interfaces";
 
 // ---------------------- Enterprise story detail
-export const BREAD_CRUMB_ENTERPRISE_DETAIL: (
+export const getBreadCrumbEnterpriseDetail: (
   Lang: Lang
 ) => BreadcrumbsType[] = (lang) => [
   {
@@ -19,15 +19,15 @@ export const BREAD_CRUMB_ENTERPRISE_DETAIL: (
   },
 ];
 
-export const BREAD_CRUMB_POLICY_DETAIL: (Lang: Lang) => BreadcrumbsType[] = (
+export const getBreadCrumbPolicyDetail: (Lang: Lang) => BreadcrumbsType[] = (
   lang
 ) => [
   {
-    label: "Thông tin chính sách",
+    label: "Chính sách",
     link: ROUTE_POLICY[lang],
   },
   {
-    label: "Ngành gỗ",
-    link: ROUTE_POLICY[lang],
+    label: ":articleName",
+    link: "#",
   },
 ];

@@ -1,9 +1,27 @@
+import { Article } from "@/src/common/interfaces/common.interface";
 import { PICTURE } from "./../../common/constants/common.constant";
-import { Article } from "./interfaces";
 export const DATA_ARTICLE: Article[] = [
   {
-    url: PICTURE("1"),
-    date: "12/05/2022",
+    id: 1,
+    lang: "vi",
+    category: {
+      type: "POLICY",
+      id: 1,
+      name: "cate",
+      slug: "cate",
+    },
+    thumbnail: {
+      id: 1,
+      key: "string",
+      type: "png",
+      url: PICTURE("1"),
+    },
+    field: "WOOD",
+    createdAt: "12/05/2022",
+    updatedAt: "12/05/2022",
+    deletedAt: "12/05/2022",
+    version: 1,
+    isFeature: 1,
     title:
       "IFC hỗ trợ Việt Nam chuyển đổi sang mô hình tăng trưởng kinh tế carbon thấp",
     shortDesc:
@@ -13,8 +31,26 @@ export const DATA_ARTICLE: Article[] = [
     slug: "ifc-ho-tro-viet-nam",
   },
   {
-    url: PICTURE("2"),
-    date: "23/06/2022",
+    id: 2,
+    lang: "vi",
+    category: {
+      id: 2,
+      type: "POLICY",
+      name: "cate",
+      slug: "cate",
+    },
+    thumbnail: {
+      id: 2,
+      key: "string",
+      type: "png",
+      url: PICTURE("2"),
+    },
+    field: "WOOD",
+    createdAt: "12/05/2022",
+    updatedAt: "12/05/2022",
+    deletedAt: "12/05/2022",
+    version: 1,
+    isFeature: 1,
     title: "28/6: Tập huấn giảm khí nhà kính và cơ chế carbon",
     shortDesc:
       "Cục Phát triển doanh nghiệp (Bộ Kế hoạch và Đầu tư) tổ chức chương trình tập huấn “Tổng quan về yêu cầu giảm khí nhà kính và cơ chế carbon-Thách thức và giải pháp ban đầu cho doanh nghiệp”.",
@@ -23,8 +59,26 @@ export const DATA_ARTICLE: Article[] = [
     slug: "tap-huan-giam-khi-nha-kinh",
   },
   {
-    url: PICTURE("3"),
-    date: "09/06/2022",
+    id: 3,
+    lang: "vi",
+    category: {
+      id: 3,
+      type: "POLICY",
+      name: "cate",
+      slug: "cate",
+    },
+    thumbnail: {
+      id: 3,
+      key: "string",
+      type: "png",
+      url: PICTURE("3"),
+    },
+    field: "WOOD",
+    createdAt: "12/05/2022",
+    updatedAt: "12/05/2022",
+    deletedAt: "12/05/2022",
+    version: 1,
+    isFeature: 1,
     title:
       "USAID assists Vietnamese businesses to reduce greenhouse gas emission",
     shortDesc:
@@ -34,8 +88,26 @@ export const DATA_ARTICLE: Article[] = [
     slug: "vietname-businesses-to-reduce-energy",
   },
   {
-    url: PICTURE("4"),
-    date: "09/06/2022",
+    id: 4,
+    lang: "vi",
+    category: {
+      id: 4,
+      type: "POLICY",
+      name: "cate",
+      slug: "cate",
+    },
+    thumbnail: {
+      id: 4,
+      key: "string",
+      type: "png",
+      url: PICTURE("4"),
+    },
+    field: "WOOD",
+    createdAt: "12/05/2022",
+    updatedAt: "12/05/2022",
+    deletedAt: "12/05/2022",
+    version: 1,
+    isFeature: 1,
     title:
       "USAID assists Vietnamese businesses to reduce greenhouse gas emission",
     shortDesc:
@@ -45,8 +117,26 @@ export const DATA_ARTICLE: Article[] = [
     slug: "assists-Vietnamese-businesses-to",
   },
   {
-    url: PICTURE("5"),
-    date: "23/06/2022",
+    id: 5,
+    lang: "vi",
+    category: {
+      id: 5,
+      type: "POLICY",
+      name: "cate",
+      slug: "cate",
+    },
+    thumbnail: {
+      id: 5,
+      key: "string",
+      type: "png",
+      url: PICTURE("5"),
+    },
+    field: "WOOD",
+    createdAt: "12/05/2022",
+    updatedAt: "12/05/2022",
+    deletedAt: "12/05/2022",
+    version: 1,
+    isFeature: 1,
     title: "28/6: Tập huấn giảm khí nhà kính và cơ chế carbon",
     shortDesc:
       "Cục Phát triển doanh nghiệp (Bộ Kế hoạch và Đầu tư) tổ chức chương trình tập huấn “Tổng quan về yêu cầu giảm khí nhà kính và cơ chế carbon-Thách thức và giải pháp ban đầu cho doanh nghiệp”.",
@@ -55,8 +145,26 @@ export const DATA_ARTICLE: Article[] = [
     slug: "co-che-carbon",
   },
   {
-    url: PICTURE("6"),
-    date: "12/05/2022",
+    id: 6,
+    lang: "vi",
+    category: {
+      id: 6,
+      type: "POLICY",
+      name: "cate",
+      slug: "cate",
+    },
+    thumbnail: {
+      id: 6,
+      key: "string",
+      type: "png",
+      url: PICTURE("6"),
+    },
+    field: "WOOD",
+    createdAt: "12/05/2022",
+    updatedAt: "12/05/2022",
+    deletedAt: "12/05/2022",
+    version: 1,
+    isFeature: 1,
     title:
       "IFC hỗ trợ Việt Nam chuyển đổi sang mô hình tăng trưởng kinh tế carbon thấp",
     shortDesc:

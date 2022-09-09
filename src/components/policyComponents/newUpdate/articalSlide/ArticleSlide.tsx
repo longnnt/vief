@@ -4,8 +4,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ArticleItemSlide from "./articleItemSlide/ArticleItemSlide";
+import { PolicyPageProps } from "../../interfaces";
 
-export default function ArticleSlide() {
+export default function ArticleSlide({
+  latestArticle,
+}: Pick<PolicyPageProps, "latestArticle">) {
   const settingsMd = {
     dots: true,
     autoPlay: true,
@@ -30,17 +33,17 @@ export default function ArticleSlide() {
         display={{ md: "block", sm: "none" }}
       >
         <Slider {...settingsMd}>
-          <ArticleItemSlide />
-          <ArticleItemSlide />
-          <ArticleItemSlide />
+          {latestArticle.map((article) => (
+            <ArticleItemSlide key={article.id} article={article} />
+          ))}
         </Slider>
       </Box>
 
       <Box w={{ sm: "343px" }} display={{ md: "none", sm: "block" }}>
         <Slider {...settingsSm}>
-          <ArticleItemSlide />
-          <ArticleItemSlide />
-          <ArticleItemSlide />
+          {latestArticle.map((article) => (
+            <ArticleItemSlide key={article.id} article={article} />
+          ))}
         </Slider>
       </Box>
     </Center>
