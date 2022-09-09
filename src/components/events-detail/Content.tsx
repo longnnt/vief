@@ -1,4 +1,5 @@
 import { PICTURE } from "@/src/common/constants/common.constant";
+import { timeLeft } from "@/src/common/utils/common.utils";
 import LeftArrow from "@/src/Images/Icons/LeftArrow";
 import { Box, Flex, Image, Stack, Text } from "@chakra-ui/react";
 import Link from "next/link";
@@ -8,7 +9,7 @@ import FormSignup from "./FormSignup";
 import { ContentProps } from "./interface";
 import LeftContent from "./LeftContent";
 
-export default function Content({ isExpired }: ContentProps) {
+export default function Content({ isExpired, data }: ContentProps) {
   return (
     <Stack spacing="0">
       <Flex w={"100%"} alignItems="center" mb={{ base: "64px", sm: "48px" }}>
@@ -22,7 +23,7 @@ export default function Content({ isExpired }: ContentProps) {
         </Link>
       </Flex>
       <Stack pb="32px">
-        <Image src={PICTURE("1")} alt="" mb={"32px"} borderRadius="12px" />
+        <Image src={PICTURE()} alt="" mb={"32px"} borderRadius="12px" />
         <Box
           w="fit-content"
           bg="orange"
@@ -31,7 +32,7 @@ export default function Content({ isExpired }: ContentProps) {
           mb="32px"
         >
           <TimeLeft
-            days={1}
+            days={timeLeft(data.timeStart!)}
             wrapperStyle={{ color: "white", lineHeight: "20px" }}
             stroke="#fff"
             isExpired={isExpired}
@@ -47,7 +48,7 @@ export default function Content({ isExpired }: ContentProps) {
         flexDirection={{ sm: "column", base: "row" }}
         pb={{ base: "64px", sm: "48px" }}
       >
-        <LeftContent />
+        <LeftContent data={data} />
         <FormSignup isExpired={isExpired} />
       </Flex>
     </Stack>
