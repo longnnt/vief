@@ -21,7 +21,7 @@ function SampleNextArrow(props: any) {
       onClick={onClick}
       ml="20px"
     >
-      <ChevronRightIcon boxSize="40px" color="#C5CAD3" />
+      <ChevronRightIcon boxSize="30px" color="#C5CAD3" />
     </IconButton>
   );
 }
@@ -38,9 +38,10 @@ function SamplePrevArrow(props: any) {
       variant={"ghost"}
       border="3px solid #C5CAD3"
       alignSelf={"center"}
+      alignContent={"center"}
       onClick={onClick}
     >
-      <ChevronLeftIcon boxSize="40px" color="#C5CAD3" />
+      <ChevronLeftIcon boxSize="30px" color="#C5CAD3" />
     </IconButton>
   );
 }
@@ -49,7 +50,6 @@ export default function SliderImage() {
   const settingsMd = {
     style: { display: "flex" },
     infinite: true,
-
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,

@@ -48,6 +48,7 @@ const Navbar = ({
         top={0}
         zIndex="10"
         shadow="xl"
+        opacity="95%"
       >
         <Stack bg="white">
           <Flex
