@@ -5,17 +5,20 @@ import { DescriptionProps } from "./interface";
 export default function Description({
   children,
   wrapperStyle,
+  content,
 }: DescriptionProps) {
   return (
     <Flex
       alignItems={"center"}
       {...wrapperStyle}
       ml={wrapperStyle?.ml}
-      mb={wrapperStyle?.mb || "8px"}
+      mb={wrapperStyle?.mb}
       minW="max-content"
     >
       {children}
-      <Text ml={wrapperStyle?.ml || "8px"}>Thứ bảy, 08:00 ngày 05/09/2022</Text>
+      <Text ml={wrapperStyle?.ml || "8px"} height="24px">
+        {content}
+      </Text>
     </Flex>
   );
 }

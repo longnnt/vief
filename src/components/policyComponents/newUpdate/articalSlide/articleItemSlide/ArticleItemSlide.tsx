@@ -43,7 +43,7 @@ const ArticleItemSlide = ({ article }: Props) => {
         >
           <Stack spacing="16px">
             <Text
-              variant={{ md: "tex36", sm: "text28" }}
+              variant={{ md: "text36", sm: "text28" }}
               lineHeight={{ base: "none", sm: "42px" }}
             >
               {article.title}
