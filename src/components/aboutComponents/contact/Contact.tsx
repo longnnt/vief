@@ -1,12 +1,5 @@
-import {
-  Box,
-  Button,
-  Center,
-  Image,
-  Input,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Image, Input, Stack, Text } from "@chakra-ui/react";
+import SubmitSuccess from "./submitNoti/SumbitSuccess";
 
 const Contact = () => {
   return (
@@ -74,8 +67,8 @@ const Contact = () => {
                   borderRadius="6px"
                 ></Input>
               </Stack>
-
-              <Box w="132px">
+              <SubmitSuccess />
+              {/* <Box w="132px">
                 <Button
                   bg="brand.100"
                   w="full"
@@ -85,7 +78,7 @@ const Contact = () => {
                 >
                   Gửi
                 </Button>
-              </Box>
+              </Box> */}
             </Stack>
           </Stack>
         </Stack>

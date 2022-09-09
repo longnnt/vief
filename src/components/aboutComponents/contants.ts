@@ -1,8 +1,8 @@
-import { PICTURE } from "./../../common/constants/common.constant";
+import { getPicture } from "@/src/common/pic/example.pic";
 import { Article } from "./interfaces";
-export const DATA_ARTICLE: Article[] = [
+export const DATA_IMG: Article[] = [
   {
-    url: PICTURE("1"),
+    url: getPicture("1"),
     date: "12/05/2022",
     title:
       "IFC hỗ trợ Việt Nam chuyển đổi sang mô hình tăng trưởng kinh tế carbon thấp",
@@ -13,7 +13,7 @@ export const DATA_ARTICLE: Article[] = [
     slug: "ifc-ho-tro-viet-nam",
   },
   {
-    url: PICTURE("2"),
+    url: getPicture("2"),
     date: "23/06/2022",
     title: "28/6: Tập huấn giảm khí nhà kính và cơ chế carbon",
     shortDesc:
@@ -23,7 +23,7 @@ export const DATA_ARTICLE: Article[] = [
     slug: "tap-huan-giam-khi-nha-kinh",
   },
   {
-    url: PICTURE("3"),
+    url: getPicture("3"),
     date: "09/06/2022",
     title:
       "USAID assists Vietnamese businesses to reduce greenhouse gas emission",
@@ -34,7 +34,7 @@ export const DATA_ARTICLE: Article[] = [
     slug: "vietname-businesses-to-reduce-energy",
   },
   {
-    url: PICTURE("4"),
+    url: getPicture("4"),
     date: "09/06/2022",
     title:
       "USAID assists Vietnamese businesses to reduce greenhouse gas emission",
@@ -45,7 +45,7 @@ export const DATA_ARTICLE: Article[] = [
     slug: "assists-Vietnamese-businesses-to",
   },
   {
-    url: PICTURE("5"),
+    url: getPicture("5"),
     date: "23/06/2022",
     title: "28/6: Tập huấn giảm khí nhà kính và cơ chế carbon",
     shortDesc:
@@ -55,7 +55,7 @@ export const DATA_ARTICLE: Article[] = [
     slug: "co-che-carbon",
   },
   {
-    url: PICTURE("6"),
+    url: getPicture("6"),
     date: "12/05/2022",
     title:
       "IFC hỗ trợ Việt Nam chuyển đổi sang mô hình tăng trưởng kinh tế carbon thấp",

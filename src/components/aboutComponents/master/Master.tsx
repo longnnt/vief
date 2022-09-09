@@ -1,4 +1,4 @@
-import { Box, Center, Stack, Text } from "@chakra-ui/react";
+import { Box, Stack, Text } from "@chakra-ui/react";
 import SliderMaster from "./component/SliderMaster";
 
 const Master = () => {
@@ -14,7 +14,7 @@ const Master = () => {
             fontWeight="600"
             alignSelf={{ base: "none", sm: "center", md: "flex-start" }}
           >
-            Nhân sự/ Chuyên gia
+            Nhân sự /Chuyên gia
           </Text>
           <SliderMaster />
         </Stack>

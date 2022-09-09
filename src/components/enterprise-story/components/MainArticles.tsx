@@ -13,7 +13,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import React from "react";
-import { DATA_ARTICLE } from "../constants";
+import { DATA_ARTICLE } from "../../policyComponents/constants";
 
 function MainArticles() {
   return (

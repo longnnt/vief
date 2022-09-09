@@ -2,7 +2,7 @@ import { ArticleItem } from "@/src/common/components/articleItem";
 import { Pagination } from "@/src/common/components/pagination";
 import { Box, Grid, GridItem, Text, VStack } from "@chakra-ui/react";
 import React from "react";
-import { DATA_ARTICLE } from "../constants";
+import { DATA_ARTICLE } from "../../policyComponents/constants";
 
 function Outstanding() {
   return (

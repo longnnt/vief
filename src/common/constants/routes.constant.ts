@@ -31,7 +31,22 @@ export const ROUTE_EVENT: Record<Lang, string> = {
   vi: "/su-kien",
   en: "/events",
 };
+
+export const ROUTE_EVENT_UPCOMING_DETAIL: Record<Lang, string> = {
+  vi: "/su-kien/sap-dien-ra/:slug",
+  en: "/events/upcoming/:slug",
+};
+
+export const ROUTE_EVENT_TOOKPLACE_DETAIL: Record<Lang, string> = {
+  vi: "/su-kien/da-dien-ra/:slug",
+  en: "/events/tookplace/:slug",
+};
+
 export const ROUTE_LIBRARY: Record<Lang, string> = {
   vi: "/thu-vien",
   en: "/library",
+};
+export const ROUTE_ARTICLE_DETAIL: Record<Lang, string> = {
+  vi: "/bai-viet/:slug",
+  en: "/article/:slug",
 };

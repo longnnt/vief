@@ -1,4 +1,7 @@
-import { PICTURE } from "@/src/common/constants/common.constant";
+import { ROUTE_EVENT_UPCOMING_DETAIL } from "@/src/common/constants/routes.constant";
+import { useViefRouter } from "@/src/common/hooks/useViefRouter";
+import { replacePathParams } from "@/src/common/lib/common.lib";
+import { formatDate, timeLeft } from "@/src/common/utils/common.utils";
 import ButtonComponent from "@/src/components/section/components/Button";
 import Location from "@/src/Images/Icons/Location";
 import WoodSector from "@/src/Images/Icons/WoodSector";
@@ -8,11 +11,21 @@ import Description from "./Description";
 import { Event } from "./interface";
 import TimeLeft from "./TimeLeft";
 
-type EventContentItemProps = {
+interface EventContentItemProps {
   event: Event;
-};
+}
 export default function EventContentItem({ event }: EventContentItemProps) {
-  const { img, shortDesc, title } = event;
+  const { thumbnail, shortDesc, title, timeStart, location, field, slug } =
+    event!;
+  const router = useViefRouter();
+
+  function handleRedirect(slug: string) {
+    router.push(
+      replacePathParams(ROUTE_EVENT_UPCOMING_DETAIL["en"], {
+        slug,
+      })
+    );
+  }
   return (
     <Flex
       backgroundColor="white.secondary"
@@ -22,7 +35,7 @@ export default function EventContentItem({ event }: EventContentItemProps) {
     >
       <Box w="full" overflow={"hidden"} borderTopRadius="14px">
         <Image
-          src={img}
+          src={thumbnail?.url}
           alt=""
           h={{ md: "288px" }}
           transitionDuration={"0.2s"}
@@ -34,7 +47,12 @@ export default function EventContentItem({ event }: EventContentItemProps) {
         />
       </Box>
       <VStack px="16px" py="32px" alignItems="start" spacing="16px">
-        <Text variant="text20" className="text-2-line">
+        <Text
+          variant="text20"
+          className="text-2-line"
+          onClick={() => handleRedirect(slug!)}
+          cursor="pointer"
+        >
           {title}
         </Text>
         <Text variant="text14" className="text-4-line">
@@ -46,13 +64,13 @@ export default function EventContentItem({ event }: EventContentItemProps) {
           h="91px"
           justifyContent="space-between"
         >
-          <Description>
+          <Description content={formatDate(timeStart!)}>
             <Calendar />
           </Description>
-          <Description>
+          <Description content={location}>
             <Location />
           </Description>
-          <Description>
+          <Description content={field}>
             <WoodSector />
           </Description>
         </Flex>
@@ -63,7 +81,7 @@ export default function EventContentItem({ event }: EventContentItemProps) {
             textHeight="25px"
             wrapperStyle={{ mt: "0", mr: "16px" }}
           />
-          <TimeLeft days={5} />
+          <TimeLeft days={timeLeft(timeStart!)} />
         </Flex>
       </VStack>
     </Flex>

@@ -1,6 +1,6 @@
 import { EnterpriseDetail } from "@/src/components/enterprise-story/components/detail";
-import { DATA_ARTICLE } from "@/src/components/enterprise-story/constants";
 import { Article } from "@/src/components/enterprise-story/interfaces";
+import { DATA_ARTICLE } from "@/src/components/policyComponents/constants";
 import { GetServerSideProps } from "next";
 import React from "react";
 
