@@ -26,7 +26,7 @@ export default function EventContentItem({ event }: EventContentItemProps) {
           src={img}
           alt=""
           w="full"
-          h="288px"
+          h="full"
           transitionDuration={"0.2s"}
           sx={{
             ".event-card:hover &": {
