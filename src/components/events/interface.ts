@@ -24,23 +24,23 @@ export interface TimeLeftProps {
 }
 
 export interface SectionUpcomingProps {
-  upcoming: Event[];
+  upcomingEvents: Event[];
 }
 
 export interface SectionContentProps {
-  pastData?: Event[];
+  pastEvents?: Event[];
 }
 
 export interface SectionPastProps {
-  past?: Event[];
+  pastEvents?: Event[];
 }
 
 export interface EventsPageProps {
-  upcomingData: Event[];
-  pastData: Event[];
+  upcomingEvents: Event[];
+  pastEvents: Event[];
 }
 
 export interface EventsProps {
-  upcoming: Event[];
-  past: Event[];
+  upcomingEvents: Event[];
+  pastEvents: Event[];
 }

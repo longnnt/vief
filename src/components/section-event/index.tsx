@@ -3,10 +3,10 @@ import EventContentItem from "./EventContentItem";
 import { Event } from "./interface";
 
 interface SectionEventProps {
-  upcomingData?: Event[];
+  upcomingEvents?: Event[];
 }
 
-export default function SectionEvent({ upcomingData }: SectionEventProps) {
+export default function SectionEvent({ upcomingEvents }: SectionEventProps) {
   return (
     <>
       <Box overflow={"hidden"}>
@@ -21,7 +21,7 @@ export default function SectionEvent({ upcomingData }: SectionEventProps) {
           }}
           gap="8"
         >
-          {upcomingData?.slice(0, 3).map((event, index) => (
+          {upcomingEvents?.slice(0, 3).map((event, index) => (
             <GridItem key={index}>
               <EventContentItem event={event} />
             </GridItem>

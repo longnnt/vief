@@ -6,12 +6,12 @@ import { getArticleEvent, getPastEvent } from "@/src/components/events/service";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 
 export default function index({
-  upcomingData,
-  pastData,
+  upcomingEvents,
+  pastEvents,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <WebContainer>
-      <Events upcoming={upcomingData} past={pastData} />
+      <Events upcomingEvents={upcomingEvents} pastEvents={pastEvents} />
     </WebContainer>
   );
 }
@@ -19,12 +19,12 @@ export default function index({
 export const getServerSideProps: GetServerSideProps<
   EventsPageProps
 > = async () => {
-  // const upcomingData = await getArticleEvent();
-  // const pastData = await getPastEvent();
+  // const upcomingEvents = await getArticleEvent();
+  // const pastEvents = await getPastEvent();
   return {
     props: {
-      upcomingData: UPCOMING_DATA,
-      pastData: PAST_DATA,
+      upcomingEvents: UPCOMING_DATA,
+      pastEvents: PAST_DATA,
     },
   };
 };

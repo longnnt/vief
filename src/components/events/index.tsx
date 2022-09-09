@@ -3,7 +3,7 @@ import { EventsProps } from "./interface";
 import SectionPast from "./section-past";
 import SectionUpcoming from "./section-upcoming";
 
-export default function Events({ upcoming, past }: EventsProps) {
+export default function Events({ upcomingEvents, pastEvents }: EventsProps) {
   return (
     <Stack pt="36px" pb="64px">
       <Stack alignSelf="center" width={{ sm: "100%" }} spacing="0">
@@ -16,8 +16,8 @@ export default function Events({ upcoming, past }: EventsProps) {
         >
           Sự kiện
         </Text>
-        <SectionUpcoming upcoming={upcoming} />
-        <SectionPast past={past} />
+        <SectionUpcoming upcomingEvents={upcomingEvents} />
+        <SectionPast pastEvents={pastEvents} />
       </Stack>
     </Stack>
   );

@@ -1,4 +1,5 @@
 import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
 
 export function formatDate(date: string, format?: string) {
   return dayjs(date).format(format || "DD/MM/YYYY HH:mm");
@@ -8,7 +9,6 @@ export function getLang() {
 }
 
 export function timeLeft(timeStart: string) {
-  const utc = require("dayjs/plugin/utc");
   dayjs.extend(utc);
   const date1 = dayjs().format("YYYY-MM-DD");
   const date2 = dayjs(`${timeStart}`).format("YYYY-MM-DD");

@@ -3,7 +3,7 @@ import { Box, Button, HStack, Text } from "@chakra-ui/react";
 import { SectionPastProps } from "../interface";
 import SectionContent from "./section-content";
 
-export default function SectionPast({ past }: SectionPastProps) {
+export default function SectionPast({ pastEvents }: SectionPastProps) {
   return (
     <Box>
       <Text variant="text28" mt="69px">
@@ -13,7 +13,7 @@ export default function SectionPast({ past }: SectionPastProps) {
         <Button variant="primary">Ngành Gỗ</Button>
         <Button ml="30px">Ngành khác</Button>
       </Box>
-      <SectionContent pastData={past} />
+      <SectionContent pastEvents={pastEvents} />
       <HStack w="full" justifyContent="center" mt="32px">
         <Pagination currentPage={5} totalPages={10} onPageChange={() => {}} />
       </HStack>
