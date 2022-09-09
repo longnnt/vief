@@ -1,13 +1,13 @@
 import { WebContainer } from "@/src/common/components/WebContainer";
-import About from "@/src/pages/about";
-import Library from "@/src/pages/library";
 import { Stack } from "@chakra-ui/react";
 import React from "react";
 import SectionCompany from "../section-company";
 import { EventsHome } from "../section-event/EventsHome";
 import SectionPolicy from "../section-policy";
+import SectionAbout from "./about";
 import Carousel from "./carousel/Carousel";
 import { HomePageProps } from "./interfaces";
+import SectionLibrary from "./library";
 import Subcribe from "./subcribe/Subcribe";
 
 function Home({ banners }: HomePageProps) {
@@ -17,14 +17,14 @@ function Home({ banners }: HomePageProps) {
       <WebContainer>
         <Stack
           alignSelf="center"
-          py={{ sm: "48px", xl: "127.5px", "2xl": "127.5px" }}
+          py={{ sm: "48px", xl: "128px" }}
           spacing={{ sm: "48px", xl: "128px", "2xl": "128px" }}
         >
-          <About />
+          <SectionAbout />
           <SectionPolicy />
           <EventsHome />
           <SectionCompany />
-          <Library />
+          <SectionLibrary />
           <Subcribe />
         </Stack>
       </WebContainer>

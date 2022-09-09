@@ -68,17 +68,6 @@ const Contact = () => {
                 ></Input>
               </Stack>
               <SubmitSuccess />
-              {/* <Box w="132px">
-                <Button
-                  bg="brand.100"
-                  w="full"
-                  textColor="white"
-                  fontSize="14px"
-                  fontWeight="600"
-                >
-                  Gửi
-                </Button>
-              </Box> */}
             </Stack>
           </Stack>
         </Stack>
