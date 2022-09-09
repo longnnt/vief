@@ -15,10 +15,12 @@ export const About = () => {
         </Stack>
       </WebContainer>
       <Wallpaper />
+      <Stack py="64px" spacing="64px" pt={{ md: "64px", sm: "32px" }}>
+        <Thumbnail />
+        <Master />
+      </Stack>
       <WebContainer>
         <Stack py="64px" spacing="64px" pt={{ md: "64px", sm: "32px" }}>
-          <Thumbnail />
-          <Master />
           <Contact />
         </Stack>
       </WebContainer>

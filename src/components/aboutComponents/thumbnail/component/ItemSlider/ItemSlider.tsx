@@ -5,11 +5,9 @@ const ItemSlider = () => {
   return (
     <>
       <Box
-        w={{ md: "345px", sm: "252px" }}
-        h={{ md: "228px", sm: "189px" }}
-        // w='full'
-        // h='full'
-        padding="10px"
+        h={{ md: "288px", sm: "189px" }}
+        alignSelf={"center"}
+        px={{ md: "22px", sm: "12px" }}
       >
         <ModalImage />
       </Box>

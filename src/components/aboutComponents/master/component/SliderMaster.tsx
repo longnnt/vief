@@ -14,7 +14,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
-import ItemSliderMaster from "./ItemSliderMaster/ItemSliderMaster";
+import ItemSliderMaster from "./itemSliderMaster";
 
 function SampleNextArrow(props: any) {
   const { onClick } = props;
@@ -27,9 +27,8 @@ function SampleNextArrow(props: any) {
       border="3px solid #C5CAD3"
       alignSelf={"center"}
       onClick={onClick}
-      ml="20px"
     >
-      <ChevronRightIcon boxSize="40px" color="#C5CAD3" />
+      <ChevronRightIcon boxSize="30px" color="#C5CAD3" />
     </IconButton>
   );
 }
@@ -38,7 +37,6 @@ function SamplePrevArrow(props: any) {
   const { onClick } = props;
   return (
     <IconButton
-      mr="20px"
       boxSize={"40px"}
       aria-label=""
       isRound
@@ -47,7 +45,7 @@ function SamplePrevArrow(props: any) {
       alignSelf={"center"}
       onClick={onClick}
     >
-      <ChevronLeftIcon boxSize="40px" color="#C5CAD3" />
+      <ChevronLeftIcon boxSize="30px" color="#C5CAD3" />
     </IconButton>
   );
 }
@@ -58,7 +56,7 @@ export default function SliderMaster() {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 1,
+    slidesToScroll: 2,
     prevArrow: <SamplePrevArrow />,
     nextArrow: <SampleNextArrow />,
   };
@@ -75,7 +73,8 @@ export default function SliderMaster() {
   return (
     <Center>
       <Box
-        w={{ md: "container", sm: "full" }}
+        w={{ md: "1330px", sm: "full" }}
+        h={{ md: "320px", sm: "189px" }}
         display={{ md: "block", sm: "none" }}
       >
         <Slider {...settingsMd}>

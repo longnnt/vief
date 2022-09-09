@@ -1,4 +1,12 @@
-import { Box, Button, Center, Flex, IconButton, Image } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Center,
+  Flex,
+  IconButton,
+  Image,
+  Stack,
+} from "@chakra-ui/react";
 import React, { ReactNode } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -12,14 +20,14 @@ function SampleNextArrow(props: any) {
   return (
     <IconButton
       display={{ sm: "none", md: "block" }}
-      boxSize={"40px"}
+      // boxSize={"40px"}
+      w="40px"
       aria-label=""
       isRound
       variant={"ghost"}
       border="3px solid #C5CAD3"
       alignSelf={"center"}
       onClick={onClick}
-      ml="20px"
     >
       <ChevronRightIcon boxSize="30px" color="#C5CAD3" />
     </IconButton>
@@ -31,8 +39,7 @@ function SamplePrevArrow(props: any) {
   return (
     <IconButton
       display={{ sm: "none", md: "block" }}
-      mr="20px"
-      boxSize={"40px"}
+      w="40px"
       aria-label=""
       isRound
       variant={"ghost"}
@@ -48,6 +55,7 @@ function SamplePrevArrow(props: any) {
 
 export default function SliderImage() {
   const settingsMd = {
+    vertical: false,
     style: { display: "flex" },
     infinite: true,
     speed: 500,
@@ -69,7 +77,8 @@ export default function SliderImage() {
   return (
     <Center>
       <Box
-        w={{ md: "container", sm: "full" }}
+        w={{ md: "1330px", sm: "full" }}
+        h={{ md: "320px", sm: "189px" }}
         display={{ md: "block", sm: "none" }}
       >
         <Slider {...settingsMd}>

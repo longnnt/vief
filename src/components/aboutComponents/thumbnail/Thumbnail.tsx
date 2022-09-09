@@ -13,14 +13,16 @@ const Thumbnail = () => {
   return (
     <>
       <Box>
-        <Stack h={{ md: "334px", sm: "265px" }} spacing="32px">
-          <Text
-            fontSize={"28px"}
-            fontWeight="600"
-            alignSelf={{ base: "none", sm: "center", md: "flex-start" }}
-          >
-            Hình ảnh
-          </Text>
+        <Stack h={{ md: "375px", sm: "265px" }} w="full" spacing="32px">
+          <Box w={"1216px"} alignSelf="center">
+            <Text
+              fontSize={"28px"}
+              fontWeight="600"
+              alignSelf={{ base: "none", sm: "center", md: "flex-start" }}
+            >
+              Hình ảnh
+            </Text>
+          </Box>
           <SliderImage />
         </Stack>
       </Box>

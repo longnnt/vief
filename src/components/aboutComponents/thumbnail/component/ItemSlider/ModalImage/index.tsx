@@ -22,9 +22,11 @@ export default function ModalImage() {
   return (
     <>
       <Image
+        align={"center"}
         position="relative"
         borderRadius="8px"
-        h="100%"
+        h="full"
+        w="full"
         alt=""
         transitionDuration="0.2s"
         src="/bgHome.png"

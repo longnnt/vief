@@ -12,11 +12,20 @@ a {
   text-decoration: none;
 }
 
-* {
+/* * {
   box-sizing: border-box;
   line-height: var(--chakra-lineHeights-default);
   font-size: 14px;
-}
+} */
+
+
+  /* the slides */
+
+/* the parent */
+  /* .slick-list {
+      margin: 0 -27px;
+  } */
+
 #app {
   height: 100%;
 }
