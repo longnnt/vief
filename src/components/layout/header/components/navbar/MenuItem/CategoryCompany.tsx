@@ -1,6 +1,6 @@
 import { ROUTE_ENTERPRISE_STORY } from "@/src/common/constants/routes.constant";
 import { useViefRouter } from "@/src/common/hooks/useViefRouter";
-import { Category } from "@/src/common/type/type";
+import { Category } from "@/src/components/layout/interfaces";
 import {
   Menu,
   MenuButton,
