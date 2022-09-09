@@ -6,7 +6,7 @@ import SliderComingEvent from "./SliderComingEvent";
 export default function SectionEvent() {
   return (
     <>
-      <Box>
+      <Box py="29px">
         {/* <Box>
           <ChevronLeft />
         </Box> */}

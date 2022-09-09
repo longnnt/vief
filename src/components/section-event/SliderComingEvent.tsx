@@ -9,6 +9,7 @@ import {
   Text,
   Grid,
   GridItem,
+  Container,
 } from "@chakra-ui/react";
 import React, { ReactNode } from "react";
 import Slider from "react-slick";
@@ -30,10 +31,9 @@ function SampleNextArrow(props: any) {
       border="3px solid #C5CAD3"
       alignSelf={"center"}
       onClick={onClick}
-      ml="20px"
-      position={"absolute"}
-      right="-64px"
-      top="52%"
+      position={{ "2xl": "absolute" }}
+      right="-38px"
+      top="46%"
     >
       <ChevronRightIcon boxSize="40px" color="#C5CAD3" />
     </IconButton>
@@ -44,7 +44,7 @@ function SamplePrevArrow(props: any) {
   const { onClick } = props;
   return (
     <IconButton
-      mr="20px"
+      mr="32px"
       boxSize={"40px"}
       aria-label=""
       isRound
@@ -52,9 +52,9 @@ function SamplePrevArrow(props: any) {
       border="3px solid #C5CAD3"
       alignSelf={"center"}
       onClick={onClick}
-      position={"absolute"}
-      left="-64px"
-      top="52%"
+      position={{ "2xl": "absolute" }}
+      left="-70px"
+      top="46%"
     >
       <ChevronLeftIcon boxSize="40px" color="#C5CAD3" />
     </IconButton>
@@ -63,32 +63,25 @@ function SamplePrevArrow(props: any) {
 
 const SliderComingEvent = () => {
   const settings = {
+    style: { display: "flex" },
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
     prevArrow: <SamplePrevArrow />,
     nextArrow: <SampleNextArrow />,
     initialSlide: 0,
+    slidesToShow: 3,
+    slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-        },
-      },
-      {
-        breakpoint: 600,
+        breakpoint: 1280,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          initialSlide: 2,
         },
       },
+
       {
-        breakpoint: 480,
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -99,12 +92,12 @@ const SliderComingEvent = () => {
 
   return (
     <Center>
-      <Box w={{ md: "container", sm: "full" }}>
+      <Box w="full">
         <Slider {...settings}>
-          {EVENT_DATA.slice(0, 6).map((event, index) => (
-            <GridItem key={index}>
+          {EVENT_DATA.slice(0, 4).map((event, index) => (
+            <Grid pr="32px" key={index}>
               <EventContentItem event={event} />
-            </GridItem>
+            </Grid>
           ))}
         </Slider>
       </Box>

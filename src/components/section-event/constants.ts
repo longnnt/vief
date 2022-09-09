@@ -30,18 +30,4 @@ export const EVENT_DATA = [
       "Mới đây trên mạng xã hội xuất hiện hình ảnh một chủ nhà tại ngõ 23 phố Đỗ Quang (Trung Hòa, Hà Nội) trồng đinh trên vỉa hè không cho xe lạ đỗ trước nhà. Vụ việc đã được Công an phường Trung Hòa xử lý.",
     content: "opoyuytuytu",
   },
-  {
-    img: PICTURE("5"),
-    title: "Hà Nội: Chủ nhà trồng đinh lên vỉa hè không cho ô tô đỗ trước cửa",
-    shortDesc:
-      "Mới đây trên mạng xã hội xuất hiện hình ảnh một chủ nhà tại ngõ 23 phố Đỗ Quang (Trung Hòa, Hà Nội) trồng đinh trên vỉa hè không cho xe lạ đỗ trước nhà. Vụ việc đã được Công an phường Trung Hòa xử lý.",
-    content: "opoyuytuytu",
-  },
-  {
-    img: PICTURE("6"),
-    title: "Hà Nội: Chủ nhà trồng đinh lên vỉa hè không cho ô tô đỗ trước cửa",
-    shortDesc:
-      "Mới đây trên mạng xã hội xuất hiện hình ảnh một chủ nhà tại ngõ 23 phố Đỗ Quang (Trung Hòa, Hà Nội) trồng đinh trên vỉa hè không cho xe lạ đỗ trước nhà. Vụ việc đã được Công an phường Trung Hòa xử lý.",
-    content: "opoyuytuytu",
-  },
 ];

@@ -19,14 +19,12 @@ export default function EventContentItem({ event }: EventContentItemProps) {
       flexDirection={"column"}
       alignItems={"center"}
       borderRadius={"14px"}
-      w={{ "2xl": "384px" }}
     >
-      <Box overflow={"hidden"} borderTopRadius="14px">
+      <Box w="full" overflow={"hidden"} borderTopRadius="14px">
         <Image
           src={img}
           alt=""
-          w="full"
-          h="full"
+          h={{ md: "288px" }}
           transitionDuration={"0.2s"}
           sx={{
             ".event-card:hover &": {
