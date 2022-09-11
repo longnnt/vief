@@ -20,8 +20,11 @@ import { EVENT_DATA } from "./constants";
 import EventContentItem from "./EventContentItem";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 
-function SampleNextArrow(props: any) {
-  const { onClick } = props;
+type ArrowButtonType = {
+  onClick?: () => void;
+};
+
+const NextArrow = ({ onClick }: ArrowButtonType) => {
   return (
     <IconButton
       boxSize={"40px"}
@@ -38,10 +41,9 @@ function SampleNextArrow(props: any) {
       <ChevronRightIcon boxSize="40px" color="#C5CAD3" />
     </IconButton>
   );
-}
+};
 
-function SamplePrevArrow(props: any) {
-  const { onClick } = props;
+const PrevArrow = ({ onClick }: ArrowButtonType) => {
   return (
     <IconButton
       mr="32px"
@@ -59,15 +61,15 @@ function SamplePrevArrow(props: any) {
       <ChevronLeftIcon boxSize="40px" color="#C5CAD3" />
     </IconButton>
   );
-}
+};
 
 const SliderComingEvent = () => {
   const settings = {
     style: { display: "flex" },
     infinite: true,
     speed: 500,
-    prevArrow: <SamplePrevArrow />,
-    nextArrow: <SampleNextArrow />,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
     initialSlide: 0,
     slidesToShow: 3,
     slidesToScroll: 1,
