@@ -30,8 +30,7 @@
     "redux": "^4.2.0",
     "slick-carousel": "^1.8.1",
     "swiper": "^8.3.2",
-    "ultimate-pagination": "^1.0.0",
-    "yarn": "^1.22.19"
+    "ultimate-pagination": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "17.0.35",
