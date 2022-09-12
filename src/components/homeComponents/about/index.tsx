@@ -4,7 +4,7 @@ import { Box, Button, Image, Link, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 import Partner from "./partner/Partner";
 
-const About = () => {
+const SectionAbout = () => {
   return (
     <>
       <Stack spacing="64px">
@@ -84,11 +84,10 @@ const About = () => {
             </Link>
           </Stack>
         </Stack>
-
         <Partner />
       </Stack>
     </>
   );
 };
 
-export default About;
+export default SectionAbout;

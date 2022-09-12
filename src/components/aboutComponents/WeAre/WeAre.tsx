@@ -7,16 +7,17 @@ const WeAre = () => {
       <Box>
         <Box>
           <Stack w="full" align={"center"} spacing={{ md: "64px", sm: "32px" }}>
-            <Link
-              color="brand.100"
-              fontSize="20px"
-              fontWeight="600"
+            <Text
+              variant={{
+                md: "text20",
+                sm: "text16",
+              }}
               borderBottom={"solid 1.5px"}
               width="fit-content"
               _hover={{ textDecoration: "none" }}
             >
               Về chúng tôi
-            </Link>
+            </Text>
             <Stack
               direction={{ md: "row", sm: "column" }}
               spacing={{ md: "32px", sm: "16px" }}
@@ -83,7 +84,7 @@ const WeAre = () => {
                 </Text>
               </Stack>
             </Stack>
-            <Partner></Partner>
+            <Partner />
           </Stack>
         </Box>
       </Box>

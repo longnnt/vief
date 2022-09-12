@@ -1,33 +1,23 @@
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  GridItem,
-  SimpleGrid,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { GridItem, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import { LibraryItem } from "./LibraryItem";
 
-const Library = () => {
+const SectionLibrary = () => {
   return (
     <>
       <Stack spacing="32px">
         <Stack spacing="16px">
           <Stack>
-            <Breadcrumb
-              color="brand.100"
-              fontSize="20px"
-              fontWeight="600"
+            <Text
+              variant={{
+                md: "text20",
+                sm: "text16",
+              }}
               borderBottom={"solid 1.5px"}
               width="fit-content"
+              _hover={{ textDecoration: "none" }}
             >
-              <BreadcrumbItem>
-                <BreadcrumbLink href="#" _hover={{ textDecoration: "none" }}>
-                  Thư viện
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-            </Breadcrumb>
+              Thư viện
+            </Text>
           </Stack>
           <Text variant="text36">Báo cáo về biến đổi khí hậu</Text>
         </Stack>
@@ -56,4 +46,4 @@ const Library = () => {
   );
 };
 
-export default Library;
+export default SectionLibrary;
