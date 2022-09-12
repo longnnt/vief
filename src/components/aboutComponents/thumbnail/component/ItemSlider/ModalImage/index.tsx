@@ -23,7 +23,7 @@ export default function ModalImage() {
     <>
       <Image
         align={"center"}
-        position="relative"
+        // position="relative"
         borderRadius="8px"
         h="full"
         w="full"
@@ -31,7 +31,7 @@ export default function ModalImage() {
         transitionDuration="0.2s"
         src="/bgHome.png"
         objectFit="cover"
-        _hover={{ transform: "scale(1.05)" }}
+        _hover={{ transform: "scale(1.02)" }}
         onClick={onOpen}
       />
 
