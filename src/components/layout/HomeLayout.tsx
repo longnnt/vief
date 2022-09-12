@@ -31,6 +31,7 @@ const HomeLayout = ({ children }: { children: ReactNode }) => {
     setEvent(resEvent.data);
     setLibrary(resLibrary.data);
   }
+
   return (
     <Box position="relative" h="100vh" overflow="scroll">
       <Navbar

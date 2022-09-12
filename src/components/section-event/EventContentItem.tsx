@@ -33,12 +33,11 @@ export default function EventContentItem({ event }: EventContentItemProps) {
       alignItems={"center"}
       borderRadius={"14px"}
     >
-      <Box overflow={"hidden"} borderTopRadius="14px">
+      <Box w="full" overflow={"hidden"} borderTopRadius="14px">
         <Image
           src={thumbnail?.url}
           alt=""
-          w="full"
-          h="288px"
+          h={{ md: "288px" }}
           transitionDuration={"0.2s"}
           sx={{
             ".event-card:hover &": {

@@ -1,7 +1,7 @@
 import { Box, Grid, GridItem } from "@chakra-ui/react";
 import EventContentItem from "./EventContentItem";
+import SliderComingEvent from "./SliderComingEvent";
 import { Event } from "./interface";
-
 interface SectionEventProps {
   upcomingEvents?: Event[];
 }
@@ -9,11 +9,11 @@ interface SectionEventProps {
 export default function SectionEvent({ upcomingEvents }: SectionEventProps) {
   return (
     <>
-      <Box overflow={"hidden"}>
+      <Box py="29px">
         {/* <Box>
           <ChevronLeft />
         </Box> */}
-        <Grid
+        {/* <Grid
           templateColumns={{
             sm: "repeat(1, 1fr)",
             xl: "repeat(3, 1fr)",
@@ -26,10 +26,11 @@ export default function SectionEvent({ upcomingEvents }: SectionEventProps) {
               <EventContentItem event={event} />
             </GridItem>
           ))}
-        </Grid>
+        </Grid> */}
         {/* <Box position={"absolute"} right="-64px" top="52%">
           <ChevronRight />
         </Box> */}
+        <SliderComingEvent />
       </Box>
     </>
   );
