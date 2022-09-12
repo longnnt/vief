@@ -1,7 +1,8 @@
 import { Box, Stack, Text } from "@chakra-ui/react";
+import { ListImgProps, ThumbnailItemProp } from "../interfaces";
 import SliderMaster from "./component/SliderMaster";
 
-const Master = () => {
+const Master = ({ listImgThumb }: ThumbnailItemProp) => {
   return (
     <>
       <Box>
@@ -18,7 +19,7 @@ const Master = () => {
               Nhân sự /Chuyên gia
             </Text>
           </Box>
-          <SliderMaster />
+          <SliderMaster listImgThumb={listImgThumb} />
         </Stack>
       </Box>
     </>

@@ -10,11 +10,10 @@ import {
 } from "@chakra-ui/react";
 import React, { ReactNode } from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import ItemSliderMaster from "./itemSliderMaster";
+import { ThumbnailItemProp } from "../../interfaces";
 
 function SampleNextArrow(props: any) {
   const { onClick } = props;
@@ -50,52 +49,70 @@ function SamplePrevArrow(props: any) {
   );
 }
 
-export default function SliderMaster() {
+export default function SliderMaster({ listImgThumb }: ThumbnailItemProp) {
   const settingsMd = {
     style: { display: "flex" },
     infinite: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 2,
+    autoplay: true,
     prevArrow: <SamplePrevArrow />,
     nextArrow: <SampleNextArrow />,
-  };
-  const settingsSm = {
-    style: { display: "flex" },
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    prevArrow: <SamplePrevArrow />,
-    nextArrow: <SampleNextArrow />,
-  };
+    responsive: [
+      {
+        breakpoint: 1200, // width to change options
+        settings: {
+          style: { display: "flex" },
+          infinite: true,
+          speed: 500,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          prevArrow: <SamplePrevArrow />,
+          nextArrow: <SampleNextArrow />,
+        },
+      },
 
+      {
+        breakpoint: 800, // width to change options
+        settings: {
+          style: { display: "flex" },
+          infinite: true,
+          speed: 500,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          prevArrow: <SamplePrevArrow />,
+          nextArrow: <SampleNextArrow />,
+        },
+      },
+      {
+        breakpoint: 400, // width to change options
+        settings: {
+          style: { display: "flex" },
+          infinite: true,
+          speed: 500,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          prevArrow: <SamplePrevArrow />,
+          nextArrow: <SampleNextArrow />,
+        },
+      },
+    ],
+  };
   return (
     <Center>
-      <Box
-        w={{ md: "1330px", sm: "full" }}
-        h={{ md: "320px", sm: "189px" }}
-        display={{ md: "block", sm: "none" }}
-      >
+      <Box w={{ md: "1330px", sm: "full" }} h={{ md: "320px", sm: "189px" }}>
         <Slider {...settingsMd}>
-          <ItemSliderMaster />
-          <ItemSliderMaster />
-          <ItemSliderMaster />
-          <ItemSliderMaster />
-          <ItemSliderMaster />
-        </Slider>
-      </Box>
+          {listImgThumb.map((img, index) => (
+            <ItemSliderMaster itemImg={img} key={index} />
+          ))}
 
-      <Box
-        w={{ md: "1360px", sm: "375px" }}
-        display={{ md: "none", sm: "block" }}
-      >
-        <Slider {...settingsSm}>
+          {/* <ItemSliderMaster />
           <ItemSliderMaster />
           <ItemSliderMaster />
           <ItemSliderMaster />
           <ItemSliderMaster />
-          <ItemSliderMaster />
+          <ItemSliderMaster /> */}
         </Slider>
       </Box>
     </Center>

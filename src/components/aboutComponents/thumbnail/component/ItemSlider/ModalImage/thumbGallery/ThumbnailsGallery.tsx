@@ -6,13 +6,14 @@ import { FreeMode, Lazy, Navigation, Thumbs } from "swiper";
 import { Stack } from "@chakra-ui/react";
 import { TopItem } from "./topItem/TopItem";
 import { BottomItem } from "./bottomItem/BottomItem";
-import { DATA_IMG } from "@/src/components/aboutComponents/contants";
 
-export default function ThumbnailGallery() {
+import { ThumbnailItemProp } from "@/src/components/aboutComponents/interfaces";
+
+export const ThumbnailGallery = ({ listImgThumb }: ThumbnailItemProp) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
-
   const handleSwiper = (e: any) => {
     setThumbsSwiper(e);
+    console.log(e);
   };
 
   return (
@@ -22,9 +23,8 @@ export default function ThumbnailGallery() {
         spaceBetween={10}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper2"
       >
-        {DATA_IMG.map((item, index) => (
+        {listImgThumb?.map((item, index) => (
           <SwiperSlide key={index}>
             <TopItem props={item} />
           </SwiperSlide>
@@ -40,7 +40,7 @@ export default function ThumbnailGallery() {
         modules={[FreeMode, Navigation, Thumbs, Lazy]}
         className="mySwiper"
       >
-        {DATA_IMG.map((item, index) => (
+        {listImgThumb?.map((item, index) => (
           <SwiperSlide key={index}>
             <BottomItem props={item} />
           </SwiperSlide>
@@ -48,4 +48,4 @@ export default function ThumbnailGallery() {
       </Swiper>
     </Stack>
   );
-}
+};

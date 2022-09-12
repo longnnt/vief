@@ -1,4 +1,8 @@
 import {
+  ListImgProps,
+  unsplashImg,
+} from "@/src/components/aboutComponents/interfaces";
+import {
   Box,
   Button,
   Image,
@@ -15,40 +19,44 @@ import {
   useDisclosure,
   VStack,
 } from "@chakra-ui/react";
-import ThumbnailGallery from "./thumbGallery/ThumbnailsGallery";
+import { useState } from "react";
+import { ThumbnailGallery } from "./thumbGallery/ThumbnailsGallery";
 
-export default function ModalImage() {
+type PictureItemProp = {
+  itemImg: unsplashImg;
+  listImgThumb: unsplashImg[];
+};
+
+export const ModalImage = ({ itemImg, listImgThumb }: PictureItemProp) => {
+  const [itemClick, setItemClick] = useState(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
       <Image
         align={"center"}
-        // position="relative"
         borderRadius="8px"
         h="full"
         w="full"
         alt=""
         transitionDuration="0.2s"
-        src="/bgHome.png"
+        src={itemImg?.urls.regular}
         objectFit="cover"
         _hover={{ transform: "scale(1.02)" }}
         onClick={onOpen}
+        cursor="pointer"
       />
 
       <Modal
-        // w='100%'
-        // h='100%'
         isOpen={isOpen}
         onClose={onClose}
         isCentered
-        // size={{ md: "2xl", sm: "xl" }}
         size={{ md: "6xl", sm: "lg" }}
       >
         <ModalOverlay />
         <ModalContent bg="transparent" borderRadius="12px" padding="10px">
-          <ThumbnailGallery />
+          <ThumbnailGallery listImgThumb={listImgThumb} />
         </ModalContent>
       </Modal>
     </>
   );
-}
+};

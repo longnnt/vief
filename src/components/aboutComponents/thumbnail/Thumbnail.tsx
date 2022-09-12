@@ -7,9 +7,10 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import { ListImgProps } from "../interfaces";
 import SliderImage from "./component/SliderImage";
 
-const Thumbnail = () => {
+const Thumbnail = ({ listImg, listImgThumb }: ListImgProps) => {
   return (
     <>
       <Box>
@@ -23,7 +24,7 @@ const Thumbnail = () => {
               Hình ảnh
             </Text>
           </Box>
-          <SliderImage />
+          <SliderImage listImg={listImg} listImgThumb={listImgThumb} />
         </Stack>
       </Box>
     </>

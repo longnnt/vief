@@ -15,12 +15,13 @@ import "slick-carousel/slick/slick-theme.css";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import ItemSlider from "./ItemSlider/ItemSlider";
 
+import { ListImgProps } from "../../interfaces";
+
 function SampleNextArrow(props: any) {
   const { onClick } = props;
   return (
     <IconButton
       display={{ sm: "none", md: "block" }}
-      // boxSize={"40px"}
       w="40px"
       aria-label=""
       isRound
@@ -53,53 +54,76 @@ function SamplePrevArrow(props: any) {
   );
 }
 
-export default function SliderImage() {
+export default function SliderImage({ listImg, listImgThumb }: ListImgProps) {
   const settingsMd = {
     vertical: false,
     style: { display: "flex" },
     infinite: true,
     speed: 500,
+    autoplay: true,
     slidesToShow: 3,
     slidesToScroll: 1,
     prevArrow: <SamplePrevArrow />,
     nextArrow: <SampleNextArrow />,
+    responsive: [
+      {
+        breakpoint: 1200, // width to change options
+        settings: {
+          vertical: false,
+          style: { display: "flex" },
+          infinite: true,
+          speed: 500,
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          prevArrow: <SamplePrevArrow />,
+          nextArrow: <SampleNextArrow />,
+        },
+      },
+      {
+        breakpoint: 1024, // width to change options
+        settings: {
+          centerMode: true,
+          centerPadding: "40px",
+          infinite: true,
+          dots: true,
+          speed: 500,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 600, // width to change options
+        settings: {
+          centerMode: true,
+          centerPadding: "40px",
+          infinite: true,
+          dots: true,
+          speed: 500,
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 400, // width to change options
+        settings: {
+          centerMode: true,
+          centerPadding: "40px",
+          infinite: true,
+          dots: true,
+          speed: 500,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
-  const settingsSm = {
-    centerMode: true,
-    centerPadding: "40px",
-    infinite: true,
-    dots: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
-
   return (
     <Center>
-      <Box
-        w={{ md: "1330px", sm: "full" }}
-        h={{ md: "320px", sm: "189px" }}
-        display={{ md: "block", sm: "none" }}
-      >
+      <Box w={{ md: "1330px", sm: "full" }} h={{ md: "320px", sm: "189px" }}>
         <Slider {...settingsMd}>
-          <ItemSlider></ItemSlider>
-          <ItemSlider></ItemSlider>
-          <ItemSlider></ItemSlider>
-          <ItemSlider></ItemSlider>
-          <ItemSlider></ItemSlider>
-        </Slider>
-      </Box>
-
-      <Box
-        w={{ md: "1360px", sm: "375px" }}
-        display={{ md: "none", sm: "block" }}
-      >
-        <Slider {...settingsSm}>
-          <ItemSlider></ItemSlider>
-          <ItemSlider></ItemSlider>
-          <ItemSlider></ItemSlider>
-          <ItemSlider></ItemSlider>
-          <ItemSlider></ItemSlider>
+          {listImg.map((img, index) => (
+            <ItemSlider itemImg={img} listImgThumb={listImgThumb} key={index} />
+          ))}
         </Slider>
       </Box>
     </Center>
