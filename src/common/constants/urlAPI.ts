@@ -19,3 +19,5 @@ export const API_CATEGORY = "client/category";
 export const API_EVENTS = "events";
 // export const API_UPCOMINGS = "events?field=WOOD&timeline=UPCOMING";
 // export const API_TOOKPLACE = "events?field=WOOD&timeline=TOOK_PLACE";
+
+export const API_DOCUMENT = "client/documents";

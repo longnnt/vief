@@ -1,8 +1,5 @@
-import { ReactNode } from "react";
-import { ArticleItem } from "@/src/common/components/articleItem";
 import { Pagination } from "@/src/common/components/pagination";
 import { Box, Grid, GridItem, Stack, TabPanel } from "@chakra-ui/react";
-import { LibraryItem } from "../../homeComponents/library/LibraryItem";
 import { FileItems } from "./item/FileItems";
 
 export const LibTabPanelItem = () => {
