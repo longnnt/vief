@@ -1,3 +1,5 @@
+import { useViefRouter } from "@/src/common/hooks/useViefRouter";
+import { docProps } from "@/src/components/libraryComponents/interfaces";
 import {
   Box,
   Button,
@@ -15,11 +17,20 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
-export default function CompleteDownLoad({ handleClose }: any) {
+export default function CompleteDownLoad({ docItem }: docProps) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const router = useViefRouter();
+  const handleDownload = ({ docItem }: docProps) => {
+    router.push(docItem?.file?.url);
+  };
   return (
     <Box>
-      <Button onClick={onOpen} variant="primary">
+      <Button
+        onClick={() => {
+          onOpen(), handleDownload({ docItem });
+        }}
+        variant="primary"
+      >
         Tải về
       </Button>
 
@@ -44,7 +55,6 @@ export default function CompleteDownLoad({ handleClose }: any) {
               </Text>
             </Stack>
           </ModalBody>
-
           <ModalFooter alignSelf="center">
             <Button variant="primary" onClick={onClose}>
               Quay lại trang

@@ -8,9 +8,23 @@ export interface Translate extends BaseEntities {
   lang: Lang;
   shortDesc: string;
 }
-export interface File {}
-export interface Document extends BaseEntities {
+export interface Files {
+  id: number;
+  key: string;
+  type: string;
+  url: string;
+}
+export interface DocumentItem extends BaseEntities {
   field: Fields;
   translates: Translate;
+  file: Files;
   shortDesc: string;
 }
+
+export interface LibraryPageProps {
+  listItem: DocumentItem[];
+}
+
+export type docProps = {
+  docItem: DocumentItem;
+};

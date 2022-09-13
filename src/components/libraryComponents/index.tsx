@@ -7,10 +7,13 @@ import {
   Tabs,
   Text,
 } from "@chakra-ui/react";
+import { LibraryPageProps } from "./interfaces";
 import { LibTabItem } from "./tabItems/LibTabItems";
 import { LibTabPanelItem } from "./tabPanelitems/LibTabPanelItem";
 
-const LibraryPage = () => {
+const LibraryPage = ({ listItem }: LibraryPageProps) => {
+  console.log(listItem);
+
   return (
     <WebContainer>
       <Stack
@@ -34,7 +37,7 @@ const LibraryPage = () => {
             <LibTabItem>Ngành khác</LibTabItem>
           </TabList>
           <TabPanels padding={"0px"}>
-            <LibTabPanelItem />
+            <LibTabPanelItem listItem={listItem} />
             <TabPanel>two</TabPanel>
           </TabPanels>
         </Tabs>

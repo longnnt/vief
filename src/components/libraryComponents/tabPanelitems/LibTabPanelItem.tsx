@@ -1,11 +1,12 @@
 import { Pagination } from "@/src/common/components/pagination";
 import { Box, Grid, GridItem, Stack, TabPanel } from "@chakra-ui/react";
+import { LibraryPageProps } from "../interfaces";
 import { FileItems } from "./item/FileItems";
 
-export const LibTabPanelItem = () => {
+export const LibTabPanelItem = ({ listItem }: LibraryPageProps) => {
   return (
     <TabPanel padding="0px">
-      <Stack spacing="32px" alignItems="start" pt={"32px"}>
+      <Stack spacing="32px" pt={"32px"}>
         <Grid
           templateColumns={{
             sm: "repeat(1, 1fr)",
@@ -23,12 +24,16 @@ export const LibTabPanelItem = () => {
               </GridItem>
             );
           })} */}
+          {listItem?.map((doc, index) => (
+            <FileItems docItem={doc} key={index} />
+          ))}
+
+          {/* <FileItems />
           <FileItems />
           <FileItems />
           <FileItems />
           <FileItems />
-          <FileItems />
-          <FileItems />
+          <FileItems /> */}
         </Grid>
         <Box display="flex" justifyContent="center" w="full">
           <Pagination currentPage={1} totalPages={10} onPageChange={() => {}} />
