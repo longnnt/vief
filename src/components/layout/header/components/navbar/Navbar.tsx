@@ -2,7 +2,9 @@ import {
   ROUTE_ABOUT,
   ROUTE_HOME,
 } from "@/src/common/constants/routes.constant";
+import { useTranslation } from "@/src/common/hooks/useTranslation";
 import { useViefRouter } from "@/src/common/hooks/useViefRouter";
+import { Lang } from "@/src/common/interfaces/common.interface";
 
 import {
   Box,
@@ -35,8 +37,19 @@ const Navbar = ({
   dataLibrary?: Category;
 }) => {
   const router = useViefRouter();
+  const { t, locale } = useTranslation();
   const handleRouter = (children: any) => {
     router.push(children);
+  };
+  const changeLocale = (locale: Lang) => {
+    router.push(
+      {
+        pathname: "router.pathname",
+        query: router.query,
+      },
+      { pathname: router.asPath },
+      { locale }
+    );
   };
   return (
     <>
@@ -73,7 +86,7 @@ const Navbar = ({
                 variant="text14"
                 cursor="pointer"
               >
-                Trang chủ
+                {t("home")}
               </Text>
               <CategoryPolicy>{dataPolicy}</CategoryPolicy>
               <CategoryEvent>{dataEvent}</CategoryEvent>
@@ -95,9 +108,13 @@ const Navbar = ({
               </Text>
             </HStack>
             <Flex alignItems={"center"}>
-              <Select variant={"unstyled"}>
-                <option>VI</option>
-                <option>EN</option>
+              <Select
+                value={locale}
+                variant={"unstyled"}
+                onChange={(e) => changeLocale(e.target.value as Lang)}
+              >
+                <option value="vi">VI</option>
+                <option value="en">EN</option>
               </Select>
               <ButtonGroup>
                 <Link href="/" _hover={{ textDecoration: "none" }}>
