@@ -1,14 +1,5 @@
-import {
-  Box,
-  Button,
-  Center,
-  Flex,
-  IconButton,
-  Image,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
-import React, { ReactNode } from "react";
+import { Box, Center, IconButton } from "@chakra-ui/react";
+import React from "react";
 import Slider from "react-slick";
 
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
@@ -106,13 +97,6 @@ export default function SliderMaster({ listImgThumb }: ThumbnailItemProp) {
           {listImgThumb.map((img, index) => (
             <ItemSliderMaster itemImg={img} key={index} />
           ))}
-
-          {/* <ItemSliderMaster />
-          <ItemSliderMaster />
-          <ItemSliderMaster />
-          <ItemSliderMaster />
-          <ItemSliderMaster />
-          <ItemSliderMaster /> */}
         </Slider>
       </Box>
     </Center>

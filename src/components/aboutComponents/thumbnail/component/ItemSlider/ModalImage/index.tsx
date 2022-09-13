@@ -3,23 +3,13 @@ import {
   unsplashImg,
 } from "@/src/components/aboutComponents/interfaces";
 import {
-  Box,
-  Button,
   Image,
-  Input,
   Modal,
-  ModalBody,
-  ModalCloseButton,
   ModalContent,
-  ModalFooter,
-  ModalHeader,
   ModalOverlay,
-  Stack,
-  Text,
   useDisclosure,
-  VStack,
 } from "@chakra-ui/react";
-import { useState } from "react";
+
 import { ThumbnailGallery } from "./thumbGallery/ThumbnailsGallery";
 
 type PictureItemProp = {
@@ -28,7 +18,6 @@ type PictureItemProp = {
 };
 
 export const ModalImage = ({ itemImg, listImgThumb }: PictureItemProp) => {
-  const [itemClick, setItemClick] = useState(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>

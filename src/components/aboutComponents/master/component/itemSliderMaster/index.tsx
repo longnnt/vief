@@ -22,22 +22,20 @@ const ItemSliderMaster = ({ itemImg }: ItemImgMaster) => {
             bgSize="cover"
           >
             {isOpen ? (
-              <>
-                <Box
-                  borderRadius="12px"
-                  w="full"
-                  position="absolute"
-                  zIndex="1"
-                  h="full"
-                  bg="#394160"
-                  opacity="0.9"
-                  p={"95px 16px 16px"}
-                >
-                  <Text variant="text14" overflow="hidden" color="white">
-                    {itemImg?.user.bio}
-                  </Text>
-                </Box>
-              </>
+              <Box
+                borderRadius="12px"
+                w="full"
+                position="absolute"
+                zIndex="1"
+                h="full"
+                bg="#394160"
+                opacity="0.9"
+                p={"95px 16px 16px"}
+              >
+                <Text variant="text14" overflow="hidden" color="white">
+                  {itemImg?.user.bio}
+                </Text>
+              </Box>
             ) : null}
           </Box>
           <Stack px="16px" py="16px">

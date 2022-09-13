@@ -1,12 +1,4 @@
-import {
-  Box,
-  Button,
-  Center,
-  Flex,
-  Image,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Stack, Text } from "@chakra-ui/react";
 import { ListImgProps } from "../interfaces";
 import SliderImage from "./component/SliderImage";
 
