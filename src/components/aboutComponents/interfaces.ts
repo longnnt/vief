@@ -1,5 +1,5 @@
 import { BaseEntities } from "@/src/common/interfaces/common.interface";
-export interface unsplashImageResponse {
+export interface UnsplashImageResponse {
   raw: string;
   full: string;
   regular: string;
@@ -7,37 +7,37 @@ export interface unsplashImageResponse {
   medium: string;
   large: string;
 }
-interface userRespone {
+interface UserRespone {
   name: string;
   username: string;
-  profile_image: unsplashImageResponse;
+  profile_image: UnsplashImageResponse;
   bio: string;
 }
 
 export interface ListImgProps {
-  listImg: unsplashImg[];
-  listImgThumb: unsplashImg[];
+  listImg: UnsplashImg[];
+  listImgThumb: UnsplashImg[];
 }
 
-export interface unsplashImg extends BaseEntities {
+export interface UnsplashImg extends BaseEntities {
   description: string;
-  urls: unsplashImageResponse;
+  urls: UnsplashImageResponse;
   categories: string;
   likes: string;
   view: string;
   download: string;
-  user: userRespone;
+  user: UserRespone;
 }
 
 export type PictureItemProp = {
-  itemImg: unsplashImg;
-  listImgThumb: unsplashImg[];
+  itemImg: UnsplashImg;
+  listImgThumb: UnsplashImg[];
 };
 
 export type ItemImgMaster = {
-  itemImg: unsplashImg;
+  itemImg: UnsplashImg;
 };
 
 export type ThumbnailItemProp = {
-  listImgThumb: unsplashImg[];
+  listImgThumb: UnsplashImg[];
 };

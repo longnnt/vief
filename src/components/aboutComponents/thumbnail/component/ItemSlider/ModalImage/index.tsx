@@ -1,6 +1,6 @@
 import {
   ListImgProps,
-  unsplashImg,
+  UnsplashImg,
 } from "@/src/components/aboutComponents/interfaces";
 import {
   Image,
@@ -13,8 +13,8 @@ import {
 import { ThumbnailGallery } from "./thumbGallery/ThumbnailsGallery";
 
 type PictureItemProp = {
-  itemImg: unsplashImg;
-  listImgThumb: unsplashImg[];
+  itemImg: UnsplashImg;
+  listImgThumb: UnsplashImg[];
 };
 
 export const ModalImage = ({ itemImg, listImgThumb }: PictureItemProp) => {
