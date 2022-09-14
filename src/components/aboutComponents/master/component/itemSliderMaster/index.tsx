@@ -18,7 +18,7 @@ const ItemSliderMaster = ({ itemImg }: ItemImgMaster) => {
             w="full"
             h="374px"
             borderRadius="12px"
-            bgImage={itemImg?.user.profile_image.large}
+            bgImage={itemImg?.user?.profile_image.large}
             bgSize="cover"
           >
             {isOpen ? (
@@ -33,14 +33,14 @@ const ItemSliderMaster = ({ itemImg }: ItemImgMaster) => {
                 p={"95px 16px 16px"}
               >
                 <Text variant="text14" overflow="hidden" color="white">
-                  {itemImg?.user.bio}
+                  {itemImg?.user?.bio}
                 </Text>
               </Box>
             ) : null}
           </Box>
           <Stack px="16px" py="16px">
-            <Text variant="text20">{itemImg?.user.name}</Text>
-            <Text variant="text14">{itemImg?.user.username}</Text>
+            <Text variant="text20">{itemImg?.user?.name}</Text>
+            <Text variant="text14">{itemImg?.user?.username}</Text>
           </Stack>
         </Box>
       </Box>

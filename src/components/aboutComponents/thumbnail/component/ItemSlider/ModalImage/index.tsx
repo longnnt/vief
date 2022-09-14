@@ -28,7 +28,7 @@ export const ModalImage = ({ itemImg, listImgThumb }: PictureItemProp) => {
         w="full"
         alt=""
         transitionDuration="0.2s"
-        src={itemImg?.urls.regular}
+        src={itemImg?.urls?.regular}
         objectFit="cover"
         _hover={{ transform: "scale(1.02)" }}
         onClick={onOpen}

@@ -121,7 +121,7 @@ export default function SliderImage({ listImg, listImgThumb }: ListImgProps) {
     <Center>
       <Box w={{ md: "1330px", sm: "full" }} h={{ md: "320px", sm: "189px" }}>
         <Slider {...settingsMd}>
-          {listImg.map((img, index) => (
+          {listImg?.map((img, index) => (
             <ItemSlider itemImg={img} listImgThumb={listImgThumb} key={index} />
           ))}
         </Slider>
