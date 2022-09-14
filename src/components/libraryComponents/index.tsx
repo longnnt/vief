@@ -1,6 +1,7 @@
 import { WebContainer } from "@/src/common/components/WebContainer";
 import {
   Stack,
+  Tab,
   TabList,
   TabPanel,
   TabPanels,
@@ -11,9 +12,7 @@ import { LibraryPageProps } from "./interfaces";
 import { LibTabItem } from "./tabItems/LibTabItems";
 import { LibTabPanelItem } from "./tabPanelitems/LibTabPanelItem";
 
-const LibraryPage = ({ listItem }: LibraryPageProps) => {
-  console.log(listItem);
-
+const LibraryPage = ({ listItem, categories }: LibraryPageProps) => {
   return (
     <WebContainer>
       <Stack
@@ -31,14 +30,14 @@ const LibraryPage = ({ listItem }: LibraryPageProps) => {
         </Text>
         <Tabs variant="unstyled" w="full">
           <TabList w="full" justifyContent={"center"}>
-            <LibTabItem>Quốc tế</LibTabItem>
-            <LibTabItem>Việt Nam</LibTabItem>
-            <LibTabItem>Ngành gỗ</LibTabItem>
-            <LibTabItem>Ngành khác</LibTabItem>
+            {categories.map((cate, index) => (
+              <LibTabItem key={index}>{cate.name}</LibTabItem>
+            ))}
           </TabList>
           <TabPanels padding={"0px"}>
-            <LibTabPanelItem listItem={listItem} />
-            <TabPanel>two</TabPanel>
+            {categories.map((cate, index) => (
+              <LibTabPanelItem listItem={listItem} key={index} />
+            ))}
           </TabPanels>
         </Tabs>
       </Stack>

@@ -58,7 +58,7 @@ const Navbar = ({
             h={{ sm: "66px", base: "96px" }}
             justifyContent={"space-between"}
           >
-            <Box>
+            <Box onClick={() => handleRouter(ROUTE_HOME.en)} cursor="pointer">
               <Image src="/fulllogo.png" alt=""></Image>
             </Box>
             <HStack

@@ -1,5 +1,6 @@
 import {
   BaseEntities,
+  Category,
   Fields,
   Lang,
 } from "@/src/common/interfaces/common.interface";
@@ -23,8 +24,12 @@ export interface DocumentItem extends BaseEntities {
 
 export interface LibraryPageProps {
   listItem: DocumentItem[];
+  categories: Category[];
 }
 
 export type docProps = {
   docItem: DocumentItem;
+};
+export type docArrayProps = {
+  listItem: DocumentItem[];
 };
