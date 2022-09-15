@@ -6,7 +6,6 @@ import { getListPictureService } from "@/src/components/aboutComponents/services
 import { GetServerSideProps } from "next";
 
 const AboutPage = ({ listImg, listImgThumb }: ListImgProps) => {
-  console.log(listImg);
   return <About listImg={listImg} listImgThumb={listImgThumb} />;
 };
 
