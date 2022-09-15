@@ -8,7 +8,6 @@ import {
   LibraryPageProps,
 } from "@/src/components/libraryComponents/interfaces";
 import { getListDoccumentService } from "@/src/components/libraryComponents/services";
-import { getParamSearchPolicy } from "@/src/components/section-policy/constant";
 import { GetServerSideProps } from "next";
 
 const Library = ({ listItem, categories }: LibraryPageProps) => {
@@ -22,7 +21,7 @@ export const getServerSideProps: GetServerSideProps<LibraryPageProps> = async ({
 
   const categories = await (
     await getListCategoryService(
-      getParamSearchPolicy({ size: 4, lang: locale as Lang })
+      getParamSearchDoccument({ lang: locale as Lang })
     )
   ).data;
   let doccumentRes: ListResponse<DocumentItem> = LIST_DATA_RESPONSE;
