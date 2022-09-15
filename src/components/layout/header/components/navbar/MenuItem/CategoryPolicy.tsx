@@ -20,7 +20,11 @@ const CategoryPolicy = ({ children }: { children?: Category }) => {
   function handleRouter() {
     router.push(ROUTE_POLICY.en);
   }
-
+  function checkCategory() {
+    if (children === undefined || children.total === 0) return false;
+    else return true;
+    // return false
+  }
   return (
     <>
       <Menu isOpen={isOpen}>
@@ -32,19 +36,20 @@ const CategoryPolicy = ({ children }: { children?: Category }) => {
           Chính sách
           {/* {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />} */}
         </MenuButton>
-
-        <MenuList onMouseEnter={onOpen} onMouseLeave={onClose} mt={"-7px"}>
-          {children?.data.map((index, key) => (
-            <MenuItem
-              key={key}
-              onClick={() => handleRouterCategoryItem(index.path)}
-            >
-              <Text variant="text14" cursor="pointer">
-                {index.name}
-              </Text>
-            </MenuItem>
-          ))}
-        </MenuList>
+        {checkCategory() === true ? (
+          <MenuList onMouseEnter={onOpen} onMouseLeave={onClose} mt={"-7px"}>
+            {children?.data.map((index, key) => (
+              <MenuItem
+                key={key}
+                onClick={() => handleRouterCategoryItem(index.path)}
+              >
+                <Text variant="text14" cursor="pointer">
+                  {index.name}
+                </Text>
+              </MenuItem>
+            ))}
+          </MenuList>
+        ) : null}
       </Menu>
     </>
   );

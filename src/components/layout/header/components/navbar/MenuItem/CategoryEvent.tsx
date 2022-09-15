@@ -9,6 +9,7 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
+import { ReactNode } from "react";
 
 const CategoryEvent = ({ children }: { children?: Category }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -16,8 +17,15 @@ const CategoryEvent = ({ children }: { children?: Category }) => {
   const handleRouterCategoryItem = (children: any) => {
     router.push(children);
   };
+  console.log(children);
+
   function handleRouteEvetnPage() {
     router.push(ROUTE_EVENT["en"]);
+  }
+  function checkCategory() {
+    if (children === undefined || children.total === 0) return false;
+    else return true;
+    // return false
   }
   return (
     <>
@@ -29,18 +37,20 @@ const CategoryEvent = ({ children }: { children?: Category }) => {
         >
           Sự kiện
         </MenuButton>
-        <MenuList onMouseEnter={onOpen} onMouseLeave={onClose} mt={"-7px"}>
-          {children?.data.map((index, key) => (
-            <MenuItem
-              key={key}
-              onClick={() => handleRouterCategoryItem(index.path)}
-            >
-              <Text variant="text14" cursor="pointer">
-                {index.name}
-              </Text>
-            </MenuItem>
-          ))}
-        </MenuList>
+        {checkCategory() === true ? (
+          <MenuList onMouseEnter={onOpen} onMouseLeave={onClose} mt={"-7px"}>
+            {children?.data.map((index, key) => (
+              <MenuItem
+                key={key}
+                onClick={() => handleRouterCategoryItem(index.path)}
+              >
+                <Text variant="text14" cursor="pointer">
+                  {index.name}
+                </Text>
+              </MenuItem>
+            ))}
+          </MenuList>
+        ) : null}
       </Menu>
     </>
   );
