@@ -10,10 +10,13 @@ import {
 import { toUrlQueryString } from "@/src/common/lib/common.lib";
 import { execute } from "@/src/common/lib/request";
 import { CLIENT_ID, IMG_URL } from "./contants";
-import { ListImgProps, UnsplashImg } from "./interfaces";
 
 export const getListPictureService = () => {
-  return execute.get(IMG_URL + CLIENT_ID);
+  try {
+    return execute.get(IMG_URL + CLIENT_ID);
+  } catch (error) {
+    return LIST_DATA_RESPONSE;
+  }
 };
 
 // export async function getListPictureService({
