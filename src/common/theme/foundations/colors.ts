@@ -35,4 +35,5 @@ export const colors = {
   orange: {
     primary: "#F3A70F",
   },
+  inputBg: "#F2F3F7",
 };
