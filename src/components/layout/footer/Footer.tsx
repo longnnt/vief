@@ -7,6 +7,7 @@ import {
   ROUTE_LIBRARY,
   ROUTE_POLICY,
 } from "@/src/common/constants/routes.constant";
+import { useTranslation } from "@/src/common/hooks/useTranslation";
 import { useViefRouter } from "@/src/common/hooks/useViefRouter";
 import { Box, Center, Link, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import { ReactNode } from "react";
@@ -17,6 +18,7 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 
 const Footer = () => {
   const router = useViefRouter();
+  const { t } = useTranslation();
   const handleRouter = (children: any) => {
     router.push(children);
   };
@@ -56,7 +58,7 @@ const Footer = () => {
                 variant="text14"
                 cursor="pointer"
               >
-                Trang chủ
+                {t("home")}
               </Text>
               <Text
                 onClick={() => handleRouter(ROUTE_POLICY.en)}
