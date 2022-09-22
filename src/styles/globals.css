@@ -22,9 +22,6 @@ a {
   /* the slides */
 
 /* the parent */
-  /* .slick-list {
-      margin: 0 -27px;
-  } */
 
 #app {
   height: 100%;
@@ -132,4 +129,8 @@ a {
   -webkit-line-clamp: 8; /* number of lines to show */
   line-clamp: 8;
   -webkit-box-orient: vertical;
+}
+
+.swiperSlides{
+  border-radius: 12px;
 }

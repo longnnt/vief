@@ -1,4 +1,4 @@
-import { Box, Image, Stack, Text } from "@chakra-ui/react";
+import { Box, color, Image, Stack, Text } from "@chakra-ui/react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -24,7 +24,9 @@ const Carousel = ({ banners }: CarouselProps) => {
       }}
     >
       <Swiper
-        pagination={true}
+        pagination={{
+          el: "panginationBtn",
+        }}
         modules={[Pagination, Autoplay]}
         autoplay={{ delay: 3000 }}
         slidesPerView={1}

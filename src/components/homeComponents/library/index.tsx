@@ -19,7 +19,9 @@ const SectionLibrary = () => {
               Thư viện
             </Text>
           </Stack>
-          <Text variant="text36">Báo cáo về biến đổi khí hậu</Text>
+          <Text variant={{ md: "text36", sm: "text28" }}>
+            Báo cáo về biến đổi khí hậu
+          </Text>
         </Stack>
         <SimpleGrid
           columns={{

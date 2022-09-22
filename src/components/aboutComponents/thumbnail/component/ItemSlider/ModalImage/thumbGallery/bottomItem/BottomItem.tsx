@@ -7,8 +7,12 @@ export type ItemImgThumbnail = {
 
 export const BottomItem = ({ props }: ItemImgThumbnail) => {
   return (
-    <Box w="full" h={{ md: "150px", sm: "100px" }}>
-      <Image src={props?.urls?.regular} alt="a" />
+    <Box w="full" h={{ md: "132px", sm: "100px" }}>
+      <Image
+        src={props?.urls?.regular}
+        alt="a"
+        style={{ borderRadius: "8px" }}
+      />
     </Box>
   );
 };

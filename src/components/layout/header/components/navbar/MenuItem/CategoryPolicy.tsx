@@ -1,6 +1,6 @@
 import { ROUTE_POLICY } from "@/src/common/constants/routes.constant";
 import { useViefRouter } from "@/src/common/hooks/useViefRouter";
-import { Category } from "@/src/components/layout/interfaces";
+import { NavbarProps } from "@/src/components/layout/interfaces";
 
 import {
   Menu,
@@ -10,9 +10,11 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
+import React from "react";
 
-const CategoryPolicy = ({ children }: { children?: Category }) => {
+const CategoryPolicy = ({ children }: { children?: NavbarProps }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
   const router = useViefRouter();
   const handleRouterCategoryItem = (children: any) => {
     router.push(children);
@@ -32,6 +34,7 @@ const CategoryPolicy = ({ children }: { children?: Category }) => {
           onMouseEnter={onOpen}
           onMouseLeave={onClose}
           onClick={handleRouter}
+          fontWeight={router.pathname == "/policy" ? "600" : "500"}
         >
           Chính sách
           {/* {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />} */}

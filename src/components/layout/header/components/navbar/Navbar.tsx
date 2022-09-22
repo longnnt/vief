@@ -3,7 +3,7 @@ import {
   ROUTE_HOME,
 } from "@/src/common/constants/routes.constant";
 import { useViefRouter } from "@/src/common/hooks/useViefRouter";
-
+import React, { useEffect, useRef } from "react";
 import {
   Box,
   Button,
@@ -16,12 +16,13 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import { Category } from "../../../interfaces";
+import { NavbarProps } from "../../../interfaces";
 import CategoryCompany from "./MenuItem/CategoryCompany";
 import CategoryEvent from "./MenuItem/CategoryEvent";
 import CategoryLibrary from "./MenuItem/CategoryLibrary";
 import CategoryPolicy from "./MenuItem/CategoryPolicy";
 import NavbarMenu from "./navbarMenuResponsive/NavBarMenu";
+import { useScrollPosition } from "../../../constant";
 
 const Navbar = ({
   dataPolicy,
@@ -29,15 +30,32 @@ const Navbar = ({
   dataEvent,
   dataLibrary,
 }: {
-  dataPolicy?: Category;
-  dataCompany?: Category;
-  dataEvent?: Category;
-  dataLibrary?: Category;
+  dataPolicy?: NavbarProps;
+  dataCompany?: NavbarProps;
+  dataEvent?: NavbarProps;
+  dataLibrary?: NavbarProps;
 }) => {
   const router = useViefRouter();
+  // const scrollPosition = useScrollPosition()
+  // const [navbar, setNavbar] = React.useState(false)
   const handleRouter = (children: any) => {
     router.push(children);
+    // setNavbar(true)
   };
+  // const handleScroll = () => {
+  //   if(window.scrollY >0){
+  //     setNavbar(true)
+  //     console.log(window.scrollY)
+  //   }
+  //   else{
+  //     setNavbar(false)
+  //   }
+  // }
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll)
+  //   handleScroll()
+  // },[])
+
   return (
     <>
       <Box
@@ -46,31 +64,35 @@ const Navbar = ({
         position="sticky"
         top={0}
         zIndex="10"
-        shadow="xl"
         opacity="95%"
       >
-        <Stack bg="white">
+        <Stack bg={"white"}>
           <Flex
             alignSelf={"center"}
             w="full"
             px={{ base: "80px", sm: "20px" }}
             alignItems="center"
-            h={{ sm: "66px", base: "96px" }}
+            h={{ sm: "66px", base: "80px" }}
             justifyContent={"space-between"}
           >
-            <Box>
-              <Image src="/fulllogo.png" alt=""></Image>
+            <Box h="44px">
+              <Image src="/logo-vief.png" alt="" h="full" />
             </Box>
             <HStack
               display={{ md: "flex", sm: "none" }}
-              fontSize="14px"
-              fontWeight="500"
               spacing="32px"
               alignItems={"center"}
+              fontSize="14px"
+              fontWeight="500"
             >
               <Text
                 onClick={() => handleRouter(ROUTE_HOME.en)}
                 variant="text14"
+                fontWeight={router.pathname == "/" ? "600" : "500"}
+                // _hover={navbar==true ?{
+                //   fontWeight: '600',
+                //   lineHeight: '20px',
+                // }: {variant: 'text14'}}
                 cursor="pointer"
               >
                 Trang chủ
@@ -83,15 +105,9 @@ const Navbar = ({
                 onClick={() => handleRouter(ROUTE_ABOUT.en)}
                 variant="text14"
                 cursor="pointer"
+                fontWeight={router.pathname == "/about" ? "600" : "500"}
               >
                 Về chúng tôi
-              </Text>
-              <Text
-                onClick={() => handleRouter(ROUTE_ABOUT.en)}
-                variant="text14"
-                cursor="pointer"
-              >
-                Liên hệ
               </Text>
             </HStack>
             <Flex alignItems={"center"}>
@@ -100,10 +116,11 @@ const Navbar = ({
                 <option>EN</option>
               </Select>
               <ButtonGroup>
-                <Link href="/" _hover={{ textDecoration: "none" }}>
+                <Link href="/login" _hover={{ textDecoration: "none" }}>
                   <Button
-                    bg="brand.100"
+                    variant="primary"
                     textColor="white"
+                    w="128px"
                     display={{ md: "block", sm: "none" }}
                   >
                     Đăng nhập

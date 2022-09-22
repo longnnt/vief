@@ -1,6 +1,6 @@
 import { ROUTE_ENTERPRISE_STORY } from "@/src/common/constants/routes.constant";
 import { useViefRouter } from "@/src/common/hooks/useViefRouter";
-import { Category } from "@/src/components/layout/interfaces";
+import { NavbarProps } from "@/src/components/layout/interfaces";
 import {
   Menu,
   MenuButton,
@@ -10,7 +10,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 
-const CategoryCompany = ({ children }: { children?: Category }) => {
+const CategoryCompany = ({ children }: { children?: NavbarProps }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const router = useViefRouter();
   const handleRouterCategoryItem = (children: any) => {
@@ -31,6 +31,7 @@ const CategoryCompany = ({ children }: { children?: Category }) => {
           onMouseEnter={onOpen}
           onMouseLeave={onClose}
           onClick={handleRouteDetail}
+          fontWeight={router.pathname == "/enterprise-story" ? "600" : "500"}
         >
           Doanh nghiệp
           {/* {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />} */}

@@ -1,6 +1,6 @@
 import { ROUTE_EVENT } from "@/src/common/constants/routes.constant";
 import { useViefRouter } from "@/src/common/hooks/useViefRouter";
-import { Category } from "@/src/components/layout/interfaces";
+import { NavbarProps } from "@/src/components/layout/interfaces";
 import {
   Menu,
   MenuButton,
@@ -9,15 +9,13 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
-import { ReactNode } from "react";
 
-const CategoryEvent = ({ children }: { children?: Category }) => {
+const CategoryEvent = ({ children }: { children?: NavbarProps }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const router = useViefRouter();
   const handleRouterCategoryItem = (children: any) => {
     router.push(children);
   };
-  console.log(children);
 
   function handleRouteEvetnPage() {
     router.push(ROUTE_EVENT["en"]);
@@ -34,6 +32,7 @@ const CategoryEvent = ({ children }: { children?: Category }) => {
           onMouseEnter={onOpen}
           onMouseLeave={onClose}
           onClick={handleRouteEvetnPage}
+          fontWeight={router.pathname == "/events" ? "600" : "500"}
         >
           Sự kiện
         </MenuButton>

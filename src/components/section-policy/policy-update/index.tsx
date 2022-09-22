@@ -2,7 +2,16 @@ import { PICTURE } from "@/src/common/constants/common.constant";
 import { ROUTE_POLICY } from "@/src/common/constants/routes.constant";
 import { useViefRouter } from "@/src/common/hooks/useViefRouter";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
-import { Box, Button, Image, Stack, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  Button,
+  Image,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 
 export default function PolicyUpdate() {
   const router = useViefRouter();
@@ -11,37 +20,39 @@ export default function PolicyUpdate() {
     router.push(ROUTE_POLICY["en"]);
   }
   return (
-    <Box>
-      <Text
-        variant={{
-          md: "text20",
-          sm: "text16",
-        }}
-        w="fit-content"
-        borderBottom="1.5px solid #394160"
-      >
-        Chính sách / Mới cập nhật
-      </Text>
-      <Text
-        variant={{
-          md: "text36",
-          sm: "text28",
-        }}
-        w={{
-          md: "80%",
-          sm: "full",
-        }}
-        my="18px"
-      >
-        COP26 và dấu ấn Việt Nam
-      </Text>
+    <Stack spacing={{ md: "32px", sm: "16px" }}>
+      <Stack spacing={{ md: "32px", sm: "16px" }}>
+        <Text
+          variant={{
+            md: "text20",
+            sm: "text16",
+          }}
+          w="fit-content"
+          borderBottom="1.5px solid #394160"
+        >
+          Chính sách / Mới cập nhật
+        </Text>
+        <Text
+          variant={{
+            md: "text36",
+            sm: "text28",
+          }}
+          w={{
+            md: "80%",
+            sm: "full",
+          }}
+          my="18px"
+        >
+          COP26 và dấu ấn Việt Nam
+        </Text>
+      </Stack>
 
       <Stack
-        flexDir={{
+        direction={{
           md: "row",
           sm: "column",
         }}
-        justify="space-between"
+        spacing={{ md: "32px", sm: "16px" }}
       >
         <Box
           w={{
@@ -62,11 +73,12 @@ export default function PolicyUpdate() {
             borderRadius="16px"
           />
         </Box>
-        <Box
+        <Stack
           w={{
-            md: "30%",
+            md: "35%",
             sm: "full",
           }}
+          spacing={{ md: "32px", sm: "16px" }}
         >
           <Text variant="text14" textAlign="justify">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
@@ -77,16 +89,18 @@ export default function PolicyUpdate() {
             in ornare quam viverra orci sagittis eu volutpat odio facilisis
             mauris sit amet massa
           </Text>
-          <Button
-            variant="primary"
-            rightIcon={<ArrowForwardIcon />}
-            mt="32px"
-            onClick={handleRoutePolicy}
-          >
-            Xem thêm
-          </Button>
-        </Box>
+          <Box>
+            <Button
+              w="128px"
+              variant="primary"
+              rightIcon={<ArrowForwardIcon />}
+              onClick={handleRoutePolicy}
+            >
+              Xem thêm
+            </Button>
+          </Box>
+        </Stack>
       </Stack>
-    </Box>
+    </Stack>
   );
 }

@@ -5,8 +5,9 @@ const ItemSliderMaster = ({ itemImg }: ItemImgMaster) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Box w="full" h="461x" px="22px">
+      <Box w="full" h="461x" px="22px" borderRadius={"12px"}>
         <Box
+          borderRadius={"12px"}
           bg="#F2F3F7"
           role="group"
           onMouseEnter={onOpen}
@@ -32,15 +33,22 @@ const ItemSliderMaster = ({ itemImg }: ItemImgMaster) => {
                 opacity="0.9"
                 p={"95px 16px 16px"}
               >
-                <Text variant="text14" overflow="hidden" color="white">
+                <Text
+                  variant="text14"
+                  color="white"
+                  overflow="hidden"
+                  textOverflow="ellipsis"
+                >
                   {itemImg?.user?.bio}
                 </Text>
               </Box>
             ) : null}
           </Box>
           <Stack px="16px" py="16px">
-            <Text variant="text20">{itemImg?.user?.name}</Text>
-            <Text variant="text14">{itemImg?.user?.username}</Text>
+            <Text variant="text20" noOfLines={1}>
+              {itemImg?.user?.name}{" "}
+            </Text>
+            <Text variant="text14">{itemImg?.user?.username} </Text>
           </Stack>
         </Box>
       </Box>

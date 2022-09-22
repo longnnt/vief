@@ -1,6 +1,6 @@
 import { BaseEntities, Fields } from "@/src/common/interfaces/common.interface";
 
-export interface Category {
+export interface NavbarProps {
   data: Categories[];
   total: number;
 }

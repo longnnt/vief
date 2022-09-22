@@ -12,6 +12,9 @@ export const colors = {
 
     // ...
   },
+  focusBorder: "#394160",
+  primaryHovering: "#013A84",
+  deactive: "#C5CAD3",
   blue: {
     primary: "#01459c",
   },

@@ -11,44 +11,44 @@ export default function PolicyInfo() {
     router.push(ROUTE_POLICY["en"]);
   }
   return (
-    <Box>
-      <Text
-        variant={{
-          md: "text20",
-          sm: "text16",
-        }}
-        w="fit-content"
-        borderBottom="1.5px solid #394160"
-      >
-        Chính sách / Thông tin chính sách
-      </Text>
-      <Text
-        variant={{
-          md: "text36",
-          sm: "text28",
-        }}
-        w={{
-          md: "80%",
-          sm: "full",
-        }}
-        my="18px"
-      >
-        Ban hành danh mục lĩnh vực, cơ sở phát thải khí nhà kính phai thực hiện
-        kiểm kê khí nhà kính
-      </Text>
+    <Stack spacing={{ md: "32px", sm: "16px" }}>
+      <Stack>
+        <Text
+          variant={{
+            md: "text20",
+            sm: "text16",
+          }}
+          w="fit-content"
+          borderBottom="1.5px solid #394160"
+        >
+          Chính sách / Thông tin chính sách
+        </Text>
+        <Text
+          variant={{
+            md: "text36",
+            sm: "text28",
+          }}
+          w={{
+            md: "80%",
+            sm: "full",
+          }}
+        >
+          Ban hành danh mục lĩnh vực, cơ sở phát thải khí nhà kính phai thực
+          hiện kiểm kê khí nhà kính
+        </Text>
+      </Stack>
 
       <Stack
-        flexDir={{
+        direction={{
           md: "row",
           sm: "column-reverse",
         }}
-        justify="space-between"
+        spacing={{ md: "64px", sm: "16px" }}
       >
-        <Box
-          w={{
-            md: "30%",
-            sm: "full",
-          }}
+        <Stack
+          w={{ md: "30%", sm: "100%" }}
+          spacing={{ sm: "16px", md: "32px" }}
+          alignSelf="center"
         >
           <Text variant="text14" textAlign="justify">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
@@ -61,16 +61,17 @@ export default function PolicyInfo() {
             donec ac odio tempor orci dapibus ultrices in iaculis nunc sed augue
             lacus
           </Text>
-          <Button
-            variant="primary"
-            rightIcon={<ArrowForwardIcon />}
-            mt="32px"
-            onClick={handleRoutePolicyPage}
-          >
-            Xem thêm
-          </Button>
-        </Box>
-
+          <Box>
+            <Button
+              w="128px"
+              variant="primary"
+              rightIcon={<ArrowForwardIcon />}
+              onClick={handleRoutePolicyPage}
+            >
+              Xem thêm
+            </Button>
+          </Box>
+        </Stack>
         <Box
           w={{
             md: "65%",
@@ -91,6 +92,6 @@ export default function PolicyInfo() {
           />
         </Box>
       </Stack>
-    </Box>
+    </Stack>
   );
 }
