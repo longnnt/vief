@@ -2,8 +2,13 @@ import {
   ROUTE_ABOUT,
   ROUTE_HOME,
 } from "@/src/common/constants/routes.constant";
+import { useTranslation } from "@/src/common/hooks/useTranslation";
 import { useViefRouter } from "@/src/common/hooks/useViefRouter";
+
 import React, { useEffect, useRef } from "react";
+
+import { Lang } from "@/src/common/interfaces/common.interface";
+
 import {
   Box,
   Button,
@@ -36,12 +41,17 @@ const Navbar = ({
   dataLibrary?: NavbarProps;
 }) => {
   const router = useViefRouter();
+
   // const scrollPosition = useScrollPosition()
   // const [navbar, setNavbar] = React.useState(false)
+
+  const { t, locale } = useTranslation();
+
   const handleRouter = (children: any) => {
     router.push(children);
     // setNavbar(true)
   };
+
   // const handleScroll = () => {
   //   if(window.scrollY >0){
   //     setNavbar(true)
@@ -55,6 +65,18 @@ const Navbar = ({
   //   window.addEventListener('scroll', handleScroll)
   //   handleScroll()
   // },[])
+
+
+  const changeLocale = (locale: Lang) => {
+    router.push(
+      {
+        pathname: "router.pathname",
+        query: router.query,
+      },
+      { pathname: router.asPath },
+      { locale }
+    );
+  };
 
   return (
     <>
@@ -95,7 +117,7 @@ const Navbar = ({
                 // }: {variant: 'text14'}}
                 cursor="pointer"
               >
-                Trang chủ
+                {t("home")}
               </Text>
               <CategoryPolicy>{dataPolicy}</CategoryPolicy>
               <CategoryEvent>{dataEvent}</CategoryEvent>
@@ -111,9 +133,13 @@ const Navbar = ({
               </Text>
             </HStack>
             <Flex alignItems={"center"}>
-              <Select variant={"unstyled"}>
-                <option>VI</option>
-                <option>EN</option>
+              <Select
+                value={locale}
+                variant={"unstyled"}
+                onChange={(e) => changeLocale(e.target.value as Lang)}
+              >
+                <option value="vi">VI</option>
+                <option value="en">EN</option>
               </Select>
               <ButtonGroup>
                 <Link href="/login" _hover={{ textDecoration: "none" }}>

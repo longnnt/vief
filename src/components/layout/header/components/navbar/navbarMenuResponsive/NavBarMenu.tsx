@@ -2,6 +2,7 @@ import {
   ROUTE_ABOUT,
   ROUTE_HOME,
 } from "@/src/common/constants/routes.constant";
+import { useTranslation } from "@/src/common/hooks/useTranslation";
 import { useViefRouter } from "@/src/common/hooks/useViefRouter";
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import {
@@ -14,7 +15,6 @@ import {
   DrawerHeader,
   DrawerOverlay,
   IconButton,
-  Input,
   Stack,
   Text,
   useDisclosure,
@@ -26,6 +26,8 @@ import CategoryPolicy from "../MenuItem/CategoryPolicy";
 
 export default function NavbarMenu() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const { t } = useTranslation();
 
   const router = useViefRouter();
   const handleRouter = (children: any) => {
@@ -69,7 +71,7 @@ export default function NavbarMenu() {
                 variant="text14"
                 cursor="pointer"
               >
-                Trang chủ
+                {t("home")}
               </Text>
 
               <CategoryPolicy />
