@@ -134,3 +134,8 @@ a {
 .swiperSlides{
   border-radius: 12px;
 }
+
+
+.swiper-pagination-bullet-active {
+  background-color: #30BF45!important;
+}

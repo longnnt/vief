@@ -24,9 +24,7 @@ const Carousel = ({ banners }: CarouselProps) => {
       }}
     >
       <Swiper
-        pagination={{
-          el: "panginationBtn",
-        }}
+        pagination={true}
         modules={[Pagination, Autoplay]}
         autoplay={{ delay: 3000 }}
         slidesPerView={1}
