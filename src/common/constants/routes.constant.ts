@@ -1,4 +1,4 @@
-import { Lang } from "../interfaces/common.interface";
+import { Lang, Types } from "../interfaces/common.interface";
 
 // DECLARE PATH NAME FOR ROUTE
 export const ROUTE_HOME: Record<Lang, string> = {
@@ -49,4 +49,24 @@ export const ROUTE_LIBRARY: Record<Lang, string> = {
 export const ROUTE_ARTICLE_DETAIL: Record<Lang, string> = {
   vi: "/bai-viet/:slug",
   en: "/article/:slug",
+};
+
+export type RouteInfo = Record<Types, Record<Lang, { name: string; link: string }>>;
+export const ROUTES: RouteInfo = {
+  POLICY: {
+    en: { name: "Policy", link: ROUTE_POLICY["en"] },
+    vi: { name: "Chính Sách", link: ROUTE_POLICY["vi"] },
+  },
+  DOCUMENT: {
+    en: { name: "Document", link: ROUTE_LIBRARY["en"] },
+    vi: { name: "Tài liệu", link: ROUTE_LIBRARY["vi"] },
+  },
+  ENTERPRISE: {
+    en: { name: "Enterprise", link: ROUTE_ENTERPRISE_STORY["en"] },
+    vi: { name: "Doanh nghiệp", link: ROUTE_ENTERPRISE_STORY["vi"] },
+  },
+  EVENT: {
+    en: { name: "Event", link: ROUTE_EVENT["en"] },
+    vi: { name: "Sự kiện", link: ROUTE_EVENT["vi"] },
+  },
 };

@@ -1,14 +1,9 @@
-import {
-  ROUTE_ENTERPRISE_STORY,
-  ROUTE_POLICY,
-} from "../constants/routes.constant";
+import { RouteInfo, ROUTE_ENTERPRISE_STORY, ROUTE_POLICY } from "../constants/routes.constant";
 import { Lang } from "../interfaces/common.interface";
 import { BreadcrumbsType } from "./interfaces";
 
 // ---------------------- Enterprise story detail
-export const getBreadCrumbEnterpriseDetail: (
-  Lang: Lang
-) => BreadcrumbsType[] = (lang) => [
+export const getBreadCrumbEnterpriseDetail: (Lang: Lang) => BreadcrumbsType[] = (lang) => [
   {
     label: "Chuyện doanh nghiệp",
     link: ROUTE_ENTERPRISE_STORY[lang],
@@ -19,12 +14,12 @@ export const getBreadCrumbEnterpriseDetail: (
   },
 ];
 
-export const getBreadCrumbPolicyDetail: (Lang: Lang) => BreadcrumbsType[] = (
-  lang
+export const getBreadCrumbArticleDetail: (typeInfo: { name: string; link: string }) => BreadcrumbsType[] = (
+  typeInfo
 ) => [
   {
-    label: "Chính sách",
-    link: ROUTE_POLICY[lang],
+    label: typeInfo.name,
+    link: typeInfo.link,
   },
   {
     label: ":articleName",

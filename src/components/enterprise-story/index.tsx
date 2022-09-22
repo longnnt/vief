@@ -1,9 +1,9 @@
 import { WebContainer } from "@/src/common/components/WebContainer";
+import { EnterprisePageProps } from "@/src/pages/enterprise-story";
 import { Text, VStack } from "@chakra-ui/react";
 import { MainArticles } from "./components/MainArticles";
-import { Outstanding } from "./components/Outstanding";
 
-function EnterpriseStory() {
+function EnterpriseStory({ articleData, categories }: EnterprisePageProps) {
   return (
     <WebContainer>
       <VStack spacing="64px" mb="64px">
@@ -19,8 +19,7 @@ function EnterpriseStory() {
         >
           Chuyện doanh nghiệp
         </Text>
-        <MainArticles />
-        <Outstanding />
+        <MainArticles articleData={articleData} categories={categories} />
       </VStack>
     </WebContainer>
   );

@@ -20,12 +20,7 @@ function ArticleItem({ article, imgStyle }: ArticleItemProps) {
   }
   const { thumbnail, title, shortDesc, createdAt, slug } = article;
   return (
-    <VStack
-      spacing="4"
-      alignItems="start"
-      onClick={() => handleRedirect(slug)}
-      cursor="pointer"
-    >
+    <VStack spacing="4" alignItems="start" onClick={() => handleRedirect(slug)} cursor="pointer">
       <Img
         src={thumbnail.url}
         w="full"
@@ -43,11 +38,12 @@ function ArticleItem({ article, imgStyle }: ArticleItemProps) {
           base: "text20",
           sm: "text16",
         }}
-        className="text-3-line"
+        className="text-2-line"
       >
         {title}
       </Text>
       <Text
+        className="text-5-line"
         variant="text14"
         display={{
           base: "block",

@@ -21,23 +21,12 @@ const Carousel = ({ banners }: CarouselProps) => {
         sm: "calc(100vh - 66px)",
       }}
     >
-      <Swiper
-        pagination={true}
-        modules={[Pagination, Autoplay]}
-        autoplay={{ delay: 3000 }}
-        slidesPerView={1}
-      >
+      <Swiper pagination={true} modules={[Pagination, Autoplay]} autoplay={{ delay: 3000 }} slidesPerView={1}>
         {banners.map((banner) => (
           <SwiperSlide key={banner.id}>
             <Box w="full" h="full" position="relative">
               <a href={banner.link} target="_blank" rel="noreferrer">
-                <Image
-                  src={banner.image.url}
-                  alt=""
-                  objectFit="cover"
-                  w="full"
-                  h="full"
-                />
+                <Image src={banner.image.url} alt="" objectFit="cover" w="full" h="full" />
               </a>
               <Stack
                 position="absolute"
@@ -52,15 +41,8 @@ const Carousel = ({ banners }: CarouselProps) => {
                 opacity={{ md: "unset", sm: "0.8" }}
                 p={{ md: "unset", sm: "16px" }}
               >
-                <Text variant={{ md: "text28", sm: "text20" }}>
-                  {banner.translates[0].title}
-                </Text>
-                <Text
-                  variant="text36"
-                  fontSize={{ md: "80px", sm: "28px" }}
-                  color="green.primary"
-                  lineHeight="100%"
-                >
+                <Text variant={{ md: "text28", sm: "text20" }}>{banner.translates[0].title}</Text>
+                <Text variant="text36" fontSize={{ md: "80px", sm: "28px" }} color="green.primary" lineHeight="100%">
                   {banner.translates[0].subTitle}
                 </Text>
                 <Text
