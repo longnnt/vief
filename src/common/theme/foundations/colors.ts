@@ -12,6 +12,9 @@ export const colors = {
 
     // ...
   },
+  focusBorder: "#394160",
+  primaryHovering: "#013A84",
+  deactive: "#C5CAD3",
   blue: {
     primary: "#01459c",
   },
@@ -35,4 +38,5 @@ export const colors = {
   orange: {
     primary: "#F3A70F",
   },
+  inputBg: "#F2F3F7",
 };

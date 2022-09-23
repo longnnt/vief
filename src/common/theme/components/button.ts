@@ -31,6 +31,13 @@ const variantPrimary = {
   bg: "blue.primary",
   border: "none",
   color: "white",
+  _hover: {
+    bg: "primaryHovering",
+  },
+  _focus: {
+    bg: "deactive",
+    color: "text",
+  },
 };
 const variantUnstyled = {};
 
@@ -51,7 +58,7 @@ const sizes = {
     px: 6,
   },
   md: {
-    h: 10,
+    h: "40px",
     minW: 10,
     fontSize: "md",
     px: 4,

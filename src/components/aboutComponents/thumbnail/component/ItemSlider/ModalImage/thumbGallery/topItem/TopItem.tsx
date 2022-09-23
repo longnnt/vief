@@ -1,9 +1,19 @@
-import { Box, Image } from "@chakra-ui/react";
+import { UnsplashImg } from "@/src/components/aboutComponents/interfaces";
+import { Box, Center, Image, Stack, VStack } from "@chakra-ui/react";
 
-export const TopItem = ({ props }: any) => {
+export type ItemImgThumbnail = {
+  props: UnsplashImg;
+};
+
+export const TopItem = ({ props }: ItemImgThumbnail) => {
   return (
-    <Box w="full" h={{ sm: "200px", md: "500px" }}>
-      <Image src={props.url} alt="a" />
+    <Box
+      h={{ md: "672.5px", sm: "200px" }}
+      w="full"
+      bg="transparent"
+      borderRadius="8px"
+    >
+      <Image src={props?.urls?.regular} alt="" />
     </Box>
   );
 };

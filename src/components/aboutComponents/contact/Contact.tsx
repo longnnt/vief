@@ -1,4 +1,12 @@
-import { Box, Image, Input, Stack, Text } from "@chakra-ui/react";
+import {
+  Box,
+  FormControl,
+  FormLabel,
+  Image,
+  Input,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import SubmitSuccess from "./submitNoti/SumbitSuccess";
 
 const Contact = () => {
@@ -11,15 +19,10 @@ const Contact = () => {
             w={{ md: "592px", sm: "full" }}
             alignSelf="center"
           >
-            <Text
-              align="center"
-              fontSize="28px"
-              fontWeight="600"
-              lineHeight="42px"
-            >
+            <Text align="center" variant={{ md: "text28", sm: "text24" }}>
               Liên Hệ
             </Text>
-            <Text textAlign="center" fontSize="14px" fontWeight="500">
+            <Text textAlign="center" variant="text14">
               Vulputate sem volutpat cras senectus lorem massa volutpat
               pellentesque dui. Tortor, pretium sed at hendrerit justo.
               Facilisis condimentum ultrices fermentum
@@ -45,28 +48,35 @@ const Contact = () => {
               />
             </Box>
             <Stack spacing="32px" w={{ md: "592px", sm: "full" }}>
-              <Stack spacing="8px">
-                <Text fontWeight="500" fontSize="14px">
-                  Họ và tên
-                </Text>
-                <Input bg="brand.bgItemFile" borderRadius="6px"></Input>
-              </Stack>
-              <Stack spacing="8px">
-                <Text fontWeight="500" fontSize="14px">
-                  Email
-                </Text>
-                <Input bg="brand.bgItemFile" borderRadius="6px"></Input>
-              </Stack>
-              <Stack spacing="8px">
-                <Text fontWeight="500" fontSize="14px">
-                  Lời nhắn
-                </Text>
+              <FormControl isRequired>
+                <FormLabel>Họ và tên</FormLabel>
                 <Input
-                  h="120px"
-                  bg="brand.bgItemFile"
+                  bg="inputBg"
                   borderRadius="6px"
-                ></Input>
-              </Stack>
+                  focusBorderColor="focusBorder"
+                  _focus={{ bg: "none" }}
+                />
+              </FormControl>
+              <FormControl isRequired>
+                <FormLabel>Email</FormLabel>
+                <Input
+                  bg="inputBg"
+                  borderRadius="6px"
+                  type="email"
+                  focusBorderColor="focusBorder"
+                  _focus={{ bg: "none" }}
+                />
+              </FormControl>
+              <FormControl>
+                <FormLabel>Lời nhắn</FormLabel>
+                <Input
+                  bg="inputBg"
+                  borderRadius="6px"
+                  h="120px"
+                  focusBorderColor="focusBorder"
+                  _focus={{ bg: "none" }}
+                />
+              </FormControl>
               <SubmitSuccess />
             </Stack>
           </Stack>

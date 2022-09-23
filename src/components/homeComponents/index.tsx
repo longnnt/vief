@@ -1,6 +1,5 @@
 import { WebContainer } from "@/src/common/components/WebContainer";
 import { Stack } from "@chakra-ui/react";
-import React from "react";
 import SectionCompany from "../section-company";
 import { EventsHome } from "../section-event/EventsHome";
 import SectionPolicy from "../section-policy";

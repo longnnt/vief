@@ -1,21 +1,19 @@
 import { RenderBreadcrumb } from "@/src/common/components/renderBreadcumb";
-import { getBreadCrumbPolicyDetail } from "@/src/common/configs/breadcrumb.configs";
+import { getBreadCrumbArticleDetail } from "@/src/common/configs/breadcrumb.configs";
 import { LANG } from "@/src/common/constants/common.constant";
+import { ROUTES } from "@/src/common/constants/routes.constant";
 import { Lang } from "@/src/common/interfaces/common.interface";
-import {
-  getArticleDetailService,
-  getListArticleService,
-} from "@/src/common/services/common.services";
+import { getArticleDetailService, getListArticleService } from "@/src/common/services/common.services";
 import { ArticleDetail } from "@/src/components/article-detail";
 import { ArticleDetailProps } from "@/src/components/article-detail/interface";
 import { GetServerSideProps } from "next";
 
-function index({ articleDetail, relateNews, extraNews }: ArticleDetailProps) {
+function Index({ articleDetail, relateNews, extraNews }: ArticleDetailProps) {
   return (
     <ArticleDetail
       breadcrumb={
         <RenderBreadcrumb
-          breadcrumbConfigs={getBreadCrumbPolicyDetail("en")}
+          breadcrumbConfigs={getBreadCrumbArticleDetail(ROUTES[articleDetail.category.type]["en"])}
           dataLabel={{ articleName: articleDetail.article.title }}
         />
       }
@@ -26,9 +24,7 @@ function index({ articleDetail, relateNews, extraNews }: ArticleDetailProps) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps<
-  ArticleDetailProps
-> = async ({ locale, params }) => {
+export const getServerSideProps: GetServerSideProps<ArticleDetailProps> = async ({ locale, params }) => {
   const articleSlug = (params?.slug || "") as string;
   const lang = (locale || LANG.vi) as Lang;
 
@@ -57,4 +53,4 @@ export const getServerSideProps: GetServerSideProps<
   };
 };
 
-export default index;
+export default Index;

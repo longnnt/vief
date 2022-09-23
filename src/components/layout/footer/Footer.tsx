@@ -7,16 +7,22 @@ import {
   ROUTE_LIBRARY,
   ROUTE_POLICY,
 } from "@/src/common/constants/routes.constant";
+import { useTranslation } from "@/src/common/hooks/useTranslation";
 import { useViefRouter } from "@/src/common/hooks/useViefRouter";
 import { Box, Center, Link, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
-  return <Text variant="text20">{children}</Text>;
+  return (
+    <Text variant="text20" mb="8px">
+      {children}
+    </Text>
+  );
 };
 
 const Footer = () => {
   const router = useViefRouter();
+  const { t } = useTranslation();
   const handleRouter = (children: any) => {
     router.push(children);
   };
@@ -25,9 +31,9 @@ const Footer = () => {
       <Center>
         <WebContainer>
           <SimpleGrid
-            py="64px"
+            py={{ md: "64px", sm: "16px" }}
             columns={{ base: 3, sm: 1, md: 3 }}
-            spacing={"64px"}
+            spacing={{ md: "64px", sm: "16px" }}
             color="text"
           >
             <Stack align={"flex-start"} spacing="8px">
@@ -44,8 +50,12 @@ const Footer = () => {
 
             <Stack align={"flex-start"} spacing="8px">
               <ListHeader>Địa chỉ</ListHeader>
-              <Text variant="text14">Điện thoại: 024 2239 7555</Text>
-              <Text variant="text14">Email: info@vief.vn</Text>
+              <Text variant="text14">
+                Văn phòng Ban nghiên cứu phát triển kinh tế tư nhân
+              </Text>
+              <Text variant="text14">
+                Địa chỉ: Tầng 6, Toà nhà số 10 Chu Văn An,Ba Đình, Hà Nội
+              </Text>
               <Text variant="text14">Điện thoại: 024 2239 7555</Text>
               <Text variant="text14">Email: info@vief.vn</Text>
             </Stack>
@@ -56,7 +66,7 @@ const Footer = () => {
                 variant="text14"
                 cursor="pointer"
               >
-                Trang chủ
+                {t("home")}
               </Text>
               <Text
                 onClick={() => handleRouter(ROUTE_POLICY.en)}

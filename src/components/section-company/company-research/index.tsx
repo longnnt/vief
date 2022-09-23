@@ -4,18 +4,32 @@ import { Box, Button, Image, Stack, Text, VStack } from "@chakra-ui/react";
 
 export default function SectionCompanyResearch() {
   return (
-    <VStack spacing="32px">
-      <VStack alignItems="end">
-        <Text
-          variant={{
-            md: "text20",
-            sm: "text16",
-          }}
-          w="fit-content"
-          borderBottom="1.5px solid #394160"
-        >
-          Chuyện doanh nghiệp / Nghiên cứu điển hình
-        </Text>
+    <VStack spacing={{ md: "32px", sm: "16px" }}>
+      <Stack alignItems={{ sm: "flex-start", md: "flex-end" }}>
+        <Box>
+          <Text
+            display={{ sm: "none", base: "flex" }}
+            variant={{
+              md: "text20",
+              sm: "text16",
+            }}
+            w="fit-content"
+            borderBottom="1.5px solid #394160"
+          >
+            Chuyện doanh nghiệp / Nghiên cứu điển hình
+          </Text>
+          <Text
+            display={{ md: "none", sm: "text" }}
+            variant={{
+              md: "text20",
+              sm: "text16",
+            }}
+            w="fit-content"
+            borderBottom="1.5px solid #394160"
+          >
+            Chuyện doanh nghiệp / Nghiên cứu
+          </Text>
+        </Box>
         <Text
           variant={{
             md: "text36",
@@ -25,20 +39,19 @@ export default function SectionCompanyResearch() {
             base: "80%",
             sm: "full",
           }}
-          my="18px"
           textAlign={{ sm: "start", base: "end" }}
         >
           Đề xuất các nhóm giải pháp ngoài lâm nghiệp nhằm giảm phát thải khí
           nhà kính
         </Text>
-      </VStack>
+      </Stack>
 
       <Stack
-        flexDir={{
+        direction={{
           md: "row",
           sm: "column",
         }}
-        justify="space-between"
+        spacing={{ md: "64px", sm: "32px" }}
       >
         <Box
           w={{
@@ -59,11 +72,12 @@ export default function SectionCompanyResearch() {
             borderRadius="16px"
           />
         </Box>
-        <Box
+        <Stack
           w={{
-            md: "30%",
+            md: "35%",
             sm: "full",
           }}
+          spacing={{ md: "32px", sm: "16px" }}
         >
           <Text variant="text14" textAlign="justify">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
@@ -76,10 +90,12 @@ export default function SectionCompanyResearch() {
             donec ac odio tempor orci dapibus ultrices in iaculis nunc sed augue
             lacus
           </Text>
-          <Button variant="primary" rightIcon={<ArrowForwardIcon />} mt="32px">
-            Xem thêm
-          </Button>
-        </Box>
+          <Box>
+            <Button variant="primary" rightIcon={<ArrowForwardIcon />}>
+              Xem thêm
+            </Button>
+          </Box>
+        </Stack>
       </Stack>
     </VStack>
   );
