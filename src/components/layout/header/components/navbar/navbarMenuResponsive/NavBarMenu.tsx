@@ -1,7 +1,4 @@
-import {
-  ROUTE_ABOUT,
-  ROUTE_HOME,
-} from "@/src/common/constants/routes.constant";
+import { ROUTE_ABOUT, ROUTE_HOME } from "@/src/common/constants/routes.constant";
 import { useTranslation } from "@/src/common/hooks/useTranslation";
 import { useViefRouter } from "@/src/common/hooks/useViefRouter";
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
@@ -60,17 +57,8 @@ export default function NavbarMenu() {
           </DrawerHeader>
 
           <DrawerBody>
-            <Stack
-              alignItems="flex-start"
-              fontSize="14px"
-              fontWeight="500"
-              onClick={onClose}
-            >
-              <Text
-                onClick={() => handleRouter(ROUTE_HOME.en)}
-                variant="text14"
-                cursor="pointer"
-              >
+            <Stack alignItems="flex-start" fontSize="14px" fontWeight="500" onClick={onClose}>
+              <Text onClick={() => handleRouter(ROUTE_HOME.en)} variant="text14" cursor="pointer">
                 {t("home")}
               </Text>
 
@@ -79,11 +67,7 @@ export default function NavbarMenu() {
               <CategoryCompany />
               <CategoryLibrary />
 
-              <Text
-                onClick={() => handleRouter(ROUTE_ABOUT.en)}
-                variant="text14"
-                cursor="pointer"
-              >
+              <Text onClick={() => handleRouter(ROUTE_ABOUT.en)} variant="text14" cursor="pointer">
                 Về chúng tôi
               </Text>
             </Stack>

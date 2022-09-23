@@ -1,12 +1,5 @@
-import {
-  LANG,
-  LIST_DATA_RESPONSE,
-} from "@/src/common/constants/common.constant";
-import {
-  ListResponse,
-  RequestCallBack,
-  SearchParams,
-} from "@/src/common/interfaces/common.interface";
+import { LANG, LIST_DATA_RESPONSE } from "@/src/common/constants/common.constant";
+import { ListResponse, RequestCallBack, SearchParams } from "@/src/common/interfaces/common.interface";
 import { toUrlQueryString } from "@/src/common/lib/common.lib";
 import { execute } from "@/src/common/lib/request";
 import { CLIENT_ID, IMG_URL } from "./contants";

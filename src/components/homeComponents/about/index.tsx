@@ -24,14 +24,7 @@ const SectionAbout = () => {
               }}
               h="444px"
             >
-              <Image
-                borderRadius="12px"
-                src="/bgHome.png"
-                width={"full"}
-                height={"full"}
-                objectFit="cover"
-                alt=""
-              />
+              <Image borderRadius="12px" src="/bgHome.png" width={"full"} height={"full"} objectFit="cover" alt="" />
             </Box>
             <Stack
               w={{
@@ -64,25 +57,15 @@ const SectionAbout = () => {
                 </Text>
               </Stack>
               <Text variant="text14" textAlign={"justify"}>
-                Với chủ đề ViEF 2021 - Thúc đẩy tăng trưởng kinh tế và tạo sức
-                bật cho doanh nghiệp trong tình hình mới, Diễn đàn Kinh tế Việt
-                Nam thường niên lần thứ 4 là sự kiện gặp gỡ, đối thoại công tư
-                quy mô quốc gia, nhằm huy động, tập hợp hiệu quả nguồn lực của
-                khu vực doanh nghiệp để xây dựng và thực thi hiệu quả Chương
-                trình phục hồi, phát triển kinh tế giai đoạn 2022 - 2023, góp
-                phần thúc đẩy các mục tiêu tăng trưởng giai đoạn 5 năm và trước
-                mắt trọng tâm cho năm 2022 là năm có ý nghĩa “bản lề” để bứt phá
-                trong bối cảnh dịch bệnh Covid-19.
+                Với chủ đề ViEF 2021 - Thúc đẩy tăng trưởng kinh tế và tạo sức bật cho doanh nghiệp trong tình hình mới,
+                Diễn đàn Kinh tế Việt Nam thường niên lần thứ 4 là sự kiện gặp gỡ, đối thoại công tư quy mô quốc gia,
+                nhằm huy động, tập hợp hiệu quả nguồn lực của khu vực doanh nghiệp để xây dựng và thực thi hiệu quả
+                Chương trình phục hồi, phát triển kinh tế giai đoạn 2022 - 2023, góp phần thúc đẩy các mục tiêu tăng
+                trưởng giai đoạn 5 năm và trước mắt trọng tâm cho năm 2022 là năm có ý nghĩa “bản lề” để bứt phá trong
+                bối cảnh dịch bệnh Covid-19.
               </Text>
-              <Link
-                href={ROUTE_ABOUT["en"]}
-                _hover={{ textDecoration: "none" }}
-              >
-                <Button
-                  variant="primary"
-                  textColor="white"
-                  rightIcon={<ArrowForwardIcon />}
-                >
+              <Link href={ROUTE_ABOUT["en"]} _hover={{ textDecoration: "none" }}>
+                <Button variant="primary" textColor="white" rightIcon={<ArrowForwardIcon />}>
                   Xem thêm
                 </Button>
               </Link>
@@ -144,25 +127,15 @@ const SectionAbout = () => {
                 </Box>
               </Stack>
               <Text variant="text14" textAlign={"justify"}>
-                Với chủ đề ViEF 2021 - Thúc đẩy tăng trưởng kinh tế và tạo sức
-                bật cho doanh nghiệp trong tình hình mới, Diễn đàn Kinh tế Việt
-                Nam thường niên lần thứ 4 là sự kiện gặp gỡ, đối thoại công tư
-                quy mô quốc gia, nhằm huy động, tập hợp hiệu quả nguồn lực của
-                khu vực doanh nghiệp để xây dựng và thực thi hiệu quả Chương
-                trình phục hồi, phát triển kinh tế giai đoạn 2022 - 2023, góp
-                phần thúc đẩy các mục tiêu tăng trưởng giai đoạn 5 năm và trước
-                mắt trọng tâm cho năm 2022 là năm có ý nghĩa “bản lề” để bứt phá
-                trong bối cảnh dịch bệnh Covid-19.
+                Với chủ đề ViEF 2021 - Thúc đẩy tăng trưởng kinh tế và tạo sức bật cho doanh nghiệp trong tình hình mới,
+                Diễn đàn Kinh tế Việt Nam thường niên lần thứ 4 là sự kiện gặp gỡ, đối thoại công tư quy mô quốc gia,
+                nhằm huy động, tập hợp hiệu quả nguồn lực của khu vực doanh nghiệp để xây dựng và thực thi hiệu quả
+                Chương trình phục hồi, phát triển kinh tế giai đoạn 2022 - 2023, góp phần thúc đẩy các mục tiêu tăng
+                trưởng giai đoạn 5 năm và trước mắt trọng tâm cho năm 2022 là năm có ý nghĩa “bản lề” để bứt phá trong
+                bối cảnh dịch bệnh Covid-19.
               </Text>
-              <Link
-                href={ROUTE_ABOUT["en"]}
-                _hover={{ textDecoration: "none" }}
-              >
-                <Button
-                  variant="primary"
-                  textColor="white"
-                  rightIcon={<ArrowForwardIcon />}
-                >
+              <Link href={ROUTE_ABOUT["en"]} _hover={{ textDecoration: "none" }}>
+                <Button variant="primary" textColor="white" rightIcon={<ArrowForwardIcon />}>
                   Xem thêm
                 </Button>
               </Link>

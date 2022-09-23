@@ -41,8 +41,7 @@ export default function SectionCompanyResearch() {
           }}
           textAlign={{ sm: "start", base: "end" }}
         >
-          Đề xuất các nhóm giải pháp ngoài lâm nghiệp nhằm giảm phát thải khí
-          nhà kính
+          Đề xuất các nhóm giải pháp ngoài lâm nghiệp nhằm giảm phát thải khí nhà kính
         </Text>
       </Stack>
 
@@ -63,14 +62,7 @@ export default function SectionCompanyResearch() {
             sm: "230px",
           }}
         >
-          <Image
-            src={PICTURE("1")}
-            alt=""
-            w="full"
-            h="full"
-            objectFit="cover"
-            borderRadius="16px"
-          />
+          <Image src={PICTURE("1")} alt="" w="full" h="full" objectFit="cover" borderRadius="16px" />
         </Box>
         <Stack
           w={{
@@ -80,15 +72,11 @@ export default function SectionCompanyResearch() {
           spacing={{ md: "32px", sm: "16px" }}
         >
           <Text variant="text14" textAlign="justify">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
-            purus sit amet luctus venenatis, lectus magna fringilla urna,
-            porttitor rhoncus dolor purus non enim praesent elementum facilisis
-            leo, vel fringilla est ullamcorper eget nulla facilisi etiam
-            dignissim diam quis enim lobortis scelerisque fermentum dui faucibus
-            in ornare quam viverra orci sagittis eu volutpat odio facilisis
-            mauris sit amet massa vitae tortor condimentum lacinia quis vel eros
-            donec ac odio tempor orci dapibus ultrices in iaculis nunc sed augue
-            lacus
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus
+            magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla
+            est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui
+            faucibus in ornare quam viverra orci sagittis eu volutpat odio facilisis mauris sit amet massa vitae tortor
+            condimentum lacinia quis vel eros donec ac odio tempor orci dapibus ultrices in iaculis nunc sed augue lacus
           </Text>
           <Box>
             <Button variant="primary" rightIcon={<ArrowForwardIcon />}>

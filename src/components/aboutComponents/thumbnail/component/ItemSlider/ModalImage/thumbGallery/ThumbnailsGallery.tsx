@@ -3,15 +3,7 @@ import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 
 // import required modules
 import { FreeMode, Lazy, Navigation, Thumbs } from "swiper";
-import {
-  Box,
-  Flex,
-  HStack,
-  IconButton,
-  Stack,
-  useDisclosure,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Flex, HStack, IconButton, Stack, useDisclosure, VStack } from "@chakra-ui/react";
 import { TopItem } from "./topItem/TopItem";
 import { BottomItem } from "./bottomItem/BottomItem";
 
@@ -25,12 +17,7 @@ export const ThumbnailGallery = ({ listImgThumb }: ThumbnailItemProp) => {
   };
 
   return (
-    <Stack
-      w="85%"
-      direction={"column"}
-      spacing={{ md: "64px", sm: "32px" }}
-      alignSelf={"center"}
-    >
+    <Stack w="85%" direction={"column"} spacing={{ md: "64px", sm: "32px" }} alignSelf={"center"}>
       <Stack bg="transparent" direction={"row"} w="full" alignSelf="center">
         <Stack w="100%" px="20%">
           <Swiper

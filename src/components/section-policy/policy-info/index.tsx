@@ -33,8 +33,7 @@ export default function PolicyInfo() {
             sm: "full",
           }}
         >
-          Ban hành danh mục lĩnh vực, cơ sở phát thải khí nhà kính phai thực
-          hiện kiểm kê khí nhà kính
+          Ban hành danh mục lĩnh vực, cơ sở phát thải khí nhà kính phai thực hiện kiểm kê khí nhà kính
         </Text>
       </Stack>
 
@@ -45,29 +44,16 @@ export default function PolicyInfo() {
         }}
         spacing={{ md: "64px", sm: "16px" }}
       >
-        <Stack
-          w={{ md: "30%", sm: "100%" }}
-          spacing={{ sm: "16px", md: "32px" }}
-          alignSelf="center"
-        >
+        <Stack w={{ md: "30%", sm: "100%" }} spacing={{ sm: "16px", md: "32px" }} alignSelf="center">
           <Text variant="text14" textAlign="justify">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
-            purus sit amet luctus venenatis, lectus magna fringilla urna,
-            porttitor rhoncus dolor purus non enim praesent elementum facilisis
-            leo, vel fringilla est ullamcorper eget nulla facilisi etiam
-            dignissim diam quis enim lobortis scelerisque fermentum dui faucibus
-            in ornare quam viverra orci sagittis eu volutpat odio facilisis
-            mauris sit amet massa vitae tortor condimentum lacinia quis vel eros
-            donec ac odio tempor orci dapibus ultrices in iaculis nunc sed augue
-            lacus
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus
+            magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla
+            est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui
+            faucibus in ornare quam viverra orci sagittis eu volutpat odio facilisis mauris sit amet massa vitae tortor
+            condimentum lacinia quis vel eros donec ac odio tempor orci dapibus ultrices in iaculis nunc sed augue lacus
           </Text>
           <Box>
-            <Button
-              w="128px"
-              variant="primary"
-              rightIcon={<ArrowForwardIcon />}
-              onClick={handleRoutePolicyPage}
-            >
+            <Button w="128px" variant="primary" rightIcon={<ArrowForwardIcon />} onClick={handleRoutePolicyPage}>
               Xem thêm
             </Button>
           </Box>
@@ -82,14 +68,7 @@ export default function PolicyInfo() {
             sm: "230px",
           }}
         >
-          <Image
-            src={PICTURE("1")}
-            alt=""
-            w="full"
-            h="full"
-            objectFit="cover"
-            borderRadius="16px"
-          />
+          <Image src={PICTURE("1")} alt="" w="full" h="full" objectFit="cover" borderRadius="16px" />
         </Box>
       </Stack>
     </Stack>

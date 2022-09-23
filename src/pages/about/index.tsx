@@ -21,9 +21,7 @@ const AboutPage = ({ listImg, listImgThumb }: ListImgProps) => {
 //   };
 // };
 
-export const getServerSideProps: GetServerSideProps<
-  ListImgProps
-> = async () => {
+export const getServerSideProps: GetServerSideProps<ListImgProps> = async () => {
   const pictureRes = await getListPictureService();
   return {
     props: { listImg: pictureRes.data, listImgThumb: pictureRes.data },
