@@ -26,7 +26,9 @@ import CategoryPolicy from "../MenuItem/CategoryPolicy";
 
 export default function NavbarMenu() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
   const { t } = useTranslation();
+
   const router = useViefRouter();
   const handleRouter = (children: any) => {
     router.push(children);
@@ -83,13 +85,6 @@ export default function NavbarMenu() {
                 cursor="pointer"
               >
                 Về chúng tôi
-              </Text>
-              <Text
-                onClick={() => handleRouter(ROUTE_ABOUT.en)}
-                variant="text14"
-                cursor="pointer"
-              >
-                Liên hệ
               </Text>
             </Stack>
           </DrawerBody>

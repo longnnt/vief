@@ -2,9 +2,13 @@ import {
   Box,
   Button,
   Center,
+  Container,
   Flex,
+  Grid,
+  GridItem,
   IconButton,
   Image,
+  SimpleGrid,
   Stack,
 } from "@chakra-ui/react";
 import React, { ReactNode } from "react";
@@ -59,7 +63,7 @@ export default function SliderImage({ listImg, listImgThumb }: ListImgProps) {
     vertical: false,
     style: { display: "flex" },
     infinite: true,
-    speed: 500,
+    speed: 1000,
     autoplay: true,
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -119,13 +123,13 @@ export default function SliderImage({ listImg, listImgThumb }: ListImgProps) {
   };
   return (
     <Center>
-      <Box w={{ md: "1330px", sm: "full" }} h={{ md: "320px", sm: "189px" }}>
+      <Stack w={{ md: "1330px", sm: "full" }} h={{ md: "320px", sm: "189px" }}>
         <Slider {...settingsMd}>
           {listImg?.map((img, index) => (
             <ItemSlider itemImg={img} listImgThumb={listImgThumb} key={index} />
           ))}
         </Slider>
-      </Box>
+      </Stack>
     </Center>
   );
 }

@@ -50,15 +50,32 @@ const Contact = () => {
             <Stack spacing="32px" w={{ md: "592px", sm: "full" }}>
               <FormControl isRequired>
                 <FormLabel>Họ và tên</FormLabel>
-                <Input bg="inputBg" borderRadius="6px" />
+                <Input
+                  bg="inputBg"
+                  borderRadius="6px"
+                  focusBorderColor="focusBorder"
+                  _focus={{ bg: "none" }}
+                />
               </FormControl>
               <FormControl isRequired>
                 <FormLabel>Email</FormLabel>
-                <Input bg="inputBg" borderRadius="6px" type="email" />
+                <Input
+                  bg="inputBg"
+                  borderRadius="6px"
+                  type="email"
+                  focusBorderColor="focusBorder"
+                  _focus={{ bg: "none" }}
+                />
               </FormControl>
               <FormControl>
                 <FormLabel>Lời nhắn</FormLabel>
-                <Input bg="inputBg" borderRadius="6px" h="120px" />
+                <Input
+                  bg="inputBg"
+                  borderRadius="6px"
+                  h="120px"
+                  focusBorderColor="focusBorder"
+                  _focus={{ bg: "none" }}
+                />
               </FormControl>
               <SubmitSuccess />
             </Stack>

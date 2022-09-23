@@ -1,22 +1,21 @@
-import { Center, Stack, Text } from "@chakra-ui/react";
-import { ItemPartner } from "./itemPartner/ItemPartner";
+import { Box, Center, Image, Stack, Text } from "@chakra-ui/react";
+import React from "react";
+import { ItemPartner } from "./itemPartner";
 
 const Partner = () => {
   return (
     <>
       <Center>
         <Stack spacing={{ sm: "24px", md: "42px" }}>
-          <Text fontSize="28px" fontWeight="600" textAlign="center">
-            ĐỐI TÁC HỢP TÁC
+          <Text variant="text28" textAlign="center">
+            Đối tác hợp tác
           </Text>
           <Stack
             justifyContent="space-between"
             spacing={{ sm: "24px", md: "64px" }}
             direction={{ md: "row", sm: "column" }}
           >
-            <ItemPartner>{"/logo-iced-vn.png"}</ItemPartner>
-            <ItemPartner>{"/usaid.png"}</ItemPartner>
-            <ItemPartner>{"/theAsia.png"}</ItemPartner>
+            <ItemPartner />
           </Stack>
         </Stack>
       </Center>

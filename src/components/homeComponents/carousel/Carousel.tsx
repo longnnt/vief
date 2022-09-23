@@ -1,4 +1,4 @@
-import { Box, Image, Stack, Text } from "@chakra-ui/react";
+import { Box, color, Image, Stack, Text } from "@chakra-ui/react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 

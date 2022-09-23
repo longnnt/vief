@@ -9,13 +9,13 @@ import {
 import { ReactNode, useEffect, useState } from "react";
 import Footer from "./footer/Footer";
 import Navbar from "./header/components/navbar/Navbar";
-import { Category } from "./interfaces";
+import { NavbarProps } from "./interfaces";
 
 const HomeLayout = ({ children }: { children: ReactNode }) => {
-  const [policy, setPolicy] = useState<Category>();
-  const [company, setCompany] = useState<Category>();
-  const [event, setEvent] = useState<Category>();
-  const [library, setLibrary] = useState<Category>();
+  const [policy, setPolicy] = useState<NavbarProps>();
+  const [company, setCompany] = useState<NavbarProps>();
+  const [event, setEvent] = useState<NavbarProps>();
+  const [library, setLibrary] = useState<NavbarProps>();
 
   useEffect(() => {
     handleGetCategories();
