@@ -28,18 +28,7 @@ const LibraryPage = ({ listItem, categories }: LibraryPageProps) => {
         >
           Thư viện
         </Text>
-        <Tabs variant="unstyled" w="full">
-          <TabList w="full" justifyContent={"center"}>
-            {categories.map((cate, index) => (
-              <LibTabItem key={index}>{cate.name}</LibTabItem>
-            ))}
-          </TabList>
-          <TabPanels padding={"0px"}>
-            {categories.map((cate, index) => (
-              <LibTabPanelItem listItem={listItem} key={index} />
-            ))}
-          </TabPanels>
-        </Tabs>
+        <LibTabPanelItem listItem={listItem} categories={categories} />
       </Stack>
     </WebContainer>
   );

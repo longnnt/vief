@@ -1,9 +1,11 @@
 import { useViefRouter } from "@/src/common/hooks/useViefRouter";
+import { DownloadIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
   FormControl,
   FormLabel,
+  Image,
   Input,
   Modal,
   ModalBody,
@@ -25,7 +27,11 @@ export default function DownLoad({ docItem }: docProps) {
 
   return (
     <Box>
-      <Button onClick={onOpen} variant="primary">
+      <Button
+        onClick={onOpen}
+        variant="primary"
+        rightIcon={<Image src="/download.svg" />}
+      >
         Tải về
       </Button>
 

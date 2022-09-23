@@ -12,8 +12,6 @@ function FileItems({ docItem }: docProps) {
           <Image src="/iconFile.png" w="full" h="full"></Image>
         </Box>
         <Text variant={{ md: "text20", sm: "text16" }} className="text-3-line">
-          {/* Báo cáo cập nhật hai năm một lần lần thứ ba của Việt Nam (BUR3) gửi
-          Công ước khung của Liên hợp quốc về biến đổi khí hậu */}
           {docItem.shortDesc}
         </Text>
         <Box>

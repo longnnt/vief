@@ -3,6 +3,7 @@ import {
   Category,
   Fields,
   Lang,
+  ListResponse,
 } from "@/src/common/interfaces/common.interface";
 
 export interface Translate extends BaseEntities {
@@ -23,7 +24,7 @@ export interface DocumentItem extends BaseEntities {
 }
 
 export interface LibraryPageProps {
-  listItem: DocumentItem[];
+  listItem: ListResponse<DocumentItem>;
   categories: Category[];
 }
 
@@ -33,3 +34,9 @@ export type docProps = {
 export type docArrayProps = {
   listItem: DocumentItem[];
 };
+export interface FileDownload {
+  key: string;
+  fileName: string;
+  type: string;
+  url: string;
+}

@@ -21,3 +21,4 @@ export const API_EVENTS = "events";
 // export const API_TOOKPLACE = "events?field=WOOD&timeline=TOOK_PLACE";
 
 export const API_DOCUMENT = "client/documents";
+export const API_DOWNLOADFILE = "file/download-url?key=";

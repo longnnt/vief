@@ -2,7 +2,7 @@ import {
   LANG,
   LIST_DATA_RESPONSE,
 } from "@/src/common/constants/common.constant";
-import { API_DOCUMENT } from "@/src/common/constants/urlAPI";
+import { API_DOCUMENT, API_DOWNLOADFILE } from "@/src/common/constants/urlAPI";
 import {
   ListResponse,
   RequestCallBack,
@@ -10,13 +10,13 @@ import {
 } from "@/src/common/interfaces/common.interface";
 import { toUrlQueryString } from "@/src/common/lib/common.lib";
 import { execute } from "@/src/common/lib/request";
-import { DocumentItem } from "./interfaces";
+import { DocumentItem, FileDownload } from "./interfaces";
 
 // export function getListDoccumentService() {
 //   return execute.get(API_DOCUMENT);
 // }
 
-export async function getListDoccumentService({
+export async function getListDocumentService({
   lang,
   onSuccess,
   onError,
@@ -31,6 +31,16 @@ export async function getListDoccumentService({
     return res.data;
   } catch (error) {
     onError && onError(error);
+    return LIST_DATA_RESPONSE;
+  }
+}
+export async function getLinkDownloadFile() {
+  try {
+    const res = await execute.get<ListResponse<FileDownload>>(
+      toUrlQueryString(API_DOWNLOADFILE)
+    );
+    return res.data;
+  } catch (error) {
     return LIST_DATA_RESPONSE;
   }
 }

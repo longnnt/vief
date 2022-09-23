@@ -1,5 +1,12 @@
+import { API_DOWNLOADFILE } from "@/src/common/constants/urlAPI";
 import { useViefRouter } from "@/src/common/hooks/useViefRouter";
-import { docProps } from "@/src/components/libraryComponents/interfaces";
+import { execute } from "@/src/common/lib/request";
+import { getParamSearchFile } from "@/src/components/libraryComponents/contants";
+import {
+  docProps,
+  FileDownload,
+} from "@/src/components/libraryComponents/interfaces";
+import { getLinkDownloadFile } from "@/src/components/libraryComponents/services";
 import {
   Box,
   Button,
@@ -20,14 +27,20 @@ import {
 export default function CompleteDownLoad({ docItem }: docProps) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const router = useViefRouter();
-  const handleDownload = ({ docItem }: docProps) => {
-    router.push(docItem?.file?.url);
+
+  async function handleGetLinkDownload(keys: string) {
+    const fileDownload = await execute.get(API_DOWNLOADFILE + keys);
+    handleDownloadFile(fileDownload.data);
+  }
+  const handleDownloadFile = (file: FileDownload) => {
+    router.push(file.url);
   };
+
   return (
     <Box>
       <Button
         onClick={() => {
-          onOpen(), handleDownload({ docItem });
+          onOpen(), handleGetLinkDownload(docItem?.file?.key);
         }}
         variant="primary"
       >
