@@ -1,12 +1,14 @@
 import { Pagination } from "@/src/common/components/pagination";
 import { LANG, PAGE_SIZE } from "@/src/common/constants/common.constant";
 import { useViefRouter } from "@/src/common/hooks/useViefRouter";
+
 import { Category, Lang, ListResponse } from "@/src/common/interfaces/common.interface";
 import { toTotalPage } from "@/src/common/lib/common.lib";
 import { Box, Grid, GridItem, list, Stack, Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
 import { useState } from "react";
 import { DOCCUMENT_SIZE, getParamSearchDocument } from "../contants";
 import { docArrayProps, docProps, DocumentItem, LibraryPageProps } from "../interfaces";
+
 import { getListDocumentService } from "../services";
 import { LibTabItem } from "../tabItems/LibTabItems";
 import { FileItems } from "./item/FileItems";
@@ -24,6 +26,7 @@ export const LibTabPanelItem = ({ listItem, categories }: LibraryPageProps) => {
 
   async function handlePageChange(page: number) {
     const listData = await getListDocumentService(getParamSearchDocument({ page, size: DOCCUMENT_SIZE, lang }));
+
     setListDocumentData(listData);
     setCurrentPage(page);
   }

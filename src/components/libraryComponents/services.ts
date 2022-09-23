@@ -1,6 +1,7 @@
 import { LANG, LIST_DATA_RESPONSE } from "@/src/common/constants/common.constant";
 import { API_DOCUMENT, API_DOWNLOADFILE } from "@/src/common/constants/urlAPI";
 import { ListResponse, RequestCallBack, SearchParams } from "@/src/common/interfaces/common.interface";
+
 import { toUrlQueryString } from "@/src/common/lib/common.lib";
 import { execute } from "@/src/common/lib/request";
 import { DocumentItem, FileDownload } from "./interfaces";
@@ -19,6 +20,7 @@ export async function getListDocumentService({
     const res = await execute.get<ListResponse<DocumentItem>>(toUrlQueryString(API_DOCUMENT, params), {
       headers: { lang: lang || LANG.vi },
     });
+
     onSuccess && onSuccess(res.data);
     return res.data;
   } catch (error) {
@@ -26,6 +28,7 @@ export async function getListDocumentService({
     return LIST_DATA_RESPONSE;
   }
 }
+
 export async function getLinkDownloadFile({
   key,
   onSuccess,
@@ -37,6 +40,7 @@ export async function getLinkDownloadFile({
     return res.data;
   } catch (error) {
     onError && onError(error);
+
     return LIST_DATA_RESPONSE;
   }
 }
