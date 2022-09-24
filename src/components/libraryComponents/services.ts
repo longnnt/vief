@@ -29,14 +29,9 @@ export async function getListDocumentService({
   }
 }
 
-export async function getLinkDownloadFile({
-  key,
-  onSuccess,
-  onError,
-  ...params
-}: SearchParams & RequestCallBack<ListResponse<FileDownload>>) {
+export async function getLinkDownloadFile({ key, onSuccess, onError }: SearchParams & RequestCallBack<FileDownload>) {
   try {
-    const res = await execute.get<ListResponse<FileDownload>>(toUrlQueryString(API_DOWNLOADFILE, params));
+    const res = await execute.get<FileDownload>(toUrlQueryString(API_DOWNLOADFILE, { key: key }));
     return res.data;
   } catch (error) {
     onError && onError(error);

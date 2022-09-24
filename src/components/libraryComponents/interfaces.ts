@@ -29,10 +29,10 @@ export type docArrayProps = {
   listItem: DocumentItem[];
 };
 export interface FileDownload {
-  key: string;
-  fileName: string;
-  type: string;
-  url: string;
+  key?: string;
+  fileName?: string;
+  type?: string;
+  url?: string;
 }
 
 export interface FileDownloadProps {

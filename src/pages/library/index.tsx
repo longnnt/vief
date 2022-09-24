@@ -23,7 +23,7 @@ export const getServerSideProps: GetServerSideProps<LibraryPageProps> = async ({
   if (categories.length) {
     doccumentRes = await getListDocumentService(
       getParamSearchDocument({
-        size: 100,
+        size: DOCCUMENT_SIZE,
         lang: locale as Lang,
       })
     );
