@@ -1,7 +1,4 @@
-import {
-  ListImgProps,
-  UnsplashImg,
-} from "@/src/components/aboutComponents/interfaces";
+import { ListImgProps, UnsplashImg } from "@/src/components/aboutComponents/interfaces";
 import { CloseIcon } from "@chakra-ui/icons";
 import {
   CloseButton,
@@ -42,13 +39,7 @@ export const ModalImage = ({ itemImg, listImgThumb }: PictureItemProp) => {
       <Modal isOpen={isOpen} onClose={onClose} isCentered size="full">
         <ModalOverlay />
         <ModalOverlay />
-        <ModalContent
-          bg="transparent"
-          borderRadius="12px"
-          shadow={"none"}
-          padding="10px"
-          py="20%"
-        >
+        <ModalContent bg="transparent" borderRadius="12px" shadow={"none"} padding="10px" py="20%">
           <ThumbnailGallery listImgThumb={listImgThumb} />
           <IconButton
             aria-label=""

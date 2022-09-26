@@ -1,7 +1,4 @@
-import {
-  ROUTE_ABOUT,
-  ROUTE_HOME,
-} from "@/src/common/constants/routes.constant";
+import { ROUTE_ABOUT, ROUTE_HOME } from "@/src/common/constants/routes.constant";
 import { useTranslation } from "@/src/common/hooks/useTranslation";
 import { useViefRouter } from "@/src/common/hooks/useViefRouter";
 
@@ -9,18 +6,7 @@ import React, { useEffect, useRef } from "react";
 
 import { Lang } from "@/src/common/interfaces/common.interface";
 
-import {
-  Box,
-  Button,
-  ButtonGroup,
-  Flex,
-  HStack,
-  Image,
-  Link,
-  Select,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Button, ButtonGroup, Flex, HStack, Image, Link, Select, Stack, Text } from "@chakra-ui/react";
 import { NavbarProps } from "../../../interfaces";
 import CategoryCompany from "./MenuItem/CategoryCompany";
 import CategoryEvent from "./MenuItem/CategoryEvent";
@@ -66,7 +52,6 @@ const Navbar = ({
   //   handleScroll()
   // },[])
 
-
   const changeLocale = (locale: Lang) => {
     router.push(
       {
@@ -80,14 +65,7 @@ const Navbar = ({
 
   return (
     <>
-      <Box
-        w="100%"
-        alignItems={"center"}
-        position="sticky"
-        top={0}
-        zIndex="10"
-        opacity="95%"
-      >
+      <Box w="100%" alignItems={"center"} position="sticky" top={0} zIndex="10" opacity="95%">
         <Stack bg={"white"}>
           <Flex
             alignSelf={"center"}
@@ -97,8 +75,8 @@ const Navbar = ({
             h={{ sm: "66px", base: "80px" }}
             justifyContent={"space-between"}
           >
-            <Box h="44px">
-              <Image src="/logo-vief.png" alt="" h="full" />
+            <Box onClick={() => handleRouter(ROUTE_HOME.en)} cursor="pointer">
+              <Image src="/logo.svg" alt=""></Image>
             </Box>
             <HStack
               display={{ md: "flex", sm: "none" }}
@@ -133,22 +111,13 @@ const Navbar = ({
               </Text>
             </HStack>
             <Flex alignItems={"center"}>
-              <Select
-                value={locale}
-                variant={"unstyled"}
-                onChange={(e) => changeLocale(e.target.value as Lang)}
-              >
+              <Select value={locale} variant={"unstyled"} onChange={(e) => changeLocale(e.target.value as Lang)}>
                 <option value="vi">VI</option>
                 <option value="en">EN</option>
               </Select>
               <ButtonGroup>
                 <Link href="/login" _hover={{ textDecoration: "none" }}>
-                  <Button
-                    variant="primary"
-                    textColor="white"
-                    w="128px"
-                    display={{ md: "block", sm: "none" }}
-                  >
+                  <Button variant="primary" textColor="white" w="128px" display={{ md: "block", sm: "none" }}>
                     Đăng nhập
                   </Button>
                 </Link>

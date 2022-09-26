@@ -1,14 +1,7 @@
 import { Box, Image, Stack } from "@chakra-ui/react";
 
 import React from "react";
-import {
-  imgIced,
-  imgIcedHover,
-  imgTheAsia,
-  imgTheAsiaHover,
-  imgUsaid,
-  imgUsaidHover,
-} from "../../../constant";
+import { imgIced, imgIcedHover, imgTheAsia, imgTheAsiaHover, imgUsaid, imgUsaidHover } from "../../../constant";
 
 export const ItemPartner = () => {
   const [usaid, setUsaid] = React.useState(imgUsaid);
@@ -17,11 +10,7 @@ export const ItemPartner = () => {
 
   return (
     <>
-      <Stack
-        direction="row"
-        spacing={{ md: "64px", sm: "16px" }}
-        alignSelf="center"
-      >
+      <Stack direction="row" spacing={{ md: "64px", sm: "16px" }} alignSelf="center">
         <Box>
           <Image
             style={{ content: iced }}

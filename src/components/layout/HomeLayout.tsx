@@ -1,11 +1,6 @@
 import { execute } from "@/src/common/lib/request";
 import { Box } from "@chakra-ui/react";
-import {
-  ENTERPRISE_CATEGORY,
-  EVENT_CATEGORY,
-  LIBRARY_CATEGORY,
-  POLICY_CATEGORY,
-} from "@/src/common/constants/urlAPI";
+import { ENTERPRISE_CATEGORY, EVENT_CATEGORY, LIBRARY_CATEGORY, POLICY_CATEGORY } from "@/src/common/constants/urlAPI";
 import { ReactNode, useEffect, useState } from "react";
 import Footer from "./footer/Footer";
 import Navbar from "./header/components/navbar/Navbar";
@@ -34,12 +29,7 @@ const HomeLayout = ({ children }: { children: ReactNode }) => {
 
   return (
     <Box position="relative" h="100vh" overflow="scroll">
-      <Navbar
-        dataPolicy={policy}
-        dataCompany={company}
-        dataEvent={event}
-        dataLibrary={library}
-      />
+      <Navbar dataPolicy={policy} dataCompany={company} dataEvent={event} dataLibrary={library} />
       {children}
       <Footer />
     </Box>

@@ -85,4 +85,5 @@ export interface SearchParams {
   slugCategory?: string;
   lang?: Lang;
   slug?: string;
+  key?: string;
 }

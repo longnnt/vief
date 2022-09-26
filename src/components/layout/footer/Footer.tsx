@@ -37,9 +37,7 @@ const Footer = () => {
             color="text"
           >
             <Stack align={"flex-start"} spacing="8px">
-              <ListHeader>
-                Dự án phát triển mạng lưới CIO ngành gỗ và chế biến gỗ
-              </ListHeader>
+              <ListHeader>Dự án phát triển mạng lưới CIO ngành gỗ và chế biến gỗ</ListHeader>
               <Text fontSize="14px" fontWeight={"500"}>
                 Điện thoại: 024 2239 7555
               </Text>
@@ -50,64 +48,32 @@ const Footer = () => {
 
             <Stack align={"flex-start"} spacing="8px">
               <ListHeader>Địa chỉ</ListHeader>
-              <Text variant="text14">
-                Văn phòng Ban nghiên cứu phát triển kinh tế tư nhân
-              </Text>
-              <Text variant="text14">
-                Địa chỉ: Tầng 6, Toà nhà số 10 Chu Văn An,Ba Đình, Hà Nội
-              </Text>
+              <Text variant="text14">Văn phòng Ban nghiên cứu phát triển kinh tế tư nhân</Text>
+              <Text variant="text14">Địa chỉ: Tầng 6, Toà nhà số 10 Chu Văn An,Ba Đình, Hà Nội</Text>
               <Text variant="text14">Điện thoại: 024 2239 7555</Text>
               <Text variant="text14">Email: info@vief.vn</Text>
             </Stack>
             <Stack align={"flex-start"} spacing="8px">
               <ListHeader>Điều hướng</ListHeader>
-              <Text
-                onClick={() => handleRouter(ROUTE_HOME.en)}
-                variant="text14"
-                cursor="pointer"
-              >
+              <Text onClick={() => handleRouter(ROUTE_HOME.en)} variant="text14" cursor="pointer">
                 {t("home")}
               </Text>
-              <Text
-                onClick={() => handleRouter(ROUTE_POLICY.en)}
-                variant="text14"
-                cursor="pointer"
-              >
+              <Text onClick={() => handleRouter(ROUTE_POLICY.en)} variant="text14" cursor="pointer">
                 Chính sách
               </Text>
-              <Text
-                onClick={() => handleRouter(ROUTE_EVENT.en)}
-                variant="text14"
-                cursor="pointer"
-              >
+              <Text onClick={() => handleRouter(ROUTE_EVENT.en)} variant="text14" cursor="pointer">
                 Sự kiện
               </Text>
-              <Text
-                onClick={() => handleRouter(ROUTE_ENTERPRISE_STORY.en)}
-                variant="text14"
-                cursor="pointer"
-              >
+              <Text onClick={() => handleRouter(ROUTE_ENTERPRISE_STORY.en)} variant="text14" cursor="pointer">
                 Doanh nghiệp
               </Text>
-              <Text
-                onClick={() => handleRouter(ROUTE_LIBRARY.en)}
-                variant="text14"
-                cursor="pointer"
-              >
+              <Text onClick={() => handleRouter(ROUTE_LIBRARY.en)} variant="text14" cursor="pointer">
                 Thư viện
               </Text>
-              <Text
-                onClick={() => handleRouter(ROUTE_ABOUT.en)}
-                variant="text14"
-                cursor="pointer"
-              >
+              <Text onClick={() => handleRouter(ROUTE_ABOUT.en)} variant="text14" cursor="pointer">
                 Về chúng tôi
               </Text>
-              <Text
-                onClick={() => handleRouter(ROUTE_ABOUT.en)}
-                variant="text14"
-                cursor="pointer"
-              >
+              <Text onClick={() => handleRouter(ROUTE_ABOUT.en)} variant="text14" cursor="pointer">
                 Liên hệ
               </Text>
             </Stack>

@@ -15,13 +15,7 @@ const ItemSliderMaster = ({ itemImg }: ItemImgMaster) => {
           position="relative"
           zIndex="0"
         >
-          <Box
-            w="full"
-            h="374px"
-            borderRadius="12px"
-            bgImage={itemImg?.user?.profile_image.large}
-            bgSize="cover"
-          >
+          <Box w="full" h="374px" borderRadius="12px" bgImage={itemImg?.user?.profile_image.large} bgSize="cover">
             {isOpen ? (
               <Box
                 borderRadius="12px"
@@ -33,12 +27,7 @@ const ItemSliderMaster = ({ itemImg }: ItemImgMaster) => {
                 opacity="0.9"
                 p={"95px 16px 16px"}
               >
-                <Text
-                  variant="text14"
-                  color="white"
-                  overflow="hidden"
-                  textOverflow="ellipsis"
-                >
+                <Text variant="text14" color="white" overflow="hidden" textOverflow="ellipsis">
                   {itemImg?.user?.bio}
                 </Text>
               </Box>

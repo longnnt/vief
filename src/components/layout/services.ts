@@ -1,9 +1,4 @@
-import {
-  ENTERPRISE_CATEGORY,
-  EVENT_CATEGORY,
-  LIBRARY_CATEGORY,
-  POLICY_CATEGORY,
-} from "@/src/common/constants/urlAPI";
+import { ENTERPRISE_CATEGORY, EVENT_CATEGORY, LIBRARY_CATEGORY, POLICY_CATEGORY } from "@/src/common/constants/urlAPI";
 import { execute } from "@/src/common/lib/request";
 
 export const getCategoryPolicyServices = () => {
