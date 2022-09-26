@@ -1,24 +1,11 @@
-import {
-  Box,
-  Button,
-  Center,
-  Flex,
-  IconButton,
-  Image,
-  Stack,
-  Text,
-  Grid,
-  GridItem,
-  Container,
-} from "@chakra-ui/react";
-import React, { ReactNode } from "react";
+import { Box, Center, Grid, IconButton } from "@chakra-ui/react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 
-import { EVENT_DATA } from "./constants";
-import EventContentItem from "./EventContentItem";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
+import EventContentItem from "./EventContentItem";
+import { Event } from "./interface";
 
 type ArrowButtonType = {
   onClick?: () => void;
@@ -63,7 +50,10 @@ const PrevArrow = ({ onClick }: ArrowButtonType) => {
   );
 };
 
-const SliderComingEvent = () => {
+type Props = {
+  events: Event[];
+};
+const SliderComingEvent = ({ events }: Props) => {
   const settings = {
     style: { display: "flex" },
     infinite: true,
@@ -96,7 +86,7 @@ const SliderComingEvent = () => {
     <Center>
       <Box w="full">
         <Slider {...settings}>
-          {EVENT_DATA.slice(0, 4).map((event, index) => (
+          {events.map((event, index) => (
             <Grid pr="32px" key={index}>
               <EventContentItem event={event} />
             </Grid>

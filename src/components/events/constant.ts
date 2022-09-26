@@ -1,8 +1,10 @@
-export const UPCOMING_DATA = [
+import { Event } from "../section-event/interface";
+
+export const UPCOMING_DATA: Event[] = [
   {
     createdAt: "2022-09-06T09:16:04.692Z",
     updatedAt: "2022-09-06T09:23:09.560Z",
-    deletedAt: null,
+    deletedAt: "2022-09-06T09:23:09.560Z",
     version: 5,
     id: 1,
     field: "WOOD",
@@ -10,7 +12,6 @@ export const UPCOMING_DATA = [
     timeStart: "2022-09-20T09:14:11.398Z",
     isFeature: -1,
     thumbnail: {
-      id: 2022,
       url: "https://s3.ap-southeast-1.amazonaws.com/vief-dev/images/986a74bc-7472-40f3-94dd-2fb1f195701c.png",
     },
     title: "LIÊN HỢP QUỐC KHỞI ĐỘNG THẬP KỶ PHỤC HỒI HỆ SINH THÁI",
@@ -24,7 +25,7 @@ export const UPCOMING_DATA = [
   {
     createdAt: "2022-09-06T09:16:04.692Z",
     updatedAt: "2022-09-06T09:23:09.560Z",
-    deletedAt: null,
+    deletedAt: "2022-09-06T09:23:09.560Z",
     version: 5,
     id: 2,
     field: "WOOD",
@@ -32,7 +33,6 @@ export const UPCOMING_DATA = [
     timeStart: "2022-09-06T09:14:11.398Z",
     isFeature: -1,
     thumbnail: {
-      id: 2022,
       url: "https://s3.ap-southeast-1.amazonaws.com/vief-dev/images/986a74bc-7472-40f3-94dd-2fb1f195701c.png",
     },
     title: "LIÊN HỢP QUỐC KHỞI ĐỘNG THẬP KỶ PHỤC HỒI HỆ SINH THÁI",
@@ -46,7 +46,7 @@ export const UPCOMING_DATA = [
   {
     createdAt: "2022-09-06T09:16:04.692Z",
     updatedAt: "2022-09-06T09:23:09.560Z",
-    deletedAt: null,
+    deletedAt: "2022-09-06T09:23:09.560Z",
     version: 5,
     id: 3,
     field: "WOOD",
@@ -54,7 +54,6 @@ export const UPCOMING_DATA = [
     timeStart: "2022-09-06T09:14:11.398Z",
     isFeature: -1,
     thumbnail: {
-      id: 2022,
       url: "https://s3.ap-southeast-1.amazonaws.com/vief-dev/images/986a74bc-7472-40f3-94dd-2fb1f195701c.png",
     },
     title: "LIÊN HỢP QUỐC KHỞI ĐỘNG THẬP KỶ PHỤC HỒI HỆ SINH THÁI",
@@ -68,7 +67,7 @@ export const UPCOMING_DATA = [
   {
     createdAt: "2022-09-06T09:16:04.692Z",
     updatedAt: "2022-09-06T09:23:09.560Z",
-    deletedAt: null,
+    deletedAt: "2022-09-06T09:23:09.560Z",
     version: 5,
     id: 4,
     field: "WOOD",
@@ -76,7 +75,6 @@ export const UPCOMING_DATA = [
     timeStart: "2022-09-06T09:14:11.398Z",
     isFeature: -1,
     thumbnail: {
-      id: 2022,
       url: "https://s3.ap-southeast-1.amazonaws.com/vief-dev/images/986a74bc-7472-40f3-94dd-2fb1f195701c.png",
     },
     title: "LIÊN HỢP QUỐC KHỞI ĐỘNG THẬP KỶ PHỤC HỒI HỆ SINH THÁI",
@@ -90,7 +88,7 @@ export const UPCOMING_DATA = [
   {
     createdAt: "2022-09-06T09:16:04.692Z",
     updatedAt: "2022-09-06T09:23:09.560Z",
-    deletedAt: null,
+    deletedAt: "2022-09-06T09:23:09.560Z",
     version: 5,
     id: 5,
     field: "WOOD",
@@ -98,7 +96,6 @@ export const UPCOMING_DATA = [
     timeStart: "2022-09-06T09:14:11.398Z",
     isFeature: -1,
     thumbnail: {
-      id: 2022,
       url: "https://s3.ap-southeast-1.amazonaws.com/vief-dev/images/986a74bc-7472-40f3-94dd-2fb1f195701c.png",
     },
     title: "LIÊN HỢP QUỐC KHỞI ĐỘNG THẬP KỶ PHỤC HỒI HỆ SINH THÁI",
@@ -111,11 +108,11 @@ export const UPCOMING_DATA = [
   },
 ];
 
-export const PAST_DATA = [
+export const PAST_DATA: Event[] = [
   {
     createdAt: "2022-09-06T09:16:04.692Z",
     updatedAt: "2022-09-06T09:23:09.560Z",
-    deletedAt: null,
+    deletedAt: "2022-09-06T09:23:09.560Z",
     version: 5,
     id: 1,
     field: "WOOD",
@@ -123,7 +120,6 @@ export const PAST_DATA = [
     timeStart: "2022-09-06T09:14:11.398Z",
     isFeature: -1,
     thumbnail: {
-      id: 2022,
       url: "https://s3.ap-southeast-1.amazonaws.com/vief-dev/images/986a74bc-7472-40f3-94dd-2fb1f195701c.png",
     },
     title: "LIÊN HỢP QUỐC KHỞI ĐỘNG THẬP KỶ PHỤC HỒI HỆ SINH THÁI",
@@ -137,7 +133,7 @@ export const PAST_DATA = [
   {
     createdAt: "2022-09-06T09:16:04.692Z",
     updatedAt: "2022-09-06T09:23:09.560Z",
-    deletedAt: null,
+    deletedAt: "2022-09-06T09:23:09.560Z",
     version: 5,
     id: 2,
     field: "WOOD",
@@ -145,7 +141,6 @@ export const PAST_DATA = [
     timeStart: "2022-09-06T09:14:11.398Z",
     isFeature: -1,
     thumbnail: {
-      id: 2022,
       url: "https://s3.ap-southeast-1.amazonaws.com/vief-dev/images/986a74bc-7472-40f3-94dd-2fb1f195701c.png",
     },
     title: "LIÊN HỢP QUỐC KHỞI ĐỘNG THẬP KỶ PHỤC HỒI HỆ SINH THÁI",
@@ -159,7 +154,7 @@ export const PAST_DATA = [
   {
     createdAt: "2022-09-06T09:16:04.692Z",
     updatedAt: "2022-09-06T09:23:09.560Z",
-    deletedAt: null,
+    deletedAt: "2022-09-06T09:23:09.560Z",
     version: 5,
     id: 3,
     field: "WOOD",
@@ -167,7 +162,6 @@ export const PAST_DATA = [
     timeStart: "2022-09-06T09:14:11.398Z",
     isFeature: -1,
     thumbnail: {
-      id: 2022,
       url: "https://s3.ap-southeast-1.amazonaws.com/vief-dev/images/986a74bc-7472-40f3-94dd-2fb1f195701c.png",
     },
     title: "LIÊN HỢP QUỐC KHỞI ĐỘNG THẬP KỶ PHỤC HỒI HỆ SINH THÁI",
@@ -181,7 +175,7 @@ export const PAST_DATA = [
   {
     createdAt: "2022-09-06T09:16:04.692Z",
     updatedAt: "2022-09-06T09:23:09.560Z",
-    deletedAt: null,
+    deletedAt: "2022-09-06T09:23:09.560Z",
     version: 5,
     id: 4,
     field: "WOOD",
@@ -189,7 +183,6 @@ export const PAST_DATA = [
     timeStart: "2022-09-06T09:14:11.398Z",
     isFeature: -1,
     thumbnail: {
-      id: 2022,
       url: "https://s3.ap-southeast-1.amazonaws.com/vief-dev/images/986a74bc-7472-40f3-94dd-2fb1f195701c.png",
     },
     title: "LIÊN HỢP QUỐC KHỞI ĐỘNG THẬP KỶ PHỤC HỒI HỆ SINH THÁI",
@@ -203,7 +196,7 @@ export const PAST_DATA = [
   {
     createdAt: "2022-09-06T09:16:04.692Z",
     updatedAt: "2022-09-06T09:23:09.560Z",
-    deletedAt: null,
+    deletedAt: "2022-09-06T09:23:09.560Z",
     version: 5,
     id: 5,
     field: "WOOD",
@@ -211,7 +204,6 @@ export const PAST_DATA = [
     timeStart: "2022-09-06T09:14:11.398Z",
     isFeature: -1,
     thumbnail: {
-      id: 2022,
       url: "https://s3.ap-southeast-1.amazonaws.com/vief-dev/images/986a74bc-7472-40f3-94dd-2fb1f195701c.png",
     },
     title: "LIÊN HỢP QUỐC KHỞI ĐỘNG THẬP KỶ PHỤC HỒI HỆ SINH THÁI",
@@ -225,7 +217,7 @@ export const PAST_DATA = [
   {
     createdAt: "2022-09-06T09:16:04.692Z",
     updatedAt: "2022-09-06T09:23:09.560Z",
-    deletedAt: null,
+    deletedAt: "2022-09-06T09:23:09.560Z",
     version: 5,
     id: 6,
     field: "WOOD",
@@ -233,7 +225,6 @@ export const PAST_DATA = [
     timeStart: "2022-09-06T09:14:11.398Z",
     isFeature: -1,
     thumbnail: {
-      id: 2022,
       url: "https://s3.ap-southeast-1.amazonaws.com/vief-dev/images/986a74bc-7472-40f3-94dd-2fb1f195701c.png",
     },
     title: "LIÊN HỢP QUỐC KHỞI ĐỘNG THẬP KỶ PHỤC HỒI HỆ SINH THÁI",
