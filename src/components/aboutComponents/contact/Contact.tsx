@@ -1,4 +1,5 @@
-import { Box, FormControl, FormLabel, Image, Input, Stack, Text } from "@chakra-ui/react";
+import { Box, FormControl, FormLabel, Input, Stack, Text } from "@chakra-ui/react";
+import Image from "next/image";
 import SubmitSuccess from "./submitNoti/SumbitSuccess";
 
 const Contact = () => {
@@ -17,8 +18,8 @@ const Contact = () => {
           </Stack>
 
           <Stack direction={{ sm: "column", md: "row" }} spacing="32px" alignItems={"center"}>
-            <Box w={{ md: "592px", sm: "full" }} h={{ md: "444px", sm: "257.25px" }}>
-              <Image src="/researchIMG.png" w="100%" h="100%" objectFit={"cover"} borderRadius={"12px"} alt="" />
+            <Box w={{ md: "592px", sm: "full" }} h={{ md: "444px", sm: "257.25px" }} position="relative">
+              <Image src="/researchIMG.png" layout="fill" objectFit={"cover"} alt="" className="imgBorderRadius" />
             </Box>
             <Stack spacing="32px" w={{ md: "592px", sm: "full" }}>
               <FormControl isRequired>

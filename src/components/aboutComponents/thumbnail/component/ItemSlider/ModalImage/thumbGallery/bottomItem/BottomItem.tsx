@@ -1,5 +1,6 @@
 import { UnsplashImg } from "@/src/components/aboutComponents/interfaces";
-import { Box, Image } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
+import Image from "next/image";
 
 export type ItemImgThumbnail = {
   props: UnsplashImg;
@@ -8,7 +9,15 @@ export type ItemImgThumbnail = {
 export const BottomItem = ({ props }: ItemImgThumbnail) => {
   return (
     <Box w="full" h={{ md: "132px", sm: "100px" }}>
-      <Image src={props?.urls?.regular} alt="a" style={{ borderRadius: "8px" }} />
+      <Image
+        src={props?.urls?.regular}
+        loader={() => {
+          return props?.urls?.regular;
+        }}
+        layout="fill"
+        alt="a"
+        style={{ borderRadius: "8px" }}
+      />
     </Box>
   );
 };

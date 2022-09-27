@@ -139,3 +139,6 @@ a {
 .swiper-pagination-bullet-active {
   background-color: #30BF45!important;
 }
+.imgBorderRadius {
+  border-radius: 12px!important;
+}

@@ -16,7 +16,7 @@ export const About = ({ listImg, listImgThumb }: ListImgProps) => {
         </Stack>
       </WebContainer>
       <Wallpaper />
-      <Stack py="64px" spacing="64px" pt={{ md: "64px", sm: "32px" }}>
+      <Stack spacing="48px" pt={{ md: "64px", sm: "32px" }}>
         <Thumbnail listImg={listImg} listImgThumb={listImgThumb} />
         <Master listImgThumb={listImg} />
       </Stack>
