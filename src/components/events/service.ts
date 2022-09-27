@@ -4,33 +4,17 @@ import { API_EVENTS } from "./../../common/constants/urlAPI";
 import { execute } from "@/src/common/lib/request";
 import { Lang } from "@/src/common/interfaces/common.interface";
 import { Event } from "../section-event/interface";
+import { EventSearchParams } from "./interface";
 
-export async function getArticleEvent(lang: Lang = "vi") {
+export async function getArticleEvent({ lang = "vi", ...params }: EventSearchParams) {
   try {
-    const res = await execute.get<ListResponse<Event>>(
-      toUrlQueryString(API_EVENTS),
-      {
-        headers: { lang },
-      }
-    );
+    const res = await execute.get<ListResponse<Event>>(toUrlQueryString(API_EVENTS, params), {
+      headers: { lang },
+    });
 
     return res.data;
   } catch (err) {
-    return err;
-  }
-}
-export async function getPastEvent(lang: Lang = "vi") {
-  try {
-    const res = await execute.get<ListResponse<Event>>(
-      toUrlQueryString(API_EVENTS),
-      {
-        headers: { lang },
-      }
-    );
-
-    return res.data;
-  } catch (err) {
-    return err;
+    return null;
   }
 }
 

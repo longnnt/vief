@@ -1,4 +1,4 @@
-import { Article, ArticleDetail, Lang } from "../interfaces/common.interface";
+import { Article, ArticleDetail, Lang, SearchParams } from "../interfaces/common.interface";
 
 // DECLARE COMMON CONSTANTS
 export const LANG: Record<Lang, Lang> = {
@@ -59,4 +59,10 @@ export const ARTICLE_DETAIL_RESPONSE: ArticleDetail = {
   updatedAt: "",
   deletedAt: "",
   version: 0,
+};
+
+export const SEARCH_PARAMS_DEFAULT: SearchParams = {
+  page: 1,
+  size: PAGE_SIZE,
+  field: "WOOD",
 };

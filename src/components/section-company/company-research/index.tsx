@@ -1,85 +1,65 @@
-import { PICTURE } from "@/src/common/constants/common.constant";
+import { ROUTE_ARTICLE_DETAIL } from "@/src/common/constants/routes.constant";
+import { useViefRouter } from "@/src/common/hooks/useViefRouter";
+import { Article } from "@/src/common/interfaces/common.interface";
+import { replacePathParams } from "@/src/common/lib/common.lib";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
-import { Box, Button, Image, Stack, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, Stack, Text, VStack } from "@chakra-ui/react";
+import Image from "next/image";
 
-export default function SectionCompanyResearch() {
+type Props = {
+  article: Article;
+};
+export default function SectionCompanyResearch({ article }: Props) {
+  const router = useViefRouter();
+
+  function handleRoutePolicyPage(slug: string) {
+    router.push(
+      replacePathParams(ROUTE_ARTICLE_DETAIL["en"], {
+        slug,
+      })
+    );
+  }
   return (
     <VStack spacing={{ md: "32px", sm: "16px" }}>
-      <Stack alignItems={{ sm: "flex-start", md: "flex-end" }}>
+      <Stack alignItems={{ sm: "flex-start", md: "flex-end" }} w="full">
         <Box>
-          <Text
-            display={{ sm: "none", base: "flex" }}
-            variant={{
-              md: "text20",
-              sm: "text16",
-            }}
-            w="fit-content"
-            borderBottom="1.5px solid #394160"
-          >
+          <Text variant={{ md: "text20", sm: "text16" }} w="fit-content" borderBottom="1.5px solid #394160">
             Chuyện doanh nghiệp / Nghiên cứu điển hình
-          </Text>
-          <Text
-            display={{ md: "none", sm: "text" }}
-            variant={{
-              md: "text20",
-              sm: "text16",
-            }}
-            w="fit-content"
-            borderBottom="1.5px solid #394160"
-          >
-            Chuyện doanh nghiệp / Nghiên cứu
           </Text>
         </Box>
         <Text
-          variant={{
-            md: "text36",
-            sm: "text28",
-          }}
-          w={{
-            base: "80%",
-            sm: "full",
-          }}
+          variant={{ md: "text36", sm: "text28" }}
+          w={{ base: "80%", sm: "full" }}
           textAlign={{ sm: "start", base: "end" }}
         >
-          Đề xuất các nhóm giải pháp ngoài lâm nghiệp nhằm giảm phát thải khí nhà kính
+          {article.title}
         </Text>
       </Stack>
 
-      <Stack
-        direction={{
-          md: "row",
-          sm: "column",
-        }}
-        spacing={{ md: "64px", sm: "32px" }}
-      >
+      <Stack direction={{ md: "row", sm: "column" }} spacing={{ md: "64px", sm: "32px" }} w="full">
         <Box
-          w={{
-            md: "65%",
-            sm: "full",
-          }}
-          h={{
-            md: "450px",
-            sm: "230px",
-          }}
+          w={{ md: "65%", sm: "full" }}
+          h={{ md: "450px", sm: "230px" }}
+          borderRadius="16px"
+          position="relative"
+          overflow="hidden"
         >
-          <Image src={PICTURE("1")} alt="" w="full" h="full" objectFit="cover" borderRadius="16px" />
+          <Image src={article.thumbnail.url} alt="" priority layout="fill" />
         </Box>
-        <Stack
-          w={{
-            md: "35%",
-            sm: "full",
-          }}
-          spacing={{ md: "32px", sm: "16px" }}
-        >
-          <Text variant="text14" textAlign="justify">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus
-            magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla
-            est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui
-            faucibus in ornare quam viverra orci sagittis eu volutpat odio facilisis mauris sit amet massa vitae tortor
-            condimentum lacinia quis vel eros donec ac odio tempor orci dapibus ultrices in iaculis nunc sed augue lacus
-          </Text>
+        <Stack w={{ md: "35%", sm: "full" }} spacing={{ md: "32px", sm: "16px" }}>
+          <Box
+            fontSize="14px"
+            fontWeight={500}
+            color="text"
+            textAlign="justify"
+            dangerouslySetInnerHTML={{ __html: article.content }}
+          />
           <Box>
-            <Button variant="primary" rightIcon={<ArrowForwardIcon />}>
+            <Button
+              variant="primary"
+              rightIcon={<ArrowForwardIcon />}
+              onClick={() => handleRoutePolicyPage(article.slug)}
+            >
               Xem thêm
             </Button>
           </Box>
