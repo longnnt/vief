@@ -1,9 +1,6 @@
-import {
-  Fields,
-  Lang,
-  ImageResponse,
-} from "./../../common/interfaces/common.interface";
-import { BaseEntities } from "@/src/common/interfaces/common.interface";
+import { Fields, Lang, ImageResponse, Article, BaseEntities } from "@/src/common/interfaces/common.interface";
+import { DocumentItem } from "../libraryComponents/interfaces";
+import { Event } from "../section-event/interface";
 
 export interface BannerTranslate extends BaseEntities {
   lang: Lang;
@@ -22,4 +19,8 @@ export interface Banner extends BaseEntities {
 
 export interface HomePageProps {
   banners: Banner[];
+  policy: Article[];
+  events: Event[];
+  enterprise: Article[];
+  documents: DocumentItem[];
 }

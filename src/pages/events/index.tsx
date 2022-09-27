@@ -2,13 +2,9 @@ import { WebContainer } from "@/src/common/components/WebContainer";
 import Events from "@/src/components/events";
 import { PAST_DATA, UPCOMING_DATA } from "@/src/components/events/constant";
 import { EventsPageProps } from "@/src/components/events/interface";
-import { getArticleEvent, getPastEvent } from "@/src/components/events/service";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 
-export default function index({
-  upcomingEvents,
-  pastEvents,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function index({ upcomingEvents, pastEvents }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <WebContainer>
       <Events upcomingEvents={upcomingEvents} pastEvents={pastEvents} />
@@ -16,9 +12,7 @@ export default function index({
   );
 }
 
-export const getServerSideProps: GetServerSideProps<
-  EventsPageProps
-> = async () => {
+export const getServerSideProps: GetServerSideProps<EventsPageProps> = async () => {
   // const upcomingEvents = await getArticleEvent();
   // const pastEvents = await getPastEvent();
   return {

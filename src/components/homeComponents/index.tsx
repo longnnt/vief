@@ -7,9 +7,9 @@ import SectionAbout from "./about";
 import Carousel from "./carousel/Carousel";
 import { HomePageProps } from "./interfaces";
 import SectionLibrary from "./library";
-import Subcribe from "./subcribe/Subcribe";
+import Subscribe from "./subcribe/Subcribe";
 
-function Home({ banners }: HomePageProps) {
+function Home({ banners, policy, events, enterprise, documents }: HomePageProps) {
   return (
     <Stack>
       <Carousel banners={banners} />
@@ -20,11 +20,11 @@ function Home({ banners }: HomePageProps) {
           spacing={{ sm: "48px", xl: "128px", "2xl": "128px" }}
         >
           <SectionAbout />
-          <SectionPolicy />
-          <EventsHome />
-          <SectionCompany />
-          <SectionLibrary />
-          <Subcribe />
+          <SectionPolicy policies={policy} />
+          <EventsHome events={events} />
+          <SectionCompany articles={enterprise} />
+          <SectionLibrary documents={documents} />
+          <Subscribe />
         </Stack>
       </WebContainer>
     </Stack>

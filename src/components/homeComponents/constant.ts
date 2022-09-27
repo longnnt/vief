@@ -1,6 +1,14 @@
-export const imgUsaid = "/logo-usaid.png";
-export const imgUsaidHover = "/logo-usaid-hover.png";
-export const imgIced = "/logo-iced.png";
-export const imgIcedHover = "/logo-iced-hover.png";
-export const imgTheAsia = "/logo-the-asia.png";
-export const imgTheAsiaHover = "/logo-the-asia-hover.png";
+export const PARTNER_LOGO = [
+  {
+    alt: "partner1",
+    url: "/logo-iced-hover.png",
+  },
+  {
+    alt: "partner2",
+    url: "/logo-usaid-hover.png",
+  },
+  {
+    alt: "partner3",
+    url: "/logo-the-asia-hover.png",
+  },
+];
