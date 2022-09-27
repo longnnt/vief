@@ -1,5 +1,4 @@
-import { Box, Center, Image, Stack, Text } from "@chakra-ui/react";
-import React from "react";
+import { Center, Stack, Text } from "@chakra-ui/react";
 import { ItemPartner } from "./itemPartner";
 
 const Partner = () => {

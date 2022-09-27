@@ -5,7 +5,8 @@ import { formatDate, timeLeft } from "@/src/common/utils/common.utils";
 import ButtonComponent from "@/src/components/section/components/Button";
 import Location from "@/src/Images/Icons/Location";
 import WoodSector from "@/src/Images/Icons/WoodSector";
-import { Box, Flex, Image, Text, VStack } from "@chakra-ui/react";
+import { Box, Flex, Text, VStack } from "@chakra-ui/react";
+import Image from "next/image";
 import Calendar from "../../Images/Icons/Calendar";
 import Description from "./Description";
 import { Event } from "./interface";
@@ -15,8 +16,7 @@ interface EventContentItemProps {
   event: Event;
 }
 export default function EventContentItem({ event }: EventContentItemProps) {
-  const { thumbnail, shortDesc, title, timeStart, location, field, slug } =
-    event!;
+  const { thumbnail, shortDesc, title, timeStart, location, field, slug } = event!;
   const router = useViefRouter();
 
   function handleRedirect(slug: string) {
@@ -27,43 +27,28 @@ export default function EventContentItem({ event }: EventContentItemProps) {
     );
   }
   return (
-    <Flex
-      backgroundColor="white.secondary"
-      flexDirection={"column"}
-      alignItems={"center"}
-      borderRadius={"14px"}
-    >
-      <Box w="full" overflow={"hidden"} borderTopRadius="14px">
-        <Image
-          src={thumbnail?.url}
-          alt=""
-          h={{ md: "288px" }}
-          transitionDuration={"0.2s"}
-          sx={{
-            ".event-card:hover &": {
-              transform: "scale(1.2)",
-            },
-          }}
-        />
+    <Flex backgroundColor="white.secondary" flexDirection={"column"} alignItems={"center"} borderRadius={"14px"}>
+      <Box
+        w="full"
+        h={{ md: "288px" }}
+        overflow={"hidden"}
+        borderTopRadius="14px"
+        sx={{
+          ".event-card:hover &": {
+            transform: "scale(1.2)",
+          },
+        }}
+      >
+        <Image src={thumbnail?.url || ""} alt="" priority layout="fill" />
       </Box>
       <VStack px="16px" py="32px" alignItems="start" spacing="16px">
-        <Text
-          variant="text20"
-          className="text-2-line"
-          onClick={() => handleRedirect(slug!)}
-          cursor="pointer"
-        >
+        <Text variant="text20" className="text-2-line" onClick={() => handleRedirect(slug!)} cursor="pointer">
           {title}
         </Text>
         <Text variant="text14" className="text-4-line">
           {shortDesc}
         </Text>
-        <Flex
-          m="16px 0"
-          flexDirection="column"
-          h="91px"
-          justifyContent="space-between"
-        >
+        <Flex m="16px 0" flexDirection="column" h="91px" justifyContent="space-between">
           <Description content={formatDate(timeStart!)}>
             <Calendar />
           </Description>

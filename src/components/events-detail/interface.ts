@@ -11,6 +11,7 @@ export type ContentProps = {
 export type EventDetailProps = {
   isExpired?: boolean;
   data?: Event;
+  upcomingEvents: Event[];
 };
 export interface FormAlertProps {
   message?: string;

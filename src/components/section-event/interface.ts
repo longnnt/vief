@@ -1,3 +1,4 @@
+import { BaseEntities, BooleanNumber, Lang } from "@/src/common/interfaces/common.interface";
 import { ChakraProps } from "@chakra-ui/react";
 export interface TimeLeftProps {
   days?: number;
@@ -12,7 +13,7 @@ export interface DescriptionProps {
   content?: string;
 }
 
-export interface Event {
+export interface Event extends BaseEntities {
   thumbnail: Thumbnail;
   title: string;
   shortDesc: string;
@@ -21,6 +22,8 @@ export interface Event {
   timeStart: string;
   field: string;
   slug: string;
+  isFeature: BooleanNumber;
+  lang: Lang;
 }
 
 type Thumbnail = {

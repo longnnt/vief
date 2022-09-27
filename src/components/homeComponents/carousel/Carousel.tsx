@@ -1,4 +1,5 @@
-import { Box, color, Image, Stack, Text } from "@chakra-ui/react";
+import { Box, Stack, Text } from "@chakra-ui/react";
+import Image from "next/image";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -25,9 +26,9 @@ const Carousel = ({ banners }: CarouselProps) => {
         {banners.map((banner) => (
           <SwiperSlide key={banner.id}>
             <Box w="full" h="full" position="relative">
-              <a href={banner.link} target="_blank" rel="noreferrer">
-                <Image src={banner.image.url} alt="" objectFit="cover" w="full" h="full" />
-              </a>
+              {/* <a href={banner.link} target="_blank" rel="noreferrer"> */}
+              <Image src={banner.image.url} alt="" priority layout="fill" />
+              {/* </a> */}
               <Stack
                 position="absolute"
                 top={{ md: "100", sm: "unset" }}

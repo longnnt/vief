@@ -8,7 +8,7 @@ import React from "react";
 export default function UpcomingPage({ upcomingData }: any) {
   return (
     <WebContainer>
-      <EventDetail isExpired={false} data={upcomingData} />
+      <EventDetail upcomingEvents={[]} isExpired={false} data={upcomingData} />
     </WebContainer>
   );
 }
