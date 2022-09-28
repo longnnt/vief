@@ -1,15 +1,16 @@
 import { ListImgProps, UnsplashImg } from "@/src/components/aboutComponents/interfaces";
 import { CloseIcon } from "@chakra-ui/icons";
 import {
+  Box,
   CloseButton,
   IconButton,
-  Image,
   Modal,
   ModalContent,
   ModalOverlay,
   Stack,
   useDisclosure,
 } from "@chakra-ui/react";
+import Image from "next/image";
 
 import { ThumbnailGallery } from "./thumbGallery/ThumbnailsGallery";
 
@@ -22,19 +23,19 @@ export const ModalImage = ({ itemImg, listImgThumb }: PictureItemProp) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Image
-        align={"center"}
-        h="full"
-        w="full"
-        alt=""
-        borderRadius={"12px"}
-        transitionDuration="0.2s"
-        src={itemImg?.urls?.regular}
-        objectFit="cover"
-        _hover={{ transform: "scale(1.05)" }}
-        onClick={onOpen}
-        cursor="pointer"
-      />
+      <Box borderRadius="12px" overflow="hidden">
+        <Image
+          style={{ borderRadius: "12px" }}
+          layout="fill"
+          objectFit="cover"
+          alt=""
+          src={itemImg?.urls?.regular}
+          loader={() => {
+            return itemImg?.urls?.regular;
+          }}
+          onClick={onOpen}
+        />
+      </Box>
 
       <Modal isOpen={isOpen} onClose={onClose} isCentered size="full">
         <ModalOverlay />

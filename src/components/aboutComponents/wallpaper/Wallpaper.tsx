@@ -1,14 +1,11 @@
-import { Box, Center, Image } from "@chakra-ui/react";
+import { Box, Center, Flex } from "@chakra-ui/react";
+import Image from "next/image";
 
 const Wallpaper = () => {
   return (
-    <>
-      <Center>
-        <Box w="full" h={{ md: "650px", sm: "240px" }}>
-          <Image src="/vief-about.png" w="100%" h="100%"></Image>
-        </Box>
-      </Center>
-    </>
+    <Center w="full" h={{ md: "650px", sm: "240px" }} position="relative">
+      <Image src="/vief-about.png" layout="fill" alt="" />
+    </Center>
   );
 };
 

@@ -4,7 +4,14 @@ import { ModalImage } from "./ModalImage";
 
 const ItemSlider = ({ itemImg, listImgThumb }: PictureItemProp) => {
   return (
-    <Box h={{ md: "288px", sm: "189px" }} px={{ md: "22px", sm: "12px" }}>
+    <Box
+      h={{ md: "288px", sm: "189px" }}
+      transitionDuration="0.2s"
+      _hover={{ transform: "scale(1.05)" }}
+      cursor="pointer"
+      position="relative"
+      border={"16px solid transparent"}
+    >
       <ModalImage itemImg={itemImg} listImgThumb={listImgThumb} />
     </Box>
   );
