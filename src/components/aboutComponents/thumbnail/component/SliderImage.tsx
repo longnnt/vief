@@ -65,6 +65,7 @@ export default function SliderImage({ listImg, listImgThumb }: ListImgProps) {
     infinite: true,
     speed: 1000,
     autoplay: true,
+
     slidesToShow: 3,
     slidesToScroll: 1,
     prevArrow: <SamplePrevArrow />,
@@ -123,7 +124,7 @@ export default function SliderImage({ listImg, listImgThumb }: ListImgProps) {
   };
   return (
     <Center>
-      <Stack w={{ md: "1330px", sm: "full" }} h={{ md: "320px", sm: "189px" }}>
+      <Stack w={{ md: "1330px", sm: "full" }} h={{ md: "320px", sm: "189px" }} px={"4px"}>
         <Slider {...settingsMd}>
           {listImg?.map((img, index) => (
             <ItemSlider itemImg={img} listImgThumb={listImgThumb} key={index} />

@@ -6,7 +6,7 @@ const Thumbnail = ({ listImg, listImgThumb }: ListImgProps) => {
   return (
     <>
       <Box>
-        <Stack h={{ md: "375px", sm: "265px" }} w="full" spacing="32px">
+        <Stack h={{ md: "375px", sm: "265px" }} w="full">
           <Box w={"1216px"} alignSelf="center">
             <Text fontSize={"28px"} fontWeight="600" alignSelf={{ base: "none", sm: "center", md: "flex-start" }}>
               Hình ảnh
