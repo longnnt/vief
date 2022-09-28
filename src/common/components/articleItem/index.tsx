@@ -22,9 +22,14 @@ function ArticleItem({ article, imgStyle }: ArticleItemProps) {
   const { thumbnail, title, shortDesc, createdAt, slug } = article;
   return (
     <VStack spacing="4" alignItems="start" onClick={() => handleRedirect(slug)} cursor="pointer">
-      <Box w={{ md: "384px", sm: "164px" }} h={{ base: "288px", sm: "123px" }} borderRadius="12px" pos="relative">
+      <Box
+        w={{ md: "384px", sm: "164px" }}
+        h={{ base: "288px", sm: "123px" }}
+        borderRadius="12px"
+        pos="relative"
+        overflow="hidden"
+      >
         <Image
-          className="imgBorderRadius"
           src={thumbnail.url}
           loader={() => {
             return thumbnail.url;

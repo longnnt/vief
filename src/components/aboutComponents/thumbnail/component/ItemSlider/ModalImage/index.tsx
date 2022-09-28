@@ -23,9 +23,9 @@ export const ModalImage = ({ itemImg, listImgThumb }: PictureItemProp) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Box borderRadius="12px" bg="transparent">
+      <Box borderRadius="12px" overflow="hidden">
         <Image
-          className="imgBorderRadius"
+          style={{ borderRadius: "12px" }}
           layout="fill"
           objectFit="cover"
           alt=""

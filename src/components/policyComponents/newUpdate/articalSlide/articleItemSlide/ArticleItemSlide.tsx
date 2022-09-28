@@ -23,9 +23,14 @@ const ArticleItemSlide = ({ article }: Props) => {
         alignItems={"center"}
         w="full"
       >
-        <Box w={{ md: "592px", sm: "343px" }} h={{ md: "444px", sm: "257.25px" }} borderRadius="12px" pos="relative">
+        <Box
+          w={{ md: "592px", sm: "343px" }}
+          h={{ md: "444px", sm: "257.25px" }}
+          borderRadius="12px"
+          pos="relative"
+          overflow="hidden"
+        >
           <Image
-            className="imgBorderRadius"
             src={article?.thumbnail?.url}
             loader={() => {
               return article?.thumbnail?.url;
