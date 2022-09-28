@@ -26,15 +26,13 @@ const Carousel = ({ banners }: CarouselProps) => {
         {banners.map((banner) => (
           <SwiperSlide key={banner.id}>
             <Box w="full" h="full" position="relative">
-              {/* <a href={banner.link} target="_blank" rel="noreferrer"> */}
-              <Image src={banner.image.url} alt="" priority layout="fill" />
-              {/* </a> */}
+              <a href={banner.link} target="_blank" rel="noreferrer">
+                <Image src={banner.image.url} alt="" priority layout="fill" />
+              </a>
               <Stack
                 position="absolute"
-                top={{ md: "100", sm: "unset" }}
-                bottom={{ md: "unset", sm: "10%" }}
+                bottom={{ md: "40%", sm: "10%" }}
                 left={{ md: "50%", sm: "10%" }}
-                alignItems={{ md: "start", sm: "center" }}
                 w={{ md: "unset", sm: "80%" }}
                 m="auto"
                 borderRadius="12px"
