@@ -33,8 +33,16 @@ function SampleNextArrow(props: any) {
       border="3px solid #C5CAD3"
       alignSelf={"center"}
       onClick={onClick}
+      role={"group"}
+      _hover={{ bg: "blue.primary", border: "none" }}
     >
-      <ChevronRightIcon boxSize="30px" color="#C5CAD3" />
+      <ChevronRightIcon
+        boxSize="30px"
+        borderRadius="100%"
+        color="#C5CAD3"
+        role={"group"}
+        _groupHover={{ color: "white" }}
+      />
     </IconButton>
   );
 }
@@ -52,8 +60,9 @@ function SamplePrevArrow(props: any) {
       alignSelf={"center"}
       alignContent={"center"}
       onClick={onClick}
+      _hover={{ bg: "blue.primary", border: "none" }}
     >
-      <ChevronLeftIcon boxSize="30px" color="#C5CAD3" />
+      <ChevronLeftIcon boxSize="30px" color="#C5CAD3" _groupHover={{ color: "white" }} role={"group"} />
     </IconButton>
   );
 }
@@ -112,7 +121,8 @@ export default function SliderImage({ listImg, listImgThumb }: ListImgProps) {
         breakpoint: 400, // width to change options
         settings: {
           centerMode: true,
-          centerPadding: "40px",
+          // centerPadding: "40px",
+          padding: "20px",
           infinite: true,
           dots: true,
           speed: 500,

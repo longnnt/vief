@@ -19,7 +19,7 @@ export const ThumbnailGallery = ({ listImgThumb }: ThumbnailItemProp) => {
   return (
     <Stack w="85%" direction={"column"} spacing={{ md: "64px", sm: "32px" }} alignSelf={"center"}>
       <Stack bg="transparent" direction={"row"} w="full" alignSelf="center">
-        <Stack w="100%" px="20%">
+        <Stack w="100%" px={{ md: "20%", sm: "none" }}>
           <Swiper
             loop={true}
             spaceBetween={10}
@@ -36,7 +36,7 @@ export const ThumbnailGallery = ({ listImgThumb }: ThumbnailItemProp) => {
           </Swiper>
         </Stack>
       </Stack>
-      <Stack w="100%" alignSelf={"center"}>
+      <Stack w="100%" alignSelf={"center"} h={{ md: "full", sm: "42px" }}>
         <Swiper
           onSwiper={handleSwiper}
           loop={true}
@@ -45,6 +45,15 @@ export const ThumbnailGallery = ({ listImgThumb }: ThumbnailItemProp) => {
           freeMode={true}
           watchSlidesProgress={true}
           modules={[FreeMode, Navigation, Thumbs, Lazy]}
+          breakpoints={{
+            800: {
+              spaceBetween: 32,
+            },
+            100: {
+              slidesPerView: 5,
+              spaceBetween: 8,
+            },
+          }}
         >
           {listImgThumb?.map((item, index) => (
             <SwiperSlide key={index} style={{ borderRadius: "8px" }}>
