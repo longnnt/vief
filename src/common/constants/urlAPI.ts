@@ -11,9 +11,7 @@ export const API_BANNER = "client/banners";
 export const API_ARTICLE = "client/article";
 export const API_CATEGORY = "client/category";
 export const API_EVENTS = "events";
-// export const API_UPCOMINGS = "events?field=WOOD&timeline=UPCOMING";
-// export const API_TOOKPLACE = "events?field=WOOD&timeline=TOOK_PLACE";
-
+export const API_EVENTS_CLIENT = "client/events";
 export const API_DOCUMENT = "client/documents";
 
 export const API_DOWNLOADFILE = "file/download-url";

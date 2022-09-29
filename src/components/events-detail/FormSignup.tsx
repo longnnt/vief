@@ -5,16 +5,11 @@ import {
   FormLabel,
   Input,
   Modal,
-  ModalBody,
   ModalContent,
   ModalOverlay,
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
-import React, { FormEvent, useState } from "react";
-import ButtonEventComponent from "../events/components/Button";
-import FormAlert from "./FormAlert";
-import FormSuccess from "./FormSuccess";
 import { FormSignupProps } from "./interface";
 
 export default function FormSignup({ isExpired }: FormSignupProps) {
@@ -47,8 +42,8 @@ export default function FormSignup({ isExpired }: FormSignupProps) {
               Đăng ký thành công
             </Text>
             <Text mb="16px" userSelect={"none"}>
-              Vui lòng kiểm tra Hộp thư email để nhận thông tin chi tiết về sự
-              kiện. Vui lòng mang theo mã QR khi đến tham gia sự kiện
+              Vui lòng kiểm tra Hộp thư email để nhận thông tin chi tiết về sự kiện. Vui lòng mang theo mã QR khi đến
+              tham gia sự kiện
             </Text>
             <Button
               bg="blue.primary"
@@ -66,51 +61,18 @@ export default function FormSignup({ isExpired }: FormSignupProps) {
       <Text variant={"text28"} textAlign="center">
         Đăng ký
       </Text>
-      <FormLabel
-        fontSize="14px"
-        lineHeight={"20px"}
-        fontWeight="600"
-        mb="0"
-        mt="32px"
-      >
+      <FormLabel fontSize="14px" lineHeight={"20px"} fontWeight="600" mb="0" mt="32px">
         Họ và tên
       </FormLabel>
-      <Input
-        type={"text"}
-        mt="8px"
-        bg={"white.secondary"}
-        disabled={isExpired ? true : false}
-      />
-      <FormLabel
-        fontSize="14px"
-        lineHeight={"20px"}
-        fontWeight="600"
-        mb="0"
-        mt="16px"
-      >
+      <Input type={"text"} mt="8px" bg={"white.secondary"} disabled={isExpired ? true : false} />
+      <FormLabel fontSize="14px" lineHeight={"20px"} fontWeight="600" mb="0" mt="16px">
         Số điện thoại
       </FormLabel>
-      <Input
-        type={"number"}
-        mt="8px"
-        bg={"white.secondary"}
-        disabled={isExpired ? true : false}
-      />
-      <FormLabel
-        fontSize="14px"
-        lineHeight={"20px"}
-        fontWeight="600"
-        mb="0"
-        mt="16px"
-      >
+      <Input type={"number"} mt="8px" bg={"white.secondary"} disabled={isExpired ? true : false} />
+      <FormLabel fontSize="14px" lineHeight={"20px"} fontWeight="600" mb="0" mt="16px">
         Email
       </FormLabel>
-      <Input
-        type={"email"}
-        mt="8px"
-        bg={"white.secondary"}
-        disabled={isExpired ? true : false}
-      />
+      <Input type={"email"} mt="8px" bg={"white.secondary"} disabled={isExpired ? true : false} />
 
       <Button
         disabled={isExpired}

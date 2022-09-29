@@ -4,7 +4,6 @@ export interface FormSignupProps {
   isExpired?: boolean;
 }
 export type ContentProps = {
-  isExpired?: boolean;
   data: Event;
 };
 

@@ -1,7 +1,7 @@
 import { BaseEntities, BooleanNumber, Lang } from "@/src/common/interfaces/common.interface";
 import { ChakraProps } from "@chakra-ui/react";
 export interface TimeLeftProps {
-  days?: number;
+  timeStart: string;
   wrapperStyle?: ChakraProps;
 }
 export interface EventContentItemProps {
@@ -20,6 +20,7 @@ export interface Event extends BaseEntities {
   content: string;
   location: string;
   timeStart: string;
+  timeEnd: string;
   field: string;
   slug: string;
   isFeature: BooleanNumber;

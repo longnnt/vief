@@ -1,17 +1,16 @@
+import { EventDetailPageProps } from "@/src/pages/events/[slug]";
 import { Stack, Text } from "@chakra-ui/react";
-import React from "react";
 import SectionEvent from "../section-event";
 import Content from "./Content";
-import { EventDetailProps } from "./interface";
 
-export default function EventDetail({ isExpired, data, upcomingEvents }: EventDetailProps) {
+export default function EventDetail({ event, relevantEvents }: EventDetailPageProps) {
   return (
     <Stack mb={"69px"} mt={{ base: "32px", sm: "16px" }}>
-      <Content isExpired={isExpired} data={data!} />
+      {event && <Content data={event} />}
       <Text variant={"text28"} pb="32px">
-        {!isExpired ? "Sự kiện liên quan" : "Sự kiện sắp diễn ra"}
+        Sự kiện liên quan
       </Text>
-      <SectionEvent upcomingEvents={upcomingEvents} />
+      {relevantEvents && <SectionEvent events={relevantEvents} />}
     </Stack>
   );
 }
