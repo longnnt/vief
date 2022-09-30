@@ -3,8 +3,7 @@ import { Article, Category, Lang, ListResponse } from "@/src/common/interfaces/c
 import { getListArticleService, getListCategoryService } from "@/src/common/services/common.services";
 import { EnterpriseStory } from "@/src/components/enterprise-story";
 import { ARTICLE_ENTERPRISE_SIZE, getParamSearchEnterprise } from "@/src/components/enterprise-story/constants";
-import { getParamSearchPolicy } from "@/src/components/section-policy/constant";
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 
 export type EnterprisePageProps = {
   categories: Category[];
@@ -15,7 +14,7 @@ function index({ articleData, categories }: EnterprisePageProps) {
   return <EnterpriseStory articleData={articleData} categories={categories} />;
 }
 
-export const getServerSideProps: GetServerSideProps<EnterprisePageProps> = async ({ locale }) => {
+export const getStaticProps: GetStaticProps<EnterprisePageProps> = async ({ locale }) => {
   const categories = await (
     await getListCategoryService(getParamSearchEnterprise({ size: 4, lang: locale as Lang }))
   ).data;
@@ -34,6 +33,7 @@ export const getServerSideProps: GetServerSideProps<EnterprisePageProps> = async
 
   return {
     props: { articleData, categories },
+    revalidate: 10,
   };
 };
 

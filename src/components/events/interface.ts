@@ -1,4 +1,4 @@
-import { SearchParams } from "@/src/common/interfaces/common.interface";
+import { ListResponse, SearchParams } from "@/src/common/interfaces/common.interface";
 import { ChakraProps } from "@chakra-ui/react";
 import { Event } from "../section-event/interface";
 
@@ -18,10 +18,9 @@ export interface SectionPastProps {
 }
 
 export interface TimeLeftProps {
-  days?: number;
+  timeStart: string;
   wrapperStyle?: ChakraProps;
   stroke?: string;
-  isExpired?: boolean;
 }
 
 export interface SectionUpcomingProps {
@@ -33,7 +32,7 @@ export interface SectionContentProps {
 }
 
 export interface SectionPastProps {
-  pastEvents?: Event[];
+  pastEvents: ListResponse<Event>;
 }
 
 export interface EventsPageProps {
@@ -43,10 +42,10 @@ export interface EventsPageProps {
 
 export interface EventsProps {
   upcomingEvents: Event[];
-  pastEvents: Event[];
+  pastEvents: ListResponse<Event>;
 }
 
-type EventTimeline = "UPCOMING" | "HAPPENING" | "TOOK_PLACE";
+export type EventTimeline = "UPCOMING" | "HAPPENING" | "TOOK_PLACE";
 export interface EventSearchParams extends SearchParams {
   timeline?: EventTimeline;
   location?: string;

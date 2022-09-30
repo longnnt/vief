@@ -1,4 +1,3 @@
-import { EVENT_DATA } from "@/src/components/section-event/constants";
 import { GridItem, SimpleGrid } from "@chakra-ui/react";
 import { SectionContentProps } from "../../interface";
 import SectionContentItem from "./section-content-item";

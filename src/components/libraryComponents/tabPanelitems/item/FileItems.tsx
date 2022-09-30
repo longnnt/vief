@@ -1,8 +1,6 @@
-import { DownloadIcon } from "@chakra-ui/icons";
-import { Box, Button, Stack, Text } from "@chakra-ui/react";
+import { Box, Stack, Text } from "@chakra-ui/react";
 import Image from "next/image";
-import React from "react";
-import { docProps, DocumentItem } from "../../interfaces";
+import { docProps } from "../../interfaces";
 import DownLoad from "./download/DownLoad";
 
 function FileItems({ docItem }: docProps) {
@@ -10,7 +8,7 @@ function FileItems({ docItem }: docProps) {
     <Box bg="brand.bgItemFile" height="280px" borderRadius="12px">
       <Stack p={"16px 16px"} justifyContent="space-between" h="full">
         <Box boxSize={"56px"} borderRadius="100%" position="relative">
-          <Image src="/iconFile.svg" layout="fill" />
+          <Image src="/iconFile.png" alt="file" layout="fill" />
         </Box>
         <Text variant={{ md: "text20", sm: "text16" }} className="text-3-line">
           {docItem.shortDesc}
