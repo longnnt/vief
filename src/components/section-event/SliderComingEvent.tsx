@@ -6,49 +6,8 @@ import "slick-carousel/slick/slick.css";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import EventContentItem from "./EventContentItem";
 import { Event } from "./interface";
-
-type ArrowButtonType = {
-  onClick?: () => void;
-};
-
-const NextArrow = ({ onClick }: ArrowButtonType) => {
-  return (
-    <IconButton
-      boxSize={"40px"}
-      aria-label=""
-      isRound
-      variant={"ghost"}
-      border="3px solid #C5CAD3"
-      alignSelf={"center"}
-      onClick={onClick}
-      position={{ "2xl": "absolute" }}
-      right="-38px"
-      top="46%"
-    >
-      <ChevronRightIcon boxSize="40px" color="#C5CAD3" />
-    </IconButton>
-  );
-};
-
-const PrevArrow = ({ onClick }: ArrowButtonType) => {
-  return (
-    <IconButton
-      mr="32px"
-      boxSize={"40px"}
-      aria-label=""
-      isRound
-      variant={"ghost"}
-      border="3px solid #C5CAD3"
-      alignSelf={"center"}
-      onClick={onClick}
-      position={{ "2xl": "absolute" }}
-      left="-70px"
-      top="46%"
-    >
-      <ChevronLeftIcon boxSize="40px" color="#C5CAD3" />
-    </IconButton>
-  );
-};
+import { PrevButton } from "@/src/common/components/button/prevButton";
+import { NextButton } from "@/src/common/components/button/nextButton";
 
 type Props = {
   events: Event[];
@@ -58,8 +17,8 @@ const SliderComingEvent = ({ events }: Props) => {
     style: { display: "flex" },
     infinite: true,
     speed: 500,
-    prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
+    prevArrow: <PrevButton />,
+    nextArrow: <NextButton />,
     initialSlide: 0,
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -84,7 +43,7 @@ const SliderComingEvent = ({ events }: Props) => {
 
   return (
     <Center>
-      <Box w="full">
+      <Box w="full" pos={"relative"}>
         <Slider {...settings}>
           {events.map((event, index) => (
             <Grid pr="32px" key={index}>

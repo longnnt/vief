@@ -10,6 +10,7 @@ export const getListPictureService = () => {
   } catch (error) {
     return LIST_DATA_RESPONSE;
   }
+  return LIST_DATA_RESPONSE;
 };
 
 // export async function getListPictureService({

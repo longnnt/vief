@@ -17,6 +17,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { theme } from "../common/theme/theme";
 import { HomeLayout } from "../components/layout/HomeLayout";
 import "swiper/css";
+import "swiper/css/bundle";
 // export const getStaticProps:GetStaticProps = async () =>{
 //   // const res= await axios.get('/client/categories?type=POLICY&field=WOOD&isFeatured=1')
 //   const res=  await axios.get('https://jsonplaceholder.typicode.com/users')

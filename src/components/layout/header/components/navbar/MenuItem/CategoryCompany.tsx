@@ -26,7 +26,7 @@ const CategoryCompany = ({ children }: { children?: NavbarProps }) => {
           onClick={handleRouteDetail}
           fontWeight={router.pathname == "/enterprise-story" ? "600" : "500"}
         >
-          Doanh nghiệp
+          Chuyện doanh nghiệp
           {/* {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />} */}
         </MenuButton>
         {checkCategory() === true ? (

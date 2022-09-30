@@ -8,7 +8,6 @@ import { TopItem } from "./topItem/TopItem";
 import { BottomItem } from "./bottomItem/BottomItem";
 
 import { ThumbnailItemProp } from "@/src/components/aboutComponents/interfaces";
-import { CloseIcon } from "@chakra-ui/icons";
 
 export const ThumbnailGallery = ({ listImgThumb }: ThumbnailItemProp) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);

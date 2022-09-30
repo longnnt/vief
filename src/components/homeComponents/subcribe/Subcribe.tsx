@@ -4,10 +4,10 @@ import Image from "next/image";
 const Subscribe = () => {
   return (
     <>
-      <Stack direction={{ md: "row", sm: "column" }} alignItems={"center"} justifyContent="space-between">
+      <Stack direction={{ md: "row", sm: "column" }} alignItems={"center"} spacing="32px">
         {/* Display from tablet mode */}
         <Box
-          w="48%"
+          w="50%"
           h="444px"
           borderRadius={"12px"}
           overflow="hidden"
@@ -16,7 +16,7 @@ const Subscribe = () => {
         >
           <Image src="/researchIMG.png" objectFit={"cover"} alt="" priority layout="fill" />
         </Box>
-        <Stack spacing="32px" w={{ md: "48%", sm: "full" }}>
+        <Stack spacing="32px" w={{ md: "50%", sm: "full" }}>
           <Text variant="text28">Đăng ký nhận tin</Text>
           <Text variant="text14">
             Vulputate sem volutpat cras senectus lorem massa volutpat pellentesque dui. Tortor, pretium sed at hendrerit

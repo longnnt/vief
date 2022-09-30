@@ -36,8 +36,6 @@ a {
   text-align: center;
   font-size: 18px;
   background: #fff;
-
-  /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -139,20 +137,10 @@ a {
 .swiper-pagination-bullet-active {
   background-color: #30BF45!important;
 }
-.imgBorderRadius {
-  border-radius: 12px!important;
-}
+
 .slick-dots {
   bottom: -16px!important;
 }
-
-
-/* .slick-dots .slick-active {
-  background: #000!important;
-  border-radius: 100%;
-  width: 8px!important;
-  height: 8px!important;
-} */
 .slick-dots li.slick-active button:before
 {
     color: #30BF45!important;

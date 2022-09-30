@@ -8,7 +8,7 @@ interface SectionEventProps {
 export default function SectionEvent({ upcomingEvents }: SectionEventProps) {
   return (
     <>
-      <Box py="29px">
+      <Box>
         {/* <Box>
           <ChevronLeft />
         </Box> */}

@@ -5,6 +5,7 @@ import { toQueryString } from "../common.lib";
 export const execute = axios.create({
   headers: {
     "Content-Type": "application/json",
+    Origin: "*",
   },
   paramsSerializer: (param) => toQueryString(param),
   baseURL: BASE_URL,
