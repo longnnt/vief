@@ -12,7 +12,7 @@ export const getParamSearchDocument = ({ lang = "vi", ...params }: SearchParams)
   ...params,
 });
 
-export const DOCCUMENT_SIZE = 6;
+export const DOCUMENT_SIZE = 6;
 
 export const getParamSearchFile = ({ key, ...params }: SearchParams): SearchParams => ({
   key: key,
