@@ -34,7 +34,7 @@ const variantPrimary = {
   _hover: {
     bg: "primaryHovering",
   },
-  _focus: {
+  _active: {
     bg: "deactive",
     color: "text",
   },

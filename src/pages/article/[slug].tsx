@@ -33,24 +33,23 @@ export const getServerSideProps: GetServerSideProps<ArticleDetailProps> = async 
   const articleCateSlug = category.slug;
   const articleCateType = category.type;
 
-  const relateNews = (
-    await getListArticleService({
-      page: 1,
-      size: 6,
-      lang,
-      type: articleCateType,
-    })
-  ).data;
-  const extraNews = await getListArticleService({
-    page: 1,
-    size: 6,
-    lang,
-    slugCategory: articleCateSlug,
-  });
+  const relateNewsRes = getListArticleService({ ...getParams(lang), type: articleCateType });
+  const extraNewsRes = getListArticleService({ ...getParams(lang), slugCategory: articleCateSlug });
+  const data = await Promise.all([relateNewsRes, extraNewsRes]);
+  const relateNews = data[0].data;
+  const extraNews = data[1];
 
   return {
     props: { articleDetail, relateNews, extraNews },
   };
 };
+
+function getParams(lang: Lang) {
+  return {
+    page: 1,
+    size: 6,
+    lang,
+  };
+}
 
 export default Index;

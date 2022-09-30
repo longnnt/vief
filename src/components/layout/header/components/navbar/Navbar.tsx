@@ -2,8 +2,6 @@ import { ROUTE_ABOUT, ROUTE_HOME } from "@/src/common/constants/routes.constant"
 import { useTranslation } from "@/src/common/hooks/useTranslation";
 import { useViefRouter } from "@/src/common/hooks/useViefRouter";
 
-import React, { useEffect, useRef } from "react";
-
 import { Lang } from "@/src/common/interfaces/common.interface";
 
 import { Box, Button, ButtonGroup, Flex, HStack, Image, Link, Select, Stack, Text } from "@chakra-ui/react";
@@ -13,7 +11,6 @@ import CategoryEvent from "./MenuItem/CategoryEvent";
 import CategoryLibrary from "./MenuItem/CategoryLibrary";
 import CategoryPolicy from "./MenuItem/CategoryPolicy";
 import NavbarMenu from "./navbarMenuResponsive/NavBarMenu";
-import { useScrollPosition } from "../../../constant";
 
 const Navbar = ({
   dataPolicy,
@@ -27,30 +24,11 @@ const Navbar = ({
   dataLibrary?: NavbarProps;
 }) => {
   const router = useViefRouter();
-
-  // const scrollPosition = useScrollPosition()
-  // const [navbar, setNavbar] = React.useState(false)
-
   const { t, locale } = useTranslation();
 
   const handleRouter = (children: any) => {
     router.push(children);
-    // setNavbar(true)
   };
-
-  // const handleScroll = () => {
-  //   if(window.scrollY >0){
-  //     setNavbar(true)
-  //     console.log(window.scrollY)
-  //   }
-  //   else{
-  //     setNavbar(false)
-  //   }
-  // }
-  // useEffect(() => {
-  //   window.addEventListener('scroll', handleScroll)
-  //   handleScroll()
-  // },[])
 
   const changeLocale = (locale: Lang) => {
     router.push(

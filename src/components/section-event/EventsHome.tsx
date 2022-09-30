@@ -1,6 +1,4 @@
 import { Grid, GridItem, Text, VStack } from "@chakra-ui/react";
-import React from "react";
-import { EVENT_DATA } from "./constants";
 import EventContentItem from "./EventContentItem";
 import { Event } from "./interface";
 
