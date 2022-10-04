@@ -2,49 +2,25 @@ import { ArticleItem } from "@/src/common/components/articleItem";
 import { Pagination } from "@/src/common/components/pagination";
 import { LANG } from "@/src/common/constants/common.constant";
 import { useViefRouter } from "@/src/common/hooks/useViefRouter";
-import {
-  Article,
-  Category,
-  Lang,
-  ListResponse,
-} from "@/src/common/interfaces/common.interface";
+import { Article, Category, Lang, ListResponse } from "@/src/common/interfaces/common.interface";
 import { toTotalPage } from "@/src/common/lib/common.lib";
 import { getListArticleService } from "@/src/common/services/common.services";
-import {
-  Box,
-  Button,
-  Grid,
-  GridItem,
-  HStack,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Button, Grid, GridItem, HStack, Stack, Text } from "@chakra-ui/react";
 import { useState } from "react";
-import {
-  ARTICLE_POLICY_SIZE,
-  getParamSearchPolicy,
-} from "../../section-policy/constant";
+import { ARTICLE_POLICY_SIZE, getParamSearchPolicy } from "../../section-policy/constant";
 import { PolicyPageProps } from "../interfaces";
 
-export const InfoPolicy = ({
-  articleData,
-  categories,
-}: Pick<PolicyPageProps, "articleData" | "categories">) => {
+export const InfoPolicy = ({ articleData, categories }: Pick<PolicyPageProps, "articleData" | "categories">) => {
   const { locale } = useViefRouter();
   const lang = (locale || LANG.vi) as Lang;
 
-  const [selectedCate, setSelectedCate] = useState<Category | null>(
-    categories[0] || null
-  );
-  const [listArticleData, setListArticleData] =
-    useState<ListResponse<Article>>(articleData);
+  const [selectedCate, setSelectedCate] = useState<Category | null>(categories[0] || null);
+  const [listArticleData, setListArticleData] = useState<ListResponse<Article>>(articleData);
 
   const [currentPage, setCurrentPage] = useState(1);
 
   async function handlePageChange(page: number) {
-    const listData = await getListArticleService(
-      getParamSearchPolicy({ page, size: ARTICLE_POLICY_SIZE, lang })
-    );
+    const listData = await getListArticleService(getParamSearchPolicy({ page, size: ARTICLE_POLICY_SIZE, lang }));
     setListArticleData(listData);
     setCurrentPage(page);
   }
@@ -70,7 +46,7 @@ export const InfoPolicy = ({
       <HStack spacing={{ md: "32px", sm: "16px" }}>
         {categories.map((cate) => {
           const isSelectedCate = cate.id === selectedCate?.id;
-          const btnVariant = isSelectedCate ? "primary" : "";
+          const btnVariant = isSelectedCate ? "primary" : "ghost";
 
           return (
             <Button
@@ -110,10 +86,7 @@ export const InfoPolicy = ({
           <Box display="flex" justifyContent="center" w="full">
             <Pagination
               currentPage={currentPage}
-              totalPages={toTotalPage(
-                listArticleData.total,
-                ARTICLE_POLICY_SIZE
-              )}
+              totalPages={toTotalPage(listArticleData.total, ARTICLE_POLICY_SIZE)}
               onPageChange={(page) => handlePageChange(page)}
             />
           </Box>

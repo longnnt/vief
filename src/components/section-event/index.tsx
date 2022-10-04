@@ -7,7 +7,7 @@ interface SectionEventProps {
 
 export default function SectionEvent({ events }: SectionEventProps) {
   return (
-    <Box py="29px">
+    <Box>
       <SliderComingEvent events={events} />
     </Box>
   );

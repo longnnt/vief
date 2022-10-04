@@ -7,7 +7,6 @@ export type ItemImgThumbnail = {
 };
 
 export const TopItem = ({ props }: ItemImgThumbnail) => {
-  console.log(props?.urls?.regular);
   return (
     <Box h={{ md: "672.5px", sm: "200px" }} w="full" bg="transparent" borderRadius="8px">
       {/* <Image src={props.urls.regular} alt="" width={100} height={100}/> */}

@@ -20,43 +20,8 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import ItemSlider from "./ItemSlider/ItemSlider";
 
 import { ListImgProps } from "../../interfaces";
-
-function SampleNextArrow(props: any) {
-  const { onClick } = props;
-  return (
-    <IconButton
-      display={{ sm: "none", md: "block" }}
-      w="40px"
-      aria-label=""
-      isRound
-      variant={"ghost"}
-      border="3px solid #C5CAD3"
-      alignSelf={"center"}
-      onClick={onClick}
-    >
-      <ChevronRightIcon boxSize="30px" color="#C5CAD3" />
-    </IconButton>
-  );
-}
-
-function SamplePrevArrow(props: any) {
-  const { onClick } = props;
-  return (
-    <IconButton
-      display={{ sm: "none", md: "block" }}
-      w="40px"
-      aria-label=""
-      isRound
-      variant={"ghost"}
-      border="3px solid #C5CAD3"
-      alignSelf={"center"}
-      alignContent={"center"}
-      onClick={onClick}
-    >
-      <ChevronLeftIcon boxSize="30px" color="#C5CAD3" />
-    </IconButton>
-  );
-}
+import { NextButton } from "@/src/common/components/button/nextButton";
+import { PrevButton } from "@/src/common/components/button/prevButton";
 
 export default function SliderImage({ listImg, listImgThumb }: ListImgProps) {
   const settingsMd = {
@@ -68,8 +33,8 @@ export default function SliderImage({ listImg, listImgThumb }: ListImgProps) {
 
     slidesToShow: 3,
     slidesToScroll: 1,
-    prevArrow: <SamplePrevArrow />,
-    nextArrow: <SampleNextArrow />,
+    prevArrow: <PrevButton />,
+    nextArrow: <NextButton />,
     responsive: [
       {
         breakpoint: 1200, // width to change options
@@ -80,8 +45,8 @@ export default function SliderImage({ listImg, listImgThumb }: ListImgProps) {
           speed: 500,
           slidesToShow: 2,
           slidesToScroll: 1,
-          prevArrow: <SamplePrevArrow />,
-          nextArrow: <SampleNextArrow />,
+          prevArrow: <PrevButton />,
+          nextArrow: <NextButton />,
         },
       },
       {
@@ -112,7 +77,8 @@ export default function SliderImage({ listImg, listImgThumb }: ListImgProps) {
         breakpoint: 400, // width to change options
         settings: {
           centerMode: true,
-          centerPadding: "40px",
+          // centerPadding: "40px",
+          padding: "20px",
           infinite: true,
           dots: true,
           speed: 500,

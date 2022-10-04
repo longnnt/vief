@@ -39,6 +39,7 @@ export default function EventContentItem({ event }: EventContentItemProps) {
       height="662px"
     >
       <Box
+        position="relative"
         w="full"
         h={{ md: "288px", sm: "257px" }}
         overflow={"hidden"}

@@ -49,13 +49,9 @@ const ArticleItemSlide = ({ article }: Props) => {
           <Text variant="text14" textAlign={"justify"}>
             {article?.shortDesc}
           </Text>
-          <Button
-            w="max-content"
-            variant="primary"
-            rightIcon={<ArrowForwardIcon />}
-            onClick={handleRedirectArticleDetail}
-          >
+          <Button w="max-content" variant="primary" onClick={handleRedirectArticleDetail}>
             Xem thêm
+            <ArrowForwardIcon boxSize={"20px"} />
           </Button>
         </Stack>
       </Stack>

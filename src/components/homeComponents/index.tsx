@@ -14,11 +14,7 @@ function Home({ banners, policy, events, enterprise, documents }: HomePageProps)
     <Stack>
       <Carousel banners={banners} />
       <WebContainer>
-        <Stack
-          alignSelf="center"
-          py={{ sm: "48px", xl: "128px" }}
-          spacing={{ sm: "48px", xl: "128px", "2xl": "128px" }}
-        >
+        <Stack py={{ sm: "48px", md: "128px" }} spacing={{ sm: "48px", md: "128px" }}>
           <SectionAbout />
           <SectionPolicy policies={policy} />
           <EventsHome events={events} />

@@ -18,8 +18,14 @@ const Contact = () => {
           </Stack>
 
           <Stack direction={{ sm: "column", md: "row" }} spacing="32px" alignItems={"center"}>
-            <Box w={{ md: "592px", sm: "full" }} h={{ md: "444px", sm: "257.25px" }} position="relative">
-              <Image src="/researchIMG.png" layout="fill" objectFit={"cover"} alt="" className="imgBorderRadius" />
+            <Box
+              w={{ md: "592px", sm: "full" }}
+              h={{ md: "444px", sm: "257.25px" }}
+              position="relative"
+              overflow="hidden"
+              borderRadius="12px"
+            >
+              <Image src="/researchIMG.png" layout="fill" objectFit={"cover"} alt="" />
             </Box>
             <Stack spacing="32px" w={{ md: "592px", sm: "full" }}>
               <FormControl isRequired>

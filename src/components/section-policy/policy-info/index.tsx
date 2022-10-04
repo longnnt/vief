@@ -5,6 +5,7 @@ import { replacePathParams } from "@/src/common/lib/common.lib";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { Box, Button, Stack, Text } from "@chakra-ui/react";
 import Image from "next/image";
+import { BsArrowRight } from "react-icons/bs";
 
 type Props = {
   policy: Article;
@@ -31,7 +32,7 @@ export default function PolicyInfo({ policy }: Props) {
       </Stack>
 
       <Stack direction={{ md: "row", sm: "column-reverse" }} spacing={{ md: "64px", sm: "16px" }}>
-        <Stack w={{ md: "30%", sm: "100%" }} spacing={{ sm: "16px", md: "32px" }}>
+        <Stack w={{ md: "35%", sm: "100%" }} spacing={{ sm: "16px", md: "32px" }}>
           <Box
             color="text"
             fontWeight={500}
@@ -43,7 +44,7 @@ export default function PolicyInfo({ policy }: Props) {
             <Button
               w="128px"
               variant="primary"
-              rightIcon={<ArrowForwardIcon />}
+              rightIcon={<BsArrowRight />}
               onClick={() => handleRoutePolicyPage(policy.slug)}
             >
               Xem thêm
