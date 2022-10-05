@@ -6,6 +6,7 @@ import { Lang } from "@/src/common/interfaces/common.interface";
 
 import { Box, Button, ButtonGroup, Flex, HStack, Image, Link, Select, Stack, Text } from "@chakra-ui/react";
 import { NavbarProps } from "../../../interfaces";
+import { Login } from "../../login";
 import CategoryCompany from "./MenuItem/CategoryCompany";
 import CategoryEvent from "./MenuItem/CategoryEvent";
 import CategoryLibrary from "./MenuItem/CategoryLibrary";
@@ -93,13 +94,8 @@ const Navbar = ({
                 <option value="vi">VI</option>
                 <option value="en">EN</option>
               </Select>
-              <ButtonGroup>
-                <Link href="/login" _hover={{ textDecoration: "none" }}>
-                  <Button variant="primary" textColor="white" w="128px" display={{ md: "block", sm: "none" }}>
-                    Đăng nhập
-                  </Button>
-                </Link>
-              </ButtonGroup>
+              <Login />
+
               <NavbarMenu />
             </Flex>
           </Flex>
