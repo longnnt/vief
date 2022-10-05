@@ -36,7 +36,6 @@ a {
   text-align: center;
   font-size: 18px;
   background: #fff;
-
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -137,4 +136,12 @@ a {
 
 .swiper-pagination-bullet-active {
   background-color: #30BF45!important;
+}
+
+.slick-dots {
+  bottom: -16px!important;
+}
+.slick-dots li.slick-active button:before
+{
+    color: #30BF45!important;
 }

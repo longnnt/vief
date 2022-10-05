@@ -5,40 +5,8 @@ import Slider from "react-slick";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import ItemSliderMaster from "./itemSliderMaster";
 import { ThumbnailItemProp } from "../../interfaces";
-
-function SampleNextArrow(props: any) {
-  const { onClick } = props;
-  return (
-    <IconButton
-      boxSize={"40px"}
-      aria-label=""
-      isRound
-      variant={"ghost"}
-      border="3px solid #C5CAD3"
-      alignSelf={"center"}
-      onClick={onClick}
-    >
-      <ChevronRightIcon boxSize="30px" color="#C5CAD3" />
-    </IconButton>
-  );
-}
-
-function SamplePrevArrow(props: any) {
-  const { onClick } = props;
-  return (
-    <IconButton
-      boxSize={"40px"}
-      aria-label=""
-      isRound
-      variant={"ghost"}
-      border="3px solid #C5CAD3"
-      alignSelf={"center"}
-      onClick={onClick}
-    >
-      <ChevronLeftIcon boxSize="30px" color="#C5CAD3" />
-    </IconButton>
-  );
-}
+import { PrevButton } from "@/src/common/components/button/prevButton";
+import { NextButton } from "@/src/common/components/button/nextButton";
 
 export default function SliderMaster({ listImgThumb }: ThumbnailItemProp) {
   const settingsMd = {
@@ -46,10 +14,10 @@ export default function SliderMaster({ listImgThumb }: ThumbnailItemProp) {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     autoplay: true,
-    prevArrow: <SamplePrevArrow />,
-    nextArrow: <SampleNextArrow />,
+    prevArrow: <PrevButton />,
+    nextArrow: <NextButton />,
     responsive: [
       {
         breakpoint: 1200, // width to change options
@@ -59,8 +27,8 @@ export default function SliderMaster({ listImgThumb }: ThumbnailItemProp) {
           speed: 500,
           slidesToShow: 3,
           slidesToScroll: 1,
-          prevArrow: <SamplePrevArrow />,
-          nextArrow: <SampleNextArrow />,
+          prevArrow: <PrevButton />,
+          nextArrow: <NextButton />,
         },
       },
 
@@ -72,8 +40,8 @@ export default function SliderMaster({ listImgThumb }: ThumbnailItemProp) {
           speed: 500,
           slidesToShow: 1,
           slidesToScroll: 1,
-          prevArrow: <SamplePrevArrow />,
-          nextArrow: <SampleNextArrow />,
+          prevArrow: <PrevButton />,
+          nextArrow: <NextButton />,
         },
       },
       {
@@ -84,8 +52,8 @@ export default function SliderMaster({ listImgThumb }: ThumbnailItemProp) {
           speed: 500,
           slidesToShow: 1,
           slidesToScroll: 1,
-          prevArrow: <SamplePrevArrow />,
-          nextArrow: <SampleNextArrow />,
+          prevArrow: <PrevButton />,
+          nextArrow: <NextButton />,
         },
       },
     ],

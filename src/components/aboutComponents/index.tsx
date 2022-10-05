@@ -11,7 +11,7 @@ export const About = ({ listImg, listImgThumb }: ListImgProps) => {
   return (
     <>
       <WebContainer>
-        <Stack py="64px" spacing="64px" pt={{ md: "64px", sm: "32px" }}>
+        <Stack py="32px" spacing="64px" pb={{ md: "64px", sm: "32px" }}>
           <WeAre />
         </Stack>
       </WebContainer>

@@ -8,7 +8,7 @@ export type ItemImgThumbnail = {
 
 export const BottomItem = ({ props }: ItemImgThumbnail) => {
   return (
-    <Box w="full" h={{ md: "132px", sm: "100px" }}>
+    <Box h={{ md: "132px", sm: "100px" }}>
       <Image
         src={props?.urls?.regular}
         loader={() => {

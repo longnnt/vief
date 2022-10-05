@@ -23,9 +23,15 @@ const baseStyle = {
   },
 };
 
-const variantGhost = {};
+const variantGhost = {
+  fontSize: "14px",
+  fontWeight: "500",
+};
 const variantOutline = {};
-const variantSolid = {};
+const variantSolid = {
+  fontSize: "14px",
+  fontWeight: "500",
+};
 const variantLink = {};
 const variantPrimary = {
   bg: "blue.primary",
@@ -38,6 +44,8 @@ const variantPrimary = {
     bg: "deactive",
     color: "text",
   },
+  fontSize: "14px",
+  fontWeight: "600",
 };
 const variantUnstyled = {};
 
