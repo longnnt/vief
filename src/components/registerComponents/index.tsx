@@ -17,8 +17,6 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { SubmitErrorHandler, SubmitHandler } from "react-hook-form/dist/types";
 import RegisterSuccess from "./register-success";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
 
 type Inputs = {
   name: string;
