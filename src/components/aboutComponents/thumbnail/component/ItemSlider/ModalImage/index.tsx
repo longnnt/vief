@@ -37,7 +37,7 @@ export const ModalImage = ({ itemImg, listImgThumb }: PictureItemProp) => {
         />
       </Box>
 
-      <Modal isOpen={isOpen} onClose={onClose} isCentered size="full">
+      <Modal isOpen={isOpen} onClose={onClose} isCentered size={{ md: "full", sm: "lg" }}>
         <ModalOverlay />
         <ModalOverlay />
         <ModalContent bg="transparent" borderRadius="12px" shadow={"none"} padding="10px" py="20%">
@@ -53,6 +53,7 @@ export const ModalImage = ({ itemImg, listImgThumb }: PictureItemProp) => {
             onClick={onClose}
             right="8%"
             _hover={{ bg: "transparent" }}
+            display={{ md: "flex", sm: "none" }}
           >
             <CloseIcon color="white" alignSelf="center" />
           </IconButton>

@@ -10,6 +10,9 @@ import { theme } from "../common/theme/theme";
 import { HomeLayout } from "../components/layout/HomeLayout";
 import "../styles/editor-quill.css";
 import "../styles/globals.css";
+import "swiper/css";
+import "swiper/css/bundle";
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

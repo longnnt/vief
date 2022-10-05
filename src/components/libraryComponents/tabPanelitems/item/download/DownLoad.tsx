@@ -1,11 +1,11 @@
 import { useViefRouter } from "@/src/common/hooks/useViefRouter";
 import { DownloadIcon } from "@chakra-ui/icons";
+
 import {
   Box,
   Button,
   FormControl,
   FormLabel,
-  Image,
   Input,
   Modal,
   ModalBody,
@@ -19,15 +19,17 @@ import {
   useDisclosure,
   VStack,
 } from "@chakra-ui/react";
+
 import { docProps } from "../../../interfaces";
 import CompleteDownLoad from "./completeDownload/CompleteDownload";
+import React, { useState } from "react";
 
 export default function DownLoad({ docItem }: docProps) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Box>
-      <Button onClick={onOpen} variant="primary" rightIcon={<Image src="/download.svg" />}>
+      <Button onClick={onOpen} variant="primary" alignItems={"center"} overflow="hidden" rightIcon={<DownloadIcon />}>
         Tải về
       </Button>
 
@@ -59,6 +61,7 @@ export default function DownLoad({ docItem }: docProps) {
               </FormControl>
             </Stack>
           </ModalBody>
+
           <ModalFooter alignSelf="center">
             <CompleteDownLoad docItem={docItem} />
           </ModalFooter>
