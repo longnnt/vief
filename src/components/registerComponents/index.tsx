@@ -27,14 +27,14 @@ type Inputs = {
 };
 
 export const Register = () => {
-  const [showPassword, setShowPassword] = useState(false);
-  const [showRePassword, setShowRePassword] = useState(false);
+  const [showPassword, setShowPassword] = useState<Boolean>(false);
+  const [showRePassword, setShowRePassword] = useState<Boolean>(false);
 
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [rePassword, setRePassword] = useState("");
+  const [name, setName] = useState<string>("");
+  const [phone, setPhone] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [rePassword, setRePassword] = useState<string>("");
 
   const handleNameChange = (e: any) => setName(e.target.value);
   const handlePhoneChange = (e: any) => setPhone(e.target.value);
@@ -62,15 +62,13 @@ export const Register = () => {
     watch,
     formState: { errors },
   } = useForm<Inputs>({
-    // mode:'onSubmit',
-    // reValidateMode:'onChange',
+    mode: "onChange",
+    reValidateMode: "onChange",
     // resolver: yupResolver(schema)
   });
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
-  const onError: SubmitErrorHandler<Inputs> = (error) => {
-    console.log("Error", error);
-  };
+  const onSubmit: SubmitHandler<Inputs> = (data) => {};
+  const onError: SubmitErrorHandler<Inputs> = (error) => {};
 
   const handleEmpty = (str: any) => {
     if (str === "") {

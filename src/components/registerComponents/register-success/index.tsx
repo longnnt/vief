@@ -43,9 +43,8 @@ export default function RegisterSuccess() {
           <ModalBody textAlign={"center"}>
             <Stack>
               <Text variant="text28">Đăng kí thành công</Text>
-              <Text variant="text14">
-                Sit eu, faucibus ut eros maecenas nunc tristique. Phasellus amet, enim duis turpis praesent. Id volutpat
-                quis et tristique facilisis. Neque nisi etiam justo nunc.
+              <Text variant="text14" textAlign={"center"}>
+                Bạn sẽ tự động quay về Trang chủ sau 03 giây. Chọn Trang chủ nếu bạn không muốn đợi lâu
               </Text>
             </Stack>
           </ModalBody>
