@@ -1,4 +1,4 @@
-import { ROUTE_REGISTER } from "@/src/common/constants/routes.constant";
+import { ROUTE_HOME, ROUTE_REGISTER } from "@/src/common/constants/routes.constant";
 import { useViefRouter } from "@/src/common/hooks/useViefRouter";
 
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
@@ -6,6 +6,7 @@ import {
   Box,
   Button,
   Center,
+  ChakraProps,
   Flex,
   FormControl,
   FormErrorMessage,
@@ -27,23 +28,35 @@ import {
   VisuallyHiddenInput,
   VStack,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { SubmitHandler } from "react-hook-form/dist/types";
+import { SubmitErrorHandler, SubmitHandler } from "react-hook-form/dist/types";
 
-import LoginSuccess from "./login-success";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+
+import { schemaForgotPassword, schemaLogin } from "./schema";
 
 type Inputs = {
   email: string;
   password: string;
 };
 
-export const Login = () => {
+export const Login = ({ ...styleProps }: ChakraProps) => {
+  const modalLoginSuccess = useDisclosure();
+  const modalLoginError = useDisclosure();
   const modalLogin = useDisclosure();
-  const [showPassword, setShowPassword] = useState(false);
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const modalForgotPassword = useDisclosure();
+  const modalForgotPasswordSuccess = useDisclosure();
+
+  const [isErrorLogin, setIsErrorLogin] = useState<boolean>(false);
+  const [isErrorForgotPassword, setIsErrorForgotPassword] = useState<boolean>(false);
+
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
   const handleEmailChange = (e: any) => setEmail(e.target.value);
   const handlePasswordChange = (e: any) => setPassword(e.target.value);
@@ -51,32 +64,66 @@ export const Login = () => {
   const isEmailError = email.includes("@");
 
   const router = useViefRouter();
-  const handleRouter = () => {
+  const navigateToRegister = () => {
     router.push(ROUTE_REGISTER["en"]);
   };
 
-  const handleEmpty = (str: any) => {
-    if (str === "") {
-      return true;
-    }
-    return false;
+  const navigateToHome = () => {
+    router.push("/");
   };
 
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const navigateToHomeAuto = () => {
+    setTimeout(() => {
+      router.push("/");
+      modalLoginSuccess.onClose();
+    }, 3000);
+  };
+
+  const formLogin = useForm<Inputs>({
+    mode: "onChange",
+    reValidateMode: "onChange",
+    resolver: yupResolver(schemaLogin),
+  });
+
+  const formForgotPassword = useForm<Inputs>({
+    mode: "onChange",
+    reValidateMode: "onChange",
+    resolver: yupResolver(schemaForgotPassword),
+  });
+
+  const onSubmit: SubmitHandler<Inputs> = () => {
+    setIsErrorLogin(false);
+    modalLogin.onClose();
+    modalLoginSuccess.onOpen();
+    navigateToHomeAuto();
+  };
+  const onError: SubmitErrorHandler<Inputs> = () => {
+    setIsErrorLogin(true);
+    modalLoginError.onOpen();
+  };
+
+  const onSubmitForgotPassword: SubmitHandler<Inputs> = (data) => {
+    setIsErrorForgotPassword(false);
+    modalForgotPasswordSuccess.onOpen();
+  };
+  const onErrorForgotPassword: SubmitErrorHandler<Inputs> = () => {
+    setIsErrorForgotPassword(true);
+  };
 
   return (
     <Box>
-      <Button onClick={modalLogin.onOpen} variant="primary" w="128px">
+      <Button onClick={modalLogin.onOpen} variant="primary" w="128px" overflow={"hidden"} {...styleProps}>
         Đăng nhập
       </Button>
 
-      <Modal isOpen={modalLogin.isOpen} onClose={modalLogin.onClose} isCentered size={{ md: "lg", sm: "md" }}>
+      {/* Modal Login ------------------------------ */}
+      <Modal
+        isOpen={modalLogin.isOpen}
+        onClose={modalLogin.onClose}
+        isCentered
+        size={{ md: "lg", sm: "md" }}
+        id="login"
+      >
         <ModalOverlay />
         <ModalContent borderRadius="12px" padding={{ md: "32px", sm: "16px" }} mx="16px">
           <ModalHeader alignSelf="center">
@@ -90,7 +137,7 @@ export const Login = () => {
                   textColor="blue.primary"
                   cursor="pointer"
                   onClick={() => {
-                    handleRouter();
+                    navigateToRegister();
                     modalLogin.onClose();
                   }}
                 >
@@ -101,47 +148,33 @@ export const Login = () => {
           </ModalHeader>
 
           <ModalBody>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={formLogin.handleSubmit(onSubmit, onError)}>
               <Stack>
-                <FormControl
-                  id="email"
-                  isInvalid={handleEmpty(email) || !isEmailError}
-                  // isInvalid={errors.email}
-                >
+                <FormControl id="email" isInvalid={isErrorLogin && (!isEmailError || email === "")}>
                   <FormLabel>Email</FormLabel>
                   <InputGroup flexDirection={"column"}>
-                    <Input
-                      {...register("email", { required: true })}
-                      type="email"
-                      value={email}
-                      onChange={handleEmailChange}
-                    />
-                    {handleEmpty(email) || !isEmailError ? (
+                    <Input {...formLogin.register("email")} type="text" value={email} onChange={handleEmailChange} />
+                    {formLogin.formState && (
                       <FormErrorMessage>
                         {email === "" ? "Vui lòng nhập thông tin vào ô trống." : "Email không đúng định dạng"}
                       </FormErrorMessage>
-                    ) : null}
-
-                    {/* {errors.email &&  (
-                                        <FormErrorMessage>
-                                            {email===''?'Vui lòng nhập thông tin vào ô trống.' :'Email không đúng định dạng'}                                    
-                                        </FormErrorMessage>
-                                        ) 
-                                    }                                         */}
+                    )}
                   </InputGroup>
                 </FormControl>
-                <FormControl id="password" isInvalid={handleEmpty(password)}>
+                <FormControl id="password" isInvalid={isErrorLogin && password === ""}>
                   <FormLabel>Mật khẩu</FormLabel>
                   <InputGroup flexDirection={"column"}>
                     <Input
-                      {...register("password", { required: true })}
+                      {...formLogin.register("password")}
                       type={showPassword ? "text" : "password"}
                       value={password}
                       onChange={handlePasswordChange}
                     />
-                    {handleEmpty(password) ? (
-                      <FormErrorMessage>Vui lòng nhập thông tin vào ô trống.</FormErrorMessage>
-                    ) : null}
+                    {formLogin.formState && (
+                      <FormErrorMessage>
+                        {password === "" ? "Vui lòng nhập thông tin vào ô trống." : null}
+                      </FormErrorMessage>
+                    )}
                     <InputRightElement>
                       <IconButton
                         aria-label=""
@@ -165,18 +198,168 @@ export const Login = () => {
                   textColor="blue.primary"
                   cursor="pointer"
                   onClick={() => {
-                    handleRouter();
+                    modalForgotPassword.onOpen();
                     modalLogin.onClose();
                   }}
                 >
                   Quên mật khẩu?
                 </Text>
+
                 <Center>
-                  <LoginSuccess />
+                  <Box>
+                    <Button type="submit" variant="primary">
+                      Đăng nhập
+                    </Button>
+                  </Box>
                 </Center>
               </Stack>
             </form>
           </ModalBody>
+        </ModalContent>
+      </Modal>
+
+      {/* Modal Login Success --------------------------------------------------------------------------*/}
+      <Modal
+        isOpen={modalLoginSuccess.isOpen}
+        onClose={modalLoginSuccess.onClose}
+        isCentered
+        size={{ md: "xl", sm: "md" }}
+      >
+        <ModalOverlay />
+        <ModalContent borderRadius="12px" padding="32px" m={"16px"}>
+          <ModalHeader alignSelf="center">
+            <Box bgImage="/checkDownload.png" boxSize={"128px"}></Box>
+          </ModalHeader>
+
+          <ModalBody textAlign={"center"}>
+            <Stack>
+              <Text variant="text28">Đăng nhập thành công</Text>
+              <Text variant="text14" textAlign="center">
+                Bạn sẽ tự động quay về Trang chủ sau 03 giây. Chọn Trang chủ nếu bạn không muốn đợi lâu
+              </Text>
+            </Stack>
+          </ModalBody>
+          <ModalFooter alignSelf="center">
+            <Button
+              variant="primary"
+              onClick={() => {
+                navigateToHome();
+                modalLoginSuccess.onClose();
+                modalLogin.onClose();
+              }}
+            >
+              Trang chủ
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+
+      {/* Modal Login Error --------------------------------------------------------------------------*/}
+      <Modal isOpen={modalLoginError.isOpen} onClose={modalLoginError.onClose} isCentered size={{ md: "xl", sm: "md" }}>
+        <ModalOverlay />
+        <ModalContent borderRadius="12px" padding="32px">
+          <ModalHeader alignSelf="center">
+            <Box bgImage="/error-img.svg" boxSize={"128px"}></Box>
+          </ModalHeader>
+
+          <ModalBody textAlign={"center"}>
+            <Stack>
+              <Text variant="text28">Đăng nhập thất bại</Text>
+              <Text variant="text14" textAlign="center">
+                Bạn sẽ tự động quay về Trang chủ sau 03 giây. Chọn Trang chủ nếu bạn không muốn đợi lâu
+              </Text>
+            </Stack>
+          </ModalBody>
+          <ModalFooter alignSelf="center">
+            <Button
+              variant="primary"
+              onClick={() => {
+                modalLoginError.onClose();
+              }}
+            >
+              Thử lại
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+
+      {/* Modal forgot password -------------------------------------*/}
+      <Modal isOpen={modalForgotPassword.isOpen} onClose={modalForgotPassword.onClose} isCentered size={"lg"}>
+        <ModalOverlay />
+        <ModalContent borderRadius="12px" padding={{ md: "32px", sm: "16px" }} mx="16px">
+          <ModalHeader alignSelf="center">
+            <VStack spacing="16px">
+              <Text variant="text28">Quên mật khẩu</Text>
+              <Text variant="text14" textAlign={"center"}>
+                Nhập địa chỉ email bạn đã đăng ký và chúng tôi sẽ gửi cho bạn hướng dẫn để đặt lại mật khẩu mới.{" "}
+              </Text>
+            </VStack>
+          </ModalHeader>
+          <ModalBody>
+            <form onSubmit={formForgotPassword.handleSubmit(onSubmitForgotPassword, onErrorForgotPassword)}>
+              <Stack spacing={"32px"}>
+                <FormControl id="email" isInvalid={isErrorForgotPassword && (!isEmailError || email === "")}>
+                  <FormLabel>Email</FormLabel>
+                  <InputGroup flexDirection={"column"}>
+                    <Input
+                      {...formForgotPassword.register("email")}
+                      type="text"
+                      value={email}
+                      onChange={handleEmailChange}
+                    />
+                    {formForgotPassword.formState && (
+                      <FormErrorMessage>
+                        {email === "" ? "Vui lòng nhập thông tin vào ô trống." : "Email không đúng định dạng"}
+                      </FormErrorMessage>
+                    )}
+                  </InputGroup>
+                </FormControl>
+
+                <Center>
+                  <Box>
+                    <Button type="submit" variant="primary">
+                      Xác thực email
+                    </Button>
+                  </Box>
+                </Center>
+              </Stack>
+            </form>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
+
+      {/* Modal Forgot password Success --------------------------------------------------------------------------*/}
+      <Modal
+        isOpen={modalForgotPasswordSuccess.isOpen}
+        onClose={modalForgotPasswordSuccess.onClose}
+        isCentered
+        size={"lg"}
+      >
+        <ModalOverlay />
+        <ModalContent borderRadius="12px" padding="32px">
+          <ModalHeader alignSelf="center">
+            <Box bgImage="/checkDownload.png" boxSize={"128px"}></Box>
+          </ModalHeader>
+
+          <ModalBody textAlign={"center"} padding="0px">
+            <Stack>
+              <Text variant="text28">Xác nhận Email</Text>
+              <Text variant="text14" textAlign="center">
+                Nếu địa chỉ email này được sử dụng để tạo tài khoản, hướng dẫn đặt lại mật khẩu sẽ được gửi cho bạn. Vui
+                lòng kiểm tra email của bạn.
+              </Text>
+            </Stack>
+          </ModalBody>
+          <ModalFooter alignSelf="center">
+            <Button
+              variant="primary"
+              onClick={() => {
+                modalForgotPasswordSuccess.onClose();
+              }}
+            >
+              Đã hiểu
+            </Button>
+          </ModalFooter>
         </ModalContent>
       </Modal>
     </Box>
