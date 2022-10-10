@@ -24,9 +24,11 @@ import { SubmitErrorHandler, SubmitHandler } from "react-hook-form/dist/types";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FormLogin } from "../../interfaces";
 import { schemaLogin } from "./schema";
-import LoginSuccess from "./modal/login/success";
-import LoginError from "./modal/login/error";
+
 import ForgotPassword from "./modal/forgot-password";
+import ModalSuccess from "@/src/common/components/modal/success";
+import { formModalLoginError, formModalLoginSuccess } from "@/src/common/constants/formModal.constant";
+import ModalError from "@/src/common/components/modal/error";
 
 export const Login = ({ ...styleProps }: ChakraProps) => {
   const modalLoginSuccess = useDisclosure();
@@ -67,7 +69,6 @@ export const Login = ({ ...styleProps }: ChakraProps) => {
       <Button onClick={modalLogin.onOpen} variant="primary" w="128px" overflow={"hidden"} {...styleProps}>
         Đăng nhập
       </Button>
-      {/* Modal Login ------------------------------ */}
       <Modal
         isOpen={modalLogin.isOpen}
         onClose={modalLogin.onClose}
@@ -126,7 +127,6 @@ export const Login = ({ ...styleProps }: ChakraProps) => {
                 >
                   Quên mật khẩu?
                 </Text>
-
                 <Center>
                   <Box>
                     <Button type="submit" variant="primary">
@@ -139,15 +139,9 @@ export const Login = ({ ...styleProps }: ChakraProps) => {
           </ModalBody>
         </ModalContent>
       </Modal>
-
-      {/* Modal Login Success --------------------------------------------------------------------------*/}
-      <LoginSuccess isOpen={modalLoginSuccess.isOpen} onClose={modalLoginSuccess.onClose} />
-
-      {/* Modal Login Error --------------------------------------------------------------------------*/}
-      <LoginError isOpen={modalLoginError.isOpen} onClose={modalLoginError.onClose} />
-
-      {/* Modal forgot password -------------------------------------*/}
-      <ForgotPassword isOpen={modalForgotPassword.isOpen} onClose={modalForgotPassword.onClose} />
+      <ModalSuccess formModal={formModalLoginSuccess} modalStatus={modalLoginSuccess} />
+      <ModalError formModal={formModalLoginError} modalStatus={modalLoginError} />
+      <ForgotPassword modalForgotPassword={modalForgotPassword} />
     </Box>
   );
 };

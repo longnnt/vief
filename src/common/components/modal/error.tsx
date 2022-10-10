@@ -11,21 +11,26 @@ import {
   Text,
   UseModalProps,
 } from "@chakra-ui/react";
+import { FormModal } from "../../interfaces/common.interface";
 
-export const LoginError = (modalLoginError: UseModalProps) => {
+type ModalStatusProps = {
+  formModal: FormModal;
+  modalStatus: UseModalProps;
+};
+
+export function ModalError({ formModal, modalStatus }: ModalStatusProps) {
   return (
-    <Modal isOpen={modalLoginError.isOpen} onClose={modalLoginError.onClose} isCentered size={{ md: "xl", sm: "md" }}>
+    <Modal isOpen={modalStatus.isOpen} onClose={modalStatus.onClose} isCentered size={{ md: "xl", sm: "md" }}>
       <ModalOverlay />
-      <ModalContent borderRadius="12px" padding="32px">
+      <ModalContent borderRadius="12px" padding="32px" m={"16px"}>
         <ModalHeader alignSelf="center">
-          <Box bgImage="/error-img.svg" boxSize={"128px"}></Box>
+          <Box bgImage={formModal.img} boxSize={"128px"} />
         </ModalHeader>
-
         <ModalBody textAlign={"center"}>
           <Stack>
-            <Text variant="text28">Đăng nhập thất bại</Text>
+            <Text variant="text28">{formModal.title}</Text>
             <Text variant="text14" textAlign="center">
-              Email hoặc mật khẩu không trùng khớp, vui lòng kiểm tra lại thông tin đăng nhập
+              {formModal.description}
             </Text>
           </Stack>
         </ModalBody>
@@ -33,14 +38,14 @@ export const LoginError = (modalLoginError: UseModalProps) => {
           <Button
             variant="primary"
             onClick={() => {
-              modalLoginError.onClose();
+              modalStatus.onClose();
             }}
           >
-            Thử lại
+            {formModal.textButton}
           </Button>
         </ModalFooter>
       </ModalContent>
     </Modal>
   );
-};
-export default LoginError;
+}
+export default ModalError;

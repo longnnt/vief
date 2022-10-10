@@ -24,7 +24,7 @@ import { SubmitErrorHandler, SubmitHandler, useForm } from "react-hook-form";
 import { schemaForgotPassword } from "../../schema";
 import ForgotPasswordSuccess from "./success";
 
-export const ForgotPassword = (modalForgotPassword: UseModalProps) => {
+export const ForgotPassword = ({ modalForgotPassword }: { modalForgotPassword: UseModalProps }) => {
   const modalForgotPasswordSuccess = useDisclosure();
   const {
     register,
@@ -73,7 +73,7 @@ export const ForgotPassword = (modalForgotPassword: UseModalProps) => {
           </ModalBody>
         </ModalContent>
       </Modal>
-      <ForgotPasswordSuccess isOpen={modalForgotPasswordSuccess.isOpen} onClose={modalForgotPasswordSuccess.onClose} />
+      <ForgotPasswordSuccess modalForgotPasswordSuccess={modalForgotPasswordSuccess} />
     </>
   );
 };

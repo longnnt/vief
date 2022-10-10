@@ -15,9 +15,10 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Login } from "../layout/header/login";
 import { schemaRegister } from "./schema";
 import { useViefRouter } from "@/src/common/hooks/useViefRouter";
-import { RegisterSuccess } from "./modal/success";
-import { RegisterError } from "./modal/error";
 import { RegisterForm } from "./interface";
+import { formModalRegisterError, formModalRegisterSuccess } from "@/src/common/constants/formModal.constant";
+import ModalSuccess from "@/src/common/components/modal/success";
+import ModalError from "@/src/common/components/modal/error";
 
 export const Register = () => {
   const modalSuccess = useDisclosure();
@@ -117,8 +118,8 @@ export const Register = () => {
               <Button type="submit" variant="primary">
                 Đăng ký
               </Button>
-              <RegisterSuccess isOpen={modalSuccess.isOpen} onClose={modalSuccess.onClose} />
-              <RegisterError isOpen={modalError.isOpen} onClose={modalError.onClose} />
+              <ModalSuccess formModal={formModalRegisterSuccess} modalStatus={modalSuccess} />
+              <ModalError formModal={formModalRegisterError} modalStatus={modalError} />
             </Center>
           </Stack>
         </form>

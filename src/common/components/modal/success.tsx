@@ -5,6 +5,7 @@ import {
   Modal,
   ModalBody,
   ModalContent,
+  ModalContentProps,
   ModalFooter,
   ModalHeader,
   ModalOverlay,
@@ -13,30 +14,30 @@ import {
   Text,
   UseModalProps,
 } from "@chakra-ui/react";
+import { FormModal } from "../../interfaces/common.interface";
 
-export const ResetSuccess = (modalResetPasswordSuccess: UseModalProps) => {
+type ModalStatusProps = {
+  formModal: FormModal;
+  modalStatus: UseModalProps;
+};
+
+export function ModalSuccess({ formModal, modalStatus }: ModalStatusProps) {
   const router = useViefRouter();
   const navigateToHome = () => {
     router.push("/");
   };
   return (
-    <Modal
-      isOpen={modalResetPasswordSuccess.isOpen}
-      onClose={modalResetPasswordSuccess.onClose}
-      isCentered
-      size={{ md: "xl", sm: "md" }}
-    >
+    <Modal isOpen={modalStatus.isOpen} onClose={modalStatus.onClose} isCentered size={{ md: "xl", sm: "md" }}>
       <ModalOverlay />
       <ModalContent borderRadius="12px" padding="32px" m={"16px"}>
         <ModalHeader alignSelf="center">
-          <Box bgImage="/checkDownload.png" boxSize={"128px"}></Box>
+          <Box bgImage={formModal.img} boxSize={"128px"} />
         </ModalHeader>
-
         <ModalBody textAlign={"center"}>
           <Stack>
-            <Text variant="text28">Đổi mật khẩu thành công</Text>
+            <Text variant="text28">{formModal.title}</Text>
             <Text variant="text14" textAlign="center">
-              Bạn sẽ tự động quay về Trang chủ sau 03 giây. Chọn Trang chủ nếu bạn không muốn đợi lâu
+              {formModal.description}
             </Text>
           </Stack>
         </ModalBody>
@@ -44,15 +45,15 @@ export const ResetSuccess = (modalResetPasswordSuccess: UseModalProps) => {
           <Button
             variant="primary"
             onClick={() => {
-              modalResetPasswordSuccess.onClose();
+              modalStatus.onClose();
               navigateToHome();
             }}
           >
-            Trang chủ
+            {formModal.textButton}
           </Button>
         </ModalFooter>
       </ModalContent>
     </Modal>
   );
-};
-export default ResetSuccess;
+}
+export default ModalSuccess;

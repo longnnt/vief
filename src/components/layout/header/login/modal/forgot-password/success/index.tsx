@@ -15,7 +15,11 @@ import {
 } from "@chakra-ui/react";
 import ResetPassword from "../../reset-password";
 
-export const ForgotPasswordSuccess = (modalForgotPasswordSuccess: UseModalProps) => {
+export const ForgotPasswordSuccess = ({
+  modalForgotPasswordSuccess,
+}: {
+  modalForgotPasswordSuccess: UseModalProps;
+}) => {
   const modalResetPassword = useDisclosure();
   return (
     <>
@@ -53,7 +57,7 @@ export const ForgotPasswordSuccess = (modalForgotPasswordSuccess: UseModalProps)
           </ModalFooter>
         </ModalContent>
       </Modal>
-      <ResetPassword isOpen={modalResetPassword.isOpen} onClose={modalResetPassword.onClose} />
+      <ResetPassword modalResetPassword={modalResetPassword} />
     </>
   );
 };

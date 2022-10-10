@@ -1,11 +1,11 @@
-import { FormForgotPassword, FormResetPassword } from "@/src/components/layout/interfaces";
+import ModalStatus, { ModalSuccess } from "@/src/common/components/modal/success";
+import { formModalResetPasswordSuccess } from "@/src/common/constants/formModal.constant";
+import { FormResetPassword } from "@/src/components/layout/interfaces";
 import {
   Box,
   Button,
   Center,
   FormControl,
-  FormErrorMessage,
-  FormHelperText,
   FormLabel,
   Input,
   Modal,
@@ -23,9 +23,8 @@ import {
 import { yupResolver } from "@hookform/resolvers/yup";
 import { SubmitErrorHandler, SubmitHandler, useForm } from "react-hook-form";
 import { schemaForgotPassword, schemaResetPassword } from "../../schema";
-import { ResetSuccess } from "./success";
 
-export const ResetPassword = (modalResetPassword: UseModalProps) => {
+export const ResetPassword = ({ modalResetPassword }: { modalResetPassword: UseModalProps }) => {
   const modalResetPasswordSuccess = useDisclosure();
   const {
     register,
@@ -75,7 +74,7 @@ export const ResetPassword = (modalResetPassword: UseModalProps) => {
           </ModalBody>
         </ModalContent>
       </Modal>
-      <ResetSuccess isOpen={modalResetPasswordSuccess.isOpen} onClose={modalResetPasswordSuccess.onClose} />
+      <ModalSuccess formModal={formModalResetPasswordSuccess} modalStatus={modalResetPasswordSuccess} />
     </>
   );
 };
