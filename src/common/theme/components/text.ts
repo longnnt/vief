@@ -47,6 +47,18 @@ const variants = {
     fontSize: "14px",
     lineHeight: "180%",
   },
+  textError: {
+    color: "error",
+    fontWeight: "500",
+    fontSize: "12px",
+    lineHeight: "175%",
+  },
+  textHelper: {
+    color: "helper",
+    fontWeight: "500",
+    fontSize: "12px",
+    lineHeight: "175%",
+  },
 };
 
 const sizes = {};
