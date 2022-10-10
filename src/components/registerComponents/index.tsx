@@ -17,20 +17,14 @@ import { schemaRegister } from "./schema";
 import { useViefRouter } from "@/src/common/hooks/useViefRouter";
 import { RegisterForm } from "./interface";
 import { formModalRegisterError, formModalRegisterSuccess } from "@/src/common/constants/formModal.constant";
-import ModalSuccess from "@/src/common/components/modal/success";
-import ModalError from "@/src/common/components/modal/error";
+
+import { useState } from "react";
+import ModalStatus from "@/src/common/components/modal/status";
 
 export const Register = () => {
   const modalSuccess = useDisclosure();
   const modalError = useDisclosure();
-  const router = useViefRouter();
 
-  const navigateToHomeAuto = () => {
-    setTimeout(() => {
-      router.push("/");
-      modalSuccess.onClose();
-    }, 3000);
-  };
   const {
     register,
     handleSubmit,
@@ -38,6 +32,17 @@ export const Register = () => {
   } = useForm<RegisterForm>({
     resolver: yupResolver(schemaRegister),
   });
+  const router = useViefRouter();
+
+  const navigateToHome = () => {
+    router.push("/");
+  };
+  const navigateToHomeAuto = () => {
+    setTimeout(() => {
+      router.push("/");
+      modalSuccess.onClose();
+    }, 3000);
+  };
 
   const onSubmit: SubmitHandler<RegisterForm> = () => {
     modalSuccess.onOpen();
@@ -118,8 +123,8 @@ export const Register = () => {
               <Button type="submit" variant="primary">
                 Đăng ký
               </Button>
-              <ModalSuccess formModal={formModalRegisterSuccess} modalStatus={modalSuccess} />
-              <ModalError formModal={formModalRegisterError} modalStatus={modalError} />
+              <ModalStatus formModal={formModalRegisterSuccess} modalStatus={modalSuccess} navigate={navigateToHome} />
+              <ModalStatus formModal={formModalRegisterError} modalStatus={modalError} />
             </Center>
           </Stack>
         </form>

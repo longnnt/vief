@@ -1,10 +1,12 @@
+import ModalStatus from "@/src/common/components/modal/status";
+import { formForgotPasswordSuccess } from "@/src/common/constants/formModal.constant";
+import { useViefRouter } from "@/src/common/hooks/useViefRouter";
 import { FormForgotPassword } from "@/src/components/layout/interfaces";
 import {
   Box,
   Button,
   Center,
   FormControl,
-  FormErrorMessage,
   FormLabel,
   Input,
   Modal,
@@ -22,7 +24,6 @@ import {
 import { yupResolver } from "@hookform/resolvers/yup";
 import { SubmitErrorHandler, SubmitHandler, useForm } from "react-hook-form";
 import { schemaForgotPassword } from "../../schema";
-import ForgotPasswordSuccess, { ModalForgotPasswordSuccess } from "./success";
 
 export const ForgotPassword = ({ modalForgotPassword }: { modalForgotPassword: UseModalProps }) => {
   const modalForgotPasswordSuccess = useDisclosure();
@@ -33,6 +34,10 @@ export const ForgotPassword = ({ modalForgotPassword }: { modalForgotPassword: U
   } = useForm<FormForgotPassword>({
     resolver: yupResolver(schemaForgotPassword),
   });
+  const router = useViefRouter();
+  const navigateToHome = () => {
+    router.push("/");
+  };
 
   const onSubmitForgotPassword: SubmitHandler<FormForgotPassword> = () => {
     modalForgotPasswordSuccess.onOpen();
@@ -73,7 +78,11 @@ export const ForgotPassword = ({ modalForgotPassword }: { modalForgotPassword: U
           </ModalBody>
         </ModalContent>
       </Modal>
-      <ModalForgotPasswordSuccess modalForgotPasswordSuccess={modalForgotPasswordSuccess} />
+      <ModalStatus
+        formModal={formForgotPasswordSuccess}
+        modalStatus={modalForgotPasswordSuccess}
+        navigate={navigateToHome}
+      />
     </>
   );
 };

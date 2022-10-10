@@ -1,5 +1,6 @@
-import ModalStatus, { ModalSuccess } from "@/src/common/components/modal/success";
+import ModalStatus from "@/src/common/components/modal/status";
 import { formModalResetPasswordSuccess } from "@/src/common/constants/formModal.constant";
+import { useViefRouter } from "@/src/common/hooks/useViefRouter";
 import { FormResetPassword } from "@/src/components/layout/interfaces";
 import {
   Box,
@@ -37,8 +38,19 @@ export const ModalResetPassword = ({ modalResetPassword }: { modalResetPassword:
   const onSubmitForgotPassword: SubmitHandler<FormResetPassword> = () => {
     modalResetPasswordSuccess.onOpen();
     modalResetPassword.onClose();
+    navigateToHomeAuto();
   };
   const onErrorForgotPassword: SubmitErrorHandler<FormResetPassword> = () => {};
+  const router = useViefRouter();
+  const navigateToHome = () => {
+    router.push("/");
+  };
+  const navigateToHomeAuto = () => {
+    setTimeout(() => {
+      router.push("/");
+      modalResetPasswordSuccess.onClose();
+    }, 3000);
+  };
 
   return (
     <>
@@ -74,7 +86,11 @@ export const ModalResetPassword = ({ modalResetPassword }: { modalResetPassword:
           </ModalBody>
         </ModalContent>
       </Modal>
-      <ModalSuccess formModal={formModalResetPasswordSuccess} modalStatus={modalResetPasswordSuccess} />
+      <ModalStatus
+        formModal={formModalResetPasswordSuccess}
+        modalStatus={modalResetPasswordSuccess}
+        navigate={navigateToHome}
+      />
     </>
   );
 };

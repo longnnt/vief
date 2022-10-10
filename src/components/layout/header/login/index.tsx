@@ -26,9 +26,9 @@ import { FormLogin } from "../../interfaces";
 import { schemaLogin } from "./schema";
 
 import ForgotPassword from "./modal/forgot-password";
-import ModalSuccess from "@/src/common/components/modal/success";
 import { formModalLoginError, formModalLoginSuccess } from "@/src/common/constants/formModal.constant";
-import ModalError from "@/src/common/components/modal/error";
+
+import ModalStatus from "@/src/common/components/modal/status";
 
 export const Login = ({ ...styleProps }: ChakraProps) => {
   const modalLoginSuccess = useDisclosure();
@@ -37,15 +37,18 @@ export const Login = ({ ...styleProps }: ChakraProps) => {
   const modalForgotPassword = useDisclosure();
 
   const router = useViefRouter();
-  const navigateToRegister = () => {
-    router.push(ROUTE_REGISTER["en"]);
+  const navigateToHome = () => {
+    router.push("/");
   };
-
   const navigateToHomeAuto = () => {
     setTimeout(() => {
       router.push("/");
       modalLoginSuccess.onClose();
     }, 3000);
+  };
+
+  const navigateToRegister = () => {
+    router.push(ROUTE_REGISTER["en"]);
   };
 
   const {
@@ -139,8 +142,10 @@ export const Login = ({ ...styleProps }: ChakraProps) => {
           </ModalBody>
         </ModalContent>
       </Modal>
-      <ModalSuccess formModal={formModalLoginSuccess} modalStatus={modalLoginSuccess} />
-      <ModalError formModal={formModalLoginError} modalStatus={modalLoginError} />
+
+      <ModalStatus formModal={formModalLoginSuccess} modalStatus={modalLoginSuccess} navigate={navigateToHome} />
+      <ModalStatus formModal={formModalLoginError} modalStatus={modalLoginError} />
+
       <ForgotPassword modalForgotPassword={modalForgotPassword} />
     </Box>
   );
