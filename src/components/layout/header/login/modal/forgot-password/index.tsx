@@ -22,7 +22,7 @@ import {
 import { yupResolver } from "@hookform/resolvers/yup";
 import { SubmitErrorHandler, SubmitHandler, useForm } from "react-hook-form";
 import { schemaForgotPassword } from "../../schema";
-import ForgotPasswordSuccess from "./success";
+import ForgotPasswordSuccess, { ModalForgotPasswordSuccess } from "./success";
 
 export const ForgotPassword = ({ modalForgotPassword }: { modalForgotPassword: UseModalProps }) => {
   const modalForgotPasswordSuccess = useDisclosure();
@@ -73,7 +73,7 @@ export const ForgotPassword = ({ modalForgotPassword }: { modalForgotPassword: U
           </ModalBody>
         </ModalContent>
       </Modal>
-      <ForgotPasswordSuccess modalForgotPasswordSuccess={modalForgotPasswordSuccess} />
+      <ModalForgotPasswordSuccess modalForgotPasswordSuccess={modalForgotPasswordSuccess} />
     </>
   );
 };

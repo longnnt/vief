@@ -22,9 +22,9 @@ import {
 } from "@chakra-ui/react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { SubmitErrorHandler, SubmitHandler, useForm } from "react-hook-form";
-import { schemaForgotPassword, schemaResetPassword } from "../../schema";
+import { schemaResetPassword } from "../../schema";
 
-export const ResetPassword = ({ modalResetPassword }: { modalResetPassword: UseModalProps }) => {
+export const ModalResetPassword = ({ modalResetPassword }: { modalResetPassword: UseModalProps }) => {
   const modalResetPasswordSuccess = useDisclosure();
   const {
     register,
@@ -78,4 +78,4 @@ export const ResetPassword = ({ modalResetPassword }: { modalResetPassword: UseM
     </>
   );
 };
-export default ResetPassword;
+export default ModalResetPassword;

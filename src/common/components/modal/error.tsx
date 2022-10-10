@@ -18,7 +18,7 @@ type ModalStatusProps = {
   modalStatus: UseModalProps;
 };
 
-export function ModalError({ formModal, modalStatus }: ModalStatusProps) {
+export const ModalError = ({ formModal, modalStatus }: ModalStatusProps) => {
   return (
     <Modal isOpen={modalStatus.isOpen} onClose={modalStatus.onClose} isCentered size={{ md: "xl", sm: "md" }}>
       <ModalOverlay />
@@ -47,5 +47,5 @@ export function ModalError({ formModal, modalStatus }: ModalStatusProps) {
       </ModalContent>
     </Modal>
   );
-}
+};
 export default ModalError;

@@ -21,7 +21,7 @@ type ModalStatusProps = {
   modalStatus: UseModalProps;
 };
 
-export function ModalSuccess({ formModal, modalStatus }: ModalStatusProps) {
+export const ModalSuccess = ({ formModal, modalStatus }: ModalStatusProps) => {
   const router = useViefRouter();
   const navigateToHome = () => {
     router.push("/");
@@ -55,5 +55,5 @@ export function ModalSuccess({ formModal, modalStatus }: ModalStatusProps) {
       </ModalContent>
     </Modal>
   );
-}
+};
 export default ModalSuccess;
