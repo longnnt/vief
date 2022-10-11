@@ -78,11 +78,7 @@ export const ForgotPassword = ({ modalForgotPassword }: { modalForgotPassword: U
           </ModalBody>
         </ModalContent>
       </Modal>
-      <ModalStatus
-        formModal={formForgotPasswordSuccess}
-        modalStatus={modalForgotPasswordSuccess}
-        navigate={navigateToHome}
-      />
+      <ModalStatus formModal={formForgotPasswordSuccess} modalStatus={modalForgotPasswordSuccess} />
     </>
   );
 };

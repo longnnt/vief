@@ -89,7 +89,7 @@ export const ModalResetPassword = ({ modalResetPassword }: { modalResetPassword:
       <ModalStatus
         formModal={formModalResetPasswordSuccess}
         modalStatus={modalResetPasswordSuccess}
-        navigate={navigateToHome}
+        handleClick={navigateToHome}
       />
     </>
   );

@@ -17,10 +17,10 @@ import { FormModal } from "../../interfaces/common.interface";
 type ModalStatusProps = {
   formModal: FormModal;
   modalStatus: UseModalProps;
-  navigate?: () => void;
+  handleClick?: () => void;
 };
 
-export const ModalStatus = ({ formModal, modalStatus, navigate }: ModalStatusProps) => {
+export const ModalStatus = ({ formModal, modalStatus, handleClick }: ModalStatusProps) => {
   return (
     <Modal isOpen={modalStatus.isOpen} onClose={modalStatus.onClose} isCentered size={{ md: "xl", sm: "md" }}>
       <ModalOverlay />
@@ -41,7 +41,7 @@ export const ModalStatus = ({ formModal, modalStatus, navigate }: ModalStatusPro
             variant="primary"
             onClick={() => {
               modalStatus.onClose();
-              navigate && navigate();
+              handleClick && handleClick();
             }}
           >
             {formModal.textButton}

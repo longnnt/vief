@@ -143,7 +143,7 @@ export const Login = ({ ...styleProps }: ChakraProps) => {
         </ModalContent>
       </Modal>
 
-      <ModalStatus formModal={formModalLoginSuccess} modalStatus={modalLoginSuccess} navigate={navigateToHome} />
+      <ModalStatus formModal={formModalLoginSuccess} modalStatus={modalLoginSuccess} handleClick={navigateToHome} />
       <ModalStatus formModal={formModalLoginError} modalStatus={modalLoginError} />
 
       <ForgotPassword modalForgotPassword={modalForgotPassword} />

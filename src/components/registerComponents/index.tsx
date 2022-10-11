@@ -123,7 +123,11 @@ export const Register = () => {
               <Button type="submit" variant="primary">
                 Đăng ký
               </Button>
-              <ModalStatus formModal={formModalRegisterSuccess} modalStatus={modalSuccess} navigate={navigateToHome} />
+              <ModalStatus
+                formModal={formModalRegisterSuccess}
+                modalStatus={modalSuccess}
+                handleClick={navigateToHome}
+              />
               <ModalStatus formModal={formModalRegisterError} modalStatus={modalError} />
             </Center>
           </Stack>
