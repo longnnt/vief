@@ -47,11 +47,17 @@ export default function DownLoad({ docItem }: docProps) {
             <Stack>
               <FormControl isRequired>
                 <FormLabel>Họ tên</FormLabel>
-                <Input bg="brand.bgItemFile" borderRadius="6px" />
+                <Input bg="deactive" borderRadius="6px" focusBorderColor="focusBorder" _focus={{ bg: "white" }} />
               </FormControl>
               <FormControl isRequired>
                 <FormLabel>Email</FormLabel>
-                <Input bg="brand.bgItemFile" borderRadius="6px" />
+                <Input
+                  bg="deactive"
+                  borderRadius="6px"
+                  type="email"
+                  focusBorderColor="focusBorder"
+                  _focus={{ bg: "white" }}
+                />
               </FormControl>
             </Stack>
           </ModalBody>
