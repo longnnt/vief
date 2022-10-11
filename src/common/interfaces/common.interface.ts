@@ -87,3 +87,13 @@ export interface SearchParams {
   slug?: string;
   key?: string;
 }
+
+export interface FormModal {
+  img: string;
+  title: string;
+  description: string;
+  textButton: string;
+}
+export interface FormModalProps {
+  formModal: FormModal;
+}

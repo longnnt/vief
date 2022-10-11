@@ -65,3 +65,7 @@ export const ROUTES: RouteInfo = {
     vi: { name: "Sự kiện", link: ROUTE_EVENT["vi"] },
   },
 };
+export const ROUTE_REGISTER = {
+  vi: "/dang-ki",
+  en: "/register",
+};

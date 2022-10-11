@@ -16,3 +16,17 @@ export interface Thumbnails {
   id: number;
   url: string;
 }
+
+export interface FormLogin {
+  email: string;
+  password: string;
+}
+
+export interface FormForgotPassword {
+  email: string;
+}
+
+export interface FormResetPassword {
+  password: string;
+  confirmPassword: string;
+}

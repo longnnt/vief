@@ -39,4 +39,6 @@ export const colors = {
     primary: "#F3A70F",
   },
   inputBg: "#F2F3F7",
+  error: "#FF4444",
+  helper: "#F3A70F",
 };
