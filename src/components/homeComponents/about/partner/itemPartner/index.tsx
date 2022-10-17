@@ -10,7 +10,6 @@ export const ItemPartner = () => {
       alignSelf="center"
       flexWrap={{ sm: "wrap", md: "nowrap" }}
       justifyContent="center"
-      className="logo-partner"
       spacing={0}
     >
       {PARTNER_LOGO.map((partner, index) => {
