@@ -5,7 +5,14 @@ import { PARTNER_LOGO } from "../../../constant";
 
 export const ItemPartner = () => {
   return (
-    <Stack direction="row" spacing={{ md: "64px", sm: "16px" }} alignSelf="center">
+    <Stack
+      direction="row"
+      alignSelf="center"
+      flexWrap={{ sm: "wrap", md: "nowrap" }}
+      justifyContent="center"
+      className="logo-partner"
+      spacing={0}
+    >
       {PARTNER_LOGO.map((partner, index) => {
         return (
           <Box
@@ -14,6 +21,7 @@ export const ItemPartner = () => {
             w={{ md: "220px", sm: "110px" }}
             h={{ sm: "40px", md: "64px" }}
             position="relative"
+            flex={index === PARTNER_LOGO.length - 1 ? "1 0 100%" : "none"}
             sx={{
               _hover: {
                 img: {
@@ -21,6 +29,8 @@ export const ItemPartner = () => {
                 },
               },
             }}
+            mb={{ sm: "24px" }}
+            mr={index === 0 ? "16px" : "0"}
           >
             <Image src={partner.url} alt={partner.alt} priority layout="fill" objectFit="contain" />
           </Box>
