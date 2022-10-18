@@ -5,7 +5,7 @@ import SectionUpcoming from "./section-upcoming";
 
 export default function Events({ upcomingEvents, pastEvents }: EventsProps) {
   return (
-    <Stack pt="36px" pb="64px">
+    <Stack pt={{ md: "48px", sm: "16px" }} pb="64px">
       <Stack alignSelf="center" width={{ sm: "100%" }} spacing="0">
         <Text
           variant="text20"

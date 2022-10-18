@@ -16,13 +16,14 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
+import { Login } from "../../../login";
 import CategoryCompany from "../MenuItem/CategoryCompany";
 import CategoryEvent from "../MenuItem/CategoryEvent";
 import CategoryLibrary from "../MenuItem/CategoryLibrary";
 import CategoryPolicy from "../MenuItem/CategoryPolicy";
 
 export default function NavbarMenu() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const drawerNavbar = useDisclosure();
 
   const { t } = useTranslation();
 
@@ -36,13 +37,13 @@ export default function NavbarMenu() {
       <IconButton
         aria-label={"Open Menu"}
         size="md"
-        icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+        icon={drawerNavbar.isOpen ? <CloseIcon /> : <HamburgerIcon />}
         display={{ sm: "block", md: "none" }}
-        onClick={isOpen ? onClose : onOpen}
+        onClick={drawerNavbar.isOpen ? drawerNavbar.onClose : drawerNavbar.onOpen}
         variant="ghost"
         border="none"
       />
-      <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+      <Drawer isOpen={drawerNavbar.isOpen} placement="left" onClose={drawerNavbar.onClose}>
         <DrawerOverlay />
         <DrawerContent zIndex="1001" w="311px">
           <DrawerCloseButton
@@ -53,11 +54,11 @@ export default function NavbarMenu() {
             color="#C5CAD3"
           />
           <DrawerHeader borderBottomWidth="1px">
-            <Button variant="primary">Đăng nhập</Button>
+            <Login />
           </DrawerHeader>
 
           <DrawerBody>
-            <Stack alignItems="flex-start" fontSize="14px" fontWeight="500" onClick={onClose}>
+            <Stack alignItems="flex-start" fontSize="14px" fontWeight="500" onClick={drawerNavbar.onClose}>
               <Text onClick={() => handleRouter(ROUTE_HOME.en)} variant="text14" cursor="pointer">
                 {t("home")}
               </Text>
@@ -72,7 +73,6 @@ export default function NavbarMenu() {
               </Text>
             </Stack>
           </DrawerBody>
-
           <DrawerFooter></DrawerFooter>
         </DrawerContent>
       </Drawer>

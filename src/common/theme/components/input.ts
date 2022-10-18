@@ -1,4 +1,8 @@
-const variantFilled = {};
+const variantFilled = {
+  field: {
+    bg: "inputBg",
+  },
+};
 const variantOutline = {};
 const variantFlushed = {};
 const variantUnstyled = {};

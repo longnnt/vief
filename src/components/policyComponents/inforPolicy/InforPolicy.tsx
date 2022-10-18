@@ -53,7 +53,7 @@ export const InfoPolicy = ({ articleData, categories }: Pick<PolicyPageProps, "a
               key={cate.id}
               variant={btnVariant}
               minW="140px"
-              h="43px"
+              h="40px"
               onClick={() => {
                 handleCateChange(cate);
               }}

@@ -6,11 +6,10 @@ import { MainArticles } from "./components/MainArticles";
 function EnterpriseStory({ articleData, categories }: EnterprisePageProps) {
   return (
     <WebContainer>
-      <VStack spacing="64px" mb="64px">
+      <VStack spacing="64px" mb="64px" pt={{ md: "48px", sm: "16px" }}>
         <Text
           m="auto"
           w="fit-content"
-          mt="32px"
           variant={{
             sm: "text16",
             base: "text20",

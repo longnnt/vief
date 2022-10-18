@@ -5,7 +5,7 @@ const ItemSliderMaster = ({ itemImg }: ItemImgMaster) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Box w="full" h="461x" px="22px" borderRadius={"12px"}>
+      <Box w="full" h="461x" px="16px" borderRadius={"12px"}>
         <Box
           borderRadius={"12px"}
           bg="#F2F3F7"

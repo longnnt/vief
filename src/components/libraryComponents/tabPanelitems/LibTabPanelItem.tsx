@@ -3,7 +3,7 @@ import { LANG } from "@/src/common/constants/common.constant";
 import { useViefRouter } from "@/src/common/hooks/useViefRouter";
 import { Lang, ListResponse } from "@/src/common/interfaces/common.interface";
 import { toTotalPage } from "@/src/common/lib/common.lib";
-import { Box, Grid, GridItem, Stack, Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
+import { Box, Grid, GridItem, HStack, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, VStack } from "@chakra-ui/react";
 import { useState } from "react";
 import { DOCUMENT_SIZE, getParamSearchDocument } from "../contants";
 import { DocumentItem, LibraryPageProps } from "../interfaces";
@@ -25,26 +25,28 @@ export const LibTabPanelItem = ({ listItem, categories }: LibraryPageProps) => {
   }
 
   return (
-    <Tabs variant="unstyled" w="full">
+    <Tabs variant="unstyled">
       <TabList w="full" justifyContent={"center"}>
-        {categories.map((cate, index) => (
-          <Tab
-            key={cate.id}
-            alignSelf="center"
-            _selected={{ color: "white", bg: "brand.100" }}
-            color="text"
-            border={"1px solid #C5CAD3"}
-            borderRadius={"6px"}
-            fontSize="14px"
-            fontWeight="500"
-            mr={{ md: "32px", sm: "20px" }}
-            py="8px"
-            overflow="hidden"
-            textOverflow="ellipsis"
-          >
-            {cate.name}
-          </Tab>
-        ))}
+        <HStack spacing={{ md: "32px", sm: "20px" }}>
+          {categories.map((cate, index) => (
+            <Tab
+              key={cate.id}
+              alignSelf="center"
+              _selected={{ color: "white", bg: "brand.100" }}
+              color="text"
+              h={"40px"}
+              border={"1px solid #C5CAD3"}
+              borderRadius={"6px"}
+              fontSize="14px"
+              fontWeight="500"
+              py="8px"
+              overflow="hidden"
+              textOverflow="ellipsis"
+            >
+              {cate.name}
+            </Tab>
+          ))}
+        </HStack>
       </TabList>
       <TabPanels padding="0px">
         {categories.map((cate) => (
