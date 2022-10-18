@@ -6,7 +6,6 @@ import Location from "@/src/Images/Icons/Location";
 import WoodSector from "@/src/Images/Icons/WoodSector";
 import { LeftContentProps } from "./interface";
 import { formatDate } from "@/src/common/utils/common.utils";
-import dayjs from "dayjs";
 
 export default function LeftContent({ data }: LeftContentProps) {
   const { timeStart, field, location, content } = data;

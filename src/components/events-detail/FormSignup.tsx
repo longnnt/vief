@@ -29,31 +29,26 @@ export default function FormSignup({ isExpired }: FormSignupProps) {
         <ModalOverlay />
         <ModalContent w="fit-content">
           <Flex
-            width="280px"
+            width="fit-content"
             flexDirection={"column"}
             alignItems="center"
             textAlign={"center"}
             boxShadow="0px 0px 16px rgba(0, 0, 0, 0.1)"
             borderRadius="12px"
-            p="32px 8px"
+            p="32px"
           >
             <Success />
-            <Text variant={"text16"} my="16px">
+            <Text variant={"text28"} mt="32px" mb="16px">
               Đăng ký thành công
             </Text>
-            <Text mb="16px" userSelect={"none"}>
+            <Text mb="32px" userSelect={"none"} variant="text14">
               Vui lòng kiểm tra Hộp thư email để nhận thông tin chi tiết về sự kiện. Vui lòng mang theo mã QR khi đến
               tham gia sự kiện
             </Text>
-            <Button
-              bg="blue.primary"
-              color={"white"}
-              p="8px 15px"
-              colorScheme={"blue.primary"}
-              fontWeight="600"
-              onClick={onClose}
-            >
-              Quay lại trang
+            <Button bg="blue.primary" p="8px 15px" colorScheme={"blue.primary"} onClick={onClose}>
+              <Text variant={"text14"} color="white" fontWeight={"600"}>
+                Quay lại trang
+              </Text>
             </Button>
           </Flex>
         </ModalContent>
