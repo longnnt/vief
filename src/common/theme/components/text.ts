@@ -57,7 +57,7 @@ const variants = {
     color: "helper",
     fontWeight: "500",
     fontSize: "12px",
-    lineHeight: "22px",
+    lineHeight: "175%",
   },
 };
 
