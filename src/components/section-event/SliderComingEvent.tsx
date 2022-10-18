@@ -1,9 +1,8 @@
-import { Box, Center, Grid, GridItem, IconButton } from "@chakra-ui/react";
+import { Box, Center, Grid, GridItem } from "@chakra-ui/react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
-import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import EventContentItem from "./EventContentItem";
 import { Event } from "./interface";
 import { PrevButton } from "@/src/common/components/button/prevButton";
@@ -14,8 +13,8 @@ type Props = {
 };
 const SliderComingEvent = ({ events }: Props) => {
   const settings = {
-    dots: true,
     style: { display: "flex" },
+    dots: false,
     infinite: true,
     speed: 500,
     prevArrow: <PrevButton />,
@@ -27,16 +26,24 @@ const SliderComingEvent = ({ events }: Props) => {
       {
         breakpoint: 1280,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 1,
+          dots: false,
         },
       },
-
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 450,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true,
         },
       },
     ],

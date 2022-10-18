@@ -12,6 +12,7 @@ import { getTimelineEvent } from "../events/constant";
 import Description from "./Description";
 import { Event } from "./interface";
 import TimeLeft from "./TimeLeft";
+import { formatDateEvent } from "./ulti";
 
 interface EventContentItemProps {
   event: Event;
@@ -58,13 +59,13 @@ export default function EventContentItem({ event }: EventContentItemProps) {
         <Text variant="text20" className="text-2-line">
           {title}
         </Text>
-        <Text variant="text14" className="text-4-line">
+        <Text variant={"text14"} className="text-4-line">
           {shortDesc}
         </Text>
 
         <Flex flexDir="column" justifyContent="flex-end" flexBasis="1" w="full" flexGrow={1}>
           <VStack alignItems="flex-start">
-            <Description content={formatDate(timeStart!)}>
+            <Description content={formatDateEvent(timeStart!)}>
               <Calendar />
             </Description>
             <Description content={location}>
@@ -79,8 +80,7 @@ export default function EventContentItem({ event }: EventContentItemProps) {
               <ButtonComponent
                 btnTitle="Đăng ký nhanh"
                 isArrowForward={false}
-                textHeight="25px"
-                wrapperStyle={{ mt: "0", mr: "16px" }}
+                wrapperStyle={{ mt: "0", mr: "16px", p: "9px 16px" }}
               />
             )}
             <TimeLeft timeStart={timeStart} />

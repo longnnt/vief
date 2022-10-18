@@ -12,7 +12,7 @@ export default function TimeLeft({ timeStart, wrapperStyle }: TimeLeftProps) {
   return (
     <Flex {...wrapperStyle} alignItems="center">
       <Clock />
-      <Text color={"orange.primary"} lineHeight="20px" fontWeight={600} ml={wrapperStyle?.ml || "8px"}>
+      <Text color={"orange.primary"} variant="text14" ml={wrapperStyle?.ml || "8px"} fontWeight="600">
         {isPast ? "Đã hết hạn đăng ký" : `Còn ${timeLeft}`}
       </Text>
     </Flex>

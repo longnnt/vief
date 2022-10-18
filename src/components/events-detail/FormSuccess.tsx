@@ -15,15 +15,15 @@ export default function FormSuccess({ onClose }: FormSuccessProps) {
       textAlign={"center"}
       boxShadow="0px 0px 16px rgba(0, 0, 0, 0.1)"
       borderRadius="12px"
-      p="32px 8px"
+      p="32px"
     >
       <Success />
       <Text variant={"text16"} my="16px">
         Đăng ký thành công
       </Text>
-      <Text mb="16px">
-        Vui lòng kiểm tra Hộp thư email để nhận thông tin chi tiết về sự kiện.
-        Vui lòng mang theo mã QR khi đến tham gia sự kiện
+      <Text mb="16px" variant={"text14"}>
+        Vui lòng kiểm tra Hộp thư email để nhận thông tin chi tiết về sự kiện. Vui lòng mang theo mã QR khi đến tham gia
+        sự kiện
       </Text>
       <Button
         bg="blue.primary"

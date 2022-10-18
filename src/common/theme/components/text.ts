@@ -12,7 +12,7 @@ const variants = {
     lineHeight: "130%",
   },
   text36: {
-    color: "text",
+    color: "#30BF45",
     fontWeight: "700",
     fontSize: "36px",
     lineHeight: "150%",
@@ -45,7 +45,7 @@ const variants = {
     color: "text",
     fontWeight: "500",
     fontSize: "14px",
-    lineHeight: "180%",
+    lineHeight: "160%",
   },
   textError: {
     color: "error",
@@ -57,7 +57,7 @@ const variants = {
     color: "helper",
     fontWeight: "500",
     fontSize: "12px",
-    lineHeight: "175%",
+    lineHeight: "22px",
   },
 };
 

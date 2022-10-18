@@ -23,7 +23,9 @@ export default function SectionPast({ pastEvents }: SectionPastProps) {
       </Text>
       <Box display="flex" mt="16px" mb="32px">
         <Button variant="primary">Ngành Gỗ</Button>
-        <Button ml="30px">Ngành khác</Button>
+        <Button ml="30px" bg={"CAC5D3"}>
+          Ngành khác
+        </Button>
       </Box>
       <SectionContent pastEvents={dataEvents.data} />
       {dataEvents.data.length > 0 && (
