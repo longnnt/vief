@@ -7,7 +7,6 @@ export default function ButtonComponent({
   wrapperStyle,
   btnTitle = "Xem thêm",
   isArrowForward = true,
-  textHeight,
 }: ButtonComponentProps) {
   return (
     <Button
@@ -18,13 +17,7 @@ export default function ButtonComponent({
       colorScheme="blue.primary"
       p={wrapperStyle?.p || "8px"}
     >
-      <Text
-        fontSize={"14px"}
-        fontWeight="500"
-        color={"white.primary"}
-        mr={isArrowForward ? "8px" : 0}
-        h={textHeight}
-      >
+      <Text color={"white.primary"} mr={isArrowForward ? "8px" : 0} variant="text14" fontWeight={600}>
         {btnTitle}
       </Text>
       {isArrowForward && <ArrowForward />}

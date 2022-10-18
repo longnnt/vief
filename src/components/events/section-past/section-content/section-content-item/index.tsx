@@ -8,6 +8,7 @@ import { useViefRouter } from "@/src/common/hooks/useViefRouter";
 import { replacePathParams } from "@/src/common/lib/common.lib";
 import { ROUTE_EVENT_DETAIL } from "@/src/common/constants/routes.constant";
 import Image from "next/image";
+import { formatDateEvent } from "@/src/components/section-event/ulti";
 
 type SectionContentItemProps = {
   event: Event;
@@ -49,7 +50,7 @@ export default function SectionContentItem({ event }: SectionContentItemProps) {
         <Text variant="text14" className="text-2-line" pt="16px">
           {shortDesc}
         </Text>
-        <Description wrapperStyle={{ pt: "16px" }} content={formatDate(timeStart!)}>
+        <Description wrapperStyle={{ pt: "16px" }} content={formatDateEvent(timeStart!)}>
           <Calendar />
         </Description>
         <Description wrapperStyle={{ pt: "8px" }} content={location}>

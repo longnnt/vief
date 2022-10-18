@@ -13,9 +13,9 @@ export default function TimeLeft({ timeStart, wrapperStyle, stroke }: TimeLeftPr
       <Clock wrapperStyle={{ stroke: stroke }} />
       <Text
         color={wrapperStyle?.color || "orange.primary"}
-        lineHeight="20px"
         fontWeight={600}
         ml={wrapperStyle?.ml || "8px"}
+        variant="text14"
       >
         {isPast ? "Đã hết hạn đăng ký" : `Còn ${timeLeft} để đăng ký`}
       </Text>

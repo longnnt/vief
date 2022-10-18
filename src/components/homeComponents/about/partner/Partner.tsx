@@ -6,7 +6,7 @@ const Partner = () => {
     <>
       <Center>
         <Stack spacing={{ sm: "24px", md: "42px" }}>
-          <Text variant="text28" textAlign="center">
+          <Text variant="text24" textAlign="center">
             Đối tác hợp tác
           </Text>
           <Stack

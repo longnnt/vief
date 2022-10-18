@@ -34,6 +34,7 @@ function Page({ value, isActive, onClick }: PaginationType) {
       color={isActive ? "white" : "gray.disabled"}
       style={isActive ? { fontWeight: "bold" } : {}}
       onClick={onClick}
+      fontSize="14px"
       {...HOVER_BG}
     >
       {value}
@@ -57,18 +58,17 @@ function FirstPageLink({ onClick }: PaginationType) {
   );
 }
 
-function PreviousPageLink({ onClick }: PaginationType) {
+function PreviousPageLink({ onClick, isActive }: PaginationType) {
   return (
-    <Box {...ITEMS_STYLES} {...HOVER_TEXT} onClick={onClick}>
+    <Box {...ITEMS_STYLES} {...HOVER_TEXT} onClick={onClick} display={isActive ? "none" : "block"}>
       <ChevronLeftIcon color="gray.primary" />
     </Box>
   );
 }
 
-function NextPageLink({ onClick }: PaginationType) {
+function NextPageLink({ onClick, isActive }: PaginationType) {
   return (
-    <Box {...ITEMS_STYLES} {...HOVER_TEXT} onClick={onClick}>
-      {/* <Text color="gray.primary">&gt;</Text> */}
+    <Box {...ITEMS_STYLES} {...HOVER_TEXT} onClick={onClick} display={isActive ? "none" : "block"}>
       <ChevronRightIcon color="gray.primary" />
     </Box>
   );

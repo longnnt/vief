@@ -18,6 +18,8 @@ export const PrevButton = ({ onClick }: ArrowButtonType) => {
       alignContent={"center"}
       onClick={onClick}
       _hover={{ bg: "blue.primary", border: "none" }}
+      position="absolute"
+      left={"-64px"}
     >
       <ChevronLeftIcon boxSize="30px" color="#C5CAD3" _groupHover={{ color: "white" }} role={"group"} />
     </IconButton>
