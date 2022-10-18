@@ -9,7 +9,7 @@ export const NextButton = ({ onClick }: ArrowButtonType) => {
   return (
     <IconButton
       display={{ sm: "none", md: "block" }}
-      w="40px"
+      w={{ md: "40px", sm: "24px" }}
       aria-label=""
       isRound
       variant={"ghost"}

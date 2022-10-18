@@ -9,7 +9,7 @@ import { PrevButton } from "@/src/common/components/button/prevButton";
 import { NextButton } from "@/src/common/components/button/nextButton";
 
 export default function SliderMaster({ listImgThumb }: ThumbnailItemProp) {
-  const settingsMd = {
+  const settings = {
     style: { display: "flex" },
     infinite: true,
     speed: 500,
@@ -52,8 +52,6 @@ export default function SliderMaster({ listImgThumb }: ThumbnailItemProp) {
           speed: 500,
           slidesToShow: 1,
           slidesToScroll: 1,
-          prevArrow: <PrevButton />,
-          nextArrow: <NextButton />,
         },
       },
     ],
@@ -61,7 +59,7 @@ export default function SliderMaster({ listImgThumb }: ThumbnailItemProp) {
   return (
     <Center>
       <Box w={{ md: "1330px", sm: "full" }} h={{ md: "320px", sm: "189px" }}>
-        <Slider {...settingsMd}>
+        <Slider {...settings}>
           {listImgThumb.map((img, index) => (
             <ItemSliderMaster itemImg={img} key={index} />
           ))}

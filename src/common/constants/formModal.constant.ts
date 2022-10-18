@@ -46,3 +46,17 @@ export const formModalRegisterError = {
   description: "Xin vui lòng nhập lại",
   textButton: "Thử lại",
 };
+
+export const formModalDownloadSuccess = {
+  img: imgSuccess,
+  title: "Tải thành công",
+  description: "",
+  textButton: "Quay lại trang",
+};
+
+export const formModalSubmitContactSuccess = {
+  img: imgSuccess,
+  title: "Gửi thành công",
+  description: "Cảm ơn bạn đã liên hệ với chúng tôi. Chúng tôi sẽ phản hồi lại bạn trong thời gian sớm nhất!",
+  textButton: "Quay lại trang",
+};

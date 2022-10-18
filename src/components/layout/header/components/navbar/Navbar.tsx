@@ -68,10 +68,6 @@ const Navbar = ({
                 onClick={() => handleRouter(ROUTE_HOME.en)}
                 variant="text14"
                 fontWeight={router.pathname == "/" ? "600" : "500"}
-                // _hover={navbar==true ?{
-                //   fontWeight: '600',
-                //   lineHeight: '20px',
-                // }: {variant: 'text14'}}
                 cursor="pointer"
               >
                 {t("home")}
@@ -94,7 +90,9 @@ const Navbar = ({
                 <option value="vi">VI</option>
                 <option value="en">EN</option>
               </Select>
-              <Login />
+              <Box display={{ md: "block", sm: "none" }}>
+                <Login />
+              </Box>
 
               <NavbarMenu />
             </Flex>

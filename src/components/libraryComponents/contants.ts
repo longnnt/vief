@@ -6,6 +6,7 @@ import { FileDownload, Files } from "./interfaces";
 export const getParamSearchDocument = ({ lang = "vi", ...params }: SearchParams): SearchParams => ({
   field: "WOOD",
   isFeature: 1,
+  // type:"DOCUMENT",
   page: 1,
   size: 100,
   lang: (lang || LANG.vi) as Lang,

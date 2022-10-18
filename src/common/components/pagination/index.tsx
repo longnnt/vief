@@ -1,10 +1,8 @@
+import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import { Box, HStack, Text } from "@chakra-ui/react";
 import PropTypes from "prop-types";
 import React from "react";
-import {
-  PaginationModelOptions,
-  getPaginationModel,
-} from "ultimate-pagination";
+import { PaginationModelOptions, getPaginationModel } from "ultimate-pagination";
 
 const HOVER_BG = { _hover: { bg: "blue.primary", color: "white" } };
 const HOVER_TEXT = {
@@ -62,7 +60,7 @@ function FirstPageLink({ onClick }: PaginationType) {
 function PreviousPageLink({ onClick }: PaginationType) {
   return (
     <Box {...ITEMS_STYLES} {...HOVER_TEXT} onClick={onClick}>
-      <Text color="gray.primary">&lt;</Text>
+      <ChevronLeftIcon color="gray.primary" />
     </Box>
   );
 }
@@ -70,7 +68,8 @@ function PreviousPageLink({ onClick }: PaginationType) {
 function NextPageLink({ onClick }: PaginationType) {
   return (
     <Box {...ITEMS_STYLES} {...HOVER_TEXT} onClick={onClick}>
-      <Text color="gray.primary">&gt;</Text>
+      {/* <Text color="gray.primary">&gt;</Text> */}
+      <ChevronRightIcon color="gray.primary" />
     </Box>
   );
 }
@@ -134,19 +133,9 @@ export function createUltimatePagination({ itemTypeToComponent }: ItemType) {
       hidePreviousAndNextPageLinks,
       hideFirstAndLastPageLinks: hideFirstAndLastPageLinks || true,
     });
-    const renderItemComponent = renderItemComponentFunctionFactory(
-      itemTypeToComponent,
-      currentPage,
-      onPageChange
-    );
+    const renderItemComponent = renderItemComponentFunctionFactory(itemTypeToComponent, currentPage, onPageChange);
     return (
-      <HStack
-        display="flex"
-        spacing="1"
-        fontSize="16px"
-        cursor="pointer"
-        {...restProps}
-      >
+      <HStack display="flex" spacing="16px" fontSize="14px" cursor="pointer" {...restProps}>
         {paginationModel.map((itemModel) =>
           renderItemComponent({
             ...itemModel,
