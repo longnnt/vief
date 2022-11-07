@@ -3,18 +3,29 @@ import { DocumentItem } from "../libraryComponents/interfaces";
 import { Event } from "../section-event/interface";
 
 export interface BannerTranslate extends BaseEntities {
-  lang: Lang;
-  title: string;
+  url: string;
+  headTitle: string;
   subTitle: string;
-  shortDesc: string;
+  description: string;
 }
 
-export interface Banner extends BaseEntities {
-  field: Fields;
-  link: string;
-  translates: BannerTranslate[];
-  image: ImageResponse;
-  name: string;
+export interface Banner {
+  // field: Fields;
+  // link: string;
+  // translates: BannerTranslate[];
+  // image: ImageResponse;
+  // name: string;
+  url: string;
+  headTitle: string;
+  subTitle: string;
+  description: string;
+  image: IImageResponse;
+}
+
+export interface IImageResponse {
+  url: string;
+  alt: string;
+  title: string;
 }
 
 export interface HomePageProps {

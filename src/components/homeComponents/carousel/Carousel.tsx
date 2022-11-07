@@ -24,10 +24,10 @@ const Carousel = ({ banners }: CarouselProps) => {
     >
       <Swiper pagination={true} modules={[Pagination, Autoplay]} autoplay={{ delay: 3000 }} slidesPerView={1}>
         {banners.map((banner) => (
-          <SwiperSlide key={banner.id}>
+          <SwiperSlide key={banner?.url}>
             <Box w="full" h="full" position="relative">
-              <a href={banner.link} target="_blank" rel="noreferrer">
-                <Image src={banner.image.url} alt="" priority layout="fill" />
+              <a href={banner?.url} target="_blank" rel="noreferrer">
+                <Image src={banner?.image?.url} alt="" priority layout="fill" />
               </a>
               <Stack
                 position="absolute"
@@ -40,9 +40,9 @@ const Carousel = ({ banners }: CarouselProps) => {
                 opacity={{ md: "unset", sm: "0.8" }}
                 p={{ md: "unset", sm: "16px" }}
               >
-                <Text variant={{ md: "text28", sm: "text20" }}>{banner.translates[0].title}</Text>
+                <Text variant={{ md: "text28", sm: "text20" }}>{banner?.headTitle}</Text>
                 <Text variant="text36" fontSize={{ md: "80px", sm: "28px" }} color="green.primary" lineHeight="100%">
-                  {banner.translates[0].subTitle}
+                  {banner?.subTitle}
                 </Text>
                 <Text
                   textAlign={{ md: "left", sm: "center" }}
@@ -50,7 +50,7 @@ const Carousel = ({ banners }: CarouselProps) => {
                   maxW="500px"
                   className="text-7-line"
                   dangerouslySetInnerHTML={{
-                    __html: banner.translates[0].shortDesc,
+                    __html: banner?.description,
                   }}
                 />
               </Stack>

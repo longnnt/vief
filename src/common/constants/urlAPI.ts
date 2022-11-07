@@ -7,7 +7,7 @@ export const POLICY_CATEGORY = "client/category?type=POLICY&field=WOOD&isFeature
 export const LIBRARY_CATEGORY = "client/category?type=DOCUMENT&field=WOOD&isFeature=1";
 export const ENTERPRISE_CATEGORY = "client/category?type=ENTERPRISE&field=WOOD&isFeature=1";
 export const EVENT_CATEGORY = "client/category?type=EVENT&field=WOOD&isFeature=1";
-export const API_BANNER = "client/banners";
+export const API_BANNER = "client/homepage/banners";
 export const API_ARTICLE = "client/article";
 export const API_CATEGORY = "client/category";
 export const API_EVENTS = "events";
