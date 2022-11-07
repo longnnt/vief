@@ -7,9 +7,11 @@ import { API_BANNER } from "@/src/common/constants/urlAPI";
 
 export async function getListBannerService(lang: Lang = "vi") {
   try {
-    const res = await execute.get<ListResponse<Banner>>(toUrlQueryString(API_BANNER, { fields: "WOOD" }), {
+    const res = await execute.get<ListResponse<Banner>>(toUrlQueryString(API_BANNER, { group: "WOOD" }), {
       headers: { lang },
     });
+    console.log(res.data);
+
     return res.data;
   } catch (error) {
     console.log("b: ", error);
