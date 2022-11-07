@@ -10,8 +10,6 @@ export async function getListBannerService(lang: Lang = "vi") {
     const res = await execute.get<ListResponse<Banner>>(toUrlQueryString(API_BANNER, { group: "WOOD" }), {
       headers: { lang },
     });
-    console.log(res.data);
-
     return res.data;
   } catch (error) {
     console.log("b: ", error);
