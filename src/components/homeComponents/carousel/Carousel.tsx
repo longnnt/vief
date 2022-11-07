@@ -49,9 +49,9 @@ const Carousel = ({ banners }: CarouselProps) => {
                   variant="text14"
                   maxW="500px"
                   className="text-7-line"
-                  // dangerouslySetInnerHTML={{
-                  //   __html: banner?.description,
-                  // }}
+                  dangerouslySetInnerHTML={{
+                    __html: banner?.description,
+                  }}
                 />
               </Stack>
             </Box>
