@@ -6,7 +6,7 @@ export default function Description({ children, wrapperStyle, content }: Descrip
   return (
     <Flex alignItems={"center"} {...wrapperStyle} ml={wrapperStyle?.ml} mb={wrapperStyle?.mb} minW="max-content">
       {children}
-      <Text ml={wrapperStyle?.ml || "8px"} variant={"text14"} lineHeight="24px">
+      <Text ml={wrapperStyle?.ml || "8px"} variant={"text14"} lineHeight="24px" maxWidth="400px">
         {content}
       </Text>
     </Flex>

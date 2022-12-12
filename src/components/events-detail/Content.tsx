@@ -36,9 +36,10 @@ export default function Content({ data }: ContentProps) {
       <Text variant={"text36"} pb="32px">
         {data.title}
       </Text>
-      <Flex
+      <Stack
         justifyContent={"space-between"}
         mt="32px"
+        spacing={"48px"}
         flexDirection={{ sm: "column", base: "row" }}
         // pb={{ base: "64px", sm: "48px" }}
       >
@@ -48,7 +49,7 @@ export default function Content({ data }: ContentProps) {
           <Box bgImage={"/QR-event.png"} boxSize="350px" backgroundPosition={"center"} backgroundRepeat="no-repeat" />
           <Text variant={"text20"}>Vui lòng quét QR để đăng kí sự kiện</Text>
         </Stack>
-      </Flex>
+      </Stack>
       <Box>
         <Link href={"https://forms.gle/LEWcw9Z1vNxACDDu6"}>
           <Button variant={"primary"}>Đăng kí sự kiện !</Button>
