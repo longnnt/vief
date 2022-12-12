@@ -56,7 +56,7 @@ const WeAre = () => {
               </Stack>
             </Stack>
             <Center w="full" h={{ md: "650px", sm: "240px" }} position="relative">
-              <Image src="/vief-about-1.png" layout="fill" alt="" />
+              <Image src="/about-vief-1.png" layout="fill" alt="" />
             </Center>
 
             <Stack w="full" align={"center"} spacing={{ md: "48px", sm: "32px" }}>
@@ -104,7 +104,7 @@ const WeAre = () => {
               </Stack>
             </Stack>
             <Center w="full" h={{ md: "650px", sm: "240px" }} position="relative">
-              <Image src="/vief-about-2.png" layout="fill" alt="" />
+              <Image src="/about-vief-2.png" layout="fill" alt="" />
             </Center>
             {/* <Partner /> */}
           </Stack>
