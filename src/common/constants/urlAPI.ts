@@ -1,4 +1,4 @@
-export const BASE_URL = process.env.NEXT_PUBLIC_BACKEND_API;
+export const BASE_URL = "https://api-dev-vief.bilisoftware.com";
 
 export const GET_POSTS = "https://jsonplaceholder.typicode.com/posts";
 export const EDIT_POSTS = "https://jsonplaceholder.typicode/EDIT_POST";
