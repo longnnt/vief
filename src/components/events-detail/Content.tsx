@@ -1,5 +1,5 @@
 import LeftArrow from "@/src/Images/Icons/LeftArrow";
-import { Box, Flex, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Stack, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
 import TimeLeft from "../events/components/TimeLeft";
@@ -40,11 +40,20 @@ export default function Content({ data }: ContentProps) {
         justifyContent={"space-between"}
         mt="32px"
         flexDirection={{ sm: "column", base: "row" }}
-        pb={{ base: "64px", sm: "48px" }}
+        // pb={{ base: "64px", sm: "48px" }}
       >
         <LeftContent data={data} />
-        <FormSignup isExpired={isExpired} />
+        {/* <FormSignup isExpired={isExpired} /> */}
+        <Stack alignItems={"center"}>
+          <Box bgImage={"/QR-event.png"} boxSize="350px" backgroundPosition={"center"} backgroundRepeat="no-repeat" />
+          <Text variant={"text20"}>Vui lòng quét QR để đăng kí sự kiện</Text>
+        </Stack>
       </Flex>
+      <Box>
+        <Link href={"https://forms.gle/LEWcw9Z1vNxACDDu6"}>
+          <Button variant={"primary"}>Đăng kí sự kiện !</Button>
+        </Link>
+      </Box>
     </Stack>
   );
 }

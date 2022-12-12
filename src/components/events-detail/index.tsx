@@ -5,12 +5,14 @@ import Content from "./Content";
 
 export default function EventDetail({ event, relevantEvents }: EventDetailPageProps) {
   return (
-    <Stack mb={"69px"} mt={{ base: "32px", sm: "16px" }}>
+    <Stack mb={"69px"} mt={{ base: "32px", sm: "16px" }} spacing="48px">
       {event && <Content data={event} />}
-      <Text variant={"text28"} pb="32px">
-        Sự kiện liên quan
-      </Text>
-      {relevantEvents && <SectionEvent events={relevantEvents} />}
+      <Stack>
+        <Text variant={"text28"} pb="32px">
+          Sự kiện liên quan
+        </Text>
+        {relevantEvents && <SectionEvent events={relevantEvents} />}
+      </Stack>
     </Stack>
   );
 }
