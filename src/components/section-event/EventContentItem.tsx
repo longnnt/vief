@@ -71,7 +71,7 @@ export default function EventContentItem({ event }: EventContentItemProps) {
             <Description content={location}>
               <Location />
             </Description>
-            <Description content={field}>
+            <Description content={"Ngành gỗ"}>
               <WoodSector />
             </Description>
           </VStack>
