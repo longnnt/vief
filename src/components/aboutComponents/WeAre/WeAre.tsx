@@ -55,9 +55,9 @@ const WeAre = () => {
                 </Stack>
               </Stack>
             </Stack>
-            <Center w="full" h={{ md: "650px", sm: "240px" }} position="relative">
+            {/* <Center w="full" h={{ md: "650px", sm: "240px" }} position="relative">
               <Image src="/about-vief-1.png" layout="fill" alt="" />
-            </Center>
+            </Center> */}
 
             <Stack w="full" align={"center"} spacing={{ md: "48px", sm: "32px" }}>
               <Text

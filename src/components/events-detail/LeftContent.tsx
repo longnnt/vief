@@ -22,7 +22,7 @@ export default function LeftContent({ data }: LeftContentProps) {
         <Description wrapperStyle={{ mt: "8px" }} content={location}>
           <Location />
         </Description>
-        <Description wrapperStyle={{ mt: "8px" }} content={field}>
+        <Description wrapperStyle={{ mt: "8px" }} content={"Ngành gỗ"}>
           <WoodSector />
         </Description>
       </Box>
